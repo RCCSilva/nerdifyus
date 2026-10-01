@@ -1,0 +1,168 @@
+export default {
+  name: 'NFL',
+  blurb: 'Fútbol americano, desde "¿qué es un down?" hasta cómo funciona el tope salarial.',
+  lessons: {
+    basics: { title: 'Cómo funciona el fútbol americano', summary: 'El campo, cómo anotar, las posiciones, correr y pasar.' },
+    fouls: { title: 'Castigos comunes', summary: 'Salida en falso, fuera de lugar, sujeción, interferencia de pase.' },
+    overtime: { title: 'Empates y tiempo extra', summary: 'Puede haber empate en la temporada regular, nunca en playoffs.' },
+    strategy: { title: 'Estrategia', summary: 'Por qué los equipos hacen lo que hacen.' },
+    cap: { title: 'El tope salarial', summary: 'Cómo funcionan realmente las nóminas.' },
+  },
+
+  common: {
+    goalLine: 'Línea de gol',
+    offense: 'Ofensiva',
+    defense: 'Defensiva',
+    los: 'Línea de golpeo',
+    ltg: 'Línea a ganar',
+    pts: '+{n}',
+    ownSide: 'propia {n}',
+    oppSide: 'rival {n}',
+    downs: ['1.º', '2.º', '3.º', '4.º'],
+    downDist: '{down} y {togo}',
+    tapPlayer: 'Toca un jugador',
+  },
+
+  slides: {
+    intro: {
+      title: 'El fútbol americano en unos toques',
+      target: 'ZONA DE ANOTACIÓN RIVAL',
+      body: 'Dos equipos, un balón. La ofensiva tiene el balón e intenta llevarlo a la zona de anotación rival. La defensiva intenta impedirlo.',
+    },
+    field: {
+      title: 'El campo',
+      body: '100 yardas de juego, más una zona de anotación de 10 yardas en cada extremo.',
+      example: 'En total: 120 × 53⅓ yardas (360 × 160 pies), unos 109,7 × 48,8 metros.',
+    },
+    endzones: {
+      title: 'Zonas de anotación',
+      body: 'Lleva el balón a la zona de anotación rival: touchdown.',
+      example: 'La línea de gol es el borde delantero de la zona de anotación. Un jugador con el balón solo necesita que la punta del balón llegue a la línea de gol. No hace falta cruzarla.',
+    },
+    teams: {
+      title: '11 contra 11',
+      body: 'Cada equipo tiene 11 jugadores en el campo.',
+      example: 'Un 12.º jugador en el campo durante una jugada = castigo de 5 yardas.',
+    },
+    downs: {
+      title: '4 intentos para avanzar 10 yardas',
+      body: 'Cada intento es un down. La ofensiva necesita avanzar al menos 10 yardas en 4 downs.',
+      example: '¿Avanzó 10+ yardas, en una jugada o en varias? La cuenta se reinicia: otra vez 1.º y 10. ¿No? El balón pasa al rival.',
+      steps: [
+        'Inicio: 1.º y 10',
+        'Carrera, +4 yardas',
+        'Pase, +7 → 11 yardas en total: ¡de nuevo 1.º y 10!',
+        'Carrera, +3 yardas',
+        'Pase incompleto: el balón vuelve, el down se gasta',
+        'Carrera, +5 yardas',
+        '4.º y 2: la mayoría despeja (patea el balón lejos)',
+      ],
+    },
+    run: {
+      title: 'Correr con el balón',
+      body: 'El QB entrega el balón al corredor (RB). El RB corre hasta que lo derriban o sale del campo.',
+      example: 'Entregar el balón hacia adelante solo es legal a un jugador elegible detrás de la línea, como el RB.',
+    },
+    pass: {
+      title: 'Pasar el balón',
+      body: 'Un pase hacia adelante por jugada, lanzado desde detrás de la línea de golpeo.',
+      example: 'Atrapado → completo, sigue corriendo. Toca el suelo → incompleto: se gasta el down y el balón vuelve.',
+    },
+    touchdown: {
+      title: 'Touchdown: 6 puntos',
+      body: 'Lleva el balón a la zona de anotación rival, o atrápalo allí.',
+      note: '¡No es como en el fútbol! El balón no tiene que cruzar la línea. Touchdown = un jugador con el balón en su poder hace llegar solo la punta del balón a la línea de gol. Un balón suelto (sin nadie que lo tenga) en la zona de anotación solo cuenta si un jugador lo atrapa allí.',
+    },
+    try: {
+      title: 'Tras un TD: 1 o 2 puntos más',
+      body: 'El equipo que anotó tiene una jugada extra. Elige una opción:',
+      bullets: [
+        'Intento de 1 punto: patear entre los postes desde la 15 → 1 punto.',
+        'Intento de 2 puntos: desde la 2, correr o pasar. La ofensiva debe anotar un “touchdown” (llegar a la zona de anotación con el balón) → 2 puntos.',
+      ],
+      kick: 'Intento de 1: patada desde la 15',
+      two: 'Intento de 2: carrera/pase desde la 2',
+    },
+    fieldGoal: {
+      title: 'Gol de campo: 3 puntos',
+      body: 'Patea el balón por encima del travesaño y entre los postes. Todo el balón debe pasar.',
+      example: '¿Cuándo? Normalmente en 4.º down, cuando la ofensiva no avanza. Cerca de los postes → gol de campo. Demasiado lejos → despeje.',
+    },
+    safety: {
+      title: 'Safety: 2 puntos para la defensiva',
+      body: 'Derriba al portador del balón en su propia zona de anotación.',
+      note: 'Doble premio para la defensiva: el equipo que concedió el safety debe patearle el balón desde su propia 20. Así que anota 2 y (casi siempre) además recibe el balón.',
+    },
+    scoring: {
+      title: 'Todas las formas de anotar',
+      rows: [
+        { label: 'Touchdown', pts: '6', after: {
+          title: 'Solo después de un touchdown: una jugada extra',
+          rows: [['Intento de 1 punto: patada', '+1'], ['Intento de 2 puntos: carrera o pase', '+2']],
+        } },
+        { label: 'Gol de campo', pts: '3' },
+        { label: 'Safety', pts: '2' },
+      ],
+      example: 'Gana quien tenga más puntos al final.',
+    },
+    offense: {
+      title: 'La ofensiva',
+      body: 'Al menos 7 jugadores deben alinearse en la línea de golpeo.',
+      example: 'Los linieros (50–79) bloquean y no pueden atrapar pases. Los receptores usan 0–49 u 80–89.',
+    },
+    defense: {
+      title: 'La defensiva (4-3)',
+      body: '4 linieros, 3 apoyadores, 4 defensivos profundos.',
+      example: 'Los apoyadores se paran a 3–5 yardas. Los safeties son los más profundos, a 10–15 yardas.',
+    },
+    stFieldGoal: {
+      title: 'Equipos especiales: gol de campo',
+      body: 'Para las patadas entra una unidad especial. El centro largo hace el snap, el sujetador coloca el balón y el pateador patea. Los demás solo bloquean. Toca un jugador resaltado.',
+      note: '¿Quién sujeta el balón? Normalmente el despejador (a veces el QB suplente). Casi ningún equipo tiene un jugador solo para sujetar.',
+    },
+    stPunt: {
+      title: 'Equipos especiales: despeje',
+      body: 'En 4.º down entra la unidad de despeje. El centro largo envía el balón unas 15 yardas atrás al despejador, que lo patea lejos. Los gunners corren a derribar al regresador. Toca un jugador resaltado.',
+    },
+    end: {
+      title: '¡Eso es lo básico!',
+      body: 'Ya conoces el campo, cómo anotar, quién juega dónde y cómo avanza el balón.',
+      example: 'Lo próximo: castigos comunes y después empates y tiempo extra.',
+    },
+  },
+
+  groups: {
+    ol: 'Línea ofensiva — bloquea',
+    backs: 'Corredores y QB — corren y dirigen',
+    rec: 'Receptores — atrapan',
+    dl: 'Línea defensiva — presiona',
+    lb: 'Apoyadores — de todo',
+    db: 'Profundos — cubren',
+  },
+
+  positions: {
+    QB: { name: 'Mariscal de campo (quarterback)', role: 'Dirige la ofensiva. Recibe el snap y entrega, corre o pasa.' },
+    C: { name: 'Centro', role: 'Hace el snap al QB y dirige los bloqueos.' },
+    G: { name: 'Guardia', role: 'Bloquea a quienes presionan y abre huecos para correr. Junto al centro.' },
+    T: { name: 'Tackle', role: 'Protege al QB y abre huecos. Por fuera de los guardias.' },
+    TE: { name: 'Ala cerrada (tight end)', role: 'Bloquea en carreras y atrapa pases. Al final de la línea.' },
+    WR: { name: 'Receptor abierto', role: 'Atrapa pases. Rápido. Abierto, cerca de la banda.' },
+    RB: { name: 'Corredor (running back)', role: 'El principal portador del balón. En el backfield.' },
+    FB: { name: 'Corredor de poder (fullback)', role: 'Bloquea para el corredor; también puede correr o atrapar.' },
+    DE: { name: 'Ala defensiva', role: 'Entra a presionar o capturar al QB. Extremo de la línea.' },
+    DT: { name: 'Tackle defensivo', role: 'Frena la carrera y desarma jugadas. Frente a los guardias.' },
+    MLB: { name: 'Apoyador central (Mike)', role: 'Frena la carrera, cubre pases, presiona al QB. A 3–5 yardas.' },
+    SLB: { name: 'Apoyador del lado fuerte (Sam)', role: 'Apoyador del lado del ala cerrada.' },
+    WLB: { name: 'Apoyador del lado débil (Will)', role: 'Apoyador del lado contrario al ala cerrada.' },
+    CB: { name: 'Esquinero (cornerback)', role: 'Cubre a los receptores abiertos.' },
+    SS: { name: 'Profundo fuerte (strong safety)', role: 'Defiende el pase y ayuda contra la carrera. Más cerca, del lado del ala cerrada.' },
+    FS: { name: 'Profundo libre (free safety)', role: 'El defensor más profundo. Defiende el pase y lee al QB.' },
+    K: { name: 'Pateador', role: 'Patea goles de campo, puntos extra y patadas de salida.' },
+    P: { name: 'Despejador (punter)', role: 'Despeja el balón en 4.º down desde unas 15 yardas atrás. Normalmente también sujeta en los goles de campo.' },
+    LS: { name: 'Centro largo (long snapper)', role: 'Hace el snap al holder o al despejador.' },
+    H: { name: 'Sujetador (holder)', role: 'Recibe el snap a unas 7–8 yardas y coloca el balón para el pateador. Normalmente es el despejador.' },
+    KR: { name: 'Regresador', role: 'El jugador rápido del otro equipo que atrapa la patada e intenta devolverla.' },
+    GUN: { name: 'Gunner', role: 'Se alinea cerca de la banda y corre a toda velocidad para derribar al regresador.' },
+    PP: { name: 'Protector personal', role: 'Se alinea 1–3 yardas detrás de la línea y bloquea para el despejador.' },
+  },
+};

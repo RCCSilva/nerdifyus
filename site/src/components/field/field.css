@@ -1,0 +1,52 @@
+.field {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.f-border { fill: var(--field-border); }
+.f-grass { fill: var(--grass); }
+.f-stripe { fill: var(--grass-stripe); pointer-events: none; }
+.f-ez-left { fill: var(--ez-left); }
+.f-ez-right { fill: var(--ez-right); }
+.f-ez-text {
+  fill: rgba(255, 255, 255, 0.92);
+  font: 800 3.2px/1 var(--font-display);
+  letter-spacing: 0.25px;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.f-line { fill: var(--chalk); }
+.f-tick { stroke: var(--chalk); stroke-width: 0.11; }
+.f-boundary { stroke: var(--chalk); stroke-width: 0.22; }
+.f-nums text {
+  fill: var(--chalk);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-anchor: middle;
+  opacity: 0.95;
+}
+.f-pylon { fill: #ff7a1a; }
+.f-goalpost line { stroke: var(--gold); stroke-width: 0.35; stroke-linecap: round; }
+.f-goalpost circle { fill: var(--gold); }
+
+/* highlighting: dim everything that isn't the highlighted part */
+.field .part { transition: opacity 0.35s ease, filter 0.35s ease; }
+.field.has-hl .part:not(.is-hl),
+.field.has-hl .f-nums,
+.field.has-hl .f-stripe { opacity: 0.35; }
+.field.has-hl .f-grass:not(.is-hl) { opacity: 0.55; }
+.field .part.is-hl { filter: drop-shadow(0 0 0.6px #fff) drop-shadow(0 0 1.2px var(--hl)); }
+.field .part.is-hl .f-line,
+.field .part.is-hl .f-boundary,
+.field .part.is-hl .f-tick { fill: var(--hl); stroke: var(--hl); }
+.field .part.is-hl .f-tick { stroke-width: 0.2; }
+.field .f-grass.is-hl { fill: var(--grass-hl); }
+
+/* overlays shared by demos */
+.ball { fill: var(--ball); stroke: #3a1c0c; stroke-width: 0.08; }
+.ball-lace { stroke: #fff; stroke-width: 0.09; }
+.los { stroke: var(--los); stroke-width: 0.35; }
+.ltg { stroke: var(--ltg); stroke-width: 0.35; }
+.trail { fill: none; stroke: #fff; stroke-width: 0.22; stroke-dasharray: 0.6 0.5; opacity: 0.85; }

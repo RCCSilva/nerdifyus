@@ -1,0 +1,25 @@
+export default {
+  tagline: 'Nerd out on things. From the basics up, always with references.',
+  home: {
+    lead: 'Short, visual lessons you can tap through. Every fact links to its source.',
+    topics: 'Topics',
+  },
+  nav: { home: 'Home', language: 'Language', contents: 'Contents' },
+  topic: {
+    lessons: 'Lessons',
+    level: { basic: 'Basic', intermediate: 'Intermediate', advanced: 'Advanced' },
+    soon: 'Coming soon',
+    slides: '{n} slides',
+  },
+  deck: {
+    prev: 'Previous',
+    next: 'Next',
+    progress: 'Slide {i} of {n}',
+    replay: 'Replay',
+    hint: 'Tap the arrows, swipe, or use ← → keys',
+    important: 'Important',
+    source: 'Source',
+    back: 'Back to {topic}',
+  },
+  notFound: 'Page not found.',
+};

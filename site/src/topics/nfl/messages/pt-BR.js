@@ -1,0 +1,168 @@
+export default {
+  name: 'NFL',
+  blurb: 'Futebol americano, de "o que é uma descida?" até como funciona o teto salarial.',
+  lessons: {
+    basics: { title: 'Como o futebol americano funciona', summary: 'O campo, como pontuar, as posições, correr e passar.' },
+    fouls: { title: 'Faltas comuns', summary: 'False start, offside, holding, interferência de passe.' },
+    overtime: { title: 'Empates e prorrogação', summary: 'Empate pode na temporada regular, nunca nos playoffs.' },
+    strategy: { title: 'Estratégia', summary: 'Por que os times fazem o que fazem.' },
+    cap: { title: 'O teto salarial', summary: 'Como as folhas salariais funcionam de verdade.' },
+  },
+
+  common: {
+    goalLine: 'Linha do gol',
+    offense: 'Ataque',
+    defense: 'Defesa',
+    los: 'Linha de scrimmage',
+    ltg: 'Linha a alcançar',
+    pts: '+{n}',
+    ownSide: 'própria {n}',
+    oppSide: 'adversária {n}',
+    downs: ['1ª', '2ª', '3ª', '4ª'],
+    downDist: '{down} & {togo}',
+    tapPlayer: 'Toque em um jogador',
+  },
+
+  slides: {
+    intro: {
+      title: 'Futebol americano em poucos toques',
+      target: 'END ZONE ADVERSÁRIA',
+      body: 'Dois times, uma bola. O ataque tem a bola e tenta levá-la até a end zone adversária. A defesa tenta impedir.',
+    },
+    field: {
+      title: 'O campo',
+      body: '100 jardas de jogo, mais uma end zone de 10 jardas em cada ponta.',
+      example: 'No total: 120 × 53⅓ jardas (360 × 160 pés), cerca de 109,7 × 48,8 metros.',
+    },
+    endzones: {
+      title: 'End zones',
+      body: 'Leve a bola até a end zone adversária: touchdown.',
+      example: 'A linha do gol é a borda da frente da end zone. Um jogador com a bola só precisa fazer a ponta da bola chegar à linha do gol. Não precisa cruzá-la.',
+    },
+    teams: {
+      title: '11 contra 11',
+      body: 'Cada time tem 11 jogadores em campo.',
+      example: 'Um 12º jogador em campo durante a jogada = falta de 5 jardas.',
+    },
+    downs: {
+      title: '4 tentativas para avançar 10 jardas',
+      body: 'Cada tentativa é uma descida (down). O ataque precisa avançar pelo menos 10 jardas em 4 descidas.',
+      example: 'Avançou 10+ jardas, em uma jogada ou em várias? A contagem zera: 1ª & 10 de novo. Não? A bola vai para o adversário.',
+      steps: [
+        'Início: 1ª & 10',
+        'Corrida, +4 jardas',
+        'Passe, +7 → 11 jardas no total: volta para 1ª & 10!',
+        'Corrida, +3 jardas',
+        'Passe incompleto: a bola volta e a descida é gasta',
+        'Corrida, +5 jardas',
+        '4ª & 2: a maioria dá punt — chuta a bola para longe',
+      ],
+    },
+    run: {
+      title: 'Correndo com a bola',
+      body: 'O QB entrega a bola ao running back (RB). O RB corre até ser derrubado ou sair do campo.',
+      example: 'Entregar a bola para a frente só é permitido para um jogador elegível atrás da linha, como o RB.',
+    },
+    pass: {
+      title: 'Passando a bola',
+      body: 'Um passe para a frente por jogada, lançado de trás da linha de scrimmage.',
+      example: 'Pegou → completo, continua correndo. Tocou o chão → incompleto: a descida é gasta e a bola volta.',
+    },
+    touchdown: {
+      title: 'Touchdown: 6 pontos',
+      body: 'Leve a bola até a end zone adversária, ou pegue-a lá dentro.',
+      note: 'Não é como no futebol! A bola não precisa cruzar a linha. Touchdown = um jogador segurando a bola faz só a ponta dela chegar à linha do gol. Uma bola solta (ninguém segurando) na end zone só vale se um jogador a pegar lá dentro.',
+    },
+    try: {
+      title: 'Depois do TD: mais 1 ou 2 pontos',
+      body: 'O time que marcou ganha uma jogada bônus. Ele escolhe uma opção:',
+      bullets: [
+        'Tentativa de 1 ponto: chutar entre as traves da linha de 15 → 1 ponto.',
+        'Tentativa de 2 pontos: da linha de 2, correr ou passar. O ataque precisa marcar um “touchdown” (chegar à end zone com a bola) → 2 pontos.',
+      ],
+      kick: 'Tentativa de 1: chute da 15',
+      two: 'Tentativa de 2: corrida/passe da 2',
+    },
+    fieldGoal: {
+      title: 'Field goal: 3 pontos',
+      body: 'Chute a bola por cima do travessão e entre as traves. A bola inteira precisa passar.',
+      example: 'Quando? Normalmente na 4ª descida, quando o ataque não consegue avançar. Perto das traves → field goal. Longe demais → punt.',
+    },
+    safety: {
+      title: 'Safety: 2 pontos para a defesa',
+      body: 'Derrube o portador da bola na própria end zone dele.',
+      note: 'Vitória dupla da defesa: o time que sofreu o safety precisa chutar a bola para ela da própria linha de 20. Ou seja, ela marca 2 e (quase sempre) ainda fica com a bola.',
+    },
+    scoring: {
+      title: 'Todas as formas de pontuar',
+      rows: [
+        { label: 'Touchdown', pts: '6', after: {
+          title: 'Só depois de um touchdown: uma jogada bônus',
+          rows: [['Tentativa de 1 ponto: chute', '+1'], ['Tentativa de 2 pontos: corrida ou passe', '+2']],
+        } },
+        { label: 'Field goal', pts: '3' },
+        { label: 'Safety', pts: '2' },
+      ],
+      example: 'Vence quem tiver mais pontos no fim.',
+    },
+    offense: {
+      title: 'O ataque',
+      body: 'Pelo menos 7 jogadores precisam se alinhar na linha de scrimmage.',
+      example: 'Os linemen (50–79) bloqueiam e não podem pegar passes. Os recebedores usam 0–49 ou 80–89.',
+    },
+    defense: {
+      title: 'A defesa (4-3)',
+      body: '4 linemen, 3 linebackers, 4 defensive backs.',
+      example: 'Os linebackers ficam 3–5 jardas atrás. Os safeties são os mais recuados, a 10–15 jardas.',
+    },
+    stFieldGoal: {
+      title: 'Times especiais: field goal',
+      body: 'Nos chutes entra uma unidade especial. O long snapper faz o snap, o holder posiciona a bola e o kicker chuta. Os outros só bloqueiam. Toque em um jogador destacado.',
+      note: 'Quem segura a bola? Normalmente o punter (às vezes o QB reserva). Quase nenhum time tem um jogador só para segurar.',
+    },
+    stPunt: {
+      title: 'Times especiais: punt',
+      body: 'Na 4ª descida entra a unidade de punt. O long snapper manda a bola cerca de 15 jardas para trás, até o punter, que chuta longe. Os gunners correm para derrubar o retornador. Toque em um jogador destacado.',
+    },
+    end: {
+      title: 'Esse é o básico!',
+      body: 'Agora você conhece o campo, como pontuar, quem joga onde e como a bola avança.',
+      example: 'A seguir: faltas comuns e depois empates e prorrogação.',
+    },
+  },
+
+  groups: {
+    ol: 'Linha ofensiva — bloqueia',
+    backs: 'Backs — correm e comandam',
+    rec: 'Recebedores — pegam passes',
+    dl: 'Linha defensiva — pressiona',
+    lb: 'Linebackers — fazem de tudo',
+    db: 'Defensive backs — cobrem',
+  },
+
+  positions: {
+    QB: { name: 'Quarterback', role: 'Comanda o ataque. Recebe o snap e entrega, corre ou passa.' },
+    C: { name: 'Center', role: 'Faz o snap para o QB e organiza os bloqueios.' },
+    G: { name: 'Guard', role: 'Bloqueia quem pressiona e abre espaço para a corrida. Ao lado do center.' },
+    T: { name: 'Tackle', role: 'Protege o QB e abre espaço. Por fora dos guards.' },
+    TE: { name: 'Tight end', role: 'Bloqueia nas corridas e pega passes. Na ponta da linha.' },
+    WR: { name: 'Wide receiver', role: 'Pega passes. Rápido. Aberto, perto da lateral.' },
+    RB: { name: 'Running back', role: 'O principal carregador da bola. No backfield.' },
+    FB: { name: 'Fullback', role: 'Bloqueia para o running back; também pode correr ou pegar passes.' },
+    DE: { name: 'Defensive end', role: 'Avança para pressionar ou dar sack no QB. Ponta da linha.' },
+    DT: { name: 'Defensive tackle', role: 'Para a corrida e atrapalha jogadas. De frente para os guards.' },
+    MLB: { name: 'Middle linebacker (Mike)', role: 'Para a corrida, cobre passes, pressiona o QB. A 3–5 jardas.' },
+    SLB: { name: 'Linebacker do lado forte (Sam)', role: 'Linebacker do lado do tight end.' },
+    WLB: { name: 'Linebacker do lado fraco (Will)', role: 'Linebacker do lado oposto ao tight end.' },
+    CB: { name: 'Cornerback', role: 'Marca os wide receivers.' },
+    SS: { name: 'Strong safety', role: 'Defende o passe e ajuda contra a corrida. Mais perto, do lado do tight end.' },
+    FS: { name: 'Free safety', role: 'O defensor mais recuado. Defende o passe e lê o QB.' },
+    K: { name: 'Kicker', role: 'Chuta field goals, pontos extras e kickoffs.' },
+    P: { name: 'Punter', role: 'Dá o punt na 4ª descida, a cerca de 15 jardas da linha. Normalmente também é o holder nos field goals.' },
+    LS: { name: 'Long snapper', role: 'Faz o snap para o holder ou o punter.' },
+    H: { name: 'Holder', role: 'Recebe o snap a cerca de 7–8 jardas e posiciona a bola para o kicker. Normalmente é o punter.' },
+    KR: { name: 'Retornador', role: 'O jogador rápido do outro time que pega o chute e tenta retorná-lo.' },
+    GUN: { name: 'Gunner', role: 'Fica perto da lateral e corre em disparada para derrubar o retornador.' },
+    PP: { name: 'Personal protector', role: 'Fica 1–3 jardas atrás da linha e bloqueia para o punter.' },
+  },
+};

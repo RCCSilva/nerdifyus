@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.DS_Store
+# personal Claude Code settings (shared agents in .claude/agents are committed)
+.claude/settings.local.json
+# archived source documents (e.g. the NFL rulebook PDF) are third-party copyrighted: keep them local
+research/*/raw/
