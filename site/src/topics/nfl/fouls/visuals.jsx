@@ -1,7 +1,8 @@
 import Field from '../../../components/field/Field';
 import { Player, Ball, FieldLine, UprightText, PenaltyFlag } from '../../../components/field/pieces';
 import { fx, MID_Y } from '../../../components/field/geometry';
-import { useTimeline, seg, lerp, along } from '../../../components/field/motion';
+import { seg, lerp, along } from '../../../components/field/motion';
+import { FluidScene, Legend, StateLine } from '../../../components/scene/Scene';
 import { useI18n } from '../../../i18n/I18n';
 import { OFFENSE, DEFENSE } from '../formations';
 import { Pop, kickArc } from '../basics/visuals';
@@ -9,6 +10,24 @@ import { Pop, kickArc } from '../basics/visuals';
 // Every visual is illustrative: it shows a rule from research/nfl/03-common-fouls.md, not a real play.
 
 const byGroup = (list, ...groups) => list.filter((p) => groups.includes(p.group));
+
+function TeamsLegend() {
+  const { t } = useI18n();
+  return <Legend strong items={[{ swatch: 'team-off', label: t('nfl.common.offense') }, { swatch: 'team-def', label: t('nfl.common.defense') }]} />;
+}
+function LosLegend() {
+  const { t } = useI18n();
+  return <Legend items={[{ swatch: 'los', label: t('nfl.common.los') }]} />;
+}
+
+/** Fouls shown as a fluid animation: offense/defense in the header, the line of scrimmage in the footer. */
+function FoulScene({ duration, replay, children, teams = true }) {
+  return (
+    <FluidScene duration={duration} replay={replay} header={teams ? <TeamsLegend /> : null} footer={<LosLegend />}>
+      {children}
+    </FluidScene>
+  );
+}
 
 /** The line of scrimmage sliding by `shift` yards, with a dashed ghost where it was. */
 function MovingLine({ from, shift }) {
@@ -23,8 +42,15 @@ function MovingLine({ from, shift }) {
 /* ---------- intro: a flag, then yards ---------- */
 
 export function FoulsIntroVisual({ replay }) {
+  return (
+    <FoulScene duration={5200} replay={replay} teams={false}>
+      {(t1) => <FoulsIntroVisualPlay t1={t1} />}
+    </FoulScene>
+  );
+}
+
+function FoulsIntroVisualPlay({ t1 }) {
   const { t } = useI18n();
-  const t1 = useTimeline(5200, replay);
   const los = fx(40);
   const offPhase = t1 < 2600;
   const p = offPhase ? seg(t1, 1300, 2200) : seg(t1, 3900, 4800);
@@ -46,8 +72,15 @@ export function FoulsIntroVisual({ replay }) {
 /* ---------- false start ---------- */
 
 export function FalseStartVisual({ replay }) {
+  return (
+    <FoulScene duration={3600} replay={replay}>
+      {(t1) => <FalseStartVisualPlay t1={t1} />}
+    </FoulScene>
+  );
+}
+
+function FalseStartVisualPlay({ t1 }) {
   const { t } = useI18n();
-  const t1 = useTimeline(3600, replay);
   const los = fx(35);
   const twitch = Math.sin(Math.PI * seg(t1, 700, 1000)) * 0.9; // the right guard flinches forward
   const flagP = seg(t1, 1000, 1600);
@@ -77,8 +110,7 @@ export function FalseStartVisual({ replay }) {
 // The three look-alike fouls, stacked top to bottom so readers compare them at their own pace.
 const NZ_SCENES = ['offside', 'encroachment', 'nzi'];
 
-function NeutralZoneScene({ scene, replay }) {
-  const t1 = useTimeline(2600, `${scene}-${replay}`);
+function NeutralZoneField({ scene, t1 }) {
   const los = fx(50);
   const ZONE = 0.62; // half the drawn ball: the neutral zone is the ball's length (R3-18-2)
   const move = seg(t1, 300, 1100);
@@ -115,16 +147,17 @@ function NeutralZoneScene({ scene, replay }) {
 export function OffsideFamilyVisual({ replay }) {
   const { t } = useI18n();
   return (
-    <div className="nz-stack">
-      <p className="nz-legend"><i className="swatch nz" />{t('nfl.fouls.neutralZone')}</p>
+    <div className="scene-stack">
       {NZ_SCENES.map((scene) => (
-        <section key={scene} className="nz-scene">
-          <header>
-            <span className="downs-chip">{t(`nfl.fouls.scene.${scene}`)}</span>
-            <span className="downs-caption">{t(`nfl.fouls.sceneHow.${scene}`)}</span>
-          </header>
-          <NeutralZoneScene scene={scene} replay={replay} />
-        </section>
+        <FluidScene
+          key={scene}
+          duration={2600}
+          replay={`${scene}-${replay}`}
+          header={<StateLine chip={t(`nfl.fouls.scene.${scene}`)} caption={t(`nfl.fouls.sceneHow.${scene}`)} />}
+          footer={<Legend items={[{ swatch: 'nz', label: t('nfl.fouls.neutralZone') }]} />}
+        >
+          {(t1) => <NeutralZoneField scene={scene} t1={t1} />}
+        </FluidScene>
       ))}
     </div>
   );
@@ -133,7 +166,14 @@ export function OffsideFamilyVisual({ replay }) {
 /* ---------- offensive holding ---------- */
 
 export function OffensiveHoldingVisual({ replay }) {
-  const t1 = useTimeline(4200, replay);
+  return (
+    <FoulScene duration={4200} replay={replay}>
+      {(t1) => <OffensiveHoldingVisualPlay t1={t1} />}
+    </FoulScene>
+  );
+}
+
+function OffensiveHoldingVisualPlay({ t1 }) {
   const los = fx(35);
   const ol = byGroup(OFFENSE, 'ol').map((p) => ({ ...p, x: los + p.dx }));
   const de = DEFENSE.find((p) => p.id === 'DE');
@@ -167,8 +207,15 @@ export function OffensiveHoldingVisual({ replay }) {
 /* ---------- defensive holding ---------- */
 
 export function DefensiveHoldingVisual({ replay }) {
+  return (
+    <FoulScene duration={4400} replay={replay}>
+      {(t1) => <DefensiveHoldingVisualPlay t1={t1} />}
+    </FoulScene>
+  );
+}
+
+function DefensiveHoldingVisualPlay({ t1 }) {
   const { t } = useI18n();
-  const t1 = useTimeline(4400, replay);
   const los = fx(35);
   const route = [[los - 1, 12], [los + 6, 12], [los + 9, 16]];
   const slowed = t1 > 900;
@@ -195,8 +242,15 @@ export function DefensiveHoldingVisual({ replay }) {
 /* ---------- pass interference ---------- */
 
 export function PassInterferenceVisual({ replay }) {
+  return (
+    <FoulScene duration={5000} replay={replay}>
+      {(t1) => <PassInterferenceVisualPlay t1={t1} />}
+    </FoulScene>
+  );
+}
+
+function PassInterferenceVisualPlay({ t1 }) {
   const { t } = useI18n();
-  const t1 = useTimeline(5000, replay);
   const los = fx(30);
   const qb = [los - 6, MID_Y];
   const catchSpot = [los + 22, 18];

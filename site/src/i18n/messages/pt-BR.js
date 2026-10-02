@@ -11,6 +11,9 @@ export default {
     soon: 'Em breve',
     slides: '{n} slides',
   },
+  scene: {
+    frame: 'Quadro {i} de {n}',
+  },
   deck: {
     prev: 'Anterior',
     next: 'Próximo',

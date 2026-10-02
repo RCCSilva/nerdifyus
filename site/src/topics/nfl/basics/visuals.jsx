@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Field from '../../../components/field/Field';
 import { Player, Ball, FieldLine, UprightText } from '../../../components/field/pieces';
 import { fx, MID_Y, LENGTH, BORDER, END_ZONE, WIDTH } from '../../../components/field/geometry';
-import { useTimeline, seg, lerp, along, prefersReducedMotion } from '../../../components/field/motion';
+import { seg, lerp, along } from '../../../components/field/motion';
+import { StillScene, FluidScene, StopMotionScene, Legend, Hint, StateLine } from '../../../components/scene/Scene';
 import { useI18n } from '../../../i18n/I18n';
 import { OFFENSE, DEFENSE } from '../formations';
 
@@ -11,6 +12,25 @@ import { OFFENSE, DEFENSE } from '../formations';
 // Frame for upright (vertical) lineup views: 9 yd behind the line to 16 yd past it.
 const LINEUP_VIEW = (los) => [los - 9, los + 16];
 const LINEUP_Y = [7, WIDTH - 7];
+
+// Header / footer legends reused by many scenes.
+function useLegends() {
+  const { t } = useI18n();
+  return {
+    teams: (count = false) => (
+      <Legend strong items={[
+        { swatch: 'team-off', label: count ? `${t('nfl.common.offense')} · 11` : t('nfl.common.offense') },
+        { swatch: 'team-def', label: count ? `${t('nfl.common.defense')} · 11` : t('nfl.common.defense') },
+      ]} />
+    ),
+    lines: (ltg = true) => (
+      <Legend items={[
+        { swatch: 'los', label: t('nfl.common.los') },
+        ...(ltg ? [{ swatch: 'ltg', label: t('nfl.common.ltg') }] : []),
+      ]} />
+    ),
+  };
+}
 
 const at = (los, p) => ({ ...p, x: los + p.dx });
 const byGroup = (list, ...groups) => list.filter((p) => groups.includes(p.group));
@@ -66,53 +86,58 @@ function useMeters() {
 
 export function IntroVisual({ replay }) {
   const { t: tr } = useI18n();
-  const t = useTimeline(3400, replay);
   const y = MID_Y - 9; // above the centre, so the end-zone label stays readable
-  const x = lerp(fx(22), fx(100.8), seg(t, 900, 2800));
   return (
-    <Field highlight={t > 2700 ? ['endzones'] : []} endZoneText={['', tr('nfl.slides.intro.target')]} key={replay}>
-      <g className="arrow">
-        <line className="arrow-shaft" x1={fx(22)} x2={fx(96)} y1={y} y2={y} pathLength="1" />
-        <polygon className="arrow-head" points={`${fx(100.5)},${y} ${fx(95.5)},${y - 2.6} ${fx(95.5)},${y + 2.6}`} />
-      </g>
-      <UprightText x={fx(30)} y={y + 4} className="tag tag-off">{tr('nfl.common.offense')} →</UprightText>
-      <g transform={`translate(${x} ${y}) scale(3)`}><Ball x={0} y={0} /></g>
-    </Field>
+    <FluidScene
+      duration={3400}
+      replay={replay}
+      header={<Legend strong items={[{ swatch: 'team-off', label: `${tr('nfl.common.offense')} →` }]} />}
+    >
+      {(t) => (
+        <Field highlight={t > 2700 ? ['endzones'] : []} endZoneText={['', tr('nfl.slides.intro.target')]} key={replay}>
+          <g className="arrow">
+            <line className="arrow-shaft" x1={fx(22)} x2={fx(96)} y1={y} y2={y} pathLength="1" />
+            <polygon className="arrow-head" points={`${fx(100.5)},${y} ${fx(95.5)},${y - 2.6} ${fx(95.5)},${y + 2.6}`} />
+          </g>
+          <g transform={`translate(${lerp(fx(22), fx(100.8), seg(t, 900, 2800))} ${y}) scale(3)`}><Ball x={0} y={0} /></g>
+        </Field>
+      )}
+    </FluidScene>
   );
 }
 
 export function FieldVisual() {
   const m = useMeters();
   return (
+    <StillScene>
     <Field highlight={['fieldOfPlay']} className="anim-in">
       <Dim x1={fx(0)} x2={fx(100)} y={MID_Y - 1.4} label="100 yd" sub={m(100)} />
       <Dim x1={0} x2={END_ZONE} y={MID_Y - 1.4} label="10 yd" sub={m(10)} />
       <Dim x1={LENGTH - END_ZONE} x2={LENGTH} y={MID_Y - 1.4} label="10 yd" sub={m(10)} />
       <Dim x1={0} x2={WIDTH} y={fx(93)} label="53⅓ yd" sub={m(160 / 3)} vertical />
     </Field>
+    </StillScene>
   );
 }
 
 export function EndZonesVisual({ replay }) {
-  const t = useTimeline(2400, replay);
-  const p = seg(t, 200, 1600);
   return (
-    <Field highlight={['endzones', 'goalLines']}>
-      <Ball x={lerp(fx(88), fx(100.4), p)} y={MID_Y - 8} />
-      <Pop x={fx(105)} y={MID_Y - 8} show={t > 1650}>6</Pop>
-    </Field>
+    <FluidScene duration={2400} replay={replay}>
+      {(t) => (
+        <Field highlight={['endzones', 'goalLines']}>
+          <Ball x={lerp(fx(88), fx(100.4), seg(t, 200, 1600))} y={MID_Y - 8} />
+          <Pop x={fx(105)} y={MID_Y - 8} show={t > 1650}>6</Pop>
+        </Field>
+      )}
+    </FluidScene>
   );
 }
 
 export function TeamsVisual({ replay }) {
-  const { t: tr } = useI18n();
+  const legends = useLegends();
   const los = fx(50);
   return (
-    <div className="teams">
-      <div className="teams-legend">
-        <span><i className="swatch team-off" />{tr('nfl.common.offense')} · 11</span>
-        <span><i className="swatch team-def" />{tr('nfl.common.defense')} · 11</span>
-      </div>
+    <StillScene header={legends.teams(true)}>
       <Field vertical view={LINEUP_VIEW(los)} viewY={LINEUP_Y} key={replay}>
         <FieldLine x={los} kind="los" />
         {OFFENSE.map((p, i) => (
@@ -122,7 +147,7 @@ export function TeamsVisual({ replay }) {
           <Player key={`d${i}`} x={los + p.dx} y={p.y} label="" side="def" size={1.15} style={{ animationDelay: `${(i + 11) * 70}ms` }} />
         ))}
       </Field>
-    </div>
+    </StillScene>
   );
 }
 
@@ -140,11 +165,11 @@ const DRIVE = [
 
 /** The concept: line of scrimmage, line to gain, 10 yards between them, 4 tries. */
 export function DownsVisual() {
-  const { t } = useI18n();
+  const legends = useLegends();
   const los = fx(25);
   const ltg = fx(35);
   return (
-    <div className="downs">
+    <StillScene footer={legends.lines()}>
       <Field view={[fx(14), fx(46)]} viewY={[MID_Y - 11, MID_Y + 11]} className="anim-in">
         <FieldLine x={los} kind="los" />
         <FieldLine x={ltg} kind="ltg" />
@@ -162,72 +187,40 @@ export function DownsVisual() {
           </g>
         ))}
       </Field>
-      <div className="downs-legend">
-        <span><i className="swatch los" />{t('nfl.common.los')}</span>
-        <span><i className="swatch ltg" />{t('nfl.common.ltg')}</span>
-      </div>
-    </div>
+    </StillScene>
   );
 }
 
-/**
- * A short drive that plays on its own like a video (no step controls): `from`–`to` are indexes into DRIVE,
- * captions come from nfl.slides.downs.steps. The board always reserves two lines so it never jumps.
- */
+/** A short drive, frame by frame: `from`–`to` index DRIVE; captions come from nfl.slides.downs.steps. */
 function DriveVisual({ replay, from, to }) {
   const { t, tm } = useI18n();
-  const [i, setI] = useState(from);
-  const [playing, setPlaying] = useState(() => !prefersReducedMotion());
+  const legends = useLegends();
   const steps = tm('nfl.slides.downs.steps');
-  const next = () => setI((n) => (n >= to ? from : n + 1));
-  const prev = () => setI((n) => (n <= from ? to : n - 1));
-
-  useEffect(() => { setI(from); }, [replay, from]);
-  useEffect(() => {
-    if (!playing) return undefined;
-    const id = setTimeout(next, i === to ? 3200 : 2300);
-    return () => clearTimeout(id);
-  }, [i, from, to, playing]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const s = DRIVE[i];
   const spot = (y) => (y === 50 ? '50' : y < 50 ? t('nfl.common.ownSide', { n: y }) : t('nfl.common.oppSide', { n: 100 - y }));
-  const board = s.punt
+  const board = (s) => (s.punt
     ? '↺'
-    : `${t('nfl.common.downDist', { down: tm('nfl.common.downs')[s.down - 1], togo: s.ltg - s.los })} · ${spot(s.ball)}`;
+    : `${t('nfl.common.downDist', { down: tm('nfl.common.downs')[s.down - 1], togo: s.ltg - s.los })} · ${spot(s.ball)}`);
 
   return (
-    <div className="downs">
-      <div className="downs-board is-fixed" aria-live="polite">
-        <span className={`downs-chip ${s.first ? 'is-first' : ''}`}>{board}</span>
-        <span className="downs-caption">{steps[i]}</span>
-      </div>
-      <Field view={[fx(14), fx(94)]}>
-        {!s.punt && <FieldLine x={fx(s.los)} kind="los" />}
-        {!s.punt && <FieldLine x={fx(s.ltg)} kind="ltg" />}
-        <g className={`downs-ball ${s.punt ? 'is-punt' : ''}`} style={{ transform: `translate(${fx(s.ball)}px, ${MID_Y}px)` }}>
-          <g transform="scale(1.8)"><Ball x={0} y={0} z={s.punt ? 0.6 : 0} /></g>
-        </g>
-      </Field>
-      <div className="downs-legend">
-        <span><i className="swatch los" />{t('nfl.common.los')}</span>
-        <span><i className="swatch ltg" />{t('nfl.common.ltg')}</span>
-        <StepControls playing={playing} onToggle={() => setPlaying((p) => !p)} onPrev={() => { setPlaying(false); prev(); }} onNext={() => { setPlaying(false); next(); }} />
-      </div>
-    </div>
-  );
-}
-
-/** Controls for step-by-step animations: back, play/pause, forward. Stepping by hand pauses playback. */
-export function StepControls({ playing, onToggle, onPrev, onNext }) {
-  const { t } = useI18n();
-  return (
-    <span className="step-controls">
-      <button onClick={onPrev} aria-label={t('ui.deck.stepBack')} title={t('ui.deck.stepBack')}>⏮</button>
-      <button onClick={onToggle} aria-label={t(playing ? 'ui.deck.pause' : 'ui.deck.play')} title={t(playing ? 'ui.deck.pause' : 'ui.deck.play')} className="is-main">
-        {playing ? '⏸' : '▶'}
-      </button>
-      <button onClick={onNext} aria-label={t('ui.deck.stepForward')} title={t('ui.deck.stepForward')}>⏭</button>
-    </span>
+    <StopMotionScene
+      frames={to - from + 1}
+      replay={replay}
+      header={(i) => <StateLine chip={board(DRIVE[from + i])} caption={steps[from + i]} highlight={DRIVE[from + i].first} />}
+      footer={legends.lines()}
+    >
+      {(i) => {
+        const s = DRIVE[from + i];
+        return (
+          <Field view={[fx(14), fx(94)]}>
+            {!s.punt && <FieldLine x={fx(s.los)} kind="los" />}
+            {!s.punt && <FieldLine x={fx(s.ltg)} kind="ltg" />}
+            <g className={`downs-ball ${s.punt ? 'is-punt' : ''}`} style={{ transform: `translate(${fx(s.ball)}px, ${MID_Y}px)` }}>
+              <g transform="scale(1.8)"><Ball x={0} y={0} z={s.punt ? 0.6 : 0} /></g>
+            </g>
+          </Field>
+        );
+      }}
+    </StopMotionScene>
   );
 }
 
@@ -275,7 +268,15 @@ export function FourthDownVisual({ replay }) {
 /* ---------- run & pass ---------- */
 
 export function RunVisual({ replay }) {
-  const t = useTimeline(3600, replay);
+  const legends = useLegends();
+  return (
+    <FluidScene duration={3600} replay={replay} header={legends.teams()} footer={legends.lines(false)}>
+      {(t) => <RunPlay t={t} />}
+    </FluidScene>
+  );
+}
+
+function RunPlay({ t }) {
   const los = fx(30);
   const ol = byGroup(OFFENSE, 'ol').map((p) => at(los, p));
   const dl = byGroup(DEFENSE, 'dl').map((p) => at(los, p));
@@ -307,7 +308,15 @@ export function RunVisual({ replay }) {
 }
 
 export function PassVisual({ replay }) {
-  const t = useTimeline(4200, replay);
+  const legends = useLegends();
+  return (
+    <FluidScene duration={4200} replay={replay} header={legends.teams()} footer={legends.lines(false)}>
+      {(t) => <PassPlay t={t} />}
+    </FluidScene>
+  );
+}
+
+function PassPlay({ t }) {
   const los = fx(28);
   const ol = byGroup(OFFENSE, 'ol').map((p) => at(los, p));
   const dl = byGroup(DEFENSE, 'dl').map((p) => at(los, p));
@@ -346,8 +355,16 @@ export function PassVisual({ replay }) {
 /* ---------- scoring ---------- */
 
 export function TouchdownVisual({ replay }) {
+  const legends = useLegends();
+  return (
+    <FluidScene duration={3000} replay={replay} header={legends.teams()}>
+      {(t) => <TouchdownPlay t={t} />}
+    </FluidScene>
+  );
+}
+
+function TouchdownPlay({ t }) {
   const { t: tr } = useI18n();
-  const t = useTimeline(3000, replay);
   // The runner stops short: only the front of the ball reaches the goal line — that's enough (R11-2-1).
   const runner = along([[fx(84), MID_Y + 7], [fx(93), MID_Y + 3], [fx(99.2), MID_Y + 2]], seg(t, 300, 2200));
   const chaser = along([[fx(90), MID_Y - 9], [fx(98.2), MID_Y - 0.4]], seg(t, 300, 2300));
@@ -370,8 +387,15 @@ export function kickArc(from, to, p) {
 }
 
 export function TryVisual({ replay }) {
+  return (
+    <FluidScene duration={5200} replay={replay}>
+      {(t) => <TryPlay t={t} />}
+    </FluidScene>
+  );
+}
+
+function TryPlay({ t }) {
   const { t: tr } = useI18n();
-  const t = useTimeline(5200, replay);
   const kickP = seg(t, 500, 1900);
   const kick = kickArc([fx(85), MID_Y], [LENGTH + 2, MID_Y], kickP);
   const runP = seg(t, 2900, 4300);
@@ -396,17 +420,20 @@ export function TryVisual({ replay }) {
   );
 }
 
-export function FieldGoalVisual({ replay }) {
-  return (
-    <div className="stack-visual">
-      <SpecialTeamsUnit unit="fg" plain replay={replay} />
-      <div className="stack-visual-pad"><FgRates /></div>
-    </div>
-  );
+export function FieldGoalVisual(props) {
+  return <KickPlay unit="fg" {...props} footerExtra={<FgRates />} />;
 }
 
 export function SafetyVisual({ replay }) {
-  const t = useTimeline(3000, replay);
+  const legends = useLegends();
+  return (
+    <FluidScene duration={3000} replay={replay} header={legends.teams()} footer={legends.lines(false)}>
+      {(t) => <SafetyPlay t={t} />}
+    </FluidScene>
+  );
+}
+
+function SafetyPlay({ t }) {
   const qb = along([[fx(1), MID_Y], [fx(-4), MID_Y + 1]], seg(t, 300, 1700));
   const d1 = along([[fx(5), MID_Y - 6], [fx(-2.2), MID_Y - 0.8]], seg(t, 300, 1850));
   const d2 = along([[fx(5), MID_Y + 6], [fx(-2.4), MID_Y + 2.8]], seg(t, 450, 1900));
@@ -454,17 +481,34 @@ export function ScoringVisual({ replay }) {
 
 /* ---------- positions ---------- */
 
+function PlayerCard({ id, side }) {
+  const { tm } = useI18n();
+  const info = tm(`nfl.positions.${id}`);
+  return (
+    <div className="lineup-info" aria-live="polite">
+      <span className={`lineup-abbr ${side}`}>{id}</span>
+      <div><strong>{info.name}</strong><p>{info.role}</p></div>
+    </div>
+  );
+}
+
 function Lineup({ side }) {
-  const { t, tm } = useI18n();
+  const { t } = useI18n();
   const mine = side === 'off' ? OFFENSE : DEFENSE;
   const [sel, setSel] = useState(side === 'off' ? 8 : 5); // QB / MLB
   const los = fx(50);
-  const pos = mine[sel];
-  const info = tm(`nfl.positions.${pos.id}`);
   const groups = [...new Set(mine.map((p) => p.group))];
 
   return (
-    <div className="lineup">
+    <StillScene
+      header={<Hint>{t('nfl.common.tapPlayers')}</Hint>}
+      footer={(
+        <>
+          <PlayerCard id={mine[sel].id} side={side} />
+          <Legend items={groups.map((g) => ({ swatch: `g-${g}`, label: t(`nfl.groups.${g}`) }))} />
+        </>
+      )}
+    >
       <Field vertical view={LINEUP_VIEW(los)} viewY={LINEUP_Y}>
         <FieldLine x={los} kind="los" />
         {side === 'def' && OFFENSE.map((p, n) => <Player key={`o${n}`} x={los + p.dx} y={p.y} label={p.id} side="off" size={1.08} dim />)}
@@ -483,17 +527,7 @@ function Lineup({ side }) {
           />
         ))}
       </Field>
-      <div className="lineup-info" aria-live="polite">
-        <span className={`lineup-abbr ${side}`}>{pos.id}</span>
-        <div>
-          <strong>{info.name}</strong>
-          <p>{info.role}</p>
-        </div>
-      </div>
-      <div className="lineup-groups">
-        {groups.map((g) => <span key={g}><i className={`swatch g-${g}`} />{t(`nfl.groups.${g}`)}</span>)}
-      </div>
-    </div>
+    </StillScene>
   );
 }
 
@@ -557,9 +591,9 @@ const ST_DEFENSE = {
   ],
 };
 
-function useStPlay(unit, replay) {
+/** Positions at time t (ms) for a kicking unit. */
+function stPlay(unit, t) {
   const u = ST_UNITS[unit];
-  const t = useTimeline(unit === 'fg' ? 3200 : 4200, `${unit}-${replay}`);
   const los = u.los;
   const at = (p) => [los + p.dx, MID_Y + p.dy];
   if (unit === 'fg') {
@@ -590,15 +624,12 @@ function useStPlay(unit, replay) {
 }
 const xy = ([x, y]) => ({ x, y });
 
-function SpecialTeamsUnit({ unit, replay, plain = false }) {
-  const { tm } = useI18n();
+/** The field for a kicking unit at time t. plain: both full teams, no labels on blockers, no taps. */
+function KickField({ unit, t, plain, sel, onSelect }) {
   const u = ST_UNITS[unit];
-  const [sel, setSel] = useState(u.select);
-  const play = useStPlay(unit, replay);
-  const info = tm(`nfl.positions.${sel}`);
+  const play = stPlay(unit, t);
   const gunner = (sign) => u.players.find((p) => p.id === 'GUN' && Math.sign(p.dy) === sign);
-
-  const field = (
+  return (
     <Field view={u.view} viewY={u.viewY} highlight={play.hl}>
       <FieldLine x={u.los} kind="los" />
       {plain && ST_DEFENSE[unit].map((d, n) => {
@@ -616,7 +647,7 @@ function SpecialTeamsUnit({ unit, replay, plain = false }) {
           side="def"
           size={u.size}
           active={!plain && sel === u.returner.id}
-          onSelect={plain ? undefined : () => setSel(u.returner.id)}
+          onSelect={plain ? undefined : () => onSelect(u.returner.id)}
         />
       )}
       {u.players.map((p, n) => {
@@ -631,38 +662,60 @@ function SpecialTeamsUnit({ unit, replay, plain = false }) {
             size={plain || p.id ? u.size : u.size * 0.75}
             dim={!plain && !p.id}
             active={!plain && p.id === sel}
-            onSelect={!plain && p.id ? () => setSel(p.id) : undefined}
+            onSelect={!plain && p.id ? () => onSelect(p.id) : undefined}
           />
         );
       })}
       <Ball x={play.ball.x} y={play.ball.y} z={play.ball.z} />
     </Field>
   );
+}
 
-  if (plain) return field;
+/** Kicking plays in the basics deck: both full teams (offense blue, defense red), no highlighting. */
+function KickPlay({ unit, replay, footerExtra }) {
+  const legends = useLegends();
   return (
-    <div className="lineup">
-      {field}
-      <div className="lineup-info" aria-live="polite">
-        <span className={`lineup-abbr ${sel === 'KR' ? 'def' : 'off'}`}>{sel}</span>
-        <div><strong>{info.name}</strong><p>{info.role}</p></div>
-      </div>
-    </div>
+    <FluidScene
+      duration={unit === 'fg' ? 3200 : 4200}
+      replay={`${unit}-${replay}`}
+      header={legends.teams(true)}
+      footer={footerExtra}
+    >
+      {(t) => <KickField unit={unit} t={t} plain />}
+    </FluidScene>
+  );
+}
+
+/** Special-teams units in the positions lesson: only the specialists are labelled and tappable. */
+function SpecialTeamsUnit({ unit, replay }) {
+  const { t } = useI18n();
+  const u = ST_UNITS[unit];
+  const [sel, setSel] = useState(u.select);
+  return (
+    <FluidScene
+      duration={unit === 'fg' ? 3200 : 4200}
+      replay={`${unit}-${replay}`}
+      header={<Hint>{t('nfl.common.tapPlayers')}</Hint>}
+      footer={<PlayerCard id={sel} side={sel === 'KR' ? 'def' : 'off'} />}
+    >
+      {(time) => <KickField unit={unit} t={time} sel={sel} onSelect={setSel} />}
+    </FluidScene>
   );
 }
 
 export const FieldGoalUnitVisual = (props) => <SpecialTeamsUnit unit="fg" {...props} />;
 export const PuntUnitVisual = (props) => <SpecialTeamsUnit unit="punt" {...props} />;
-
-/** Kicking plays in the basics deck: both full teams, same colours, no highlighting. */
-export const PuntVisual = (props) => <SpecialTeamsUnit unit="punt" plain {...props} />;
+export const PuntVisual = (props) => <KickPlay unit="punt" {...props} />;
 
 export function EndVisual({ replay }) {
+  const legends = useLegends();
   const los = fx(50);
   return (
-    <Field key={replay}>
-      {OFFENSE.map((p, i) => <Player key={`o${i}`} x={los + p.dx} y={p.y} label="" side="off" style={{ animationDelay: `${i * 40}ms` }} />)}
-      {DEFENSE.map((p, i) => <Player key={`d${i}`} x={los + p.dx} y={p.y} label="" side="def" style={{ animationDelay: `${(i + 11) * 40}ms` }} />)}
-    </Field>
+    <StillScene header={legends.teams(true)}>
+      <Field key={replay}>
+        {OFFENSE.map((p, i) => <Player key={`o${i}`} x={los + p.dx} y={p.y} label="" side="off" style={{ animationDelay: `${i * 40}ms` }} />)}
+        {DEFENSE.map((p, i) => <Player key={`d${i}`} x={los + p.dx} y={p.y} label="" side="def" style={{ animationDelay: `${(i + 11) * 40}ms` }} />)}
+      </Field>
+    </StillScene>
   );
 }

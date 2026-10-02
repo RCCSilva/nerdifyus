@@ -1,0 +1,58 @@
+/* The shared frame for every slide visual: header · body · footer. */
+.scene { margin: 0; background: var(--surface); display: grid; }
+.scene-body { min-width: 0; }
+.scene-body > .field { display: block; }
+
+.scene-head,
+.scene-foot { padding: 0.7rem 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
+.scene-head { font-weight: 700; }
+.scene-foot { font-size: 0.85rem; color: var(--muted); }
+.scene-foot > * { min-width: 0; }
+
+.scene-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; align-items: center; }
+.scene-legend.is-strong { color: var(--text); font-weight: 700; font-size: 1rem; }
+.scene-hint { color: var(--text); }
+
+/* state line: always two single-line rows, so changing text never makes the page jump */
+.scene-state { display: grid; justify-items: start; gap: 0.35rem; width: 100%; }
+.scene-state > * { max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.scene-chip {
+  font: 800 1rem/1 var(--font-display);
+  background: #111;
+  color: #fff;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  font-variant-numeric: tabular-nums;
+  transition: background 0.3s;
+}
+.scene-chip.is-hl { background: #1c8c3c; }
+.scene-caption { font-weight: 600; }
+
+/* stop-motion player: frame indicator + controls */
+.scene-player { display: flex; align-items: center; gap: 0.8rem; width: 100%; margin-top: 0.1rem; }
+.scene-frames { display: flex; align-items: center; gap: 0.6rem; margin-right: auto; }
+.scene-pips { display: inline-flex; gap: 4px; }
+.scene-pips i { width: 1.4rem; height: 0.3rem; border-radius: 99px; background: var(--line); transition: background 0.3s; }
+.scene-pips i.is-done { background: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.scene-pips i.is-on { background: var(--accent); }
+.scene-count { font-variant-numeric: tabular-nums; font-weight: 600; }
+.scene-controls { display: inline-flex; gap: 0.3rem; }
+.scene-controls button {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.scene-controls button.is-main { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.scene-controls button:hover:not(:disabled) { border-color: var(--accent); }
+.scene-controls button:disabled { opacity: 0.3; cursor: default; }
+
+/* player cards and charts in a footer read as content, not as a muted legend */
+.scene-foot .lineup-info,
+.scene-foot .fg-rates { color: var(--text); width: 100%; padding: 0; }

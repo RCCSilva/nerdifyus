@@ -23,7 +23,8 @@ export default {
     oppSide: 'rival {n}',
     downs: ['1.º', '2.º', '3.º', '4.º'],
     downDist: '{down} y {togo}',
-    tapPlayer: 'Toca un jugador',
+    tapPlayer: 'Toca a los jugadores para ver qué hacen',
+    tapPlayers: 'Toca a los jugadores para ver qué hacen',
   },
 
   slides: {

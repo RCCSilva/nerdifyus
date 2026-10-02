@@ -11,6 +11,9 @@ export default {
     soon: 'Próximamente',
     slides: '{n} diapositivas',
   },
+  scene: {
+    frame: 'Cuadro {i} de {n}',
+  },
   deck: {
     prev: 'Anterior',
     next: 'Siguiente',

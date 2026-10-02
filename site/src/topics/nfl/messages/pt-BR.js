@@ -23,7 +23,8 @@ export default {
     oppSide: 'adversária {n}',
     downs: ['1ª', '2ª', '3ª', '4ª'],
     downDist: '{down} & {togo}',
-    tapPlayer: 'Toque em um jogador',
+    tapPlayer: 'Toque nos jogadores para ver o que eles fazem',
+    tapPlayers: 'Toque nos jogadores para ver o que eles fazem',
   },
 
   slides: {

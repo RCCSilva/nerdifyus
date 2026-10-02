@@ -41,7 +41,11 @@ Lessons are slide decks, not articles. People don't want to read walls of text.
 - One idea per slide: a **visual** (usually the field), a title, 1–2 short sentences, an optional example, and source chips.
 - Navigation: arrows, ← → keys, swipe, progress segments, and the topic sidebar (every lesson, every slide; a drawer on phones). The current slide is in `?s=N`.
 - Always start from the basics, and be direct.
-- **No sub-slides.** Don't put steppers, dots or auto-advancing stages inside a slide. When a visual has several static parts (rounds of a bracket, variants of a foul), stack them vertically so readers scroll at their own pace, especially on phones. A continuous animation (like a play) is fine: it's a short video. A step-by-step animation (frames that change on a timer, like the downs drive) gets back / play-pause / forward controls (`StepControls`), so readers can stop and step at their own pace.
+- **No sub-slides.** Don't put steppers, dots or auto-advancing stages inside a slide. When a visual has several static parts (rounds of a bracket, variants of a foul), stack them vertically so readers scroll at their own pace, especially on phones. A continuous animation (like a play) is fine: it's a short video. A step-by-step animation (frames that change on a timer, like the downs drive) is a `StopMotionScene`, so readers can stop and step at their own pace.
+- **Every slide visual is a scene** (`site/src/components/scene/Scene.jsx`), so they all look the same: a header (what to look at: `Legend`, `Hint`, `StateLine`), the picture, and a footer (legends, a chart, a player card). Three kinds:
+  - `StillScene`: a picture that doesn't move (e.g. 11 vs 11, the lineups).
+  - `FluidScene`: a continuous animation, like a short video (run, pass, kicks); children get the time `t`.
+  - `StopMotionScene`: a few frames with a frame indicator and back / play-pause / forward. It never loops: back is disabled on the first frame, forward on the last, playback stops at the end.
 - One topic per lesson, but don't over-split: e.g. offense, defense and special teams live together in one "Positions" lesson.
 
 ## i18n
@@ -65,6 +69,7 @@ research/              cited notes, one folder per topic
 site/src/
   components/field/    Field (SVG), players/ball, motion helpers
   components/deck/     slide deck
+  components/scene/    the shared frame for slide visuals (still / fluid / stop motion)
   pages/TopicLayout    sidebar: every lesson of a topic, with live lessons' slides nested below
   i18n/                locale config + UI strings
   topics/registry.js   topics → lessons

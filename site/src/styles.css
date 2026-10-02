@@ -410,10 +410,6 @@ a.lesson:hover { transform: translateX(4px); }
 .swatch.los { background: var(--los); border-radius: 2px; height: 0.25rem; width: 1rem; vertical-align: 0.2rem; }
 .swatch.ltg { background: var(--ltg); border-radius: 2px; height: 0.25rem; width: 1rem; vertical-align: 0.2rem; }
 
-/* a field visual with extra content below it */
-.stack-visual { background: var(--surface); display: grid; }
-.stack-visual-pad { padding: 0.8rem 1rem 1rem; }
-
 /* 4th down options */
 .fourth { background: var(--surface); padding: 0.9rem; display: grid; gap: 0.6rem; }
 .fourth-opt { border-radius: 12px; background: var(--bg); padding: 0.7rem 0.9rem; border-left: 4px solid; animation: fade-up-lg 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
@@ -432,58 +428,17 @@ a.lesson:hover { transform: translateX(4px); }
 .fg-rate b { text-align: right; }
 .fg-rates-note { color: var(--muted); font-size: 0.78rem; line-height: 1.35; }
 
-/* step-animation controls */
-.step-controls { margin-left: auto; display: inline-flex; gap: 0.3rem; }
-.step-controls button {
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--text);
-  font-size: 0.85rem;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-}
-.step-controls button.is-main { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.step-controls button:hover { border-color: var(--accent); }
-
 /* teams */
-.teams { background: var(--surface); }
-.teams-legend { display: flex; gap: 1.2rem; padding: 0.7rem 1rem; font-weight: 700; }
 .swatch.team-off { background: var(--off); }
 .swatch.team-def { background: var(--def); }
 
 /* downs */
-.downs { background: var(--surface); }
-.downs-board { display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0.8rem; flex-wrap: wrap; min-height: 3.2rem; }
-.downs-chip {
-  font: 800 1rem/1 var(--font-display);
-  background: #111;
-  color: #fff;
-  padding: 0.45rem 0.7rem;
-  border-radius: 8px;
-  font-variant-numeric: tabular-nums;
-  transition: background 0.3s;
-}
-.downs-chip.is-first { background: #1c8c3c; }
-.downs-caption { font-weight: 600; }
-/* Animated captions: always exactly two rows (chip, then caption), each on one line,
-   so changing text never changes the height and the page never jumps. */
-.downs-board.is-fixed { display: grid; grid-template-rows: auto auto; justify-items: start; gap: 0.35rem; }
-.downs-board.is-fixed > * { max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .try-dot circle { fill: #11151c; stroke: #fff; stroke-width: 0.15; }
 .try-dot { animation: fade-up 0.4s both; }
 .downs-ball { transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
 .downs-ball.is-punt { transition-duration: 1.4s; }
-.downs-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center; padding: 0.55rem 0.8rem; font-size: 0.82rem; color: var(--muted); }
-.downs-dots { margin-left: auto; display: flex; gap: 6px; }
-.downs-dots button { width: 9px; height: 9px; padding: 0; border-radius: 50%; border: 0; background: var(--line); cursor: pointer; }
-.downs-dots button.is-on { background: var(--accent); }
 
 /* lineup */
-.lineup { background: var(--surface); }
 .lineup-info { display: flex; gap: 0.8rem; align-items: center; padding: 0.8rem 1rem 0.3rem; min-height: 5rem; }
 .lineup-info strong { display: block; }
 .lineup-info p { margin: 0.1rem 0 0; color: var(--muted); font-size: 0.92rem; line-height: 1.4; }
@@ -498,7 +453,6 @@ a.lesson:hover { transform: translateX(4px); }
 }
 .lineup-abbr.off { background: var(--off); }
 .lineup-abbr.def { background: var(--def); }
-.lineup-groups { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; padding: 0.3rem 1rem 0.9rem; font-size: 0.8rem; color: var(--muted); }
 
 /* scoring + special teams lists */
 .score-grid, .st-grid { display: grid; gap: 0.55rem; padding: 1rem; }
@@ -559,11 +513,8 @@ a.lesson:hover { transform: translateX(4px); }
 .penalty-flag circle { fill: #8a6d00; }
 .penalty-flag.is-down { filter: drop-shadow(0 0 0.5px #fff) drop-shadow(0 0 1.2px #ffd400); }
 .swatch.nz { background: var(--hl); border-radius: 2px; }
-.nz-stack { background: var(--surface); display: grid; gap: 0.8rem; padding: 0.8rem; }
-.nz-legend { margin: 0; font-size: 0.82rem; color: var(--muted); }
-.nz-scene { display: grid; gap: 0.45rem; }
-.nz-scene header { display: grid; justify-items: start; gap: 0.3rem; }
-.nz-scene .field { border-radius: 10px; }
+.scene-stack { display: grid; gap: 0.8rem; background: var(--bg); }
+.scene-stack .scene { border-radius: 12px; overflow: hidden; }
 .nz-band { fill: var(--hl); opacity: 0.55; }
 .nz-label { fill: var(--hl); font: 800 1.1px/1 var(--font-body); text-anchor: middle; paint-order: stroke; stroke: rgb(0 0 0 / 0.45); stroke-width: 0.25; }
 .ghost-line { stroke: #fff; stroke-width: 0.25; stroke-dasharray: 0.6 0.5; opacity: 0.6; }

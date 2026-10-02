@@ -24,7 +24,8 @@ export default {
     oppSide: 'opp {n}',
     downs: ['1st', '2nd', '3rd', '4th'],
     downDist: '{down} & {togo}',
-    tapPlayer: 'Tap a player',
+    tapPlayer: 'Tap the players to see what they do',
+    tapPlayers: 'Tap the players to see what they do',
   },
 
   slides: {
