@@ -24,6 +24,7 @@
 | S20 | Wikipedia — "Penalty (gridiron football)" | secondary (explainer) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/Penalty_(gridiron_football) |
 | S21 | Football Zebras — "Penalty enforcement is an entire-crew effort" (Mark Schultz) | secondary (officiating site) | 2014-08-01 · accessed 2026-10-02 | https://www.footballzebras.com/2014/08/penalty-enforcement-an-entire-crew-effort/ |
 | S22 | IFAB Laws of the Game — Law 5 "The Referee", Advantage (soccer; comparison only) | primary | latest edition · accessed 2026-10-02 | https://www.theifab.com/laws/latest/the-referee/ |
+| S23 | Wikipedia — "Pass interference" | secondary (explainer) | last edited 2026-09-20 · accessed 2026-10-02 | https://en.wikipedia.org/wiki/Pass_interference |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

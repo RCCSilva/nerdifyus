@@ -111,6 +111,11 @@ export const SOURCES = {
     title: 'IFAB Laws of the Game — Law 5, The Referee (advantage)',
     url: 'https://www.theifab.com/laws/latest/the-referee/',
   },
+  S23: {
+    short: 'Wikipedia · Pass interference',
+    title: 'Wikipedia — Pass interference, edited 2026-09-20 (fallback source)',
+    url: 'https://en.wikipedia.org/wiki/Pass_interference',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

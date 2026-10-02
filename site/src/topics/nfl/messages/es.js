@@ -361,6 +361,7 @@ export default {
     },
     foulMechanism: {
       title: 'Los castigos en una imagen',
+      insight: 'El fútbol americano es un deporte de contacto, pero no es una lucha. Muchas faltas existen para que el juego siga siendo sobre el balón: la sujeción impide agarrar sin más a quien se cruza en el camino, y la interferencia de pase garantiza que los dos jugadores tengan una oportunidad justa de atrapar un balón en el aire.',
       example: 'Lo próximo: empates y tiempo extra. Las faltas una por una (salida en falso, sujeción…) están en la lección “Castigos comunes”.',
     },
   },

@@ -24,6 +24,8 @@ export default {
     stepForward: 'Next step',
     replay: 'Replay',
     hint: 'Tap the arrows, swipe, or use ← → keys',
+    insight: 'Interpretation',
+    insightHint: 'Our reading of the rules, not a rule itself.',
     important: 'Important',
     source: 'Source',
     back: 'Back to {topic}',

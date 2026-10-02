@@ -361,6 +361,7 @@ export default {
     },
     foulMechanism: {
       title: 'As faltas num só quadro',
+      insight: 'O futebol americano é um esporte de contato, mas não é uma luta de judô. Muitas faltas existem para o jogo continuar sendo sobre a bola: o holding impede de simplesmente agarrar quem está no caminho, e a interferência de passe garante que os dois jogadores tenham uma chance justa de pegar a bola no ar.',
       example: 'A seguir: empates e prorrogação. As faltas uma a uma (false start, holding…) estão na lição “Faltas comuns”.',
     },
   },

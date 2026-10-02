@@ -24,6 +24,8 @@ export default {
     stepForward: 'Paso siguiente',
     replay: 'Repetir',
     hint: 'Toca las flechas, desliza o usa las teclas ← →',
+    insight: 'Interpretación',
+    insightHint: 'Nuestra lectura de las reglas, no una regla en sí.',
     important: 'Importante',
     source: 'Fuente',
     back: 'Volver a {topic}',

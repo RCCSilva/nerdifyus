@@ -8,7 +8,7 @@ First topic: **NFL** — basic rules → strategy → salary cap mechanics.
 Every factual claim on the site must trace back to a reference.
 - Research notes in `research/` cite a source for each claim (see `research/README.md` for the format).
 - Pages show their sources to readers (a "Sources" section per page, inline markers where useful).
-- If something can't be sourced, it is either labelled as opinion/interpretation or left out.
+- If something can't be sourced, it is either labelled as opinion/interpretation or left out. On slides, interpretation goes in the purple "Interpretation" box (`insight` in the slide text), separate from the yellow "Important" box (`note`, sourced facts). Ground it in the closest sourced rules and cite those.
 - References only: never explain from prior/trained knowledge. If no source supports it, it doesn't go on the site.
 - Official sources first. For the NFL, that's the official rulebook PDF and operations.nfl.com, archived in `research/<topic>/raw/`. `raw/` is gitignored: those files are third-party copyrighted, so they stay local and `sources.md` links the original URL.
 - Fallback: explainer websites, cited by exact URL and access date.

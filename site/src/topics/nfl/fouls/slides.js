@@ -8,7 +8,7 @@ export const FOULS_SLIDES = [
   { id: 'foulOffense', Visual: V.OffenseFoulVisual, refs: [['S1', 'R14-1-2 Item 1', 61], ['S1', 'R12-1-3(c)', 52]] },
   { id: 'foulDefense', Visual: V.DefenseFoulVisual, refs: [['S1', 'R14-1-2 Item 5', 61], ['S1', 'R12-1-6', 53]] },
   { id: 'foulDecline', Visual: V.DeclineVisual, refs: [['S21'], ['S1', 'R14-1-1', 61], ['S22', 'Law 5.3']] },
-  { id: 'foulMechanism', Visual: V.FoulMechanismSummaryVisual, refs: [['S1', 'R14-1-2', 61]] },
+  { id: 'foulMechanism', Visual: V.FoulMechanismSummaryVisual, refs: [['S1', 'R14-1-2', 61], ['S1', 'R8-5-1', 40], ['S1', 'R12-1-3(c)', 52], ['S23']] },
 ];
 
 export const COMMON_FOULS_SLIDES = [

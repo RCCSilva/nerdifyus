@@ -104,6 +104,13 @@ export default function Deck({ slides, textPath, resolveRef, footer }) {
                 <p>{text.note}</p>
               </div>
             )}
+            {text.insight && (
+              <div className="slide-insight" role="note">
+                <strong>💡 {t('ui.deck.insight')}</strong>
+                <p>{text.insight}</p>
+                <small>{t('ui.deck.insightHint')}</small>
+              </div>
+            )}
             {index === n - 1 && footer}
             {slide.refs?.length > 0 && (
               <p className="slide-refs">

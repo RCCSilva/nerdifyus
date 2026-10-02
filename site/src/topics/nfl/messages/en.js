@@ -362,6 +362,7 @@ export default {
     },
     foulMechanism: {
       title: 'Fouls in one picture',
+      insight: 'Football is a contact sport, but it isn’t a wrestling match. Many fouls exist to keep the game about the ball: holding stops players from simply grabbing whoever is in their way, and pass interference makes sure both players get a fair chance to catch a ball in the air.',
       example: 'Next up: ties & overtime. The individual fouls (false start, holding…) are in the “Common fouls” lesson.',
     },
   },

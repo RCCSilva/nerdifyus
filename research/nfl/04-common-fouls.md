@@ -15,6 +15,12 @@ Scope (editorial choice, 2026-10-01): the fouls a beginner sees most. False star
 - **Foul by the defense:** after the penalty, the next down is 1st & 10 for the offense [S1 R14-1-2 Item 5, p.61], even if the yards alone wouldn't reach the line to gain. Exceptions that only give yards: offside, encroachment, neutral zone infraction, delay of game, illegal substitution, excess timeout, running into the kicker, more than 11 players [same]. With those, the down stays the same unless the yards reach the line to gain.
 - Example (applying the rules): 3rd & 8, defensive holding (5 yards + automatic first down [S1 R12-1-6, p.53]) → 1st & 10, although only 5 of the 8 yards were gained.
 
+## Interpretation (ours, labelled as such on the site)
+Football is a contact sport, but many fouls keep the game about the ball rather than about grabbing people. Grounding:
+- On a pass in the air, "eligible offensive and defensive receivers have the same right to the path of the ball" [S1 R8-5-1, p.40]; PI is a foul because it takes away "an eligible receiver's ability to make a fair attempt to catch a forward pass" [S23].
+- Holding is using hands or arms to "materially restrict or alter the defender's path" [S1 R12-1-3(c), p.52], or grabbing a receiver [S1 R8-4-6, p.39].
+The framing ("not a wrestling match") is our reading, shown in an "Interpretation" box, not a sourced fact.
+
 ## The flag and the penalty
 - Officials throw a yellow flag when a rule is broken [S2 "Penalty/Flag"].
 - Penalties are written as "Loss of N yards" for the team that fouled [S1 R7-4-2, R12-1-3, R12-1-6, p.34/52/53]. **Simplification used on the site:** a foul by the offense pushes the offense back. A foul by the defense moves the offense forward. The exact enforcement spot (previous spot, spot of foul, end of run) is Rule 14 and is left for a later lesson.
