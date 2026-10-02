@@ -438,11 +438,15 @@ export default {
       title: 'Tags: retener a un jugador un año más',
       body: 'Una vez al año, cada equipo puede aplicar un tag a uno de sus jugadores que está por quedar libre. El tag es un contrato de un año con salario fijado por fórmula. Hay tres tipos:',
       example: '2026: los equipos podían aplicar el tag del 17 de febrero al 3 de marzo.',
+      aside: { title: 'Caso real: Brock Purdy (49ers)', body: 'En 2025, los analistas discutían si los 49ers le aplicarían el tag a su QB si no llegaban a un acuerdo: los tags podían mantenerlo fuera del mercado hasta tres años, por unos US$41M (2026) y US$51M (2027) estimados. Uno señaló que eso “no lo haría feliz”. En mayo de 2025 firmaron una extensión de 5 años y US$265M (US$53M por año).' },
+      insight: '¿Por qué aplicar el tag? Sobre todo por dinero y tiempo. El equipo quiere quedarse con un buen jugador, pero no tiene espacio en el tope salarial (o no está listo) para el contrato largo que probablemente merecería. El tag compra un año más. El costo: al jugador puede no gustarle, y puede desgastar la relación. Siempre es una decisión que hay que evaluar.',
     },
     tagNonExclusive: {
       title: 'Franchise tag (no exclusivo)',
       body: 'El más común. El jugador recibe el promedio de los 5 salarios más altos de su posición (o el 120% de su último salario, lo que sea mayor). Puede hablar con otros equipos.',
       note: 'Si otro equipo le hace una oferta, el equipo que le aplicó el tag tiene 5 días para igualarla. Si no lo hace, el jugador se va, y ese equipo recibe dos selecciones de primera ronda.',
+      aside: { title: '¿De qué drafts son las selecciones?', body: 'La regla no dice los años. Solo dice que se entregan en el draft de ese año, o en el siguiente si la oferta llega a menos de dos días del draft. Caso real: Washington le aplicó el tag al DT Sean Gilbert en 1998. Él firmó con Carolina el 21 de abril, dos días después del draft de 1998, y Washington recibió las selecciones de primera ronda de Carolina de 1999 y 2000.' },
+      insight: 'Leyendo la regla y el caso Gilbert: lo esperable son las dos siguientes selecciones de primera ronda seguidas. Funciona como un canje con precio fijo.',
     },
     tagExclusive: {
       title: 'Franchise tag (exclusivo)',

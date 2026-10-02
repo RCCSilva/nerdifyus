@@ -9,8 +9,8 @@ export const TRADES_SLIDES = [
 ];
 
 export const TAGS_SLIDES = [
-  { id: 'tagWhat', Visual: V.TagWhatVisual, refs: [['S36', '2026'], ['S33', 'Art. 10 §1–3', 75]] },
-  { id: 'tagNonExclusive', Visual: V.TagNonExclusiveVisual, refs: [['S33', 'Art. 10 §2(a)(i)', 75], ['S36']] },
+  { id: 'tagWhat', Visual: V.TagWhatVisual, refs: [['S36', '2026'], ['S33', 'Art. 10 §1–3', 75], ['S41'], ['S40'], ['S42']] },
+  { id: 'tagNonExclusive', Visual: V.TagNonExclusiveVisual, refs: [['S33', 'Art. 10 §2(a)(i)', 75], ['S36'], ['S33', 'Art. 9 §2(j)', 69], ['S43'], ['S44'], ['S45'], ['S39']] },
   { id: 'tagExclusive', Visual: V.TagExclusiveVisual, refs: [['S33', 'Art. 10 §2(a)(ii)', 75], ['S36']] },
   { id: 'tagTransition', Visual: V.TagTransitionVisual, refs: [['S33', 'Art. 10 §4–5', 78]] },
   { id: 'tagValues', Visual: V.TagValuesVisual, refs: [['S37', '2026'], ['S33', 'Art. 10 §2(b)', 76]] },

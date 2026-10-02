@@ -41,6 +41,12 @@
 | S37 | NBC Sports / ProFootballTalk — "NFL announces franchise tag, transition tag values for 2026" (Josh Alper) | secondary (reports the NFL's figures) | 2026-02-27 · accessed 2026-10-02 | https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nfl-announces-franchise-tag-transition-tag-values-for-2026 |
 | S38 | Wikipedia — "Sean Gilbert" | fallback (encyclopedia) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/Sean_Gilbert |
 | S39 | Wikipedia — "1999 NFL draft" (pick 5 note) and "1999 Carolina Panthers season" | fallback (encyclopedia) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/1999_NFL_draft |
+| S40 | Sports Illustrated — "Will the 49ers franchise tag Brock Purdy if they can't extend him?" (Grant Cohn) | secondary (analysis) | 2025-03-29 · accessed 2026-10-02 | https://www.si.com/nfl/49ers/news/will-49ers-franchise-tag-brock-purdy |
+| S41 | CBS Sports — "Agent's Take: Why recent history shows 49ers will likely slow roll a new mega deal with Brock Purdy" (Joel Corry) | secondary (analysis) | 2025-04-10 · accessed 2026-10-02 | https://www.cbssports.com/nfl/news/agents-take-why-recent-history-shows-49ers-will-likely-slow-roll-a-new-mega-deal-with-brock-purdy/ |
+| S42 | The San Francisco Standard — "From pick No. 262 to $265 million: Brock Purdy, 49ers agree to extension" (David Lombardi) | secondary (news) | 2025-05-16 · accessed 2026-10-02 | https://sfstandard.com/2025/05/16/brock-purdy-49ers-contract-extension-sign/ |
+| S43 | Bleacher Report — "Flashback Friday: Redskins vs. Panthers timeline" (Rich Tandler) | secondary | 2008-08-22 · accessed 2026-10-02 | https://bleacherreport.com/articles/50011-flashback-friday-redskins-vs-panthers-timeline |
+| S44 | The Washington Post — "Gilbert signs with Panthers" (archive; date from the URL, page returned 403) | secondary (news) | 1998-04-21 · accessed 2026-10-02 | https://www.washingtonpost.com/archive/sports/1998/04/21/gilbert-signs-with-panthers/86516c45-e891-41e5-97c8-42dfb4a64251/ |
+| S45 | Wikipedia — "1998 NFL draft" | fallback (encyclopedia) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/1998_NFL_draft |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

@@ -439,11 +439,15 @@ export default {
       title: 'Tags: keeping a player for one more year',
       body: 'Once a year, each team can tag one of its players who is about to become a free agent. The tag is a one-year contract with a salary set by formula. There are three kinds:',
       example: '2026: teams could tag a player from February 17 to March 3.',
+      aside: { title: 'Real case: Brock Purdy (49ers)', body: 'In 2025, analysts discussed the 49ers tagging their QB if they couldn’t agree on a deal: tags could keep him off the open market for up to three years, at an estimated $41M (2026) and $51M (2027). One noted it “would not make him happy”. In May 2025 they signed a 5-year, $265M extension instead ($53M a year).' },
+      insight: 'Why tag a player? Mostly money and time. The team wants to keep a good player, but it doesn’t have the cap room (or isn’t ready) for the long contract he would probably earn. The tag buys one more year. The cost: the player may not like it, and it can strain the relationship. It’s always a call to weigh.',
     },
     tagNonExclusive: {
       title: 'Franchise tag (non-exclusive)',
       body: 'The most common one. The player gets the average of the 5 highest salaries at his position (or 120% of his last salary, whichever is higher). He may talk to other teams.',
       note: 'If another team makes him an offer, the team that tagged him has 5 days to match it. If it doesn’t, the player leaves, and the tagging team gets two first-round picks.',
+      aside: { title: 'Which drafts are the picks from?', body: 'The rule doesn’t name the years. It only says the picks are due in that year’s draft, or in the next one if the offer arrives less than two days before the draft. Real case: Washington tagged DT Sean Gilbert in 1998. He signed with Carolina on April 21, two days after the 1998 draft, and Washington got Carolina’s 1999 and 2000 first-round picks.' },
+      insight: 'Reading the rule and the Gilbert case: expect the next two first-round picks in a row. It works like a trade with a fixed price.',
     },
     tagExclusive: {
       title: 'Franchise tag (exclusive)',

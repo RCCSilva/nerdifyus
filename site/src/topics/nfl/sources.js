@@ -187,6 +187,41 @@ export const SOURCES = {
     title: 'NBC Sports / ProFootballTalk — NFL announces franchise tag, transition tag values for 2026 (2026-02-27)',
     url: 'https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nfl-announces-franchise-tag-transition-tag-values-for-2026',
   },
+  S40: {
+    short: 'SI · Will 49ers tag Purdy?',
+    title: 'Sports Illustrated — Will the 49ers franchise tag Brock Purdy if they can’t extend him? (Grant Cohn, 2025-03-29)',
+    url: 'https://www.si.com/nfl/49ers/news/will-49ers-franchise-tag-brock-purdy',
+  },
+  S41: {
+    short: 'CBS · Agent’s Take on Purdy',
+    title: 'CBS Sports — Agent’s Take: Why recent history shows 49ers will likely slow roll a new mega deal with Brock Purdy (Joel Corry, 2025-04-10)',
+    url: 'https://www.cbssports.com/nfl/news/agents-take-why-recent-history-shows-49ers-will-likely-slow-roll-a-new-mega-deal-with-brock-purdy/',
+  },
+  S42: {
+    short: 'SF Standard · Purdy extension',
+    title: 'The San Francisco Standard — From pick No. 262 to $265 million: Brock Purdy, 49ers agree to extension (David Lombardi, 2025-05-16)',
+    url: 'https://sfstandard.com/2025/05/16/brock-purdy-49ers-contract-extension-sign/',
+  },
+  S39: {
+    short: 'Wikipedia · 1999 NFL draft',
+    title: 'Wikipedia — 1999 NFL draft (pick 5: from Carolina via Washington)',
+    url: 'https://en.wikipedia.org/wiki/1999_NFL_draft',
+  },
+  S43: {
+    short: 'Bleacher Report · Redskins vs. Panthers',
+    title: 'Bleacher Report — Flashback Friday: Redskins vs. Panthers timeline (Rich Tandler, 2008-08-22)',
+    url: 'https://bleacherreport.com/articles/50011-flashback-friday-redskins-vs-panthers-timeline',
+  },
+  S44: {
+    short: 'Washington Post · Gilbert signs',
+    title: 'The Washington Post — Gilbert signs with Panthers (1998-04-21)',
+    url: 'https://www.washingtonpost.com/archive/sports/1998/04/21/gilbert-signs-with-panthers/86516c45-e891-41e5-97c8-42dfb4a64251/',
+  },
+  S45: {
+    short: 'Wikipedia · 1998 NFL draft',
+    title: 'Wikipedia — 1998 NFL draft (held April 18–19, 1998)',
+    url: 'https://en.wikipedia.org/wiki/1998_NFL_draft',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */
