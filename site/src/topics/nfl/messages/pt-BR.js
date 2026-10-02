@@ -126,7 +126,8 @@ export default {
     safety: {
       title: 'Safety: 2 pontos para a defesa',
       body: 'Derrube o portador da bola na própria end zone dele.',
-      note: 'Vitória dupla da defesa: o time que sofreu o safety precisa chutar a bola para ela da própria linha de 20. Ou seja, ela marca 2 e (quase sempre) ainda fica com a bola.',
+      note: 'Vitória dupla da defesa: o time que sofreu o safety precisa chutar a bola para ela da própria linha de 20. Ou seja, a defesa marca 2 pontos e ainda recebe a bola de volta.',
+      insight: 'Tomar um safety é parecido com um gol contra no futebol: o ataque, na própria end zone, dá pontos para o adversário.',
     },
     scoring: {
       title: 'Todas as formas de pontuar',

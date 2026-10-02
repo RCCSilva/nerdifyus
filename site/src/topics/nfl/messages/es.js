@@ -126,7 +126,8 @@ export default {
     safety: {
       title: 'Safety: 2 puntos para la defensiva',
       body: 'Derriba al portador del balón en su propia zona de anotación.',
-      note: 'Doble premio para la defensiva: el equipo que concedió el safety debe patearle el balón desde su propia 20. Así que anota 2 y (casi siempre) además recibe el balón.',
+      note: 'Doble premio para la defensiva: el equipo que concedió el safety debe patearle el balón desde su propia 20. O sea, la defensiva anota 2 puntos y además recibe el balón de vuelta.',
+      insight: 'Conceder un safety se parece a un autogol en el fútbol: el ataque, en su propia zona de anotación, le regala puntos al rival.',
     },
     scoring: {
       title: 'Todas las formas de anotar',

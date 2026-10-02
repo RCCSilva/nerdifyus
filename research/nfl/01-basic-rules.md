@@ -86,6 +86,7 @@ Example: 1st-and-10 at your own 25. The line to gain is your 35. Gain 4 → 2nd-
 - **Field goal:** a place kick or drop kick from on or behind the line of scrimmage. The entire ball must pass through the goal (above the crossbar, between the uprights) [S1 R11-4-1, p.50]. No kicking tee is allowed [S1 R11-4-4, p.50].
   - When: on 4th down, a team that fails to gain enough yards for a first down and is too far from the goalposts to attempt a field goal sends in the punter [S2 "Punter"]. So, usually: stuck on 4th down and close enough → field goal; too far → punt.
 - **Safety:** typically the offense is downed with the ball in its own end zone, or the ball goes out of bounds behind its own goal line, on a play where the offense put it there [S1 R11-5-1, p.51]. The team that gave up the safety then free-kicks from its own 20 [S1 R11-5-2, p.51]. When the receiving team ends up with the ball after a free kick, it gets a new series of downs [S1 R7-3-2(c), p.34]. So the team that gave up the safety also gives the ball away. (The kicking team can legally recover a free kick [S1 R7-3-1(e), p.34], so this isn't absolute.)
+- Site wording: "the defense scores 2 and gets the ball back" (it receives the free kick). Interpretation box (user's view, no source found): giving up a safety is like an own goal in soccer.
 - Whoever has more points at the end wins [S1 R11-1-1, p.49].
 
 ## Kicks and restarts

@@ -127,7 +127,8 @@ export default {
     safety: {
       title: 'Safety: 2 points for the defense',
       body: 'Tackle the ball carrier in his own end zone.',
-      note: 'Double win for the defense: the team that gave up the safety must then kick the ball to them from its own 20. So they score 2 and (almost always) get the ball too.',
+      note: 'Double win for the defense: the team that gave up the safety must then kick the ball to them from its own 20. So the defense scores 2 points and gets the ball back too.',
+      insight: 'Giving up a safety is a bit like an own goal in soccer: the offense, in its own end zone, hands points to the other team.',
     },
     scoring: {
       title: 'Every way to score',
