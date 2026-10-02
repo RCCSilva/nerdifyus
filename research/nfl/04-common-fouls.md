@@ -4,6 +4,7 @@ Applies to: 2026 season
 
 Citation key: see `01-basic-rules.md`. Sources are listed in `sources.md`.
 Scope (editorial choice, 2026-10-01): the fouls a beginner sees most. False start, the offside family, offensive and defensive holding, pass interference.
+Scope update (2026-10-02, user): the ~15 most-called fouls of 2025 [S48], each with the official referee signal [S1 Official Signals, PDF p.80–84].
 
 ## How fouls work (the mechanism, for the basic lesson)
 - Officials signal a foul by throwing a yellow flag toward or at the spot of the foul [S20; S2 "Penalty/Flag"].
@@ -55,6 +56,70 @@ Three different fouls, all about a defender and the neutral zone before the snap
 - **By the defense:** "First down for the offensive team at the spot of the foul" [S1 R8-5 Penalty, p.40]. Special case near the goal line: the ball goes to the 1 [same].
 - **By the offense:** "Loss of 10 yards from the previous spot" [S1 R8-5 Penalty, p.40].
 - Within one yard of the line it isn't PI, but it can be holding [S1 R8-5-1, p.40].
+
+## The most-called fouls, 2025 regular season [S48]
+Counts exclude declined and offsetting penalties (S48's definition). Top 15 by count:
+| Foul | Count |
+|---|---|
+| Offensive holding | 684 |
+| False start | 681 |
+| Defensive pass interference | 289 |
+| Defensive holding | 183 |
+| Delay of game | 182 |
+| Unnecessary roughness | 181 |
+| Defensive offside | 146 |
+| Illegal formation | 112 |
+| Face mask | 100 |
+| Illegal contact | 96 |
+| Roughing the passer | 94 |
+| Neutral zone infraction | 77 |
+| Offensive pass interference | 72 |
+| Illegal use of hands | 61 |
+| Intentional grounding | 59 |
+(Encroachment: 36, grouped on the site with offside and NZI.)
+
+## Blocking: legal vs holding (for the holding animation)
+- A blocker may contact an opponent with his hands "on or outside the opponent's frame (the body of an opponent below the neck that is presented to the blocker), provided that he does not materially restrict him. The blocker must work immediately to bring his hands inside the opponent's frame" [S1 R12-1-2, p.52].
+- Holding: using hands or arms "to materially restrict or alter the defender's path or angle of pursuit… regardless of whether the blocker's hands are inside or outside the frame". Includes grabbing, "hooking, jerking, twisting, or turning him", pulling him down [S1 R12-1-3(c), p.52].
+- Site wording (applies the rule): blocking = hands on the chest of the defender in front of you. Holding = e.g. the defender gets past to the side and the blocker reaches out, grabs or hooks him to hold him back. The animation is illustrative.
+
+## More fouls (2026 rulebook)
+### Illegal formation (offense): 5 yards
+- At the snap the offense must have 7 or more players on the line, eligible receivers at both ends, nobody out of bounds [S1 R7-5-1, p.35]. Penalty: loss of 5 yards [same].
+
+### Delay of game: 5 yards
+- The ball must be snapped within 40 seconds after the play clock starts (25 after some stoppages) [S1 R4-6-1/2, p.20]. Penalty: loss of 5 yards [S1 R4-6 Penalty, p.21].
+
+### Illegal use of hands: offense 10 yards; defense 5 yards + automatic first down
+- A blocker "thrusts his hands forward above the frame of an opponent to forcibly contact him on the head or neck" → loss of 10 yards [S1 R12-1-3(a), p.52].
+- Same act by a defender → loss of 5 yards and an automatic first down [S1 R12-1-7, p.53].
+
+### Illegal contact (defense): 5 yards + automatic first down
+- Within 5 yards past the line, a defender may "chuck" (jam) a receiver in front of him. Beyond 5 yards, while the QB is in the pocket with the ball, a defender may not initiate contact with a receiver trying to evade him [S1 R8-4-1/3, p.39]. Penalty: 5 yards and automatic first down [S1 R8-4 Penalty, p.39].
+
+### Intentional grounding (offense): loss of down + 10 yards (or spot)
+- A passer "facing an imminent loss of yardage because of pressure from the defense" throws a pass "not in the direction and vicinity of an originally eligible offensive receiver" [S1 R8-2-1, p.38]. Not called if the passer is outside the pocket and the pass reaches the line of scrimmage [S1 R8-2-1 Item 1, p.38].
+- Penalty: loss of down and 10 yards from the previous spot, or loss of down at the spot of the pass if that's farther; a safety if thrown from his own end zone [S1 R8-2 Penalty, p.38].
+
+### Personal fouls: 15 yards (+ automatic first down if by the defense)
+- **Unnecessary roughness:** examples include hitting a runner out of bounds, hitting a runner who has slid or is down, hitting a player out of the play [S1 R12-2-8(b)(d)(g), p.54–55]. Penalty: 15 yards; automatic first down if by the defense [S1 R12-2-8 Penalty, p.55].
+- **Roughing the passer:** once the ball has left the passer's hand, a rusher may contact him only up through his first step after the release; after that he must try to avoid contact [S1 R12-2-11(a), p.55–56]. Penalty: 15 yards and an automatic first down [S1 R12-2-11 Penalty, p.56].
+- **Face mask:** a player who grasps an opponent's facemask must release it immediately; he may not "grasp and control, twist, turn, push, or pull" it [S1 R12-2-15, p.57]. Penalty: 15 yards; automatic first down if by the defense [same].
+
+## Referee signals [S1 Official Signals, PDF p.80–84; printed p.73–77]
+Quoted descriptions, by signal number:
+- 3 First down: "Arms pointed toward defensive team's goal."
+- 8 Delay of game: "Folded arms."
+- 9 False start, illegal formation: "Forearms rotated over and over in front of body."
+- 10 Personal foul: "One wrist striking the other above head." Followed by "raised arm swinging forward: Roughing Passer"; followed by "grasping facemask: Facemask."
+- 11 Holding: "Grasping one wrist, the fist clenched, in front of chest."
+- 12 Illegal use of hands: "Grasping one wrist, the hand open and facing forward, in front of chest."
+- 16 Intentional grounding: "Parallel arms waved in a diagonal plane across body. Followed by loss of down signal (23)."
+- 17 Pass interference: "Hands open and extended forward from shoulders with hands vertical."
+- 20 Illegal contact: "One open hand extended forward."
+- 21 Offside, encroachment, NZI: "Hands on hips."
+- 23 Loss of down: "Both hands held behind head."
+The site's figures are drawn from these descriptions (illustrative).
 
 ## Open questions
 - Full enforcement rules (Rule 14), declining penalties, and how the down counts after a penalty: for a later lesson.

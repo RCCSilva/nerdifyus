@@ -170,10 +170,19 @@ export default {
       body: 'Quebrou uma regra, um árbitro joga uma bandeira amarela. A punição mais comum: jardas.',
       example: 'Falta do ataque → o ataque volta. Falta da defesa → o ataque avança.',
     },
+    foulsTop: {
+      title: 'As faltas mais marcadas',
+      body: 'Estas foram as 15 faltas mais marcadas da temporada 2025. Holding do ataque e false start lideram de longe. Nesta lição: cada uma, e o sinal do árbitro para ela.',
+    },
     falseStart: {
       title: 'False start (ataque): 5 jardas',
       body: 'Antes do snap, um jogador do ataque já posicionado se mexe como se a jogada tivesse começado. Apito: a jogada não acontece.',
       example: 'Um lineman se mexe antes do snap → o ataque volta 5 jardas.',
+    },
+    illegalFormation: {
+      title: 'Formação ilegal (ataque): 5 jardas',
+      body: 'No snap, o ataque precisa de pelo menos 7 jogadores na linha, com um recebedor em cada ponta.',
+      example: 'Aqui o tight end se alinha um passo atrás: só 6 na linha, e o ataque volta 5 jardas. O sinal é o mesmo do false start.',
     },
     offside: {
       title: 'Impedimento, encroachment, infração de zona neutra',
@@ -184,15 +193,31 @@ export default {
         'Infração de zona neutra: um defensor entra na zona e faz um jogador do ataque reagir.',
       ],
     },
+    delayOfGame: {
+      title: 'Delay of game: 5 jardas',
+      body: 'Entre as jogadas, o ataque tem 40 segundos para dar o snap (25 depois de algumas paradas). Se o play clock zerar antes, é falta.',
+    },
     offHolding: {
       title: 'Holding (ataque): 10 jardas',
-      body: 'Um bloqueador agarra, engancha ou derruba um defensor para segurá-lo.',
-      example: 'Bloquear pode; segurar não. O ataque volta 10 jardas.',
+      body: 'Bloquear é legal: mãos no peito do defensor que está na sua frente. Holding é agarrar, enganchar ou puxar o defensor para pará-lo, muitas vezes quando ele está passando por você pelo lado.',
+      example: 'Não importa onde estão as mãos: o que faz ser holding é restringir o caminho dele.',
+    },
+    illegalHands: {
+      title: 'Uso ilegal das mãos: na cabeça',
+      body: 'O bloqueio empurra o peito, não a cabeça. Empurrar a cabeça ou o pescoço do adversário é falta.',
+      bullets: [
+        'Do ataque: volta 10 jardas.',
+        'Da defesa: 5 jardas e first down automático.',
+      ],
     },
     defHolding: {
       title: 'Holding (defesa): 5 jardas + first down',
       body: 'Um defensor agarra um recebedor, ou a camisa dele, para atrasá-lo.',
       example: 'O ataque avança 5 jardas e ganha um first down automático: 1ª & 10 de novo.',
+    },
+    illegalContact: {
+      title: 'Contato ilegal (defesa): 5 jardas + first down',
+      body: 'Nas primeiras 5 jardas depois da linha, o defensor pode travar o recebedor que está na frente dele. Depois de 5 jardas, enquanto o QB ainda está com a bola no pocket, ele não pode empurrar um recebedor que tenta escapar.',
     },
     passInterference: {
       title: 'Interferência de passe',
@@ -203,16 +228,41 @@ export default {
       ],
       example: 'Trombar enquanto os dois disputam a bola pode. É falta quando o contato tira a chance de pegar a bola.',
     },
+    grounding: {
+      title: 'Intentional grounding (ataque)',
+      body: 'Pressionado e prestes a perder jardas, o QB joga a bola onde não tem nenhum recebedor.',
+      example: 'Penalidade: perda da descida e 10 jardas (ou o local do passe, se for mais atrás). Não é falta se ele está fora do pocket e a bola chega à linha de scrimmage.',
+    },
+    roughingPasser: {
+      title: 'Roughing the passer: 15 jardas + first down',
+      body: 'Depois que o QB passou a bola, o defensor só pode terminar o passo que está dando. Depois disso, ele precisa tentar evitar o choque.',
+    },
+    roughness: {
+      title: 'Unnecessary roughness: 15 jardas',
+      body: 'Pancadas que não fazem parte da jogada: num corredor que já saiu de campo ou já está no chão, ou num jogador fora da jogada.',
+      example: 'Se for da defesa, também dá first down automático.',
+    },
+    faceMask: {
+      title: 'Face mask: 15 jardas',
+      body: 'Pegar na grade do capacete só passa se soltar na hora. Segurar, torcer ou puxar é falta.',
+      example: 'Se for da defesa, também dá first down automático.',
+    },
     foulsSummary: {
       title: 'As faltas comuns num relance',
-      example: 'A seguir: empates e prorrogação.',
+      example: 'A seguir: a tática da defesa contra o passe.',
       rows: [
-        ['False start', 'off', '−5'],
+        ['False start / formação ilegal', 'off', '−5'],
         ['Impedimento / encroachment / infração de zona neutra', 'def', '+5'],
+        ['Delay of game', 'off', '−5'],
         ['Holding (ataque)', 'off', '−10'],
+        ['Uso ilegal das mãos', 'both', '−10 / +5 e first down'],
         ['Holding (defesa)', 'def', '+5 e first down'],
+        ['Contato ilegal', 'def', '+5 e first down'],
         ['Interferência de passe (defesa)', 'def', 'Local e first down'],
         ['Interferência de passe (ataque)', 'off', '−10'],
+        ['Intentional grounding', 'off', 'Perde a descida e −10'],
+        ['Roughing the passer', 'def', '+15 e first down'],
+        ['Unnecessary roughness / face mask', 'both', '15 (+ first down se da defesa)'],
       ],
     },
     seasonLeague: {
@@ -812,6 +862,28 @@ export default {
     neutralZone: 'Zona neutra',
     firstDown: '1ª & 10 automática',
     spotFirstDown: 'Bola aqui + 1ª & 10',
+    signalTitle: 'O sinal do árbitro',
+    legend: { onLine: 'Na linha', hands: 'Mãos no adversário', fiveYards: 'Primeiras 5 jardas' },
+    top: {
+      title: 'Faltas marcadas em 2025 (temporada regular)',
+      note: 'Só faltas aceitas: as recusadas e as que se anulam não entram na conta.',
+      side: { off: 'Ataque', def: 'Defesa', both: 'Os dois' },
+      names: {
+        offHolding: 'Holding (ataque)', falseStart: 'False start', dpi: 'Interferência de passe (defesa)', defHolding: 'Holding (defesa)',
+        delayOfGame: 'Delay of game', roughness: 'Unnecessary roughness', offside: 'Impedimento', formation: 'Formação ilegal',
+        faceMask: 'Face mask', illegalContact: 'Contato ilegal', roughingPasser: 'Roughing the passer', nzi: 'Infração de zona neutra',
+        opi: 'Interferência de passe (ataque)', illegalHands: 'Uso ilegal das mãos', grounding: 'Intentional grounding',
+      },
+    },
+    formation: { count: 'Na linha: {n}' },
+    delay: { clock: 'Play clock' },
+    block: { legal: 'Bloqueio legal', legalHow: 'Defensor de frente, mãos no peito dele', holding: 'Holding', holdingHow: 'Ele passa pelo lado; o bloqueador agarra' },
+    hands: { head: 'Mãos na cabeça' },
+    contact: { jam: 'Trava', shove: 'Empurrão: falta' },
+    grounding: { nobody: 'Ninguém aqui', result: 'Perde a descida e −10' },
+    roughing: { gone: 'A bola já saiu' },
+    roughness: { out: 'Fora de campo' },
+    faceMask: { grab: 'Agarra a grade do capacete' },
     scene: {
       offside: 'Impedimento (offside)',
       encroachment: 'Encroachment',
@@ -822,6 +894,20 @@ export default {
       encroachment: 'Atravessa e toca um jogador do ataque',
       nzi: 'Entra e faz um bloqueador reagir',
     },
+  },
+
+  signals: {
+    falseStart: 'Antebraços girando, um sobre o outro, na frente do corpo.',
+    offside: 'Mãos na cintura.',
+    delayOfGame: 'Braços cruzados.',
+    holding: 'Segura um pulso, com o punho fechado, na frente do peito.',
+    illegalHands: 'Segura um pulso, com essa mão aberta e virada para frente, na frente do peito.',
+    illegalContact: 'Uma mão aberta empurrando para frente.',
+    passInterference: 'As duas mãos abertas, empurrando para frente a partir dos ombros, palmas em pé.',
+    grounding: 'Braços paralelos balançando na diagonal na frente do corpo, depois mãos atrás da cabeça (perda da descida).',
+    personalFoul: 'Um pulso batendo no outro acima da cabeça (falta pessoal).',
+    roughingPasser: 'Sinal de falta pessoal, depois um braço levantado balançando para frente.',
+    faceMask: 'Sinal de falta pessoal, depois a mão agarrando perto do rosto, como numa grade de capacete.',
   },
 
   groups: {

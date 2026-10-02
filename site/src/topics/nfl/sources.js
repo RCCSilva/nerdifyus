@@ -232,6 +232,11 @@ export const SOURCES = {
     title: 'Wikipedia — Transfer (association football)',
     url: 'https://en.wikipedia.org/wiki/Transfer_(association_football)',
   },
+  S48: {
+    short: 'NFLPenalties.com',
+    title: 'NFLPenalties.com — 2025 penalty totals, all penalties (declined and offsetting excluded)',
+    url: 'https://www.nflpenalties.com/all-penalties.php?year=2025',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

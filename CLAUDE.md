@@ -70,6 +70,7 @@ site/src/
   components/field/    Field (SVG), players/ball, motion helpers
   components/deck/     slide deck
   components/scene/    the shared frame for slide visuals (still / fluid / stop motion)
+  components/referee/  the referee figure and the official signals (drawn from the rulebook's descriptions)
   pages/TopicLayout    sidebar: every lesson of a topic, with live lessons' slides nested below
   i18n/                locale config + UI strings
   topics/registry.js   topics → lessons

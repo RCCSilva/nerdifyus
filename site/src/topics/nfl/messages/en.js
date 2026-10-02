@@ -171,10 +171,19 @@ export default {
       body: 'Break a rule and an official throws a yellow flag. The usual punishment: yards.',
       example: 'Foul by the offense → the offense goes back. Foul by the defense → the offense moves forward.',
     },
+    foulsTop: {
+      title: 'The most-called fouls',
+      body: 'These were the 15 most-called fouls of the 2025 season. Holding by the offense and false starts lead by far. In this lesson: each one, and the referee’s signal for it.',
+    },
     falseStart: {
       title: 'False start (offense): 5 yards',
       body: 'Before the snap, an offensive player who is set moves as if the play had started. Whistle: the play never happens.',
       example: 'A lineman flinches before the snap → the offense goes back 5 yards.',
+    },
+    illegalFormation: {
+      title: 'Illegal formation (offense): 5 yards',
+      body: 'At the snap, the offense needs at least 7 players on the line, with a receiver at each end.',
+      example: 'Here the tight end lines up a step back: only 6 on the line, so the offense goes back 5 yards. The signal is the same as for a false start.',
     },
     offside: {
       title: 'Offside, encroachment, neutral zone infraction',
@@ -185,15 +194,31 @@ export default {
         'Neutral zone infraction: a defender steps into it and makes an offensive player flinch.',
       ],
     },
+    delayOfGame: {
+      title: 'Delay of game: 5 yards',
+      body: 'Between plays, the offense has 40 seconds to snap the ball (25 after some stoppages). If the play clock hits zero first, it’s a foul.',
+    },
     offHolding: {
       title: 'Holding (offense): 10 yards',
-      body: 'A blocker grabs, hooks or pulls down a defender to stop him.',
-      example: 'Blocking is legal; holding isn’t. The offense goes back 10 yards.',
+      body: 'Blocking is legal: hands on the chest of the defender in front of you. Holding is grabbing, hooking or pulling him to stop him, often when he gets past you on the side.',
+      example: 'Where the hands are doesn’t matter: what makes it holding is restricting his path.',
+    },
+    illegalHands: {
+      title: 'Illegal use of hands: to the head',
+      body: 'Blockers push the chest, not the head. Shoving an opponent’s head or neck is a foul.',
+      bullets: [
+        'By the offense: 10 yards back.',
+        'By the defense: 5 yards and an automatic first down.',
+      ],
     },
     defHolding: {
       title: 'Holding (defense): 5 yards + first down',
       body: 'A defender grabs a receiver, or his jersey, to slow him down.',
       example: 'The offense moves forward 5 yards and gets an automatic first down: 1st & 10 again.',
+    },
+    illegalContact: {
+      title: 'Illegal contact (defense): 5 yards + first down',
+      body: 'In the first 5 yards past the line, a defender may jam a receiver in front of him. Beyond 5 yards, while the QB still has the ball in the pocket, he may not push a receiver who is trying to get away.',
     },
     passInterference: {
       title: 'Pass interference',
@@ -204,16 +229,41 @@ export default {
       ],
       example: 'Bumping while both players go for the ball is fine. It’s a foul when the contact takes away the chance to catch.',
     },
+    grounding: {
+      title: 'Intentional grounding (offense)',
+      body: 'Under pressure and about to lose yards, the QB throws the ball where no receiver is.',
+      example: 'Penalty: loss of down and 10 yards (or the spot of the throw, if that’s farther back). It’s not a foul if he is out of the pocket and the ball reaches the line of scrimmage.',
+    },
+    roughingPasser: {
+      title: 'Roughing the passer: 15 yards + first down',
+      body: 'Once the QB has thrown, the rusher may only finish the step he’s taking. After that he must try to avoid hitting him.',
+    },
+    roughness: {
+      title: 'Unnecessary roughness: 15 yards',
+      body: 'Hits that aren’t part of the play: on a runner who is already out of bounds, or who is down, or on a player out of the play.',
+      example: 'By the defense, it also gives an automatic first down.',
+    },
+    faceMask: {
+      title: 'Face mask: 15 yards',
+      body: 'Grabbing the facemask is only OK if you let go right away. Holding, twisting or pulling it is a foul.',
+      example: 'By the defense, it also gives an automatic first down.',
+    },
     foulsSummary: {
       title: 'Common fouls at a glance',
-      example: 'Next up: ties & overtime.',
+      example: 'Next up: defensive tactics against the pass.',
       rows: [
-        ['False start', 'off', '−5'],
+        ['False start / illegal formation', 'off', '−5'],
         ['Offside / encroachment / neutral zone infraction', 'def', '+5'],
+        ['Delay of game', 'off', '−5'],
         ['Holding (offense)', 'off', '−10'],
+        ['Illegal use of hands', 'both', '−10 / +5 & 1st down'],
         ['Holding (defense)', 'def', '+5 & 1st down'],
+        ['Illegal contact', 'def', '+5 & 1st down'],
         ['Pass interference (defense)', 'def', 'Spot & 1st down'],
         ['Pass interference (offense)', 'off', '−10'],
+        ['Intentional grounding', 'off', 'Loss of down & −10'],
+        ['Roughing the passer', 'def', '+15 & 1st down'],
+        ['Unnecessary roughness / face mask', 'both', '15 (+ 1st down vs. defense)'],
       ],
     },
     seasonLeague: {
@@ -813,6 +863,28 @@ export default {
     neutralZone: 'Neutral zone',
     firstDown: 'Automatic 1st & 10',
     spotFirstDown: 'Ball here + 1st & 10',
+    signalTitle: 'The referee’s signal',
+    legend: { onLine: 'On the line', hands: 'Hands on the opponent', fiveYards: 'First 5 yards' },
+    top: {
+      title: 'Fouls called in 2025 (regular season)',
+      note: 'Accepted fouls only: declined and offsetting ones aren’t counted.',
+      side: { off: 'Offense', def: 'Defense', both: 'Either' },
+      names: {
+        offHolding: 'Holding (offense)', falseStart: 'False start', dpi: 'Pass interference (defense)', defHolding: 'Holding (defense)',
+        delayOfGame: 'Delay of game', roughness: 'Unnecessary roughness', offside: 'Offside', formation: 'Illegal formation',
+        faceMask: 'Face mask', illegalContact: 'Illegal contact', roughingPasser: 'Roughing the passer', nzi: 'Neutral zone infraction',
+        opi: 'Pass interference (offense)', illegalHands: 'Illegal use of hands', grounding: 'Intentional grounding',
+      },
+    },
+    formation: { count: 'On the line: {n}' },
+    delay: { clock: 'Play clock' },
+    block: { legal: 'Legal block', legalHow: 'Defender in front, hands on his chest', holding: 'Holding', holdingHow: 'He gets past on the side; the blocker grabs him' },
+    hands: { head: 'Hands to the head' },
+    contact: { jam: 'Jam', shove: 'Push: foul' },
+    grounding: { nobody: 'Nobody here', result: 'Loss of down & −10' },
+    roughing: { gone: 'The ball is already gone' },
+    roughness: { out: 'Out of bounds' },
+    faceMask: { grab: 'Grabs the facemask' },
     scene: {
       offside: 'Offside',
       encroachment: 'Encroachment',
@@ -823,6 +895,20 @@ export default {
       encroachment: 'Crosses and touches an offensive player',
       nzi: 'Steps in and makes a blocker flinch',
     },
+  },
+
+  signals: {
+    falseStart: 'Forearms rolling over and over in front of the body.',
+    offside: 'Hands on hips.',
+    delayOfGame: 'Arms folded.',
+    holding: 'Grabs one wrist, fist clenched, in front of the chest.',
+    illegalHands: 'Grabs one wrist, with that hand open and facing forward, in front of the chest.',
+    illegalContact: 'One open hand pushed forward.',
+    passInterference: 'Both hands open, pushed forward from the shoulders, palms upright.',
+    grounding: 'Parallel arms waved diagonally across the body, then hands behind the head (loss of down).',
+    personalFoul: 'One wrist striking the other above the head (personal foul).',
+    roughingPasser: 'Personal foul signal, then a raised arm swinging forward.',
+    faceMask: 'Personal foul signal, then a hand grabbing near the face, like a facemask.',
   },
 
   groups: {

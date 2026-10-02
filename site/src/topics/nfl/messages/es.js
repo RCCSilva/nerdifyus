@@ -170,29 +170,54 @@ export default {
       body: 'Si alguien rompe una regla, un oficial lanza un pañuelo amarillo. El castigo habitual: yardas.',
       example: 'Castigo a la ofensiva → la ofensiva retrocede. Castigo a la defensiva → la ofensiva avanza.',
     },
+    foulsTop: {
+      title: 'Las faltas más cobradas',
+      body: 'Estas fueron las 15 faltas más cobradas de la temporada 2025. La sujeción de la ofensiva y la salida en falso lideran de lejos. En esta lección: cada una, y la señal del árbitro para ella.',
+    },
     falseStart: {
       title: 'Salida en falso (ofensiva): 5 yardas',
       body: 'Antes del snap, un jugador ofensivo ya colocado se mueve como si la jugada hubiera empezado. Silbato: la jugada no ocurre.',
       example: 'Un liniero se mueve antes del snap → la ofensiva retrocede 5 yardas.',
+    },
+    illegalFormation: {
+      title: 'Formación ilegal (ofensiva): 5 yardas',
+      body: 'En el snap, la ofensiva necesita al menos 7 jugadores en la línea, con un receptor en cada punta.',
+      example: 'Aquí el tight end se alinea un paso atrás: solo 6 en la línea, y la ofensiva retrocede 5 yardas. La señal es la misma que la de la salida en falso.',
     },
     offside: {
       title: 'Fuera de lugar, invasión, infracción de zona neutral',
       body: 'La zona neutral es el largo del balón, entre los dos equipos. Antes del snap, los defensivos deben quedarse fuera de ella. Tres formas de romper esa regla, todas de 5 yardas contra la defensiva:',
       bullets: [
         'Fuera de lugar: un defensivo está dentro de la zona neutral cuando se hace el snap.',
-        'Invasión (encroachment): un defensivo la cruza y toca a un jugador ofensivo antes del snap.',
+        'Invasión (invasión): un defensivo la cruza y toca a un jugador ofensivo antes del snap.',
         'Infracción de zona neutral: un defensivo entra en ella y hace que un jugador ofensivo reaccione.',
       ],
     },
+    delayOfGame: {
+      title: 'Retraso del juego: 5 yardas',
+      body: 'Entre jugadas, la ofensiva tiene 40 segundos para dar el snap (25 tras algunas pausas). Si el reloj de jugada llega a cero antes, es falta.',
+    },
     offHolding: {
       title: 'Sujeción (ofensiva): 10 yardas',
-      body: 'Un bloqueador agarra, engancha o derriba a un defensivo para frenarlo.',
-      example: 'Bloquear es legal; sujetar no. La ofensiva retrocede 10 yardas.',
+      body: 'Bloquear es legal: manos en el pecho del defensor que tienes enfrente. La sujeción es agarrarlo, engancharlo o jalarlo para frenarlo, muchas veces cuando te está pasando por un lado.',
+      example: 'No importa dónde estén las manos: lo que lo hace sujeción es restringir su camino.',
+    },
+    illegalHands: {
+      title: 'Uso ilegal de las manos: a la cabeza',
+      body: 'El bloqueo empuja el pecho, no la cabeza. Empujar la cabeza o el cuello del rival es falta.',
+      bullets: [
+        'De la ofensiva: retrocede 10 yardas.',
+        'De la defensiva: 5 yardas y 1.er down automático.',
+      ],
     },
     defHolding: {
       title: 'Sujeción (defensiva): 5 yardas + primer down',
       body: 'Un defensivo agarra a un receptor, o su camiseta, para frenarlo.',
       example: 'La ofensiva avanza 5 yardas y gana un primer down automático: de nuevo 1.º y 10.',
+    },
+    illegalContact: {
+      title: 'Contacto ilegal (defensiva): 5 yardas + 1.er down',
+      body: 'En las primeras 5 yardas pasada la línea, el defensor puede frenar al receptor que tiene enfrente. Después de 5 yardas, mientras el QB sigue con el balón en el pocket, no puede empujar a un receptor que intenta escaparse.',
     },
     passInterference: {
       title: 'Interferencia de pase',
@@ -203,16 +228,41 @@ export default {
       ],
       example: 'Chocar mientras ambos van por el balón está permitido. Es falta cuando el contacto quita la oportunidad de atraparlo.',
     },
+    grounding: {
+      title: 'Intentional grounding (ofensiva)',
+      body: 'Presionado y a punto de perder yardas, el QB lanza el balón donde no hay ningún receptor.',
+      example: 'Castigo: pérdida del down y 10 yardas (o el lugar del pase, si queda más atrás). No es falta si está fuera del pocket y el balón llega a la línea de scrimmage.',
+    },
+    roughingPasser: {
+      title: 'Rudeza innecesaria contra el pasador: 15 yardas + 1.er down',
+      body: 'Cuando el QB ya lanzó, el defensor solo puede terminar el paso que está dando. Después debe intentar evitar el golpe.',
+    },
+    roughness: {
+      title: 'Rudeza innecesaria: 15 yardas',
+      body: 'Golpes que no son parte de la jugada: a un corredor que ya salió del campo o ya está en el suelo, o a un jugador fuera de la jugada.',
+      example: 'Si es de la defensiva, también da 1.er down automático.',
+    },
+    faceMask: {
+      title: 'Face mask: 15 yardas',
+      body: 'Tocar la máscara del casco solo vale si la sueltas enseguida. Sujetarla, torcerla o jalarla es falta.',
+      example: 'Si es de la defensiva, también da 1.er down automático.',
+    },
     foulsSummary: {
       title: 'Los castigos comunes de un vistazo',
-      example: 'Lo próximo: empates y tiempo extra.',
+      example: 'A continuación: la táctica de la defensiva contra el pase.',
       rows: [
-        ['Salida en falso', 'off', '−5'],
+        ['Salida en falso / formación ilegal', 'off', '−5'],
         ['Fuera de lugar / invasión / infracción de zona neutral', 'def', '+5'],
+        ['Retraso del juego', 'off', '−5'],
         ['Sujeción (ofensiva)', 'off', '−10'],
+        ['Uso ilegal de las manos', 'both', '−10 / +5 y 1.er down'],
         ['Sujeción (defensiva)', 'def', '+5 y 1.er down'],
+        ['Contacto ilegal', 'def', '+5 y 1.er down'],
         ['Interferencia de pase (defensiva)', 'def', 'Lugar y 1.er down'],
         ['Interferencia de pase (ofensiva)', 'off', '−10'],
+        ['Intentional grounding', 'off', 'Pierde el down y −10'],
+        ['Rudeza contra el pasador', 'def', '+15 y 1.er down'],
+        ['Rudeza innecesaria / face mask', 'both', '15 (+ 1.er down si es de la defensiva)'],
       ],
     },
     seasonLeague: {
@@ -812,6 +862,28 @@ export default {
     neutralZone: 'Zona neutral',
     firstDown: '1.º y 10 automático',
     spotFirstDown: 'Balón aquí + 1.º y 10',
+    signalTitle: 'La señal del árbitro',
+    legend: { onLine: 'En la línea', hands: 'Manos sobre el rival', fiveYards: 'Primeras 5 yardas' },
+    top: {
+      title: 'Faltas cobradas en 2025 (temporada regular)',
+      note: 'Solo faltas aceptadas: las rechazadas y las que se anulan no cuentan.',
+      side: { off: 'Ofensiva', def: 'Defensiva', both: 'Ambas' },
+      names: {
+        offHolding: 'Sujeción (ofensiva)', falseStart: 'Salida en falso', dpi: 'Interferencia de pase (defensiva)', defHolding: 'Sujeción (defensiva)',
+        delayOfGame: 'Retraso del juego', roughness: 'Rudeza innecesaria', offside: 'Fuera de lugar', formation: 'Formación ilegal',
+        faceMask: 'Face mask', illegalContact: 'Contacto ilegal', roughingPasser: 'Rudeza contra el pasador', nzi: 'Infracción de zona neutral',
+        opi: 'Interferencia de pase (ofensiva)', illegalHands: 'Uso ilegal de las manos', grounding: 'Intentional grounding',
+      },
+    },
+    formation: { count: 'En la línea: {n}' },
+    delay: { clock: 'Reloj de jugada' },
+    block: { legal: 'Bloqueo legal', legalHow: 'Defensor de frente, manos en su pecho', holding: 'Sujeción', holdingHow: 'Pasa por un lado; el bloqueador lo agarra' },
+    hands: { head: 'Manos a la cabeza' },
+    contact: { jam: 'Frenada', shove: 'Empujón: falta' },
+    grounding: { nobody: 'Nadie aquí', result: 'Pierde el down y −10' },
+    roughing: { gone: 'El balón ya salió' },
+    roughness: { out: 'Fuera del campo' },
+    faceMask: { grab: 'Agarra la máscara' },
     scene: {
       offside: 'Fuera de lugar',
       encroachment: 'Invasión (encroachment)',
@@ -822,6 +894,20 @@ export default {
       encroachment: 'Cruza y toca a un jugador ofensivo',
       nzi: 'Entra y hace reaccionar a un bloqueador',
     },
+  },
+
+  signals: {
+    falseStart: 'Antebrazos girando uno sobre otro delante del cuerpo.',
+    offside: 'Manos en la cintura.',
+    delayOfGame: 'Brazos cruzados.',
+    holding: 'Sujeta una muñeca, con el puño cerrado, delante del pecho.',
+    illegalHands: 'Sujeta una muñeca, con esa mano abierta y hacia adelante, delante del pecho.',
+    illegalContact: 'Una mano abierta empujando hacia adelante.',
+    passInterference: 'Las dos manos abiertas, empujando hacia adelante desde los hombros, palmas verticales.',
+    grounding: 'Brazos paralelos moviéndose en diagonal delante del cuerpo, luego manos detrás de la cabeza (pérdida del down).',
+    personalFoul: 'Una muñeca golpeando la otra sobre la cabeza (falta personal).',
+    roughingPasser: 'Señal de falta personal, luego un brazo levantado moviéndose hacia adelante.',
+    faceMask: 'Señal de falta personal, luego una mano agarrando cerca de la cara, como una máscara.',
   },
 
   groups: {

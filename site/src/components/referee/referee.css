@@ -1,0 +1,13 @@
+.ref-signal { display: block; width: 100%; height: auto; }
+.ref-shirt, .ref-leg { fill: #fff; stroke: #fff; }
+.ref-leg { stroke-width: 12; stroke-linecap: round; }
+.ref-stripe, .ref-shoe, .ref-cap { fill: #111; }
+.ref-sleeve { stroke: #111; stroke-width: 10; stroke-linecap: round; }
+.ref-sleeve.is-fore { stroke-width: 9; }
+.ref-skin { fill: #c98e62; }
+
+/* the signal card in a foul scene's footer */
+.signal-card { display: grid; grid-template-columns: 6.2rem 1fr; gap: 0.8rem; align-items: center; width: 100%; padding-top: 0.6rem; border-top: 1px solid var(--line); }
+.signal-card .ref-signal { background: #2e7d3a; border-radius: 10px; }
+.signal-card strong { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.signal-card p { margin: 0.15rem 0 0; font-size: 0.92rem; line-height: 1.35; color: var(--text); }
