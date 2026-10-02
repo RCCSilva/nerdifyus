@@ -54,12 +54,12 @@ export default {
       note: 'Nem sempre faltam 10: faltas podem empurrar o ataque para trás. Exemplo: false start (um jogador do ataque se mexe antes do snap) → o ataque volta 5 jardas.',
       steps: [
         'Início: 1ª & 10',
-        'Corrida, +4 jardas',
-        'Passe, +7 → 11 jardas no total: volta para 1ª & 10!',
-        'Corrida, +3 jardas',
-        'Passe incompleto: a bola volta e a descida é gasta',
-        'Corrida, +5 jardas',
-        '4ª & 2: a maioria dá punt — chuta a bola para longe',
+        'Corrida: +4 jardas',
+        'Passe: +7 → first down!',
+        'Corrida: +3 jardas',
+        'Passe incompleto: descida gasta',
+        'Corrida: +5 jardas',
+        '4ª & 2: punt',
       ],
     },
     downsUse: {

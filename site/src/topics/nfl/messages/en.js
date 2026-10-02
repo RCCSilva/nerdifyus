@@ -55,12 +55,12 @@ export default {
       note: 'Not always 10 to go: penalties can push the offense back. Example: false start (an offensive player moves before the snap) → the offense goes back 5 yards.',
       steps: [
         'Start: 1st & 10',
-        'Run, +4 yards',
-        'Pass, +7 → 11 yards total: reset to 1st & 10!',
-        'Run, +3 yards',
-        'Incomplete pass: ball comes back, down is used',
-        'Run, +5 yards',
-        '4th & 2: most teams punt — kick it away',
+        'Run: +4 yards',
+        'Pass: +7 → first down!',
+        'Run: +3 yards',
+        'Incomplete pass: down used',
+        'Run: +5 yards',
+        '4th & 2: punt',
       ],
     },
     downsUse: {

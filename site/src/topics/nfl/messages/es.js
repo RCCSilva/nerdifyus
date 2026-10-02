@@ -54,12 +54,12 @@ export default {
       note: 'No siempre faltan 10: los castigos pueden hacer retroceder a la ofensiva. Ejemplo: salida en falso (un jugador ofensivo se mueve antes del snap) → la ofensiva retrocede 5 yardas.',
       steps: [
         'Inicio: 1.º y 10',
-        'Carrera, +4 yardas',
-        'Pase, +7 → 11 yardas en total: ¡de nuevo 1.º y 10!',
-        'Carrera, +3 yardas',
-        'Pase incompleto: el balón vuelve, el down se gasta',
-        'Carrera, +5 yardas',
-        '4.º y 2: la mayoría despeja (patea el balón lejos)',
+        'Carrera: +4 yardas',
+        'Pase: +7 → ¡primer down!',
+        'Carrera: +3 yardas',
+        'Pase incompleto: down gastado',
+        'Carrera: +5 yardas',
+        '4.º y 2: despeje',
       ],
     },
     downsUse: {

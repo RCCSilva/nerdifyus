@@ -452,8 +452,10 @@ a.lesson:hover { transform: translateX(4px); }
 }
 .downs-chip.is-first { background: #1c8c3c; }
 .downs-caption { font-weight: 600; }
-/* reserve two lines so changing captions never make the field jump */
-.downs-board.is-fixed { min-height: calc(2 * 1.5em + 1.2rem); align-content: center; }
+/* Animated captions: always exactly two rows (chip, then caption), each on one line,
+   so changing text never changes the height and the page never jumps. */
+.downs-board.is-fixed { display: grid; grid-template-rows: auto auto; justify-items: start; gap: 0.35rem; }
+.downs-board.is-fixed > * { max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .try-dot circle { fill: #11151c; stroke: #fff; stroke-width: 0.15; }
 .try-dot { animation: fade-up 0.4s both; }
 .downs-ball { transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
