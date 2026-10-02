@@ -31,6 +31,7 @@ If web-dev needs a fact that isn't in the notes, it asks for research. It does n
 - No UI or animation libraries. The field is hand-drawn SVG, to scale from Rulebook Rule 1 (`site/src/components/field/`). Animations use `requestAnimationFrame` timelines (`motion.js`) and CSS. Use D3 later only for data charts (e.g. the salary cap).
 - Respect `prefers-reduced-motion`: timelines jump to their end state.
 - Commands (in `site/`): `npm run dev`, `npm run build`, `npm run preview`, `npm test` (Vitest + jsdom, tests in `src/__tests__/`).
+- Deploy: every push to `main` runs the tests, builds `site/` and publishes it to GitHub Pages (`.github/workflows/deploy.yml`) at http://rccsilva.com/nerdifyus/.
 - `index.html` opts out of browser auto-translation (`translate="no"`), since we ship our own translations.
 - Effects must never return a value implicitly: write `useEffect(() => { fn(); }, deps)`, not `useEffect(() => fn(), deps)`. Current Chrome returns a Promise from `scrollTo`, React then calls it as a cleanup, and the page crashes (this broke the language switch once). The tests stub `scrollTo` to return a Promise to catch this.
 
