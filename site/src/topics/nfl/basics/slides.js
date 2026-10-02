@@ -7,6 +7,8 @@ export const BASICS_SLIDES = [
   { id: 'field', Visual: V.FieldVisual, refs: [['S1', 'R1-1-1', 8], ['S5', '1 yd = 0.9144 m']] },
   { id: 'endzones', Visual: V.EndZonesVisual, refs: [['S1', 'R1-1-1', 8], ['S1', 'R11-2-1', 49]] },
   { id: 'teams', Visual: V.TeamsVisual, refs: [['S1', 'R5-1-1', 23]] },
+  { id: 'coinToss', Visual: V.CoinTossVisual, refs: [['S1', 'R4-2-2', 18]] },
+  { id: 'kickoff', Visual: V.KickoffVisual, refs: [['S1', 'R6-1-1/2/3', 29], ['S1', 'R6-1-4/5', 30], ['S1', 'R7-2-1(d)', 33]] },
   { id: 'touchdown', Visual: V.TouchdownVisual, refs: [['S1', 'R11-1-2', 49], ['S1', 'R11-2-1(a)(d)', 49], ['S4', 'Law 10.1']] },
   { id: 'run', Visual: V.RunVisual, refs: [['S1', 'R8-7-4', 41], ['S1', 'R3-27', 15], ['S1', 'R7-2-1', 33]] },
   { id: 'pass', Visual: V.PassVisual, refs: [['S1', 'R8-1-2/3', 37], ['S1', 'R8-1-4', 38]] },

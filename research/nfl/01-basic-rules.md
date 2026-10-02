@@ -27,6 +27,18 @@ Citation key: `[S1 R11-1-2, p.49]` = 2026 Rulebook, Rule 11, Section 1, Article 
 - **Two-minute warning:** an automatic timeout when the clock passes 2:00 in Q2 and Q4 [S1 R3-41].
 - **Timeouts:** 3 per team per half, and 2 per team in a regular-season overtime [S1 R4-5-1, p.19].
 
+## How the game starts: coin toss and kickoff
+- **Coin toss:** at most 3 minutes before kickoff, at midfield; the visiting captain calls heads or tails [S1 R4-2-2, p.18].
+- The winner picks one of two privileges, and the loser gets the other: (a) receive or kick off, or (b) which goal to defend. Or the winner can defer its choice to the second half [S1 R4-2-2, p.18].
+- **Second half:** the team that lost the pregame toss chooses first, unless the winner deferred, in which case the winner chooses [S1 R4-2-2, p.18].
+- **Kickoff:** puts the ball in play at the start of each half, after a Try and after a field goal [S1 R6-1-1(a), p.29]. The receiving team is the team that chose (or got) "receive".
+- **Where (2026):** the kicker kicks from his team's 35-yard line; his 10 teammates line up on the receiving team's 40. The receiving team must have at least 9 players in the "setup zone", between its own 35 and 30 [S1 R6-1-2/3, p.29]. The "landing zone" runs from the receiving team's 20-yard line to its goal line [S1 R6-1-2(e), p.29].
+- A receiver who catches the kick in the landing zone or the end zone may advance it [S1 R6-1-4(a), p.30]. A kick into the end zone that stays in bounds is live: it "must be returned or downed by the receiving team" [S1 R6-1-5, p.30].
+- **Touchback** (the receiving team downs it in its end zone, e.g. by kneeling: a runner who kneels declares himself down [S1 R7-2-1(d), p.33]):
+  - kick landed in the end zone in the air, then downed there → ball at the receiving team's **35** [S1 R6-1-5(d), p.30];
+  - kick first touched the landing zone, then was downed in the end zone → ball at the **20** [S1 R6-1-5(a), p.30].
+- A kick that lands short of the landing zone is a foul by the kicking team (receiving team may take the ball 25 yards from the spot of the kick) [S1 R6-2-4, p.32]. Not shown on the site yet.
+
 ## Downs: the core loop
 - The offense gets a **series of four downs** to reach the **line to gain** [S1 R3-7-2, p.11].
 - The line to gain is 10 yards ahead of where the series started. If the goal line is closer than that, the goal line is the line to gain ("and goal") [S1 R3-7-3, p.11].

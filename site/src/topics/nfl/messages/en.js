@@ -49,6 +49,17 @@ export default {
       body: 'Each team has 11 players on the field.',
       example: 'A 12th player on the field during a play = 5-yard penalty.',
     },
+    coinToss: {
+      title: 'How it starts: the coin toss',
+      body: 'Before the game, the referee tosses a coin at midfield and the visiting team calls it. The winner picks one option; the other team gets the other.',
+      note: 'Second half: the team that lost the toss chooses first (unless the winner deferred its choice to the second half).',
+    },
+    kickoff: {
+      title: 'The kickoff',
+      body: 'Like a kickoff in soccer, it starts the game. But here one team kicks the ball far away and the other team receives it. The receiving team tries to run it back as far as it can: where the runner is stopped, its offense starts.',
+      note: 'Touchback: caught in the end zone and knelt down? The play stops there. The offense starts at its 35 if the kick reached the end zone in the air, or at its 20 if it bounced in the landing zone first.',
+      example: 'There’s also a kickoff after every touchdown and every field goal.',
+    },
     downs: {
       title: '4 tries to go 10 yards',
       body: 'The offense’s goal on every snap: a first down and, if it can, a touchdown. It gets 4 tries (downs) to gain 10 yards; make it and it gets 4 more.',
@@ -322,6 +333,23 @@ export default {
       title: 'Regular season vs playoffs',
       example: 'Next up: how the season works.',
     },
+  },
+
+  kickoff: {
+    tossCall: 'The visiting team calls heads or tails',
+    winner: 'The winner chooses',
+    opt1: 'Receive the ball or kick off',
+    opt2: 'Which end zone to defend',
+    opt3: 'Or defer: choose in the 2nd half',
+    loser: 'The other team gets the other choice.',
+    kicking: 'Kicking team',
+    receiving: 'Receiving team',
+    landingZone: 'Landing zone',
+    phaseReturn: 'Return',
+    phaseReturnHow: 'Catch it and run it back as far as possible',
+    phaseTouchback: 'Touchback',
+    phaseTouchbackHow: 'Caught in the end zone, knee down: start at the 35',
+    knee: 'Knee down',
   },
 
   fourth: {

@@ -48,6 +48,17 @@ export default {
       body: 'Cada time tem 11 jogadores em campo.',
       example: 'Um 12º jogador em campo durante a jogada = falta de 5 jardas.',
     },
+    coinToss: {
+      title: 'Como começa: cara ou coroa',
+      body: 'Antes do jogo, o árbitro joga uma moeda no meio do campo, e o time visitante escolhe cara ou coroa. Quem ganha escolhe uma opção; o outro time fica com a outra.',
+      note: 'Segundo tempo: escolhe primeiro o time que perdeu o cara ou coroa (a não ser que o vencedor tenha adiado a escolha para o segundo tempo).',
+    },
+    kickoff: {
+      title: 'O kickoff',
+      body: 'Como o pontapé inicial do futebol, ele começa o jogo. Só que aqui um time chuta a bola para longe e o outro time recebe. O time que recebe tenta voltar com a bola o máximo possível: onde o corredor for parado, começa o ataque dele.',
+      note: 'Touchback: pegou a bola na end zone e deu joelho? A jogada para ali. O ataque começa na própria linha de 35 se o chute chegou à end zone pelo ar, ou na de 20 se quicou antes na landing zone.',
+      example: 'Também tem kickoff depois de todo touchdown e todo field goal.',
+    },
     downs: {
       title: '4 tentativas para avançar 10 jardas',
       body: 'O objetivo do ataque em toda jogada: a primeira descida e, se der, o touchdown. Ele tem 4 tentativas (descidas) para avançar 10 jardas; conseguiu, ganha mais 4.',
@@ -321,6 +332,23 @@ export default {
       title: 'Temporada regular × playoffs',
       example: 'A seguir: como funciona o campeonato.',
     },
+  },
+
+  kickoff: {
+    tossCall: 'O visitante escolhe cara ou coroa',
+    winner: 'Quem ganha escolhe',
+    opt1: 'Receber a bola ou chutar',
+    opt2: 'Qual end zone defender',
+    opt3: 'Ou adiar: escolher no 2º tempo',
+    loser: 'O outro time fica com a outra escolha.',
+    kicking: 'Time que chuta',
+    receiving: 'Time que recebe',
+    landingZone: 'Landing zone',
+    phaseReturn: 'Retorno',
+    phaseReturnHow: 'Pega a bola e volta com ela o máximo possível',
+    phaseTouchback: 'Touchback',
+    phaseTouchbackHow: 'Pegou na end zone e deu joelho: começa na 35',
+    knee: 'Joelho no chão',
   },
 
   fourth: {

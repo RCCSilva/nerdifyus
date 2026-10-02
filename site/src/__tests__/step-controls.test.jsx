@@ -13,7 +13,7 @@ describe('stop-motion scene', () => {
   afterEach(cleanup);
 
   it('shows the frame, disables back/forward at the ends, and never loops', async () => {
-    window.location.hash = '#/en/nfl/basics?s=9'; // Downs 1 to 3: 3 frames
+    window.location.hash = '#/en/nfl/basics?s=11'; // Downs 1 to 3: 3 frames
     render(<App />);
     await screen.findByText('Start: 1st & 10');
     expect(screen.getByText('Frame 1 of 3')).toBeTruthy();

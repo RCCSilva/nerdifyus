@@ -151,6 +151,115 @@ export function TeamsVisual({ replay }) {
   );
 }
 
+/* ---------- how the game starts ---------- */
+
+export function CoinTossVisual({ replay }) {
+  const { t } = useI18n();
+  const opts = ['opt1', 'opt2', 'opt3'];
+  return (
+    <StillScene header={<span className="scene-hint">🪙 {t('nfl.kickoff.tossCall')}</span>} footer={t('nfl.kickoff.loser')}>
+      <div className="toss" key={replay}>
+        <div className="toss-coin" aria-hidden="true" />
+        <div className="toss-opts">
+          <strong>{t('nfl.kickoff.winner')}</strong>
+          {opts.map((o, n) => (
+            <div key={o} className={`toss-opt ${o === 'opt3' ? 'is-alt' : ''}`} style={{ animationDelay: `${300 + n * 150}ms` }}>
+              <span>{n + 1}</span>{t(`nfl.kickoff.${o}`)}
+            </div>
+          ))}
+        </div>
+      </div>
+    </StillScene>
+  );
+}
+
+// Kickoff, 2026 alignment (R6-1-2/3): kicker on his 35, teammates on the receiving team's 40, at least 9
+// receivers in the setup zone (their 35–30), returners behind their 20. The receiving team defends the
+// left end zone, so its "own 35" is fx(35) and the kicking team's 35 is fx(65). Spacing is ILLUSTRATIVE.
+const KO_KICKERS = [-4, -3, -2, -1, 1, 2, 3, 4, 5, -5].map((k) => [fx(40) + 0.8, MID_Y + k * 4.4]);
+const KO_SETUP = [
+  ...[-2, -1, 0, 1, 2].map((k) => [fx(35) - 0.8, MID_Y + k * 7]),
+  ...[-1.5, -0.5, 0.5, 1.5].map((k) => [fx(31.5), MID_Y + k * 7]),
+];
+const KO_DEEP = [fx(12), MID_Y + 8];
+
+function KickoffPhase({ t, touchback }) {
+  const { t: tr } = useI18n();
+  const KICK = [fx(65), MID_Y];
+  const catchAt = touchback ? [fx(-5), MID_Y] : [fx(4), MID_Y];
+  const fly = seg(t, 300, 1800);
+  const run = seg(t, 1900, 3600);
+  const ret = touchback ? catchAt : along([catchAt, [fx(14), MID_Y - 4], [fx(27), MID_Y - 3]], run);
+  const rush = seg(t, 300, 3600);
+  const tackleAt = [fx(27) + 1.6, MID_Y - 3];
+  const ball = t < 1800 ? kickArc(KICK, catchAt, fly) : { x: ret[0] + 0.9, y: ret[1] - 0.9, z: 0 };
+  const knelt = touchback && t > 2100;
+  const placed = touchback && t > 2900;
+  return (
+    <>
+      <rect className="lz-band" x={fx(0)} y={0} width={20} height={WIDTH} />
+      <UprightText x={fx(10)} y={3} className="lz-label">{tr('nfl.kickoff.landingZone')}</UprightText>
+      {!placed && KO_KICKERS.map(([x, y], n) => {
+        const target = touchback ? [x - 8, y] : along([[x, y], [tackleAt[0] + (n % 3) * 1.6, tackleAt[1] + ((n % 5) - 2) * 2]], 1);
+        const [px, py] = along([[x, y], target], rush);
+        return <Player key={`k${n}`} x={px} y={py} label="" side="def" size={1.25} />;
+      })}
+      {!placed && (
+        <>
+          <Player x={KICK[0] + 1.2} y={KICK[1]} label="K" side="def" size={1.25} />
+          {KO_SETUP.map(([x, y], n) => <Player key={`s${n}`} x={x - (touchback ? 0 : run * 4)} y={y} label="" side="off" size={1.25} />)}
+          <Player x={KO_DEEP[0]} y={KO_DEEP[1]} label="" side="off" size={1.25} />
+          <Player x={ret[0]} y={ret[1]} label="KR" side="off" size={1.25} active />
+        </>
+      )}
+      {!placed && <Ball x={ball.x} y={ball.y} z={ball.z} />}
+      {knelt && !placed && <UprightText x={catchAt[0]} y={catchAt[1] - 3.2} className="tag tag-hl">{tr('nfl.kickoff.knee')}</UprightText>}
+      {placed && (
+        <>
+          <FieldLine x={fx(35)} kind="los" />
+          <g transform={`translate(${fx(35) - 0.8} ${MID_Y}) scale(1.8)`}><Ball x={0} y={0} /></g>
+          <UprightText x={fx(35)} y={MID_Y - 5} className="tag tag-hl" style={{ fontSize: 3 }}>35</UprightText>
+          <path className="trail" d={`M${catchAt[0]} ${catchAt[1]} L${fx(35) - 1.5} ${MID_Y}`} />
+        </>
+      )}
+    </>
+  );
+}
+
+export function KickoffVisual({ replay }) {
+  const { t } = useI18n();
+  const SPLIT = 4400;
+  const phase = (time) => (time < SPLIT ? 'Return' : 'Touchback');
+  return (
+    <FluidScene
+      duration={8000}
+      replay={replay}
+      header={(time) => (
+        <StateLine
+          chip={t(`nfl.kickoff.phase${phase(time)}`)}
+          caption={t(`nfl.kickoff.phase${phase(time)}How`)}
+          highlight={phase(time) === 'Touchback'}
+        />
+      )}
+      footer={(
+        <Legend items={[
+          { swatch: 'team-def', label: t('nfl.kickoff.kicking') },
+          { swatch: 'team-off', label: t('nfl.kickoff.receiving') },
+          { swatch: 'lz', label: t('nfl.kickoff.landingZone') },
+        ]} />
+      )}
+    >
+      {(time) => (
+        <Field view={[-BORDER, fx(70)]} viewY={[1, WIDTH - 1]}>
+          {time < SPLIT
+            ? <KickoffPhase t={time} />
+            : <KickoffPhase t={time - SPLIT} touchback />}
+        </Field>
+      )}
+    </FluidScene>
+  );
+}
+
 /* ---------- downs ---------- */
 
 const DRIVE = [

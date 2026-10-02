@@ -48,6 +48,17 @@ export default {
       body: 'Cada equipo tiene 11 jugadores en el campo.',
       example: 'Un 12.º jugador en el campo durante una jugada = castigo de 5 yardas.',
     },
+    coinToss: {
+      title: 'Cómo empieza: el volado',
+      body: 'Antes del partido, el árbitro lanza una moneda en el centro del campo y el equipo visitante elige cara o cruz. El ganador elige una opción; el otro equipo se queda con la otra.',
+      note: 'Segunda mitad: elige primero el equipo que perdió el volado (salvo que el ganador haya diferido su elección a la segunda mitad).',
+    },
+    kickoff: {
+      title: 'La patada inicial (kickoff)',
+      body: 'Como el saque inicial del fútbol, empieza el partido. Pero aquí un equipo patea el balón lejos y el otro lo recibe. El equipo que recibe intenta devolverlo lo más lejos posible: donde detienen al corredor, empieza su ofensiva.',
+      note: 'Touchback: ¿atrapó el balón en la zona de anotación y puso la rodilla? La jugada termina ahí. La ofensiva empieza en su 35 si la patada llegó por el aire a la zona de anotación, o en su 20 si antes botó en la zona de aterrizaje.',
+      example: 'También hay patada inicial después de cada touchdown y de cada gol de campo.',
+    },
     downs: {
       title: '4 intentos para avanzar 10 yardas',
       body: 'El objetivo de la ofensiva en cada jugada: un primer down y, si puede, un touchdown. Tiene 4 intentos (downs) para avanzar 10 yardas; si lo logra, gana 4 más.',
@@ -321,6 +332,23 @@ export default {
       title: 'Temporada regular vs playoffs',
       example: 'Lo próximo: cómo funciona la temporada.',
     },
+  },
+
+  kickoff: {
+    tossCall: 'El visitante elige cara o cruz',
+    winner: 'El ganador elige',
+    opt1: 'Recibir el balón o patear',
+    opt2: 'Qué zona de anotación defender',
+    opt3: 'O diferir: elegir en la 2.ª mitad',
+    loser: 'El otro equipo se queda con la otra opción.',
+    kicking: 'Equipo que patea',
+    receiving: 'Equipo que recibe',
+    landingZone: 'Zona de aterrizaje',
+    phaseReturn: 'Devolución',
+    phaseReturnHow: 'Atrapa el balón y lo devuelve lo más lejos posible',
+    phaseTouchback: 'Touchback',
+    phaseTouchbackHow: 'Atrapado en la zona de anotación, rodilla al suelo: empieza en la 35',
+    knee: 'Rodilla al suelo',
   },
 
   fourth: {
