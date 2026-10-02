@@ -4,6 +4,7 @@ import { OVERTIME_SLIDES } from './nfl/overtime/slides';
 import { FOULS_SLIDES, COMMON_FOULS_SLIDES } from './nfl/fouls/slides';
 import { SEASON_SLIDES } from './nfl/season/slides';
 import { DEFENSE_TACTICS_SLIDES } from './nfl/tactics/slides';
+import { DRAFT_SLIDES } from './nfl/draft/slides';
 import { resolveRef as nflRef } from './nfl/sources';
 
 // All topics. A lesson with `slides` is live; without it, it shows as "coming soon".
@@ -21,8 +22,11 @@ export const TOPICS = [
       { id: 'season', level: 'basic', slides: SEASON_SLIDES },
       { id: 'commonFouls', level: 'intermediate', slides: COMMON_FOULS_SLIDES },
       { id: 'defenseTactics', level: 'intermediate', slides: DEFENSE_TACTICS_SLIDES },
+      { id: 'draft', level: 'intermediate', slides: DRAFT_SLIDES },
+      { id: 'trades', level: 'intermediate' },
       { id: 'strategy', level: 'intermediate' },
       { id: 'matchCoverage', level: 'advanced' },
+      { id: 'tags', level: 'advanced' },
       { id: 'cap', level: 'advanced' },
     ],
   },

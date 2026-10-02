@@ -146,6 +146,21 @@ export const SOURCES = {
     title: 'Football Nation — What Is Zone Coverage in Football? Cover 2, 3 and 4',
     url: 'https://www.footballnationusa.com/post/what-is-zone-coverage-in-football',
   },
+  S30: {
+    short: 'NFL Football Ops · Draft rules',
+    title: 'NFL Football Operations — NFL Draft Rules',
+    url: 'https://operations.nfl.com/calendar-events/nfl-draft/nfl-draft-rules',
+  },
+  S31: {
+    short: 'NFL.com · 2026 draft order',
+    title: 'NFL.com — 2026 NFL Draft order for all seven rounds',
+    url: 'https://www.nfl.com/news/2026-nfl-draft-order-for-all-seven-rounds',
+  },
+  S32: {
+    short: 'NFL · 2026 compensatory picks',
+    title: 'NFL — NFL Announces 33 Compensatory Draft Choices to 15 Clubs (2026-03-09)',
+    url: 'https://media.nfl.com/football-information/2026/news/---nfl-announces-33-compensatory-draft-choices-to-15-clubs-',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

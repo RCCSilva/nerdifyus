@@ -31,6 +31,9 @@
 | S27 | PFF — "How the NFL is Evolving: Five schematic trends that have shaped the 2025 season" (Daire Carragher) | secondary (analytics) | 2026-01-04 · accessed 2026-10-02 | https://www.pff.com/news/nfl-is-evolving-five-schematic-trends-that-have-shaped-the-2025-season |
 | S28 | Football Nation — "What Is Man Coverage in Football?" | secondary (explainer) | updated Sep 8 · accessed 2026-10-02 | https://www.footballnationusa.com/post/what-is-man-coverage-in-football |
 | S29 | Football Nation — "What Is Zone Coverage in Football? Cover 2, 3 and 4" | secondary (explainer) | updated Sep 2 · accessed 2026-10-02 | https://www.footballnationusa.com/post/what-is-zone-coverage-in-football |
+| S30 | NFL Football Operations — "NFL Draft Rules" | primary | accessed 2026-10-02 | https://operations.nfl.com/calendar-events/nfl-draft/nfl-draft-rules |
+| S31 | NFL.com — "2026 NFL Draft order for all seven rounds" | primary (league news) | 2026 · accessed 2026-10-02 | https://www.nfl.com/news/2026-nfl-draft-order-for-all-seven-rounds |
+| S32 | NFL — "NFL Announces 33 Compensatory Draft Choices to 15 Clubs" | primary | 2026-03-09 · accessed 2026-10-02 | https://media.nfl.com/football-information/2026/news/---nfl-announces-33-compensatory-draft-choices-to-15-clubs- |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

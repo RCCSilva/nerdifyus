@@ -11,8 +11,11 @@ export default {
     overtime: { title: 'Ties & overtime', summary: 'Ties are possible in the regular season, never in the playoffs.' },
     commonFouls: { title: 'Common fouls', summary: 'False start, offside, holding, pass interference.' },
     defenseTactics: { title: 'Defensive tactics: pass coverage', summary: 'Man-to-man, zone and match: the three ways to cover receivers.' },
+    draft: { title: 'The draft', summary: 'How teams pick new players from college each year.' },
+    trades: { title: 'Trades', summary: 'How teams swap players and draft picks.' },
     strategy: { title: 'Strategy', summary: 'Why teams do what they do.' },
     matchCoverage: { title: 'Match coverage', summary: 'The man/zone hybrid most defenses use today.' },
+    tags: { title: 'Franchise & transition tags', summary: 'Exclusive and non-exclusive franchise tags, and the transition tag.' },
     cap: { title: 'The salary cap', summary: 'How team payrolls really work.' },
   },
 
@@ -391,6 +394,77 @@ export default {
     covToday: {
       title: 'What defenses play today',
       body: 'Man-to-man is at its lowest in years: in 2025 it was used on 22.6% of snaps, down from over a third seven seasons ago. One team stood out: Cleveland, with 45.1%.',
+    },
+    draftWhat: {
+      title: 'The draft: picking new players',
+      body: 'Every year, the 32 teams take turns choosing players coming out of college. 7 rounds, one pick per team in each round.',
+      example: '2026: April 23–25 in Pittsburgh, 257 picks over three days.',
+    },
+    draftOrder: {
+      title: 'The worst team picks first',
+      body: 'The draft goes in reverse order: the team with the worst record picks first in every round, and the Super Bowl champion picks last.',
+      note: 'Playoff teams always pick after the 20 teams that missed the playoffs, ordered by how far they went.',
+      example: 'Same record? Strength of schedule breaks the tie first.',
+    },
+    draftClock: {
+      title: 'On the clock',
+      body: 'Each team has a time limit to make its pick, shorter in later rounds.',
+      example: 'Time runs out? The team can still pick later, but the next team may take its player.',
+    },
+    draftComp: {
+      title: 'Compensatory picks',
+      body: 'Extra picks for teams that lost more (or better) free agents than they signed.',
+      note: 'Picks, compensatory ones included, can be traded before and during the draft. More in the “Trades” lesson.',
+    },
+    draftElig: {
+      title: 'Who can be drafted',
+      body: 'Not everyone in college can enter the draft right away.',
+    },
+  },
+
+  draft: {
+    pick: 'One pick per team',
+    comp: 'Compensatory picks',
+    round: 'Round {n}',
+    roundShort: 'Round {n}',
+    total2026: '2026: 7 rounds × 32 = 224 picks, plus 33 compensatory = 257.',
+    order2026: 'Real example: the Las Vegas Raiders had the No. 1 pick in 2026.',
+    clockTitle: 'Time per pick',
+    slots: {
+      missed: 'Missed the playoffs: worst record first',
+      wildCard: 'Lost in the Wild Card round',
+      divisional: 'Lost in the Divisional round',
+      conference: 'Lost in a Conference Championship',
+      sbLoser: 'Lost the Super Bowl',
+      champion: 'Won the Super Bowl',
+    },
+    compFacts: {
+      why: {
+        title: 'Why',
+        text: 'A team that lost more or better free agents than it signed gets extra picks, at most four.',
+      },
+      where: {
+        title: 'Where',
+        text: 'At the end of rounds 3 to 7, up to 32 per year.',
+      },
+      how: {
+        title: 'How',
+        text: 'A formula based on the players’ salary, playing time and postseason honors.',
+      },
+      real: {
+        title: '2026, real numbers',
+        text: '33 compensatory picks to 15 teams, one of them a special pick for Detroit, given when a coach it developed was hired as a head coach elsewhere.',
+      },
+    },
+    elig: {
+      years: {
+        title: '3 years after high school',
+        text: 'A player must be out of high school for at least three years.',
+      },
+      early: {
+        title: 'Leaving college early',
+        text: 'Players with college eligibility left must declare within seven days after the college championship game.',
+      },
     },
   },
 

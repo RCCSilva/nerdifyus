@@ -10,8 +10,11 @@ export default {
     overtime: { title: 'Empates e prorrogação', summary: 'Empate pode na temporada regular, nunca nos playoffs.' },
     commonFouls: { title: 'Faltas comuns', summary: 'False start, impedimento, holding, interferência de passe.' },
     defenseTactics: { title: 'Tática: a defesa contra o passe', summary: 'Homem a homem, zona e match: as três formas de marcar os recebedores.' },
+    draft: { title: 'O draft', summary: 'Como os times escolhem todo ano os jogadores que saem da faculdade.' },
+    trades: { title: 'Trocas', summary: 'Como os times trocam jogadores e escolhas de draft.' },
     strategy: { title: 'Estratégia', summary: 'Por que os times fazem o que fazem.' },
     matchCoverage: { title: 'Marcação match', summary: 'O híbrido de homem e zona que muitas defesas usam hoje.' },
+    tags: { title: 'Franchise e transition tags', summary: 'O franchise tag exclusivo e não exclusivo, e o transition tag.' },
     cap: { title: 'O teto salarial', summary: 'Como as folhas salariais funcionam de verdade.' },
   },
 
@@ -390,6 +393,77 @@ export default {
     covToday: {
       title: 'O que as defesas jogam hoje',
       body: 'O homem a homem está no menor uso em anos: em 2025 ele apareceu em 22,6% das jogadas, contra mais de um terço sete temporadas antes. Um time se destacou: Cleveland, com 45,1%.',
+    },
+    draftWhat: {
+      title: 'O draft: escolhendo jogadores novos',
+      body: 'Todo ano, os 32 times se revezam para escolher jogadores que estão saindo da faculdade. São 7 rodadas, uma escolha por time em cada rodada.',
+      example: '2026: de 23 a 25 de abril em Pittsburgh, 257 escolhas em três dias.',
+    },
+    draftOrder: {
+      title: 'O pior time escolhe primeiro',
+      body: 'O draft vai na ordem inversa: o time com a pior campanha escolhe primeiro em todas as rodadas, e o campeão do Super Bowl escolhe por último.',
+      note: 'Os times de playoff sempre escolhem depois dos 20 que ficaram de fora, na ordem de até onde chegaram.',
+      example: 'Mesma campanha? O primeiro desempate é a força da tabela (aproveitamento dos adversários).',
+    },
+    draftClock: {
+      title: 'O relógio está correndo',
+      body: 'Cada time tem um tempo limite para fazer a escolha, mais curto nas últimas rodadas.',
+      example: 'Estourou o tempo? O time ainda pode escolher depois, mas o próximo pode levar o jogador que ele queria.',
+    },
+    draftComp: {
+      title: 'Escolhas compensatórias',
+      body: 'Escolhas extras para os times que perderam mais (ou melhores) free agents do que contrataram.',
+      note: 'As escolhas, inclusive as compensatórias, podem ser trocadas antes e durante o draft. Mais na lição “Trocas”.',
+    },
+    draftElig: {
+      title: 'Quem pode ser draftado',
+      body: 'Nem todo universitário pode entrar no draft na hora.',
+    },
+  },
+
+  draft: {
+    pick: 'Uma escolha por time',
+    comp: 'Escolhas compensatórias',
+    round: 'Rodada {n}',
+    roundShort: 'Rodada {n}',
+    total2026: '2026: 7 rodadas × 32 = 224 escolhas, mais 33 compensatórias = 257.',
+    order2026: 'Exemplo real: o Las Vegas Raiders teve a escolha nº 1 em 2026.',
+    clockTitle: 'Tempo por escolha',
+    slots: {
+      missed: 'Fora dos playoffs: pior campanha primeiro',
+      wildCard: 'Eliminados na rodada Wild Card',
+      divisional: 'Eliminados na rodada Divisional',
+      conference: 'Eliminados na final de conferência',
+      sbLoser: 'Perdeu o Super Bowl',
+      champion: 'Ganhou o Super Bowl',
+    },
+    compFacts: {
+      why: {
+        title: 'Por quê',
+        text: 'O time que perdeu mais ou melhores free agents do que contratou ganha escolhas extras, no máximo quatro.',
+      },
+      where: {
+        title: 'Onde',
+        text: 'No fim das rodadas 3 a 7, até 32 por ano.',
+      },
+      how: {
+        title: 'Como',
+        text: 'Uma fórmula baseada no salário, no tempo de jogo e nas honrarias de pós-temporada dos jogadores.',
+      },
+      real: {
+        title: '2026, números reais',
+        text: '33 escolhas compensatórias para 15 times, uma delas especial para o Detroit, dada quando um treinador formado lá foi contratado como head coach em outro time.',
+      },
+    },
+    elig: {
+      years: {
+        title: '3 anos depois do ensino médio',
+        text: 'O jogador precisa ter saído do ensino médio há pelo menos três anos.',
+      },
+      early: {
+        title: 'Saindo cedo da faculdade',
+        text: 'Quem ainda tem elegibilidade universitária precisa se declarar em até sete dias depois da final do campeonato universitário.',
+      },
     },
   },
 

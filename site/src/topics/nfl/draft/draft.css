@@ -1,0 +1,40 @@
+.swatch.pick { background: var(--accent); border-radius: 3px; }
+.swatch.comp { background: #d9a400; border-radius: 3px; }
+
+.draft-board { display: grid; gap: 0.35rem; padding: 1rem; }
+.draft-round { display: grid; grid-template-columns: 4.6rem 1fr; align-items: center; gap: 0.5rem; animation: fade-up-lg 0.35s both; }
+.draft-round-label { font-size: 0.8rem; font-weight: 700; color: var(--muted); }
+.draft-pips { display: flex; flex-wrap: wrap; gap: 2px; align-items: center; }
+.draft-pips i { width: 0.55rem; height: 0.85rem; border-radius: 2px; background: var(--accent); opacity: 0.85; }
+.draft-comp { margin-left: 0.3rem; color: #fff; background: #d9a400; border-radius: 4px; font-size: 0.75rem; padding: 0 0.35rem; }
+
+.draft-order { display: grid; gap: 0.9rem; padding: 1rem; }
+.draft-slots { display: grid; grid-template-columns: repeat(32, minmax(0, 1fr)); gap: 2px; }
+.draft-slot { display: grid; place-items: center; height: 1.6rem; border-radius: 3px; font-size: 0.65rem; font-weight: 800; color: #fff; }
+.draft-groups { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+.draft-groups li { display: grid; grid-template-columns: 1.1rem 3.2rem 1fr; align-items: center; gap: 0.5rem; font-size: 0.9rem; animation: fade-up-lg 0.35s both; }
+.draft-groups .draft-slot { height: 1.1rem; }
+.draft-groups b { font-variant-numeric: tabular-nums; }
+.s-missed { background: #8a8f99; }
+.s-wildCard { background: #d9a400; }
+.s-divisional { background: #d9661f; }
+.s-conference { background: #c8323f; }
+.s-sbLoser { background: #6b46c1; }
+.s-champion { background: #1c8c3c; }
+
+.draft-clock { display: grid; gap: 0.6rem; padding: 1.2rem 1rem; }
+.draft-clock-row { display: grid; grid-template-columns: 6rem 1fr 3.6rem; gap: 0.7rem; align-items: center; }
+.draft-clock-track { height: 0.9rem; border-radius: 99px; background: var(--line); overflow: hidden; }
+.draft-clock-track i { display: block; height: 100%; background: var(--accent); border-radius: 99px; transform-origin: left; animation: grow 0.8s ease-out both; }
+.draft-clock-row b { text-align: right; font-variant-numeric: tabular-nums; }
+
+.draft-facts { display: grid; gap: 0.55rem; padding: 1rem; }
+.draft-fact { padding: 0.7rem 0.9rem; border-radius: 12px; background: var(--bg); animation: fade-up-lg 0.4s both; }
+.draft-fact strong { display: block; margin-bottom: 0.2rem; }
+.draft-fact p { margin: 0; line-height: 1.4; font-size: 0.93rem; }
+.draft-fact.is-real { border: 1px dashed var(--accent); background: var(--accent-soft); }
+
+@media (max-width: 560px) {
+  .draft-pips i { width: 0.42rem; }
+  .draft-slot { font-size: 0.5rem; height: 1.3rem; }
+}

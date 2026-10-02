@@ -10,8 +10,11 @@ export default {
     overtime: { title: 'Empates y tiempo extra', summary: 'Puede haber empate en la temporada regular, nunca en playoffs.' },
     commonFouls: { title: 'Castigos comunes', summary: 'Salida en falso, fuera de lugar, sujeción, interferencia de pase.' },
     defenseTactics: { title: 'Táctica: la defensa contra el pase', summary: 'Hombre a hombre, zona y match: las tres formas de cubrir a los receptores.' },
+    draft: { title: 'El draft', summary: 'Cómo los equipos eligen cada año a los jugadores que salen de la universidad.' },
+    trades: { title: 'Intercambios', summary: 'Cómo los equipos cambian jugadores y selecciones del draft.' },
     strategy: { title: 'Estrategia', summary: 'Por qué los equipos hacen lo que hacen.' },
     matchCoverage: { title: 'Cobertura match', summary: 'El híbrido de hombre y zona que usan hoy muchas defensas.' },
+    tags: { title: 'Franchise y transition tags', summary: 'El franchise tag exclusivo y no exclusivo, y el transition tag.' },
     cap: { title: 'El tope salarial', summary: 'Cómo funcionan realmente las nóminas.' },
   },
 
@@ -390,6 +393,77 @@ export default {
     covToday: {
       title: 'Qué juegan las defensas hoy',
       body: 'El hombre a hombre está en su punto más bajo en años: en 2025 se usó en el 22,6% de las jugadas, frente a más de un tercio hace siete temporadas. Un equipo destacó: Cleveland, con 45,1%.',
+    },
+    draftWhat: {
+      title: 'El draft: elegir jugadores nuevos',
+      body: 'Cada año, los 32 equipos se turnan para elegir jugadores que salen de la universidad. 7 rondas, una selección por equipo en cada ronda.',
+      example: '2026: del 23 al 25 de abril en Pittsburgh, 257 selecciones en tres días.',
+    },
+    draftOrder: {
+      title: 'El peor equipo elige primero',
+      body: 'El draft va en orden inverso: el equipo con peor récord elige primero en cada ronda, y el campeón del Super Bowl elige último.',
+      note: 'Los equipos de playoffs siempre eligen después de los 20 que no clasificaron, ordenados por hasta dónde llegaron.',
+      example: '¿Mismo récord? Primero desempata la fortaleza del calendario.',
+    },
+    draftClock: {
+      title: 'Con el reloj en marcha',
+      body: 'Cada equipo tiene un tiempo límite para elegir, más corto en las últimas rondas.',
+      example: '¿Se acaba el tiempo? El equipo puede elegir después, pero el siguiente puede llevarse a su jugador.',
+    },
+    draftComp: {
+      title: 'Selecciones compensatorias',
+      body: 'Selecciones extra para los equipos que perdieron más (o mejores) agentes libres de los que firmaron.',
+      note: 'Las selecciones, incluidas las compensatorias, se pueden intercambiar antes y durante el draft. Más en la lección “Intercambios”.',
+    },
+    draftElig: {
+      title: 'Quién puede ser elegido',
+      body: 'No todos los universitarios pueden entrar al draft de inmediato.',
+    },
+  },
+
+  draft: {
+    pick: 'Una selección por equipo',
+    comp: 'Selecciones compensatorias',
+    round: 'Ronda {n}',
+    roundShort: 'Ronda {n}',
+    total2026: '2026: 7 rondas × 32 = 224 selecciones, más 33 compensatorias = 257.',
+    order2026: 'Ejemplo real: los Las Vegas Raiders tuvieron la selección n.º 1 en 2026.',
+    clockTitle: 'Tiempo por selección',
+    slots: {
+      missed: 'No clasificaron: peor récord primero',
+      wildCard: 'Perdieron en la ronda de comodines',
+      divisional: 'Perdieron en la ronda divisional',
+      conference: 'Perdieron una final de conferencia',
+      sbLoser: 'Perdió el Super Bowl',
+      champion: 'Ganó el Super Bowl',
+    },
+    compFacts: {
+      why: {
+        title: 'Por qué',
+        text: 'Un equipo que perdió más o mejores agentes libres de los que firmó recibe selecciones extra, cuatro como máximo.',
+      },
+      where: {
+        title: 'Dónde',
+        text: 'Al final de las rondas 3 a 7, hasta 32 por año.',
+      },
+      how: {
+        title: 'Cómo',
+        text: 'Una fórmula basada en el salario, el tiempo de juego y los honores de postemporada de los jugadores.',
+      },
+      real: {
+        title: '2026, números reales',
+        text: '33 selecciones compensatorias para 15 equipos, una de ellas especial para Detroit, otorgada cuando un entrenador formado allí fue contratado como entrenador principal en otro equipo.',
+      },
+    },
+    elig: {
+      years: {
+        title: '3 años después de la secundaria',
+        text: 'Un jugador debe llevar al menos tres años fuera de la secundaria.',
+      },
+      early: {
+        title: 'Dejar la universidad antes',
+        text: 'Quien todavía tiene elegibilidad universitaria debe declararse dentro de los siete días posteriores a la final universitaria.',
+      },
     },
   },
 
