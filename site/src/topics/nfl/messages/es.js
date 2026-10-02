@@ -57,7 +57,7 @@ export default {
     coinToss: {
       title: 'Cómo empieza: el volado',
       body: 'Antes del partido, el árbitro lanza una moneda en el centro del campo y el equipo visitante elige cara o cruz. El ganador elige una opción; el otro equipo se queda con la otra.',
-      note: 'Segunda mitad: elige primero el equipo que perdió el volado (salvo que el ganador haya diferido su elección a la segunda mitad).',
+      note: 'Segunda mitad: elige primero el otro equipo, así que puede quedarse con el balón.',
     },
     kickoff: {
       title: 'La patada inicial (kickoff)',
@@ -658,7 +658,6 @@ export default {
     winner: 'El ganador elige',
     opt1: 'Recibir el balón o patear',
     opt2: 'Qué zona de anotación defender',
-    opt3: 'O diferir: elegir en la 2.ª mitad',
     loser: 'El otro equipo se queda con la otra opción.',
     kicking: 'Equipo que patea',
     receiving: 'Equipo que recibe',

@@ -31,6 +31,7 @@ Citation key: `[S1 R11-1-2, p.49]` = 2026 Rulebook, Rule 11, Section 1, Article 
 - **Coin toss:** at most 3 minutes before kickoff, at midfield; the visiting captain calls heads or tails [S1 R4-2-2, p.18].
 - The winner picks one of two privileges, and the loser gets the other: (a) receive or kick off, or (b) which goal to defend. Or the winner can defer its choice to the second half [S1 R4-2-2, p.18].
 - **Second half:** the team that lost the pregame toss chooses first, unless the winner deferred, in which case the winner chooses [S1 R4-2-2, p.18].
+- Site: the defer option is left off the coin toss slide on purpose (user: it confuses beginners). The slide says the other team chooses first in the 2nd half, so it can take the ball.
 - **Kickoff:** puts the ball in play at the start of each half, after a Try and after a field goal [S1 R6-1-1(a), p.29]. The receiving team is the team that chose (or got) "receive".
 - **Where (2026):** the kicker kicks from his team's 35-yard line; his 10 teammates line up on the receiving team's 40. The receiving team must have at least 9 players in the "setup zone", between its own 35 and 30 [S1 R6-1-2/3, p.29]. The "landing zone" runs from the receiving team's 20-yard line to its goal line [S1 R6-1-2(e), p.29].
 - A receiver who catches the kick in the landing zone or the end zone may advance it [S1 R6-1-4(a), p.30]. A kick into the end zone that stays in bounds is live: it "must be returned or downed by the receiving team" [S1 R6-1-5, p.30].

@@ -57,7 +57,7 @@ export default {
     coinToss: {
       title: 'Como começa: cara ou coroa',
       body: 'Antes do jogo, o árbitro joga uma moeda no meio do campo, e o time visitante escolhe cara ou coroa. Quem ganha escolhe uma opção; o outro time fica com a outra.',
-      note: 'Segundo tempo: escolhe primeiro o time que perdeu o cara ou coroa (a não ser que o vencedor tenha adiado a escolha para o segundo tempo).',
+      note: 'Segundo tempo: o outro time escolhe primeiro, então pode ficar com a bola.',
     },
     kickoff: {
       title: 'O kickoff',
@@ -658,7 +658,6 @@ export default {
     winner: 'Quem ganha escolhe',
     opt1: 'Receber a bola ou chutar',
     opt2: 'Qual end zone defender',
-    opt3: 'Ou adiar: escolher no 2º tempo',
     loser: 'O outro time fica com a outra escolha.',
     kicking: 'Time que chuta',
     receiving: 'Time que recebe',

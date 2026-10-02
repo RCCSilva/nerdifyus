@@ -58,7 +58,7 @@ export default {
     coinToss: {
       title: 'How it starts: the coin toss',
       body: 'Before the game, the referee tosses a coin at midfield and the visiting team calls it. The winner picks one option; the other team gets the other.',
-      note: 'Second half: the team that lost the toss chooses first (unless the winner deferred its choice to the second half).',
+      note: 'Second half: the other team chooses first, so it can take the ball.',
     },
     kickoff: {
       title: 'The kickoff',
@@ -659,7 +659,6 @@ export default {
     winner: 'The winner chooses',
     opt1: 'Receive the ball or kick off',
     opt2: 'Which end zone to defend',
-    opt3: 'Or defer: choose in the 2nd half',
     loser: 'The other team gets the other choice.',
     kicking: 'Kicking team',
     receiving: 'Receiving team',

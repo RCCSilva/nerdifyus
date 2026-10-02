@@ -544,8 +544,6 @@ a.lesson:hover { transform: translateX(4px); }
 .toss-opts strong { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
 .toss-opt { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.7rem; border-radius: 10px; background: var(--bg); font-weight: 600; animation: fade-up-lg 0.4s both; }
 .toss-opt span { width: 1.5rem; height: 1.5rem; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font-size: 0.8rem; flex: none; }
-.toss-opt.is-alt { background: transparent; border: 1px dashed var(--line); font-weight: 500; }
-.toss-opt.is-alt span { background: var(--muted); }
 
 /* kickoff */
 .lz-band { fill: #ffd400; opacity: 0.16; }

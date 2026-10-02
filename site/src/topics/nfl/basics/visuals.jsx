@@ -155,7 +155,7 @@ export function TeamsVisual({ replay }) {
 
 export function CoinTossVisual({ replay }) {
   const { t } = useI18n();
-  const opts = ['opt1', 'opt2', 'opt3'];
+  const opts = ['opt1', 'opt2'];
   return (
     <StillScene header={<span className="scene-hint">🪙 {t('nfl.kickoff.tossCall')}</span>} footer={t('nfl.kickoff.loser')}>
       <div className="toss" key={replay}>
@@ -163,7 +163,7 @@ export function CoinTossVisual({ replay }) {
         <div className="toss-opts">
           <strong>{t('nfl.kickoff.winner')}</strong>
           {opts.map((o, n) => (
-            <div key={o} className={`toss-opt ${o === 'opt3' ? 'is-alt' : ''}`} style={{ animationDelay: `${300 + n * 150}ms` }}>
+            <div key={o} className="toss-opt" style={{ animationDelay: `${300 + n * 150}ms` }}>
               <span>{n + 1}</span>{t(`nfl.kickoff.${o}`)}
             </div>
           ))}
