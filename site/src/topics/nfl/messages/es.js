@@ -62,13 +62,14 @@ export default {
         '4.º y 2: la mayoría despeja (patea el balón lejos)',
       ],
     },
-    downsReset: {
-      title: 'Lograr un primer down',
-      body: 'Una serie corta: avanza las 10 yardas (en una jugada o en varias) y la cuenta vuelve a 1.º y 10.',
+    downsUse: {
+      title: 'Downs 1 a 3: correr o pasar',
+      body: 'En los tres primeros downs, la ofensiva corre o pasa para llegar a la línea a ganar. ¿Llegó? La cuenta vuelve a 1.º y 10.',
     },
-    downsPunt: {
-      title: '¿No alcanza? 4.º down',
-      body: 'Aquí la ofensiva se acerca, pero tras 3 downs aún le faltan 2 yardas. En 4.º down, la mayoría despeja: patea el balón lejos para que el rival empiece muy atrás.',
+    downsFourth: {
+      title: '4.º down: una decisión',
+      body: '¿En 4.º down y aún sin llegar a la línea a ganar? La ofensiva tiene tres opciones:',
+      note: 'Ninguna regla obliga a esperar al 4.º down: un equipo puede despejar o intentar un gol de campo en cualquier down. Pero patear entrega el balón, así que normalmente los equipos siguen corriendo y pasando hasta el 4.º down.',
     },
     run: {
       title: 'Correr con el balón',
@@ -315,6 +316,14 @@ export default {
       title: 'Temporada regular vs playoffs',
       example: 'Lo próximo: cómo funciona la temporada.',
     },
+  },
+
+  fourth: {
+    goForIt: { name: 'Ir por ello', what: 'Correr o pasar una vez más. Si lo logra: nuevo 1.º y 10. Si no: el rival recibe el balón ahí mismo.' },
+    fieldGoal: { name: 'Gol de campo', what: '¿Lo bastante cerca? Patea por 3 puntos. Si falla: el rival recibe el balón en el lugar de la patada.' },
+    punt: { name: 'Despeje (punt)', what: '¿Demasiado lejos para un gol de campo? Patea el balón lejos para que el rival empiece más atrás.' },
+    fgRates: 'Goles de campo convertidos en 2025, por distancia (yardas)',
+    fgDistance: 'La distancia se cuenta desde la patada hasta los postes: línea de golpeo + unas 7 yardas + las 10 yardas de la zona de anotación. Desde la 40 rival, son unas 57 yardas.',
   },
 
   overtime: {

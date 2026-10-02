@@ -86,6 +86,11 @@ export const SOURCES = {
     title: 'IFAB Laws of the Game 2026/27 — Law 7, The Duration of the Match',
     url: 'https://www.theifab.com/laws/latest/the-duration-of-the-match/',
   },
+  S18: {
+    short: 'NFL.com · field goals by distance',
+    title: 'NFL.com — 2025 team field goal stats by distance',
+    url: 'https://www.nfl.com/stats/team-stats/special-teams/field-goals/2025/reg/all',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

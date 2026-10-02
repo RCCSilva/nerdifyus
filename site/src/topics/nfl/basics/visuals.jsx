@@ -213,8 +213,42 @@ function DriveVisual({ replay, from, to }) {
   );
 }
 
-export const DownsResetVisual = (props) => <DriveVisual from={0} to={2} {...props} />;
-export const DownsPuntVisual = (props) => <DriveVisual from={3} to={6} {...props} />;
+export const DownsUseVisual = (props) => <DriveVisual from={0} to={2} {...props} />;
+
+// 4th down: the three options, stacked (no sub-slides). FG make rates: 2025 league totals from S18
+// (research/nfl/01-basic-rules.md, "Using the 4 downs").
+const FG_RATES = [['40–49', 84], ['50–59', 70], ['60+', 55]];
+
+export function FourthDownVisual({ replay }) {
+  const { t } = useI18n();
+  const opts = ['goForIt', 'fieldGoal', 'punt'];
+  return (
+    <div className="fourth" key={replay}>
+      {opts.map((o, n) => (
+        <section key={o} className={`fourth-opt opt-${o}`} style={{ animationDelay: `${n * 140}ms` }}>
+          <header>
+            <span className="fourth-num">{n + 1}</span>
+            <strong>{t(`nfl.fourth.${o}.name`)}</strong>
+          </header>
+          <p>{t(`nfl.fourth.${o}.what`)}</p>
+          {o === 'fieldGoal' && (
+            <div className="fg-rates">
+              <span className="fg-rates-title">{t('nfl.fourth.fgRates')}</span>
+              {FG_RATES.map(([d, pct]) => (
+                <div key={d} className="fg-rate">
+                  <span>{d}</span>
+                  <span className="fg-bar"><i style={{ width: `${pct}%` }} /></span>
+                  <b>{pct}%</b>
+                </div>
+              ))}
+              <span className="fg-rates-note">{t('nfl.fourth.fgDistance')}</span>
+            </div>
+          )}
+        </section>
+      ))}
+    </div>
+  );
+}
 
 /* ---------- run & pass ---------- */
 

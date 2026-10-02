@@ -63,13 +63,14 @@ export default {
         '4th & 2: most teams punt — kick it away',
       ],
     },
-    downsReset: {
-      title: 'Getting a first down',
-      body: 'A short drive: gain the 10 yards (in one play or several) and the count resets to 1st & 10.',
+    downsUse: {
+      title: 'Downs 1 to 3: run or pass',
+      body: 'On the first three downs, the offense runs or passes to reach the line to gain. Got there? The count resets to 1st & 10.',
     },
-    downsPunt: {
-      title: 'Not enough? 4th down',
-      body: 'Here the offense gets close, but after 3 downs it still needs 2 yards. On 4th down, most teams punt: they kick the ball away so the other team starts far back.',
+    downsFourth: {
+      title: '4th down: a decision',
+      body: 'Still short of the line to gain on 4th down? The offense has three options:',
+      note: 'No rule says to wait for 4th down: a team may punt or try a field goal on any down. But kicking gives the ball away, so teams normally keep running and passing until 4th down.',
     },
     run: {
       title: 'Running the ball',
@@ -316,6 +317,14 @@ export default {
       title: 'Regular season vs playoffs',
       example: 'Next up: how the season works.',
     },
+  },
+
+  fourth: {
+    goForIt: { name: 'Go for it', what: 'Run or pass one more time. Make it: new 1st & 10. Miss: the other team gets the ball right there.' },
+    fieldGoal: { name: 'Field goal', what: 'Close enough? Kick for 3 points. Miss: the other team gets the ball at the spot of the kick.' },
+    punt: { name: 'Punt', what: 'Too far to try a field goal? Kick the ball far away so the other team starts farther back.' },
+    fgRates: 'Field goals made in 2025, by distance (yards)',
+    fgDistance: 'The distance counts from the kick to the posts: line of scrimmage + about 7 yards + the 10-yard end zone. From the opponent’s 40, that’s about 57 yards.',
   },
 
   overtime: {

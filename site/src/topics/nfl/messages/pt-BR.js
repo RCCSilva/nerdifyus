@@ -62,13 +62,14 @@ export default {
         '4ª & 2: a maioria dá punt — chuta a bola para longe',
       ],
     },
-    downsReset: {
-      title: 'Conseguindo um first down',
-      body: 'Uma sequência curta: avance as 10 jardas (numa jogada ou em várias) e a contagem volta para 1ª & 10.',
+    downsUse: {
+      title: 'Descidas 1 a 3: corrida ou passe',
+      body: 'Nas três primeiras descidas, o ataque corre ou passa para chegar à linha a alcançar. Chegou? A contagem volta para 1ª & 10.',
     },
-    downsPunt: {
-      title: 'Não deu? 4ª descida',
-      body: 'Aqui o ataque chega perto, mas depois de 3 descidas ainda faltam 2 jardas. Na 4ª descida, a maioria dá punt: chuta a bola para longe para o adversário começar lá atrás.',
+    downsFourth: {
+      title: '4ª descida: uma decisão',
+      body: 'Chegou na 4ª descida sem alcançar a linha? O ataque tem três saídas:',
+      note: 'Nenhuma regra obriga a esperar a 4ª descida: o time pode dar punt ou tentar um field goal em qualquer descida. Mas chutar entrega a bola, então normalmente os times correm e passam até a 4ª descida.',
     },
     run: {
       title: 'Correndo com a bola',
@@ -315,6 +316,14 @@ export default {
       title: 'Temporada regular × playoffs',
       example: 'A seguir: como funciona o campeonato.',
     },
+  },
+
+  fourth: {
+    goForIt: { name: 'Tentar mais uma vez', what: 'Corrida ou passe mais uma vez. Conseguiu: nova 1ª & 10. Não conseguiu: o adversário fica com a bola ali mesmo.' },
+    fieldGoal: { name: 'Field goal', what: 'Perto o bastante? Chuta para 3 pontos. Errou: o adversário fica com a bola no local do chute.' },
+    punt: { name: 'Punt', what: 'Longe demais para tentar o field goal? Chuta a bola para longe, para o adversário começar mais atrás.' },
+    fgRates: 'Field goals convertidos em 2025, por distância (jardas)',
+    fgDistance: 'A distância conta do chute até as traves: linha de scrimmage + cerca de 7 jardas + as 10 jardas da end zone. Da linha de 40 do adversário, dá uns 57 jardas.',
   },
 
   overtime: {

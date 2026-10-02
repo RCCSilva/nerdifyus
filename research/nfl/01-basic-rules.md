@@ -41,6 +41,16 @@ Citation key: `[S1 R11-1-2, p.49]` = 2026 Rulebook, Rule 11, Section 1, Article 
 - **Pass:** one forward pass per down, thrown from behind the line of scrimmage [S1 R8-1-2, p.37]. If a player catches it before it touches the ground, it's **complete**, and the catcher can keep running [S1 R8-1-3, p.37]. If not, it's **incomplete**: that down is used up and the ball goes back to where the play started [S1 R8-1-4, p.38]. If a defender catches it, it's an **interception** [S1 R8-1-3, p.37].
 - The QB takes the snap and moves the ball by running or passing; the RB is the main ball carrier [S2 "Quarterback", "Running Back"].
 
+## Using the 4 downs
+- Downs 1–3: the offense runs or passes (see "Moving the ball") to reach the line to gain [S1 R3-7-2, p.11].
+- 4th down without a first down: three options.
+  - **Go for it** (run or pass). Reach the line to gain → new series [S1 R7-3-1, p.34]. Fail → the other team gets a new series [S1 R7-3-2(a), p.34].
+  - **Field goal**, if close enough [S2 "Punter"]. If it misses, the other team gets the ball at the spot of the kick (or at its 20 if the kick was inside the 20) [S1 R11-4-2, p.50].
+  - **Punt**, if too far away to attempt a field goal [S2 "Punter"]. When the receiving team ends up with the ball, it gets a new series [S1 R7-3-2(c), p.34].
+- **Any down:** the rules let Team A punt or kick from on or behind the line of scrimmage, with no restriction to 4th down [S1 R9-1-1, p.43]. Kicking gives the ball away, which is why the punter "enters the game on fourth downs" [S2 "Punter"].
+- **Field-goal distance:** the goal is on the end line [S1 R1-3-1, p.8], 10 yards behind the goal line [S1 R1-1-1, p.8]. The holder sets the ball about 7–8 yards behind the line of scrimmage [S7]. So a kick from the line at the opponent's 40 is about 40 + 10 + 7 ≈ 57 yards.
+- **2025 league totals** (made/attempted), summed from all 32 teams on [S18]: 1–19 yd 4/4, 20–29 202/206 (98%), 30–39 278/299 (93%), 40–49 264/313 (84%), 50–59 171/244 (70%), 60+ 12/22 (55%).
+
 Example: 1st-and-10 at your own 25. The line to gain is your 35. Gain 4 → 2nd-and-6. Gain 7 → you're at the 36, past the 35 → new 1st-and-10. (Applies S1 R3-7-3 and R7-3-1.)
 
 ## Scoring

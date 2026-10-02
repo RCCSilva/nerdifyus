@@ -410,6 +410,24 @@ a.lesson:hover { transform: translateX(4px); }
 .swatch.los { background: var(--los); border-radius: 2px; height: 0.25rem; width: 1rem; vertical-align: 0.2rem; }
 .swatch.ltg { background: var(--ltg); border-radius: 2px; height: 0.25rem; width: 1rem; vertical-align: 0.2rem; }
 
+/* 4th down options */
+.fourth { background: var(--surface); padding: 0.9rem; display: grid; gap: 0.6rem; }
+.fourth-opt { border-radius: 12px; background: var(--bg); padding: 0.7rem 0.9rem; border-left: 4px solid; animation: fade-up-lg 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.fourth-opt header { display: flex; align-items: center; gap: 0.6rem; }
+.fourth-opt p { margin: 0.35rem 0 0; line-height: 1.4; font-size: 0.93rem; }
+.fourth-num { width: 1.6rem; height: 1.6rem; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 0.85rem; }
+.opt-goForIt { border-color: #1d4f91; } .opt-goForIt .fourth-num { background: #1d4f91; }
+.opt-fieldGoal { border-color: #1c8c3c; } .opt-fieldGoal .fourth-num { background: #1c8c3c; }
+.opt-punt { border-color: #6b46c1; } .opt-punt .fourth-num { background: #6b46c1; }
+.fg-rates { display: grid; gap: 0.3rem; margin-top: 0.6rem; font-size: 0.82rem; }
+.fg-rates-title { font-weight: 700; color: var(--muted); }
+.fg-rate { display: grid; grid-template-columns: 3.4rem 1fr 2.6rem; align-items: center; gap: 0.5rem; font-variant-numeric: tabular-nums; }
+.fg-bar { height: 0.55rem; border-radius: 99px; background: var(--line); overflow: hidden; }
+.fg-bar i { display: block; height: 100%; background: #1c8c3c; border-radius: 99px; animation: grow 0.9s 0.4s ease-out both; transform-origin: left; }
+@keyframes grow { from { transform: scaleX(0); } }
+.fg-rate b { text-align: right; }
+.fg-rates-note { color: var(--muted); font-size: 0.78rem; line-height: 1.35; }
+
 /* teams */
 .teams { background: var(--surface); }
 .teams-legend { display: flex; gap: 1.2rem; padding: 0.7rem 1rem; font-weight: 700; }
