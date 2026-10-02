@@ -442,7 +442,7 @@ export default {
     tagNonExclusive: {
       title: 'Franchise tag (no exclusivo)',
       body: 'El más común. El jugador recibe el promedio de los 5 salarios más altos de su posición (o el 120% de su último salario, lo que sea mayor). Puede hablar con otros equipos.',
-      note: 'Si otro equipo le hace una oferta, su equipo tiene 5 días para igualarla. Si no la iguala, el jugador se va, y su antiguo equipo recibe dos selecciones de primera ronda.',
+      note: 'Si otro equipo le hace una oferta, el equipo que le aplicó el tag tiene 5 días para igualarla. Si no lo hace, el jugador se va, y ese equipo recibe dos selecciones de primera ronda.',
     },
     tagExclusive: {
       title: 'Franchise tag (exclusivo)',
@@ -450,7 +450,8 @@ export default {
     },
     tagTransition: {
       title: 'Transition tag',
-      body: 'Más barato: el promedio de los 10 salarios más altos de su posición (o el 120% de su último salario). El jugador puede hablar con otros equipos y su equipo puede igualar cualquier oferta, pero si no lo hace, no recibe selecciones.',
+      body: 'Más barato: el promedio de los 10 salarios más altos de su posición (o el 120% de su último salario, lo que sea mayor). El jugador puede hablar con otros equipos y el equipo que le aplicó el tag puede igualar cualquier oferta, pero si no lo hace, no recibe selecciones.',
+      aside: { title: '¿Puede costar más que el franchise tag?', body: 'No. Los dos usan “el mayor entre el promedio de la posición y el 120% de su último salario”, y el promedio de los 10 más altos nunca supera al de los 5 más altos. Así que el transition tag cae en el 120% más a menudo, pero como mucho cuesta lo mismo que el franchise: cuando el 120% supera a los dos promedios, los dos tags son iguales.' },
     },
     tagValues: {
       title: 'Cuánto costaba un tag en 2026',
@@ -525,19 +526,19 @@ export default {
       nonExclusive: {
         name: 'Franchise (no exclusivo)',
         salary: 'Promedio de los 5 más altos de su posición (o 120% de su salario)',
-        talk: 'Sí; su equipo puede igualar',
+        talk: 'Sí; el equipo que le aplicó el tag puede igualar',
         leave: 'Dos selecciones de 1.ª ronda',
       },
       exclusive: {
         name: 'Franchise (exclusivo)',
-        salary: 'Los 5 más altos de este año en su posición',
+        salary: 'Los 5 más altos de este año en su posición (o el valor del no exclusivo, si es mayor)',
         talk: 'No',
         leave: 'No se puede ir',
       },
       transition: {
         name: 'Transition',
         salary: 'Promedio de los 10 más altos de su posición (o 120%)',
-        talk: 'Sí; su equipo puede igualar',
+        talk: 'Sí; el equipo que le aplicó el tag puede igualar',
         leave: 'Nada',
       },
     },

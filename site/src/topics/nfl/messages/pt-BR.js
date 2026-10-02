@@ -442,7 +442,7 @@ export default {
     tagNonExclusive: {
       title: 'Franchise tag (não exclusivo)',
       body: 'O mais comum. O jogador recebe a média dos 5 maiores salários da posição dele (ou 120% do último salário, o que for maior). Ele pode conversar com outros times.',
-      note: 'Se outro time fizer uma oferta, o time dele tem 5 dias para igualar. Se não igualar, o jogador sai, e o time antigo ganha duas escolhas de primeira rodada.',
+      note: 'Se outro time fizer uma oferta, o time que aplicou o tag tem 5 dias para igualar. Se não igualar, o jogador sai, e esse time ganha duas escolhas de primeira rodada.',
     },
     tagExclusive: {
       title: 'Franchise tag (exclusivo)',
@@ -450,7 +450,8 @@ export default {
     },
     tagTransition: {
       title: 'Transition tag',
-      body: 'Mais barato: a média dos 10 maiores salários da posição (ou 120% do último salário). O jogador pode conversar com outros times e o time dele pode igualar qualquer oferta, mas, se não igualar, não ganha escolhas.',
+      body: 'Mais barato: a média dos 10 maiores salários da posição (ou 120% do último salário, o que for maior). O jogador pode conversar com outros times e o time que aplicou o tag pode igualar qualquer oferta, mas, se não igualar, não ganha escolhas.',
+      aside: { title: 'Pode sair mais caro que o franchise tag?', body: 'Não. Os dois usam “o maior entre a média da posição e 120% do último salário”, e a média dos 10 maiores nunca passa da média dos 5 maiores. Então o transition cai no 120% com mais frequência, mas no máximo custa o mesmo que o franchise: quando os 120% passam das duas médias, os dois tags ficam iguais.' },
     },
     tagValues: {
       title: 'Quanto custava um tag em 2026',
@@ -525,19 +526,19 @@ export default {
       nonExclusive: {
         name: 'Franchise (não exclusivo)',
         salary: 'Média dos 5 maiores da posição (ou 120% do salário)',
-        talk: 'Sim; o time pode igualar',
+        talk: 'Sim; o time que aplicou o tag pode igualar',
         leave: 'Duas escolhas de 1ª rodada',
       },
       exclusive: {
         name: 'Franchise (exclusivo)',
-        salary: 'Os 5 maiores do ano na posição',
+        salary: 'Os 5 maiores do ano na posição (ou o valor do não exclusivo, se for maior)',
         talk: 'Não',
         leave: 'Ele não pode sair',
       },
       transition: {
         name: 'Transition',
         salary: 'Média dos 10 maiores da posição (ou 120%)',
-        talk: 'Sim; o time pode igualar',
+        talk: 'Sim; o time que aplicou o tag pode igualar',
         leave: 'Nada',
       },
     },

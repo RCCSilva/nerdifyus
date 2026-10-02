@@ -39,6 +39,8 @@
 | S35 | NFL.com — "NFL announces 2026 salary cap set at $301.2 million per team" | primary (league news) | 2026-02-27 · accessed 2026-10-02 | https://www.nfl.com/news/nfl-announces-2026-salary-cap-set-at-301-2-million-per-team |
 | S36 | NFL Football Operations — "Franchise Tags" | primary | 2026 · accessed 2026-10-02 | https://operations.nfl.com/calendar-events/nfl-free-agency/franchise-tags |
 | S37 | NBC Sports / ProFootballTalk — "NFL announces franchise tag, transition tag values for 2026" (Josh Alper) | secondary (reports the NFL's figures) | 2026-02-27 · accessed 2026-10-02 | https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nfl-announces-franchise-tag-transition-tag-values-for-2026 |
+| S38 | Wikipedia — "Sean Gilbert" | fallback (encyclopedia) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/Sean_Gilbert |
+| S39 | Wikipedia — "1999 NFL draft" (pick 5 note) and "1999 Carolina Panthers season" | fallback (encyclopedia) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/1999_NFL_draft |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

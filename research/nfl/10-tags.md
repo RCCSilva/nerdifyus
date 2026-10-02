@@ -10,6 +10,9 @@ Applies to: the 2020 CBA, Article 10 (S33); 2026 figures (S36, S37)
 ## Non-exclusive franchise tag
 - Salary: the greater of a position average of the five largest salaries (computed as a share of the cap over the previous five years) or 120% of the player's prior salary [S33 Art. 10 §2(a)(i), p.75].
 - The player may negotiate with other teams; his team has five days to match an offer sheet; if it doesn't, it gets two first-round picks [S36; S33 Art. 10 §2(a)(i), p.75].
+- It is not a trade: the player signs an offer sheet with the new club. The picks are the new club's own (or better) choices, and a club without them available in the upcoming draft may not sign the offer sheet [S33 Art. 9 §3, p.70].
+- Timing: compensation is due in that league year's draft, unless the prior club receives the offer sheet later than two days before that draft; then it is due in the following league year's draft [S33 Art. 9 §2(j), p.69–70]. No source found says which year the second pick comes from (the CBA, S36, ESPN, Wikipedia and Bleacher Report all just say "two first-round picks"). Keep the years off the site until one does.
+- Real example: Washington tagged DT Sean Gilbert again for 1998; Carolina signed him to an offer sheet and Washington, not matching, received two first-round picks [S38]. Carolina's 1999 first-round pick (No. 5) went to Washington [S39]. Sources disagree on the second pick's year, so it is left out.
 
 ## Exclusive franchise tag
 - Salary: the greater of the average of the five largest current-year salaries at the position or the non-exclusive amount [S33 Art. 10 §2(a)(ii), p.75–76].

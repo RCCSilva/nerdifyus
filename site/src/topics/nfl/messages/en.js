@@ -443,7 +443,7 @@ export default {
     tagNonExclusive: {
       title: 'Franchise tag (non-exclusive)',
       body: 'The most common one. The player gets the average of the 5 highest salaries at his position (or 120% of his last salary, whichever is higher). He may talk to other teams.',
-      note: 'If another team makes him an offer, his team has 5 days to match it. If it doesn’t, the player leaves, and his old team gets two first-round picks.',
+      note: 'If another team makes him an offer, the team that tagged him has 5 days to match it. If it doesn’t, the player leaves, and the tagging team gets two first-round picks.',
     },
     tagExclusive: {
       title: 'Franchise tag (exclusive)',
@@ -451,7 +451,8 @@ export default {
     },
     tagTransition: {
       title: 'Transition tag',
-      body: 'Cheaper: the average of the top 10 salaries at his position (or 120% of his last salary). The player may talk to other teams and his team can match any offer, but if it doesn’t, it gets no picks.',
+      body: 'Cheaper: the average of the top 10 salaries at his position (or 120% of his last salary, whichever is higher). The player may talk to other teams and the team that tagged him can match any offer, but if it doesn’t, it gets no picks.',
+      aside: { title: 'Can it cost more than the franchise tag?', body: 'No. Both use “the higher of the position average or 120% of his last salary”, and the top-10 average is never above the top-5 average. So the transition tag lands on the 120% more often, but at most it costs the same as the franchise tag: when 120% beats both averages, the two tags are equal.' },
     },
     tagValues: {
       title: 'How much a tag cost in 2026',
@@ -526,19 +527,19 @@ export default {
       nonExclusive: {
         name: 'Franchise (non-exclusive)',
         salary: 'Average of the top 5 at his position (or 120% of his salary)',
-        talk: 'Yes; his team can match',
+        talk: 'Yes; the team that tagged him can match',
         leave: 'Two 1st-round picks',
       },
       exclusive: {
         name: 'Franchise (exclusive)',
-        salary: 'Top 5 of this year at his position',
+        salary: 'Top 5 of this year at his position (or the non-exclusive amount, if higher)',
         talk: 'No',
         leave: 'He can’t leave',
       },
       transition: {
         name: 'Transition',
         salary: 'Average of the top 10 at his position (or 120%)',
-        talk: 'Yes; his team can match',
+        talk: 'Yes; the team that tagged him can match',
         leave: 'Nothing',
       },
     },
