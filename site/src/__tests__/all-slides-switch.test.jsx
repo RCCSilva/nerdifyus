@@ -2,14 +2,14 @@
 import { describe, it, expect, afterEach, vi } from 'vitest';
 import { render, screen, fireEvent, act, cleanup } from '@testing-library/react';
 import App from '../App';
-import { BASICS_SLIDES, OFFENSE_SLIDES, DEFENSE_SLIDES, SPECIAL_TEAMS_SLIDES } from '../topics/nfl/basics/slides';
+import { BASICS_SLIDES, POSITIONS_SLIDES } from '../topics/nfl/basics/slides';
 import { GAME_SLIDES } from '../topics/nfl/game/slides';
 import { FOULS_SLIDES } from '../topics/nfl/fouls/slides';
 import { SEASON_SLIDES } from '../topics/nfl/season/slides';
 
 const DECKS = [
-  ['basics', BASICS_SLIDES], ['game', GAME_SLIDES], ['offense', OFFENSE_SLIDES], ['defense', DEFENSE_SLIDES],
-  ['specialTeams', SPECIAL_TEAMS_SLIDES], ['season', SEASON_SLIDES], ['fouls', FOULS_SLIDES],
+  ['basics', BASICS_SLIDES], ['game', GAME_SLIDES], ['positions', POSITIONS_SLIDES],
+  ['season', SEASON_SLIDES], ['fouls', FOULS_SLIDES],
 ];
 
 // Behave like a real browser: motion ON, animation frames ticking.

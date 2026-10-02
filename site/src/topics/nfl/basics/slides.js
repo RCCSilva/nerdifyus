@@ -20,16 +20,10 @@ export const BASICS_SLIDES = [
   { id: 'end', Visual: V.EndVisual, refs: [] },
 ];
 
-// Positions: one deck per unit, so each can grow on its own.
-export const OFFENSE_SLIDES = [
+// Positions: offense, defense and special teams, in one lesson.
+export const POSITIONS_SLIDES = [
   { id: 'offense', Visual: V.OffenseVisual, refs: [['S1', 'R7-5-1', 35], ['S1', 'R5-1-2', 23], ['S2', 'positions']] },
-];
-
-export const DEFENSE_SLIDES = [
   { id: 'defense', Visual: V.DefenseVisual, refs: [['S2', 'positions'], ['S3']] },
-];
-
-export const SPECIAL_TEAMS_SLIDES = [
   { id: 'stFieldGoal', Visual: V.FieldGoalUnitVisual, refs: [['S2', 'special teams'], ['S6'], ['S7']] },
   { id: 'stPunt', Visual: V.PuntUnitVisual, refs: [['S2', 'Punter, Long Snapper'], ['S7']] },
 ];

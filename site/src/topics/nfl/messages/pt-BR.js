@@ -4,9 +4,7 @@ export default {
   lessons: {
     basics: { title: 'Como o futebol americano funciona', summary: 'O campo, as descidas, correr, passar e como pontuar.' },
     game: { title: 'O jogo', summary: 'Quartos, o relógio, os timeouts e como ler o placar.' },
-    offense: { title: 'O ataque', summary: 'Quem é quem quando seu time está com a bola.' },
-    defense: { title: 'A defesa', summary: 'Quem é quem quando o adversário está com a bola.' },
-    specialTeams: { title: 'Times especiais', summary: 'As unidades de field goal e punt.' },
+    positions: { title: 'As posições', summary: 'Quem é quem no ataque, na defesa e nos times especiais.' },
     season: { title: 'Como funciona o campeonato', summary: 'Conferências, divisões, os 17 jogos, os playoffs e o Super Bowl.' },
     fouls: { title: 'Faltas comuns', summary: 'False start, offside, holding, interferência de passe.' },
     overtime: { title: 'Empates e prorrogação', summary: 'Empate pode na temporada regular, nunca nos playoffs.' },

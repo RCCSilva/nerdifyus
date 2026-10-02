@@ -5,9 +5,7 @@ export default {
   lessons: {
     basics: { title: 'How football works', summary: 'The field, downs, running, passing and how to score.' },
     game: { title: 'The game', summary: 'Quarters, the clock, timeouts and how to read the scoreboard.' },
-    offense: { title: 'The offense', summary: 'Who is who when your team has the ball.' },
-    defense: { title: 'The defense', summary: 'Who is who when the other team has the ball.' },
-    specialTeams: { title: 'Special teams', summary: 'The units for field goals and punts.' },
+    positions: { title: 'The positions', summary: 'Who is who on offense, on defense and on special teams.' },
     season: { title: 'How the season works', summary: 'Conferences, divisions, the 17 games, playoffs and the Super Bowl.' },
     fouls: { title: 'Common fouls', summary: 'False start, offside, holding, pass interference.' },
     overtime: { title: 'Ties & overtime', summary: 'Ties are possible in the regular season, never in the playoffs.' },

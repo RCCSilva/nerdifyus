@@ -14,11 +14,11 @@ describe('topic sidebar', () => {
     const { container } = render(<App />);
     const sidebar = await screen.findByRole('complementary', { name: 'Contents' });
 
-    for (const lesson of ['How football works', 'The game', 'The offense', 'The defense', 'Special teams', 'How the season works', 'Common fouls', 'Ties & overtime', 'Strategy', 'The salary cap']) {
+    for (const lesson of ['How football works', 'The game', 'The positions', 'How the season works', 'Common fouls', 'Ties & overtime', 'Strategy', 'The salary cap']) {
       // A lesson title can also be a slide title (e.g. "The offense"), so allow several matches.
       expect(within(sidebar).getAllByText(lesson).length).toBeGreaterThan(0);
     }
-    expect(within(sidebar).getAllByRole('link').filter((a) => a.href.includes('?s=')).length).toBe(45); // 15 basics + 12 game + 1 + 1 + 2 positions + 7 season + 7 fouls
+    expect(within(sidebar).getAllByRole('link').filter((a) => a.href.includes('?s=')).length).toBe(45); // 15 basics + 12 game + 4 positions + 7 season + 7 fouls
 
     // Open the (mobile) drawer, pick slide 8, and the drawer closes again.
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: /Contents/ })); });
