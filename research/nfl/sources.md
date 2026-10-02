@@ -15,6 +15,10 @@
 | S11 | NFL — "Approved 2026 Playing Rules, Bylaws and Resolutions" | primary | 2026-03-31 · accessed 2026-10-01 | https://media.nfl.com/football-information/2026/news/approved-2026-playing-rules--bylaws-and-resolutions |
 | S12 | NFL.com — 2026 division standings (team list) | primary | 2026 season · accessed 2026-10-01 | https://www.nfl.com/standings/division/2026/REG |
 | S13 | Wikipedia — "NFL playoffs" | secondary (explainer) | revision of 2024-12-19 · accessed 2026-10-01 | https://en.wikipedia.org/wiki/NFL_playoffs |
+| S14 | Wikipedia — "Score bug" | secondary (explainer) | last edited 2026-09-20 · accessed 2026-10-01 | https://en.wikipedia.org/wiki/Score_bug |
+| S15 | Wikipedia — "Home (sports)" | secondary (explainer) | last edited 2026-09-11 · accessed 2026-10-01 | https://en.wikipedia.org/wiki/Home_(sports) |
+| S16 | NFL — "2026 NFL Schedule Announced" | primary | 2026 season · accessed 2026-10-01 | https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced |
+| S17 | IFAB Laws of the Game — Law 7 "The Duration of the Match" (soccer; comparison only) | primary | 2026/27 edition · accessed 2026-10-01 | https://www.theifab.com/laws/latest/the-duration-of-the-match/ |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.
@@ -23,3 +27,4 @@ Notes
 - S5 is used only to convert yards to meters: 1 in = 25.4 mm exactly, so 1 yd = 36 in = 0.9144 m.
 - S6/S7 are a fallback: the official glossary (S2) defines the special-teams roles but not who usually holds, nor the punt unit's gunners or personal protector.
 - S13 is a fallback for three playoff details with no official page found: division winners seeded 1–4, divisional-round matchups, the Super Bowl at a predetermined site. Replace it if an official NFL source turns up.
+- S14/S15 are a fallback for TV scoreboard conventions, which no official NFL page describes.

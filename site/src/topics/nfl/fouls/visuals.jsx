@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
 import Field from '../../../components/field/Field';
 import { Player, Ball, FieldLine, UprightText, PenaltyFlag } from '../../../components/field/pieces';
 import { fx, MID_Y } from '../../../components/field/geometry';
-import { useTimeline, seg, lerp, along, prefersReducedMotion } from '../../../components/field/motion';
+import { useTimeline, seg, lerp, along } from '../../../components/field/motion';
 import { useI18n } from '../../../i18n/I18n';
 import { OFFENSE, DEFENSE } from '../formations';
 import { Pop, kickArc } from '../basics/visuals';
@@ -75,67 +74,58 @@ export function FalseStartVisual({ replay }) {
 
 /* ---------- offside / encroachment / neutral zone infraction ---------- */
 
+// The three look-alike fouls, stacked top to bottom so readers compare them at their own pace.
 const NZ_SCENES = ['offside', 'encroachment', 'nzi'];
 
-export function OffsideFamilyVisual({ replay }) {
-  const { t } = useI18n();
-  const [i, setI] = useState(0);
-  const t1 = useTimeline(2600, `${i}-${replay}`);
-
-  useEffect(() => { setI(0); }, [replay]);
-  useEffect(() => {
-    if (prefersReducedMotion()) return undefined;
-    const id = setTimeout(() => setI((n) => (n + 1) % NZ_SCENES.length), 3400);
-    return () => clearTimeout(id);
-  }, [i]);
-
-  const scene = NZ_SCENES[i];
+function NeutralZoneScene({ scene, replay }) {
+  const t1 = useTimeline(2600, `${scene}-${replay}`);
   const los = fx(50);
   const ZONE = 0.62; // half the drawn ball: the neutral zone is the ball's length (R3-18-2)
   const move = seg(t1, 300, 1100);
   const flagP = seg(t1, 1300, 1900);
 
-  // Positions in this close-up: offense just behind the zone, defense just in front of it.
+  // Close-up: offense just behind the zone, defense just in front of it.
   const ol = [-2, -1, 0, 1, 2].map((k) => ({ id: ['T', 'G', 'C', 'G', 'T'][k + 2], x: los - ZONE - 1.1, y: MID_Y + k * 2.1 }));
   const dl = [-3.5, -1, 1, 3.6].map((k, n) => ({ id: ['DE', 'DT', 'DT', 'DE'][n], x: los + ZONE + 1.3, y: MID_Y + k * 2.1 }));
   const actor = scene === 'offside' ? 0 : scene === 'encroachment' ? 2 : 3;
 
   const defPos = (p, n) => {
     if (n !== actor) return [p.x, p.y];
-    if (scene === 'offside') return [lerp(p.x, los + ZONE - 0.2, move), p.y]; // just inside the zone at the snap
+    if (scene === 'offside') return [lerp(p.x, los + ZONE - 0.2, move), p.y]; // inside the zone at the snap
     if (scene === 'encroachment') return [lerp(p.x, los - ZONE - 0.6 + 2.0, move), lerp(p.y, MID_Y + 2.1, move)]; // touches the guard
     return [lerp(p.x, los - 0.2, move), p.y]; // steps into the zone
   };
   const flinch = scene === 'nzi' ? -0.9 * seg(t1, 1000, 1300) : 0; // the tackle reacts
 
   return (
-    <div className="downs">
-      <div className="downs-board" aria-live="polite">
-        <span className="downs-chip">{t(`nfl.fouls.scene.${scene}`)}</span>
-        <span className="downs-caption">{t(`nfl.fouls.sceneHow.${scene}`)}</span>
-      </div>
-      <Field view={[los - 14, los + 14]} viewY={[MID_Y - 9.5, MID_Y + 9.5]}>
-        <rect className="nz-band" x={los - ZONE} y={MID_Y - 30} width={ZONE * 2} height={60} />
-        <UprightText x={los} y={MID_Y - 8.6} className="nz-label">{t('nfl.fouls.neutralZone')}</UprightText>
-        <Ball x={los} y={MID_Y} />
-        {ol.map((p, n) => (
-          <Player key={`o${n}`} x={p.x + (n === 4 ? flinch : 0)} y={p.y} label={p.id} side="off" />
-        ))}
-        {dl.map((p, n) => {
-          const [x, y] = defPos(p, n);
-          return <Player key={`d${n}`} x={x} y={y} label={p.id} side="def" active={n === actor} />;
-        })}
-        <PenaltyFlag x={los + 3.5} y={MID_Y - 5.5} fromX={los + 7} fromY={MID_Y - 9} p={flagP} />
-        <Pop x={los + 9} y={MID_Y + 5} show={t1 > 1950} kind="sm">+5</Pop>
-      </Field>
-      <div className="downs-legend">
-        <span><i className="swatch nz" />{t('nfl.fouls.neutralZone')}</span>
-        <span className="downs-dots">
-          {NZ_SCENES.map((s, n) => (
-            <button key={s} className={n === i ? 'is-on' : ''} onClick={() => setI(n)} aria-label={t(`nfl.fouls.scene.${s}`)} />
-          ))}
-        </span>
-      </div>
+    <Field view={[los - 13, los + 13]} viewY={[MID_Y - 9.2, MID_Y + 9.2]}>
+      <rect className="nz-band" x={los - ZONE} y={MID_Y - 30} width={ZONE * 2} height={60} />
+      <Ball x={los} y={MID_Y} />
+      {ol.map((p, n) => <Player key={`o${n}`} x={p.x + (n === 4 ? flinch : 0)} y={p.y} label={p.id} side="off" />)}
+      {dl.map((p, n) => {
+        const [x, y] = defPos(p, n);
+        return <Player key={`d${n}`} x={x} y={y} label={p.id} side="def" active={n === actor} />;
+      })}
+      <PenaltyFlag x={los + 3.5} y={MID_Y - 5.5} fromX={los + 7} fromY={MID_Y - 9} p={flagP} />
+      <Pop x={los + 8.5} y={MID_Y + 5} show={t1 > 1950} kind="sm">+5</Pop>
+    </Field>
+  );
+}
+
+export function OffsideFamilyVisual({ replay }) {
+  const { t } = useI18n();
+  return (
+    <div className="nz-stack">
+      <p className="nz-legend"><i className="swatch nz" />{t('nfl.fouls.neutralZone')}</p>
+      {NZ_SCENES.map((scene) => (
+        <section key={scene} className="nz-scene">
+          <header>
+            <span className="downs-chip">{t(`nfl.fouls.scene.${scene}`)}</span>
+            <span className="downs-caption">{t(`nfl.fouls.sceneHow.${scene}`)}</span>
+          </header>
+          <NeutralZoneScene scene={scene} replay={replay} />
+        </section>
+      ))}
     </div>
   );
 }

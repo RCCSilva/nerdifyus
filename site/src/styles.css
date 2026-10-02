@@ -430,6 +430,10 @@ a.lesson:hover { transform: translateX(4px); }
 }
 .downs-chip.is-first { background: #1c8c3c; }
 .downs-caption { font-weight: 600; }
+/* reserve two lines so changing captions never make the field jump */
+.downs-board.is-fixed { min-height: calc(2 * 1.5em + 1.2rem); align-content: center; }
+.try-dot circle { fill: #11151c; stroke: #fff; stroke-width: 0.15; }
+.try-dot { animation: fade-up 0.4s both; }
 .downs-ball { transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
 .downs-ball.is-punt { transition-duration: 1.4s; }
 .downs-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center; padding: 0.55rem 0.8rem; font-size: 0.82rem; color: var(--muted); }
@@ -514,6 +518,11 @@ a.lesson:hover { transform: translateX(4px); }
 .penalty-flag circle { fill: #8a6d00; }
 .penalty-flag.is-down { filter: drop-shadow(0 0 0.5px #fff) drop-shadow(0 0 1.2px #ffd400); }
 .swatch.nz { background: var(--hl); border-radius: 2px; }
+.nz-stack { background: var(--surface); display: grid; gap: 0.8rem; padding: 0.8rem; }
+.nz-legend { margin: 0; font-size: 0.82rem; color: var(--muted); }
+.nz-scene { display: grid; gap: 0.45rem; }
+.nz-scene header { display: grid; justify-items: start; gap: 0.3rem; }
+.nz-scene .field { border-radius: 10px; }
 .nz-band { fill: var(--hl); opacity: 0.55; }
 .nz-label { fill: var(--hl); font: 800 1.1px/1 var(--font-body); text-anchor: middle; paint-order: stroke; stroke: rgb(0 0 0 / 0.45); stroke-width: 0.25; }
 .ghost-line { stroke: #fff; stroke-width: 0.25; stroke-dasharray: 0.6 0.5; opacity: 0.6; }

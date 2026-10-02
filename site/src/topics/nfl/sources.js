@@ -66,6 +66,26 @@ export const SOURCES = {
     title: 'Wikipedia — NFL playoffs (fallback source)',
     url: 'https://en.wikipedia.org/wiki/NFL_playoffs',
   },
+  S14: {
+    short: 'Wikipedia · Score bug',
+    title: 'Wikipedia — Score bug, edited 2026-09-20 (fallback source)',
+    url: 'https://en.wikipedia.org/wiki/Score_bug',
+  },
+  S15: {
+    short: 'Wikipedia · Home (sports)',
+    title: 'Wikipedia — Home (sports), edited 2026-09-11 (fallback source)',
+    url: 'https://en.wikipedia.org/wiki/Home_(sports)',
+  },
+  S16: {
+    short: 'NFL · 2026 schedule',
+    title: 'NFL — 2026 NFL Schedule Announced',
+    url: 'https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced',
+  },
+  S17: {
+    short: 'IFAB Laws of the Game (soccer)',
+    title: 'IFAB Laws of the Game 2026/27 — Law 7, The Duration of the Match',
+    url: 'https://www.theifab.com/laws/latest/the-duration-of-the-match/',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

@@ -3,7 +3,11 @@ export default {
   name: 'NFL',
   blurb: 'American football, from "what is a down?" to how the salary cap works.',
   lessons: {
-    basics: { title: 'How football works', summary: 'The field, scoring, positions, running and passing.' },
+    basics: { title: 'How football works', summary: 'The field, downs, running, passing and how to score.' },
+    game: { title: 'The game', summary: 'Quarters, the clock, timeouts and how to read the scoreboard.' },
+    offense: { title: 'The offense', summary: 'Who is who when your team has the ball.' },
+    defense: { title: 'The defense', summary: 'Who is who when the other team has the ball.' },
+    specialTeams: { title: 'Special teams', summary: 'The units for field goals and punts.' },
     season: { title: 'How the season works', summary: 'Conferences, divisions, the 17 games, playoffs and the Super Bowl.' },
     fouls: { title: 'Common fouls', summary: 'False start, offside, holding, pass interference.' },
     overtime: { title: 'Ties & overtime', summary: 'Ties are possible in the regular season, never in the playoffs.' },
@@ -60,6 +64,14 @@ export default {
         'Run, +5 yards',
         '4th & 2: most teams punt — kick it away',
       ],
+    },
+    downsReset: {
+      title: 'Getting a first down',
+      body: 'A short drive: gain the 10 yards (in one play or several) and the count resets to 1st & 10.',
+    },
+    downsPunt: {
+      title: 'Not enough? 4th down',
+      body: 'Here the offense gets close, but after 3 downs it still needs 2 yards. On 4th down, most teams punt: they kick the ball away so the other team starts far back.',
     },
     run: {
       title: 'Running the ball',
@@ -129,8 +141,8 @@ export default {
     },
     end: {
       title: 'That’s the basics!',
-      body: 'You now know the field, how to score, who plays where, and how the ball moves.',
-      example: 'Next up: how the season works.',
+      body: 'You now know the field, the downs, how the ball moves and how to score.',
+      example: 'Next up: the game, with the clock and the scoreboard.',
     },
     foulsIntro: {
       title: 'Fouls: the yellow flag',
@@ -216,6 +228,80 @@ export default {
       body: 'Regular season, playoffs, Super Bowl.',
       example: 'Next up: common fouls.',
     },
+    gameLength: {
+      title: '60 minutes, 4 quarters',
+      body: 'A game has 60 minutes of play: 4 quarters of 15 minutes. Quarters 1+2 are the first half, 3+4 the second.',
+      example: 'Halftime lasts 13 minutes. Teams switch ends after the 1st and 3rd quarters.',
+    },
+    gameClock: {
+      title: 'The clock counts down',
+      body: 'The game clock shows the time left in the quarter: 14:00 means 14 minutes to go. It stops in some moments, like an incomplete pass or a timeout.',
+      note: 'Not like soccer! Soccer plays two halves of 45 minutes that keep running, and the referee adds time at the end. In the NFL the clock stops instead, and 0:00 means the quarter is over.',
+      example: 'Two-minute warning: at 2:00 in the 2nd and 4th quarters, the clock stops automatically.',
+    },
+    gameTimeouts: {
+      title: '3 timeouts per half',
+      body: 'Each team can stop the clock with a timeout: 3 in each half.',
+      example: 'In the example, the away team uses 2 timeouts in the 1st half. In the 2nd half, both teams have 3 again.',
+    },
+    scoreboard: {
+      title: 'Reading the TV scoreboard',
+      body: 'On TV, a small scoreboard shows everything about the game. This one is an example; the next slides explain each part.',
+    },
+    sbTeams: {
+      title: 'The teams: away first, home second',
+      body: 'The home team appears second: to the right of (or below) the visiting team.',
+      example: 'Same on the schedule: “New England at Seattle” means New England plays at Seattle’s stadium. That was the real 2026 opener, at Lumen Field.',
+    },
+    sbRecord: {
+      title: 'The record',
+      body: 'Next to each team: its record this season, wins-losses. 3-1 = 3 wins and 1 loss.',
+    },
+    sbTimeouts: {
+      title: 'The timeouts',
+      body: 'The small marks are the timeouts each team has left in this half (3 per half).',
+      example: 'Here the home team has used one: 2 marks left.',
+    },
+    sbScore: {
+      title: 'The score',
+      body: 'The points of each team. 14 to 3: the away team leads.',
+      example: 'A touchdown is 6, a field goal 3, a safety 2, plus 1 or 2 after a touchdown.',
+    },
+    sbClock: {
+      title: 'Quarter and clock',
+      body: '“2ND 8:42” = 2nd quarter, 8 minutes and 42 seconds left in it.',
+    },
+    sbDown: {
+      title: 'Down and distance',
+      body: '“2nd & 8” = it’s 2nd down, and the offense needs 8 more yards to reach the line to gain.',
+      example: 'Reach it and the count resets to 1st & 10.',
+    },
+    sbPlayClock: {
+      title: 'The play clock',
+      body: 'The small countdown is the play clock: the offense must snap the ball before it hits zero. Usually 40 seconds; 25 after some stoppages, like a timeout.',
+      note: 'Too slow? Delay of game: the offense goes back 5 yards.',
+    },
+    gameEnd: {
+      title: 'That’s the game!',
+      body: 'Now you can read a scoreboard: teams, record, timeouts, score, clock, down and play clock.',
+      example: 'Next up: the positions, starting with the offense.',
+    },
+  },
+
+  game: {
+    away: 'AWAY',
+    home: 'HOME',
+    q1: '1st',
+    q2: '2ND',
+    q3: '3rd',
+    q4: '4TH',
+    firstHalf: '1st half',
+    secondHalf: '2nd half',
+    halftime: 'Halftime',
+    left: 'left in the quarter',
+    twoMinute: 'Two-minute warning: clock stops',
+    example: 'example',
+    exampleScoreboard: 'Example TV scoreboard',
   },
 
   season: {
@@ -240,23 +326,18 @@ export default {
     hosts: 'hosts',
     champion: 'Conference champion',
     round: {
-      seeds: 'Seeds',
       wildCard: 'Wild Card round',
-      wildCardResult: 'Wild Card: results',
       divisional: 'Divisional round',
-      divisionalResult: 'Divisional: results',
       conference: 'Conference Championship',
-      conferenceResult: 'Conference champion',
+      superBowl: 'Super Bowl',
     },
     roundHow: {
-      seeds: '7 teams per conference',
-      wildCard: '2 hosts 7, 3 hosts 6, 4 hosts 5. Seed 1 rests.',
-      wildCardResult: 'Example: seed 7 upsets seed 2',
-      divisional: 'Seed 1 hosts the lowest seed left: 7',
-      divisionalResult: 'Example: seeds 1 and 3 win',
-      conference: 'The last 2 teams play for the conference title',
-      conferenceResult: 'Seed 1 goes to the Super Bowl',
+      wildCard: '2 hosts 7, 3 hosts 6, 4 hosts 5. Seed 1 rests. Here, 7 upsets 2.',
+      divisional: 'Seed 1 hosts the lowest seed left (7). 3 hosts 4.',
+      conference: 'The last 2 teams play for the conference title.',
+      superBowl: 'The conference champion goes to the Super Bowl.',
     },
+    example: 'Example',
     recap: {
       regular: 'Regular season: 17 games',
       playoffs: 'Playoffs: 7 teams per conference, lose and you’re out',

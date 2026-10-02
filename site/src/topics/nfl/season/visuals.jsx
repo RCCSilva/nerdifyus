@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useI18n } from '../../../i18n/I18n';
-import { prefersReducedMotion } from '../../../components/field/motion';
 import { LEAGUE, DIVISIONS, SCHEDULE } from '../league';
 import './season.css';
 
@@ -107,65 +106,58 @@ export function SeedsVisual({ replay }) {
   );
 }
 
-/* ---------- the bracket, step by step ---------- */
+/* ---------- the bracket: every round, stacked ---------- */
 
-// Example run through one conference. Seeds only, no real teams.
-const BRACKET_STEPS = [
-  { key: 'seeds', games: [], bye: 1 },
-  { key: 'wildCard', games: [[2, 7], [3, 6], [4, 5]], bye: 1 },
-  { key: 'wildCardResult', games: [[2, 7, 7], [3, 6, 3], [4, 5, 4]], bye: 1 },
-  { key: 'divisional', games: [[1, 7], [3, 4]] },
-  { key: 'divisionalResult', games: [[1, 7, 1], [3, 4, 3]] },
-  { key: 'conference', games: [[1, 3]] },
-  { key: 'conferenceResult', games: [[1, 3, 1]] },
+// Example run through one conference (seeds only, no real teams): seed 7 upsets seed 2.
+// Shown all at once, top to bottom, so readers scroll at their own pace (no auto-advancing steps).
+const ROUNDS = [
+  { key: 'wildCard', games: [[2, 7, 7], [3, 6, 3], [4, 5, 4]], bye: 1 },
+  { key: 'divisional', games: [[1, 7, 1], [3, 4, 3]] },
+  { key: 'conference', games: [[1, 3, 1]] },
+  { key: 'superBowl', champion: 1 },
 ];
+
+const pill = (seed, winner) =>
+  `seed-pill ${seed <= 4 ? 'champ' : 'wild'}${winner && winner !== seed ? ' lost' : ''}${winner === seed ? ' won' : ''}`;
 
 export function BracketVisual({ replay }) {
   const { t } = useI18n();
-  const [i, setI] = useState(0);
-  useEffect(() => { setI(0); }, [replay]);
-  useEffect(() => {
-    if (prefersReducedMotion()) return undefined;
-    const id = setTimeout(() => setI((n) => (n + 1) % BRACKET_STEPS.length), i === BRACKET_STEPS.length - 1 ? 3600 : 2600);
-    return () => clearTimeout(id);
-  }, [i]);
-  const step = BRACKET_STEPS[i];
-
   return (
-    <div className="season-panel bracket downs">
-      <div className="downs-board" aria-live="polite">
-        <span className="downs-chip">{t(`nfl.season.round.${step.key}`)}</span>
-        <span className="downs-caption">{t(`nfl.season.roundHow.${step.key}`)}</span>
-      </div>
-      <div className="bracket-body" key={i}>
-        {step.key === 'seeds' && (
-          <div className="seed-row">
-            {[1, 2, 3, 4, 5, 6, 7].map((s) => <span key={s} className={`seed-pill ${s <= 4 ? 'champ' : 'wild'}`} style={delay(s, 60)}>{s}</span>)}
-          </div>
-        )}
-        {step.games.map(([home, away, winner], n) => (
-          <div key={`${home}-${away}`} className="matchup" style={delay(n, 120)}>
-            <span className={`seed-pill ${home <= 4 ? 'champ' : 'wild'} ${winner && winner !== home ? 'lost' : ''} ${winner === home ? 'won' : ''}`}>{home}</span>
-            <span className="vs">{t('nfl.season.hosts')}</span>
-            <span className={`seed-pill ${away <= 4 ? 'champ' : 'wild'} ${winner && winner !== away ? 'lost' : ''} ${winner === away ? 'won' : ''}`}>{away}</span>
-          </div>
-        ))}
-        {step.bye && step.key !== 'seeds' && (
-          <div className="matchup bye">
-            <span className="seed-pill champ won">{step.bye}</span>
-            <span className="vs">{t('nfl.season.bye')}</span>
-          </div>
-        )}
-      </div>
-      <div className="downs-legend">
+    <div className="season-panel bracket" key={replay}>
+      <div className="bracket-legend">
         <span><i className="swatch seed-champ" />{t('nfl.season.divChamp')}</span>
         <span><i className="swatch seed-wild" />{t('nfl.season.wildCard')}</span>
-        <span className="downs-dots">
-          {BRACKET_STEPS.map((s, n) => (
-            <button key={s.key} className={n === i ? 'is-on' : ''} onClick={() => setI(n)} aria-label={t(`nfl.season.round.${s.key}`)} />
-          ))}
-        </span>
+        <span className="bracket-example">{t('nfl.season.example')}</span>
       </div>
+      {ROUNDS.map((r, n) => (
+        <section key={r.key} className="round" style={delay(n, 160)}>
+          <header>
+            <span className="round-chip">{t(`nfl.season.round.${r.key}`)}</span>
+            <span className="round-how">{t(`nfl.season.roundHow.${r.key}`)}</span>
+          </header>
+          <div className="round-games">
+            {r.games?.map(([home, away, winner]) => (
+              <div key={`${home}-${away}`} className="matchup">
+                <span className={pill(home, winner)}>{home}</span>
+                <span className="vs">{t('nfl.season.hosts')}</span>
+                <span className={pill(away, winner)}>{away}</span>
+              </div>
+            ))}
+            {r.bye && (
+              <div className="matchup bye">
+                <span className="seed-pill champ won">{r.bye}</span>
+                <span className="vs">{t('nfl.season.bye')}</span>
+              </div>
+            )}
+            {r.champion && (
+              <div className="matchup">
+                <span className="seed-pill champ won">{r.champion}</span>
+                <span className="vs">→ Super Bowl</span>
+              </div>
+            )}
+          </div>
+        </section>
+      ))}
     </div>
   );
 }

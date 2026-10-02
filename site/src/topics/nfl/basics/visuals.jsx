@@ -138,17 +138,53 @@ const DRIVE = [
   { ball: 82, punt: true },
 ];
 
-export function DownsVisual({ replay }) {
+/** The concept: line of scrimmage, line to gain, 10 yards between them, 4 tries. */
+export function DownsVisual() {
+  const { t } = useI18n();
+  const los = fx(25);
+  const ltg = fx(35);
+  return (
+    <div className="downs">
+      <Field view={[fx(14), fx(46)]} viewY={[MID_Y - 11, MID_Y + 11]} className="anim-in">
+        <FieldLine x={los} kind="los" />
+        <FieldLine x={ltg} kind="ltg" />
+        <g className="dim">
+          <line x1={los} x2={ltg} y1={MID_Y - 5} y2={MID_Y - 5} />
+          <line x1={los} x2={los} y1={MID_Y - 5.8} y2={MID_Y - 4.2} />
+          <line x1={ltg} x2={ltg} y1={MID_Y - 5.8} y2={MID_Y - 4.2} />
+          <text x={(los + ltg) / 2} y={MID_Y - 5} dy="-0.8" style={{ fontSize: 1.9 }}>10 yd</text>
+        </g>
+        <g transform={`translate(${los - 0.7} ${MID_Y}) scale(1.8)`}><Ball x={0} y={0} /></g>
+        {[1, 2, 3, 4].map((d) => (
+          <g key={d} className="try-dot" style={{ animationDelay: `${d * 150}ms` }}>
+            <circle cx={fx(16) + (d - 1) * 2.6} cy={MID_Y + 7.5} r={1.05} />
+            <UprightText x={fx(16) + (d - 1) * 2.6} y={MID_Y + 7.5} className="player-label">{d}</UprightText>
+          </g>
+        ))}
+      </Field>
+      <div className="downs-legend">
+        <span><i className="swatch los" />{t('nfl.common.los')}</span>
+        <span><i className="swatch ltg" />{t('nfl.common.ltg')}</span>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * A short drive that plays on its own like a video (no step controls): `from`–`to` are indexes into DRIVE,
+ * captions come from nfl.slides.downs.steps. The board always reserves two lines so it never jumps.
+ */
+function DriveVisual({ replay, from, to }) {
   const { t, tm } = useI18n();
-  const [i, setI] = useState(0);
+  const [i, setI] = useState(from);
   const steps = tm('nfl.slides.downs.steps');
 
-  useEffect(() => { setI(0); }, [replay]);
+  useEffect(() => { setI(from); }, [replay, from]);
   useEffect(() => {
     if (prefersReducedMotion()) return undefined;
-    const id = setTimeout(() => setI((n) => (n + 1) % DRIVE.length), i === DRIVE.length - 1 ? 3200 : 2300);
+    const id = setTimeout(() => setI((n) => (n >= to ? from : n + 1)), i === to ? 3200 : 2300);
     return () => clearTimeout(id);
-  }, [i]);
+  }, [i, from, to]);
 
   const s = DRIVE[i];
   const spot = (y) => (y === 50 ? '50' : y < 50 ? t('nfl.common.ownSide', { n: y }) : t('nfl.common.oppSide', { n: 100 - y }));
@@ -158,7 +194,7 @@ export function DownsVisual({ replay }) {
 
   return (
     <div className="downs">
-      <div className="downs-board" aria-live="polite">
+      <div className="downs-board is-fixed" aria-live="polite">
         <span className={`downs-chip ${s.first ? 'is-first' : ''}`}>{board}</span>
         <span className="downs-caption">{steps[i]}</span>
       </div>
@@ -172,15 +208,13 @@ export function DownsVisual({ replay }) {
       <div className="downs-legend">
         <span><i className="swatch los" />{t('nfl.common.los')}</span>
         <span><i className="swatch ltg" />{t('nfl.common.ltg')}</span>
-        <span className="downs-dots">
-          {DRIVE.map((_, n) => (
-            <button key={n} className={n === i ? 'is-on' : ''} onClick={() => setI(n)} aria-label={steps[n]} />
-          ))}
-        </span>
       </div>
     </div>
   );
 }
+
+export const DownsResetVisual = (props) => <DriveVisual from={0} to={2} {...props} />;
+export const DownsPuntVisual = (props) => <DriveVisual from={3} to={6} {...props} />;
 
 /* ---------- run & pass ---------- */
 

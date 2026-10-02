@@ -2,7 +2,11 @@ export default {
   name: 'NFL',
   blurb: 'Fútbol americano, desde "¿qué es un down?" hasta cómo funciona el tope salarial.',
   lessons: {
-    basics: { title: 'Cómo funciona el fútbol americano', summary: 'El campo, cómo anotar, las posiciones, correr y pasar.' },
+    basics: { title: 'Cómo funciona el fútbol americano', summary: 'El campo, los downs, correr, pasar y cómo anotar.' },
+    game: { title: 'El partido', summary: 'Cuartos, el reloj, los tiempos fuera y cómo leer el marcador.' },
+    offense: { title: 'La ofensiva', summary: 'Quién es quién cuando tu equipo tiene el balón.' },
+    defense: { title: 'La defensiva', summary: 'Quién es quién cuando el rival tiene el balón.' },
+    specialTeams: { title: 'Equipos especiales', summary: 'Las unidades de gol de campo y despeje.' },
     season: { title: 'Cómo funciona la temporada', summary: 'Conferencias, divisiones, los 17 partidos, los playoffs y el Super Bowl.' },
     fouls: { title: 'Castigos comunes', summary: 'Salida en falso, fuera de lugar, sujeción, interferencia de pase.' },
     overtime: { title: 'Empates y tiempo extra', summary: 'Puede haber empate en la temporada regular, nunca en playoffs.' },
@@ -59,6 +63,14 @@ export default {
         'Carrera, +5 yardas',
         '4.º y 2: la mayoría despeja (patea el balón lejos)',
       ],
+    },
+    downsReset: {
+      title: 'Lograr un primer down',
+      body: 'Una serie corta: avanza las 10 yardas (en una jugada o en varias) y la cuenta vuelve a 1.º y 10.',
+    },
+    downsPunt: {
+      title: '¿No alcanza? 4.º down',
+      body: 'Aquí la ofensiva se acerca, pero tras 3 downs aún le faltan 2 yardas. En 4.º down, la mayoría despeja: patea el balón lejos para que el rival empiece muy atrás.',
     },
     run: {
       title: 'Correr con el balón',
@@ -128,8 +140,8 @@ export default {
     },
     end: {
       title: '¡Eso es lo básico!',
-      body: 'Ya conoces el campo, cómo anotar, quién juega dónde y cómo avanza el balón.',
-      example: 'Lo próximo: cómo funciona la temporada.',
+      body: 'Ya conoces el campo, los downs, cómo avanza el balón y cómo anotar.',
+      example: 'Lo próximo: el partido, con el reloj y el marcador.',
     },
     foulsIntro: {
       title: 'Castigos: el pañuelo amarillo',
@@ -215,6 +227,80 @@ export default {
       body: 'Temporada regular, playoffs, Super Bowl.',
       example: 'Lo próximo: castigos comunes.',
     },
+    gameLength: {
+      title: '60 minutos, 4 cuartos',
+      body: 'Un partido tiene 60 minutos de juego: 4 cuartos de 15 minutos. Los cuartos 1+2 son la primera mitad; 3+4, la segunda.',
+      example: 'El medio tiempo dura 13 minutos. Los equipos cambian de lado tras el 1.º y el 3.º cuarto.',
+    },
+    gameClock: {
+      title: 'El reloj va hacia atrás',
+      body: 'El reloj muestra el tiempo que queda en el cuarto: 14:00 significa que faltan 14 minutos. Se detiene en algunos momentos, como un pase incompleto o un tiempo fuera.',
+      note: '¡No es como en el fútbol! El fútbol juega dos tiempos de 45 minutos que corren sin parar, y el árbitro añade tiempo al final. En la NFL, en cambio, el reloj se detiene, y 0:00 significa que el cuarto terminó.',
+      example: 'Aviso de dos minutos: a las 2:00 del 2.º y del 4.º cuarto, el reloj se detiene automáticamente.',
+    },
+    gameTimeouts: {
+      title: '3 tiempos fuera por mitad',
+      body: 'Cada equipo puede detener el reloj con un tiempo fuera: 3 en cada mitad.',
+      example: 'En el ejemplo, el visitante usa 2 en la 1.ª mitad. En la 2.ª mitad, ambos vuelven a tener 3.',
+    },
+    scoreboard: {
+      title: 'Cómo leer el marcador de TV',
+      body: 'En la TV, un pequeño marcador muestra todo sobre el partido. Este es un ejemplo; las siguientes diapositivas explican cada parte.',
+    },
+    sbTeams: {
+      title: 'Los equipos: visitante primero, local después',
+      body: 'El equipo local aparece en segundo lugar: a la derecha (o debajo) del visitante.',
+      example: 'Igual en el calendario: “New England at Seattle” significa que New England juega en el estadio de Seattle. Fue el partido inaugural real de 2026, en el Lumen Field.',
+    },
+    sbRecord: {
+      title: 'El récord',
+      body: 'Junto a cada equipo: su récord en la temporada, victorias-derrotas. 3-1 = 3 victorias y 1 derrota.',
+    },
+    sbTimeouts: {
+      title: 'Los tiempos fuera',
+      body: 'Las marquitas son los tiempos fuera que le quedan a cada equipo en esta mitad (3 por mitad).',
+      example: 'Aquí el local ya usó uno: le quedan 2 marcas.',
+    },
+    sbScore: {
+      title: 'El marcador',
+      body: 'Los puntos de cada equipo. 14 a 3: gana el visitante.',
+      example: 'Un touchdown vale 6, un gol de campo 3, un safety 2, más 1 o 2 tras un touchdown.',
+    },
+    sbClock: {
+      title: 'Cuarto y reloj',
+      body: '“2.º 8:42” = 2.º cuarto, quedan 8 minutos y 42 segundos.',
+    },
+    sbDown: {
+      title: 'Down y distancia',
+      body: '“2.º y 8” = es el 2.º down y a la ofensiva le faltan 8 yardas para la línea a ganar.',
+      example: 'Si la alcanza, la cuenta vuelve a 1.º y 10.',
+    },
+    sbPlayClock: {
+      title: 'El reloj de jugada',
+      body: 'La pequeña cuenta atrás es el reloj de jugada (play clock): la ofensiva debe hacer el snap antes de que llegue a cero. Normalmente 40 segundos; 25 tras algunas pausas, como un tiempo fuera.',
+      note: '¿Muy lento? Retraso del juego: la ofensiva retrocede 5 yardas.',
+    },
+    gameEnd: {
+      title: '¡Ese es el partido!',
+      body: 'Ya sabes leer un marcador: equipos, récord, tiempos fuera, puntos, reloj, down y reloj de jugada.',
+      example: 'Lo próximo: las posiciones, empezando por la ofensiva.',
+    },
+  },
+
+  game: {
+    away: 'VIS',
+    home: 'LOC',
+    q1: '1.º',
+    q2: '2.º',
+    q3: '3.º',
+    q4: '4.º',
+    firstHalf: '1.ª mitad',
+    secondHalf: '2.ª mitad',
+    halftime: 'Medio tiempo',
+    left: 'quedan en el cuarto',
+    twoMinute: 'Aviso de dos minutos: el reloj se detiene',
+    example: 'ejemplo',
+    exampleScoreboard: 'Marcador de TV de ejemplo',
   },
 
   season: {
@@ -239,23 +325,18 @@ export default {
     hosts: 'recibe a',
     champion: 'Campeón de conferencia',
     round: {
-      seeds: 'Posiciones',
       wildCard: 'Ronda de comodines',
-      wildCardResult: 'Comodines: resultados',
       divisional: 'Ronda divisional',
-      divisionalResult: 'Divisional: resultados',
       conference: 'Final de conferencia',
-      conferenceResult: 'Campeón de conferencia',
+      superBowl: 'Super Bowl',
     },
     roundHow: {
-      seeds: '7 equipos por conferencia',
-      wildCard: '2 recibe a 7, 3 a 6, 4 a 5. El 1 descansa.',
-      wildCardResult: 'Ejemplo: el 7 vence al 2',
-      divisional: 'El 1 recibe a la posición más baja que queda: 7',
-      divisionalResult: 'Ejemplo: ganan el 1 y el 3',
-      conference: 'Los 2 últimos juegan por el título de conferencia',
-      conferenceResult: 'El 1 va al Super Bowl',
+      wildCard: '2 recibe a 7, 3 a 6, 4 a 5. El 1 descansa. Aquí, el 7 vence al 2.',
+      divisional: 'El 1 recibe a la posición más baja que queda (7). El 3 recibe al 4.',
+      conference: 'Los 2 últimos juegan por el título de conferencia.',
+      superBowl: 'El campeón de conferencia va al Super Bowl.',
     },
+    example: 'Ejemplo',
     recap: {
       regular: 'Temporada regular: 17 partidos',
       playoffs: 'Playoffs: 7 equipos por conferencia, quien pierde queda fuera',

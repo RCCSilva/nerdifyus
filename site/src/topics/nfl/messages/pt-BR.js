@@ -2,7 +2,11 @@ export default {
   name: 'NFL',
   blurb: 'Futebol americano, de "o que é uma descida?" até como funciona o teto salarial.',
   lessons: {
-    basics: { title: 'Como o futebol americano funciona', summary: 'O campo, como pontuar, as posições, correr e passar.' },
+    basics: { title: 'Como o futebol americano funciona', summary: 'O campo, as descidas, correr, passar e como pontuar.' },
+    game: { title: 'O jogo', summary: 'Quartos, o relógio, os timeouts e como ler o placar.' },
+    offense: { title: 'O ataque', summary: 'Quem é quem quando seu time está com a bola.' },
+    defense: { title: 'A defesa', summary: 'Quem é quem quando o adversário está com a bola.' },
+    specialTeams: { title: 'Times especiais', summary: 'As unidades de field goal e punt.' },
     season: { title: 'Como funciona o campeonato', summary: 'Conferências, divisões, os 17 jogos, os playoffs e o Super Bowl.' },
     fouls: { title: 'Faltas comuns', summary: 'False start, offside, holding, interferência de passe.' },
     overtime: { title: 'Empates e prorrogação', summary: 'Empate pode na temporada regular, nunca nos playoffs.' },
@@ -59,6 +63,14 @@ export default {
         'Corrida, +5 jardas',
         '4ª & 2: a maioria dá punt — chuta a bola para longe',
       ],
+    },
+    downsReset: {
+      title: 'Conseguindo um first down',
+      body: 'Uma sequência curta: avance as 10 jardas (numa jogada ou em várias) e a contagem volta para 1ª & 10.',
+    },
+    downsPunt: {
+      title: 'Não deu? 4ª descida',
+      body: 'Aqui o ataque chega perto, mas depois de 3 descidas ainda faltam 2 jardas. Na 4ª descida, a maioria dá punt: chuta a bola para longe para o adversário começar lá atrás.',
     },
     run: {
       title: 'Correndo com a bola',
@@ -128,8 +140,8 @@ export default {
     },
     end: {
       title: 'Esse é o básico!',
-      body: 'Agora você conhece o campo, como pontuar, quem joga onde e como a bola avança.',
-      example: 'A seguir: como funciona o campeonato.',
+      body: 'Agora você conhece o campo, as descidas, como a bola avança e como pontuar.',
+      example: 'A seguir: o jogo, com o relógio e o placar.',
     },
     foulsIntro: {
       title: 'Faltas: a bandeira amarela',
@@ -215,6 +227,80 @@ export default {
       body: 'Temporada regular, playoffs, Super Bowl.',
       example: 'A seguir: faltas comuns.',
     },
+    gameLength: {
+      title: '60 minutos, 4 quartos',
+      body: 'Um jogo tem 60 minutos de bola rolando: 4 quartos de 15 minutos. Os quartos 1+2 são o primeiro tempo; 3+4, o segundo.',
+      example: 'O intervalo dura 13 minutos. Os times trocam de lado depois do 1º e do 3º quarto.',
+    },
+    gameClock: {
+      title: 'O relógio conta para trás',
+      body: 'O relógio mostra o tempo que falta no quarto: 14:00 quer dizer que faltam 14 minutos. Ele para em alguns momentos, como num passe incompleto ou num timeout.',
+      note: 'Não é como no futebol! O futebol tem dois tempos de 45 minutos que correm sem parar, e o árbitro dá acréscimos no fim. Na NFL o relógio para, e 0:00 quer dizer que o quarto acabou.',
+      example: 'Aviso de dois minutos: quando o relógio chega a 2:00 no 2º e no 4º quarto, ele para automaticamente.',
+    },
+    gameTimeouts: {
+      title: '3 timeouts por tempo',
+      body: 'Cada time pode parar o relógio com um timeout: 3 em cada tempo.',
+      example: 'No exemplo, o visitante usa 2 timeouts no 1º tempo. No 2º tempo, os dois times voltam a ter 3.',
+    },
+    scoreboard: {
+      title: 'Como ler o placar da TV',
+      body: 'Na TV, um placar pequeno mostra tudo sobre o jogo. Este é um exemplo; os próximos slides explicam cada parte.',
+    },
+    sbTeams: {
+      title: 'Os times: visitante primeiro, mandante depois',
+      body: 'O mandante aparece em segundo: à direita (ou embaixo) do visitante.',
+      example: 'Na tabela é igual: “New England at Seattle” quer dizer que o New England joga no estádio do Seattle. Foi o jogo de abertura real de 2026, no Lumen Field.',
+    },
+    sbRecord: {
+      title: 'A campanha',
+      body: 'Ao lado de cada time: a campanha na temporada, vitórias-derrotas. 3-1 = 3 vitórias e 1 derrota.',
+    },
+    sbTimeouts: {
+      title: 'Os timeouts',
+      body: 'As barrinhas são os timeouts que cada time ainda tem neste tempo (3 por tempo).',
+      example: 'Aqui o mandante já usou um: sobram 2 barrinhas.',
+    },
+    sbScore: {
+      title: 'O placar',
+      body: 'Os pontos de cada time. 14 a 3: o visitante está ganhando.',
+      example: 'Touchdown vale 6, field goal 3, safety 2, mais 1 ou 2 depois de um touchdown.',
+    },
+    sbClock: {
+      title: 'Quarto e relógio',
+      body: '“2º 8:42” = 2º quarto, faltam 8 minutos e 42 segundos para ele acabar.',
+    },
+    sbDown: {
+      title: 'Descida e distância',
+      body: '“2ª & 8” = é a 2ª descida, e o ataque precisa de mais 8 jardas para chegar à linha a alcançar.',
+      example: 'Chegou lá, a contagem volta para 1ª & 10.',
+    },
+    sbPlayClock: {
+      title: 'O play clock',
+      body: 'A contagem regressiva pequena é o play clock: o ataque precisa fazer o snap antes de ela zerar. Normalmente 40 segundos; 25 depois de algumas paradas, como um timeout.',
+      note: 'Demorou? Delay of game: o ataque volta 5 jardas.',
+    },
+    gameEnd: {
+      title: 'Esse é o jogo!',
+      body: 'Agora você sabe ler um placar: times, campanha, timeouts, pontos, relógio, descida e play clock.',
+      example: 'A seguir: as posições, começando pelo ataque.',
+    },
+  },
+
+  game: {
+    away: 'VIS',
+    home: 'MAN',
+    q1: '1º',
+    q2: '2º',
+    q3: '3º',
+    q4: '4º',
+    firstHalf: '1º tempo',
+    secondHalf: '2º tempo',
+    halftime: 'Intervalo',
+    left: 'restantes no quarto',
+    twoMinute: 'Aviso de dois minutos: o relógio para',
+    example: 'exemplo',
+    exampleScoreboard: 'Placar de TV de exemplo',
   },
 
   season: {
@@ -239,23 +325,18 @@ export default {
     hosts: 'recebe o',
     champion: 'Campeão de conferência',
     round: {
-      seeds: 'Classificação',
       wildCard: 'Rodada Wild Card',
-      wildCardResult: 'Wild Card: resultados',
       divisional: 'Rodada Divisional',
-      divisionalResult: 'Divisional: resultados',
       conference: 'Final de conferência',
-      conferenceResult: 'Campeão de conferência',
+      superBowl: 'Super Bowl',
     },
     roundHow: {
-      seeds: '7 times por conferência',
-      wildCard: '2º recebe o 7º, 3º o 6º, 4º o 5º. O 1º folga.',
-      wildCardResult: 'Exemplo: o 7º elimina o 2º',
-      divisional: 'O 1º recebe o pior classificado que sobrou: o 7º',
-      divisionalResult: 'Exemplo: 1º e 3º vencem',
-      conference: 'Os 2 últimos disputam o título da conferência',
-      conferenceResult: 'O 1º vai ao Super Bowl',
+      wildCard: '2º recebe o 7º, 3º o 6º, 4º o 5º. O 1º folga. Aqui, o 7º elimina o 2º.',
+      divisional: 'O 1º recebe o pior classificado que sobrou (7º). O 3º recebe o 4º.',
+      conference: 'Os 2 últimos disputam o título da conferência.',
+      superBowl: 'O campeão da conferência vai ao Super Bowl.',
     },
+    example: 'Exemplo',
     recap: {
       regular: 'Temporada regular: 17 jogos',
       playoffs: 'Playoffs: 7 times por conferência, perdeu está fora',

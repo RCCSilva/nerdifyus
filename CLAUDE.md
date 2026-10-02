@@ -41,6 +41,8 @@ Lessons are slide decks, not articles. People don't want to read walls of text.
 - One idea per slide: a **visual** (usually the field), a title, 1–2 short sentences, an optional example, and source chips.
 - Navigation: arrows, ← → keys, swipe, progress segments, and the topic sidebar (every lesson, every slide; a drawer on phones). The current slide is in `?s=N`.
 - Always start from the basics, and be direct.
+- **No sub-slides.** Don't put steppers, dots or auto-advancing stages inside a slide. When a visual has several static parts (rounds of a bracket, variants of a foul), stack them vertically so readers scroll at their own pace, especially on phones. A continuous animation (like a play) is fine: it's a short video.
+- Lessons stay small and focused: one topic per lesson (e.g. positions are split into offense, defense and special teams), so each can grow on its own.
 
 ## i18n
 

@@ -1,0 +1,80 @@
+.game-panel { background: var(--surface); padding: 1.4rem 1rem; display: grid; gap: 1rem; }
+
+@keyframes game-in { from { opacity: 0; transform: translateY(8px); } }
+
+/* ---------- TV-style scoreboard ---------- */
+.scorebug {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #11151c;
+  color: #fff;
+  font-family: var(--font-display);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.25);
+  animation: game-in 0.4s both;
+}
+.sb-teams { display: flex; flex: 2 1 18rem; }
+.sb-team { flex: 1; display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.7rem; }
+.sb-away { background: #2a3550; }
+.sb-home { background: #4a2430; }
+.sb-name { font-weight: 800; letter-spacing: 0.04em; font-size: 0.95rem; }
+.sb-record { font-size: 0.75rem; opacity: 0.85; }
+.sb-score { margin-left: auto; font-size: 1.6rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.sb-timeouts { display: inline-flex; gap: 3px; }
+.sb-timeouts i { width: 0.55rem; height: 0.2rem; border-radius: 1px; background: rgb(255 255 255 / 0.25); }
+.sb-timeouts i.on { background: #ffd400; }
+.sb-timeouts.big i { width: 1.4rem; height: 0.45rem; }
+.sb-info { display: flex; flex: 1 1 14rem; align-items: center; justify-content: space-around; gap: 0.6rem; padding: 0.6rem 0.8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.sb-clock b { color: #9ec1ff; margin-right: 0.2rem; }
+.sb-down { color: #ffd400; }
+.sb-play { padding: 0.1rem 0.4rem; border-radius: 5px; background: rgb(255 255 255 / 0.1); }
+.sb-play.is-low { background: #c8323f; }
+.sb-example { position: absolute; right: 0.5rem; bottom: 0.15rem; font-size: 0.55rem; opacity: 0.5; font-family: var(--font-body); }
+
+.sb-part { border-radius: 5px; transition: opacity 0.3s, box-shadow 0.3s; }
+.sb-part.is-dim { opacity: 0.22; }
+.sb-part.is-focus { box-shadow: 0 0 0 2px #ffd400, 0 0 14px rgb(255 212 0 / 0.6); animation: focus-pulse 1.6s ease-in-out infinite; }
+@keyframes focus-pulse { 50% { box-shadow: 0 0 0 2px #ffd400, 0 0 2px rgb(255 212 0 / 0.2); } }
+
+.big-playclock { justify-self: center; font: 800 3.4rem/1 var(--font-display); font-variant-numeric: tabular-nums; color: var(--text); }
+
+/* ---------- timeline ---------- */
+.halves { display: grid; grid-template-columns: 32fr 13fr 32fr; font-size: 0.8rem; font-weight: 700; color: var(--muted); text-align: center; }
+.halves span:last-child { grid-column: 3; }
+.timeline { display: flex; gap: 3px; height: 4.2rem; }
+.tl-block { position: relative; border-radius: 8px; overflow: hidden; background: var(--bg); display: grid; place-items: center; min-width: 0; }
+.tl-fill { position: absolute; inset: 0; transform-origin: left; }
+.tl-q .tl-fill { background: var(--grass); }
+.tl-half .tl-fill { background: #d9661f; }
+.tl-brk .tl-fill { background: var(--line); }
+.tl-label { position: relative; color: #fff; font-weight: 800; text-align: center; line-height: 1.1; font-size: 0.9rem; }
+.tl-label small { display: block; font-weight: 600; font-size: 0.7rem; opacity: 0.9; }
+.tl-total { margin: 0; text-align: center; color: var(--muted); }
+.tl-total b { color: var(--text); }
+
+/* ---------- countdown clock ---------- */
+.clock-panel { justify-items: center; padding: 2rem 1rem; }
+.clock-face { display: grid; justify-items: center; background: #11151c; color: #fff; border-radius: 16px; padding: 1rem 2.2rem; }
+.clock-q { color: #9ec1ff; font-weight: 800; }
+.clock-time { font: 800 4rem/1.05 var(--font-display); font-variant-numeric: tabular-nums; }
+.clock-time.is-stopped { color: #ffd400; }
+.clock-left { font-size: 0.8rem; opacity: 0.7; }
+.clock-alert { opacity: 0; transform: scale(0.9); transition: all 0.3s; font-weight: 800; color: #11151c; background: #ffd400; padding: 0.4rem 0.9rem; border-radius: 99px; }
+.clock-alert.is-on { opacity: 1; transform: none; }
+
+/* ---------- timeouts ---------- */
+.to-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.to-half { display: grid; gap: 0.6rem; padding: 0.8rem; border-radius: 12px; background: var(--bg); transition: opacity 0.4s; }
+.to-half.is-dim { opacity: 0.35; }
+.to-row { display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+.to-half .sb-timeouts i { background: var(--line); }
+.to-half .sb-timeouts i.on { background: #d9a400; }
+
+@media (max-width: 560px) {
+  .to-grid { grid-template-columns: 1fr; }
+  .tl-label { font-size: 0.7rem; }
+  .clock-time { font-size: 3rem; }
+}
