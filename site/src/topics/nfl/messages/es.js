@@ -6,8 +6,9 @@ export default {
     game: { title: 'El partido', summary: 'Cuartos, el reloj, los tiempos fuera y cómo leer el marcador.' },
     positions: { title: 'Las posiciones', summary: 'Quién es quién en la ofensiva, la defensiva y los equipos especiales.' },
     season: { title: 'Cómo funciona la temporada', summary: 'Conferencias, divisiones, los 17 partidos, los playoffs y el Super Bowl.' },
-    fouls: { title: 'Castigos comunes', summary: 'Salida en falso, fuera de lugar, sujeción, interferencia de pase.' },
+    fouls: { title: 'Cómo funcionan los castigos', summary: 'El pañuelo, el anuncio y qué le hace un castigo a las yardas y al down.' },
     overtime: { title: 'Empates y tiempo extra', summary: 'Puede haber empate en la temporada regular, nunca en playoffs.' },
+    commonFouls: { title: 'Castigos comunes', summary: 'Salida en falso, fuera de lugar, sujeción, interferencia de pase.' },
     strategy: { title: 'Estrategia', summary: 'Por qué los equipos hacen lo que hacen.' },
     cap: { title: 'El tope salarial', summary: 'Cómo funcionan realmente las nóminas.' },
   },
@@ -332,6 +333,36 @@ export default {
       title: 'Temporada regular vs playoffs',
       example: 'Lo próximo: cómo funciona la temporada.',
     },
+    foulFlag: {
+      title: 'Un castigo: el pañuelo amarillo',
+      body: 'Cuando un oficial ve una falta, lanza un pañuelo amarillo al campo, hacia el lugar donde ocurrió. La jugada sigue; la falta se resuelve después.',
+    },
+    foulAnnounce: {
+      title: 'El árbitro lo explica por el micrófono',
+      body: 'Tras la jugada, el árbitro abre su micrófono y anuncia a todo el estadio: qué falta fue, de qué equipo, el número del jugador, el castigo y el siguiente down.',
+      note: 'El equipo que sufrió la falta puede rechazarla. Lo vemos en dos diapositivas.',
+    },
+    foulOffense: {
+      title: 'Castigo a la ofensiva: atrás y se repite el down',
+      body: 'La ofensiva retrocede las yardas del castigo y juega el mismo down otra vez. Por eso se ven cosas como “1.º y 20”.',
+      example: '1.º y 10 en la 30, sujeción de la ofensiva (10 yardas): queda 1.º y 20 desde la 20.',
+    },
+    foulDefense: {
+      title: 'Castigo a la defensiva: adelante, muchas veces con primer down',
+      body: 'La ofensiva avanza las yardas del castigo. La mayoría de los castigos a la defensiva también dan un primer down automático: otra vez 1.º y 10, aunque las yardas no lleguen a la línea a ganar.',
+      note: 'Por eso a veces la ofensiva gana menos yardas de las que necesitaba y aun así consigue el primer down. Excepciones que solo dan yardas: fuera de lugar, invasión e infracción de zona neutral, entre otras.',
+      example: '3.º y 8, sujeción de la defensiva (5 yardas + primer down automático): 1.º y 10, con solo 5 de las 8 yardas.',
+    },
+    foulDecline: {
+      title: 'Rechazar un castigo (la “ventaja”)',
+      body: 'El equipo que sufrió la falta no está obligado a aceptar el castigo. Si la jugada salió mejor, lo rechaza y se queda con el resultado.',
+      note: '¡No es como en el fútbol! En el fútbol el árbitro decide cuándo dar ventaja. En la NFL, elige el entrenador principal del equipo que sufrió la falta: aceptar o rechazar.',
+      example: 'La ofensiva gana 30 yardas, pero la defensiva cometió una falta de 10 yardas. Aceptar = 10 yardas. Rechazar = quedarse con las 30. Elección fácil.',
+    },
+    foulMechanism: {
+      title: 'Los castigos en una imagen',
+      example: 'Lo próximo: empates y tiempo extra. Las faltas una por una (salida en falso, sujeción…) están en la lección “Castigos comunes”.',
+    },
   },
 
   kickoff: {
@@ -450,6 +481,43 @@ export default {
   },
 
   fouls: {
+    flagLanded: '¡Falta!',
+    offFoulBefore: 'Falta de la ofensiva: sujeción (10 yardas)',
+    offFoulAfter: '10 yardas atrás, se repite el down',
+    defFoulBefore: 'Falta de la defensiva: sujeción (5 yardas)',
+    defFoulAfter: '+5 yardas y primer down automático',
+    announce: {
+      title: 'Lo que anuncia el árbitro',
+      quote: 'Sujeción, ofensiva, número 74. Castigo de 10 yardas. Se repite el primer down.',
+      example: 'Anuncio de ejemplo, inventado para esta diapositiva.',
+      parts: [
+        ['Falta', 'Sujeción'],
+        ['Equipo', 'Ofensiva'],
+        ['Jugador', 'Número 74'],
+        ['Castigo', '10 yardas'],
+        ['Siguiente down', 'Otra vez 1.º down'],
+      ],
+    },
+    decline: {
+      play: '+30: la jugada',
+      penalty: '+10: el castigo',
+      accept: 'Aceptar: 10 yardas',
+      reject: 'Rechazar: quedarse con 30 yardas',
+    },
+    sum: {
+      yards: 'Yardas:',
+      down: 'Down:',
+      off: {
+        title: 'Falta de la ofensiva',
+        yards: 'la ofensiva retrocede.',
+        down: 'se juega el mismo down otra vez (p. ej., 1.º y 20).',
+      },
+      def: {
+        title: 'Falta de la defensiva',
+        yards: 'la ofensiva avanza.',
+        down: 'normalmente 1.º y 10 automático (no en las pequeñas, como fuera de lugar).',
+      },
+    },
     offFoul: 'Castigo a la ofensiva',
     defFoul: 'Castigo a la defensiva',
     whistle: '¡Silbato! Jugada muerta',

@@ -551,3 +551,24 @@ a.lesson:hover { transform: translateX(4px); }
 .lz-band { fill: #ffd400; opacity: 0.16; }
 .lz-label { fill: #ffe680; font: 800 1.6px/1 var(--font-body); text-anchor: middle; dominant-baseline: central; paint-order: stroke; stroke: rgb(0 0 0 / 0.4); stroke-width: 0.3; }
 .swatch.lz { background: #ffd400; opacity: 0.6; border-radius: 2px; }
+
+/* referee announcement */
+.announce { padding: 1.1rem 1rem; display: grid; gap: 0.8rem; }
+.announce-quote { margin: 0; padding: 0.8rem 1rem; border-radius: 14px 14px 14px 4px; background: #11151c; color: #fff; font: 700 1.05rem/1.4 var(--font-display); animation: fade-up-lg 0.4s both; }
+.announce-parts { display: grid; gap: 0.35rem; }
+.announce-part { display: grid; grid-template-columns: 9rem 1fr; gap: 0.6rem; padding: 0.45rem 0.7rem; border-radius: 9px; background: var(--bg); animation: fade-up-lg 0.4s both; }
+.announce-part span { color: var(--muted); font-size: 0.85rem; }
+
+/* offense foul vs defense foul */
+.foul-sides { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; padding: 1rem; }
+.foul-side-card { border-radius: 12px; padding: 0.8rem 0.9rem; background: var(--bg); border-top: 4px solid; animation: fade-up-lg 0.4s both; }
+.foul-side-card.off { border-color: var(--off); }
+.foul-side-card.def { border-color: var(--def); }
+.foul-side-card strong { display: block; margin-bottom: 0.4rem; font-family: var(--font-display); }
+.foul-side-card p { margin: 0.3rem 0 0; line-height: 1.4; font-size: 0.92rem; }
+@media (max-width: 560px) { .foul-sides { grid-template-columns: 1fr; } .announce-part { grid-template-columns: 7rem 1fr; } }
+
+/* accept / decline */
+.decline-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%; }
+.decline-opt { padding: 0.55rem 0.7rem; border-radius: 9px; background: var(--bg); color: var(--text); border: 2px solid transparent; }
+.decline-opt.is-best { border-color: #1c8c3c; background: color-mix(in srgb, #1c8c3c 12%, var(--surface)); }

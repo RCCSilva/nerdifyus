@@ -21,6 +21,9 @@
 | S17 | IFAB Laws of the Game — Law 7 "The Duration of the Match" (soccer; comparison only) | primary | 2026/27 edition · accessed 2026-10-01 | https://www.theifab.com/laws/latest/the-duration-of-the-match/ |
 | S18 | NFL.com — 2025 team field goal stats by distance | primary | 2025 regular season · accessed 2026-10-01 | https://www.nfl.com/stats/team-stats/special-teams/field-goals/2025/reg/all |
 | S19 | Wikipedia — "Field goal" | secondary (explainer) | last edited 2026-09-29 · accessed 2026-10-01 | https://en.wikipedia.org/wiki/Field_goal |
+| S20 | Wikipedia — "Penalty (gridiron football)" | secondary (explainer) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/Penalty_(gridiron_football) |
+| S21 | Football Zebras — "Penalty enforcement is an entire-crew effort" (Mark Schultz) | secondary (officiating site) | 2014-08-01 · accessed 2026-10-02 | https://www.footballzebras.com/2014/08/penalty-enforcement-an-entire-crew-effort/ |
+| S22 | IFAB Laws of the Game — Law 5 "The Referee", Advantage (soccer; comparison only) | primary | latest edition · accessed 2026-10-02 | https://www.theifab.com/laws/latest/the-referee/ |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

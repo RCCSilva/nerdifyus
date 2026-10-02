@@ -6,8 +6,9 @@ export default {
     game: { title: 'O jogo', summary: 'Quartos, o relógio, os timeouts e como ler o placar.' },
     positions: { title: 'As posições', summary: 'Quem é quem no ataque, na defesa e nos times especiais.' },
     season: { title: 'Como funciona o campeonato', summary: 'Conferências, divisões, os 17 jogos, os playoffs e o Super Bowl.' },
-    fouls: { title: 'Faltas comuns', summary: 'False start, offside, holding, interferência de passe.' },
+    fouls: { title: 'Como funcionam as faltas', summary: 'A bandeira, o anúncio e o que uma falta faz com as jardas e a descida.' },
     overtime: { title: 'Empates e prorrogação', summary: 'Empate pode na temporada regular, nunca nos playoffs.' },
+    commonFouls: { title: 'Faltas comuns', summary: 'False start, impedimento, holding, interferência de passe.' },
     strategy: { title: 'Estratégia', summary: 'Por que os times fazem o que fazem.' },
     cap: { title: 'O teto salarial', summary: 'Como as folhas salariais funcionam de verdade.' },
   },
@@ -332,6 +333,36 @@ export default {
       title: 'Temporada regular × playoffs',
       example: 'A seguir: como funciona o campeonato.',
     },
+    foulFlag: {
+      title: 'Uma falta: a bandeira amarela',
+      body: 'Quando um árbitro vê uma falta, ele joga uma bandeira amarela no campo, na direção de onde ela aconteceu. A jogada continua; a falta é resolvida depois.',
+    },
+    foulAnnounce: {
+      title: 'O árbitro explica no microfone',
+      body: 'Depois da jogada, o árbitro liga o microfone e anuncia para o estádio inteiro: qual foi a falta, de qual time, o número do jogador, a punição e a próxima descida.',
+      note: 'O time que sofreu a falta pode recusá-la. Isso vem daqui a dois slides.',
+    },
+    foulOffense: {
+      title: 'Falta do ataque: volta, e a descida se repete',
+      body: 'O ataque volta as jardas da punição e joga a mesma descida de novo. É assim que aparecem coisas como “1ª & 20”.',
+      example: '1ª & 10 na linha de 30, holding do ataque (10 jardas): fica 1ª & 20 a partir da 20.',
+    },
+    foulDefense: {
+      title: 'Falta da defesa: avança, muitas vezes com first down',
+      body: 'O ataque avança as jardas da punição. A maioria das faltas da defesa também dá first down automático: 1ª & 10 de novo, mesmo que as jardas não cheguem à linha a alcançar.',
+      note: 'Por isso às vezes o ataque ganha menos jardas do que precisava e ainda assim consegue o first down. Exceções que só dão as jardas: impedimento, encroachment e infração de zona neutra, entre outras.',
+      example: '3ª & 8, holding da defesa (5 jardas + first down automático): 1ª & 10, com só 5 das 8 jardas.',
+    },
+    foulDecline: {
+      title: 'Recusar a falta (a “vantagem”)',
+      body: 'O time que sofreu a falta não é obrigado a aceitar a punição. Se a jogada em si foi melhor, ele recusa a falta e fica com o resultado.',
+      note: 'Não é como no futebol! No futebol, quem decide dar vantagem é o árbitro. Na NFL, quem escolhe é o head coach (técnico principal) do time que sofreu a falta: aceitar ou recusar.',
+      example: 'O ataque ganha 30 jardas, mas a defesa cometeu uma falta de 10 jardas. Aceitar = 10 jardas. Recusar = ficar com as 30. Escolha fácil.',
+    },
+    foulMechanism: {
+      title: 'As faltas num só quadro',
+      example: 'A seguir: empates e prorrogação. As faltas uma a uma (false start, holding…) estão na lição “Faltas comuns”.',
+    },
   },
 
   kickoff: {
@@ -450,6 +481,43 @@ export default {
   },
 
   fouls: {
+    flagLanded: 'Falta!',
+    offFoulBefore: 'Falta do ataque: holding (10 jardas)',
+    offFoulAfter: 'Volta 10 jardas, repete a descida',
+    defFoulBefore: 'Falta da defesa: holding (5 jardas)',
+    defFoulAfter: '+5 jardas e first down automático',
+    announce: {
+      title: 'O que o árbitro anuncia',
+      quote: 'Holding, ataque, número 74. Punição de 10 jardas. Repete a primeira descida.',
+      example: 'Anúncio de exemplo, criado para este slide.',
+      parts: [
+        ['Falta', 'Holding'],
+        ['Time', 'Ataque'],
+        ['Jogador', 'Número 74'],
+        ['Punição', '10 jardas'],
+        ['Próxima descida', '1ª descida de novo'],
+      ],
+    },
+    decline: {
+      play: '+30: a jogada',
+      penalty: '+10: a falta',
+      accept: 'Aceitar: 10 jardas',
+      reject: 'Recusar: ficar com 30 jardas',
+    },
+    sum: {
+      yards: 'Jardas:',
+      down: 'Descida:',
+      off: {
+        title: 'Falta do ataque',
+        yards: 'o ataque volta.',
+        down: 'joga a mesma descida de novo (ex.: 1ª & 20).',
+      },
+      def: {
+        title: 'Falta da defesa',
+        yards: 'o ataque avança.',
+        down: 'normalmente 1ª & 10 automática (não nas pequenas, como impedimento).',
+      },
+    },
     offFoul: 'Falta do ataque',
     defFoul: 'Falta da defesa',
     whistle: 'Apito! Jogada morta',

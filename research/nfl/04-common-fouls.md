@@ -5,6 +5,16 @@ Applies to: 2026 season
 Citation key: see `01-basic-rules.md`. Sources are listed in `sources.md`.
 Scope (editorial choice, 2026-10-01): the fouls a beginner sees most. False start, the offside family, offensive and defensive holding, pass interference.
 
+## How fouls work (the mechanism, for the basic lesson)
+- Officials signal a foul by throwing a yellow flag toward or at the spot of the foul [S20; S2 "Penalty/Flag"].
+- The referee announces fouls and penalties over the stadium's public address system with a wireless microphone: the foul, the team, the player's number, and the resulting down [S20].
+- The offended team may decline a penalty and keep the result of the play [S1 R14-1-1, p.61].
+- **Declining ("advantage"):** the wing officials report the foul to the head coaches, and "the coach (of the offended team) then makes the decision whether to accept or decline the penalty" [S21]. Declining keeps the result of the play [S1 R14-1-1, p.61; S20]. Example (applying the rules): the offense gains 30 yards on a play with a 10-yard defensive foul → declining keeps the 30.
+- Soccer comparison: there the referee applies advantage, allowing play to continue when the non-offending team will benefit [S22 Law 5.3].
+- **Foul by the offense:** if the ball is still behind the line to gain after the penalty, the down number stays the same [S1 R14-1-2 Item 1, p.61]. So a 10-yard offensive penalty on 1st & 10 gives 1st & 20 (example applying the rule).
+- **Foul by the defense:** after the penalty, the next down is 1st & 10 for the offense [S1 R14-1-2 Item 5, p.61], even if the yards alone wouldn't reach the line to gain. Exceptions that only give yards: offside, encroachment, neutral zone infraction, delay of game, illegal substitution, excess timeout, running into the kicker, more than 11 players [same]. With those, the down stays the same unless the yards reach the line to gain.
+- Example (applying the rules): 3rd & 8, defensive holding (5 yards + automatic first down [S1 R12-1-6, p.53]) → 1st & 10, although only 5 of the 8 yards were gained.
+
 ## The flag and the penalty
 - Officials throw a yellow flag when a rule is broken [S2 "Penalty/Flag"].
 - Penalties are written as "Loss of N yards" for the team that fouled [S1 R7-4-2, R12-1-3, R12-1-6, p.34/52/53]. **Simplification used on the site:** a foul by the offense pushes the offense back. A foul by the defense moves the offense forward. The exact enforcement spot (previous spot, spot of foul, end of run) is Rule 14 and is left for a later lesson.

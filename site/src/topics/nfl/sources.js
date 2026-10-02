@@ -96,6 +96,21 @@ export const SOURCES = {
     title: 'Wikipedia — Field goal, edited 2026-09-29 (fallback source)',
     url: 'https://en.wikipedia.org/wiki/Field_goal',
   },
+  S20: {
+    short: 'Wikipedia · Penalty',
+    title: 'Wikipedia — Penalty (gridiron football) (fallback source)',
+    url: 'https://en.wikipedia.org/wiki/Penalty_(gridiron_football)',
+  },
+  S21: {
+    short: 'Football Zebras · penalty enforcement',
+    title: 'Football Zebras — Penalty enforcement is an entire-crew effort (2014)',
+    url: 'https://www.footballzebras.com/2014/08/penalty-enforcement-an-entire-crew-effort/',
+  },
+  S22: {
+    short: 'IFAB Laws of the Game (soccer)',
+    title: 'IFAB Laws of the Game — Law 5, The Referee (advantage)',
+    url: 'https://www.theifab.com/laws/latest/the-referee/',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

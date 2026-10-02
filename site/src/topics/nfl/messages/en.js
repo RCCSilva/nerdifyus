@@ -7,8 +7,9 @@ export default {
     game: { title: 'The game', summary: 'Quarters, the clock, timeouts and how to read the scoreboard.' },
     positions: { title: 'The positions', summary: 'Who is who on offense, on defense and on special teams.' },
     season: { title: 'How the season works', summary: 'Conferences, divisions, the 17 games, playoffs and the Super Bowl.' },
-    fouls: { title: 'Common fouls', summary: 'False start, offside, holding, pass interference.' },
+    fouls: { title: 'How fouls work', summary: 'The flag, the announcement, and what a foul does to the yards and the down.' },
     overtime: { title: 'Ties & overtime', summary: 'Ties are possible in the regular season, never in the playoffs.' },
+    commonFouls: { title: 'Common fouls', summary: 'False start, offside, holding, pass interference.' },
     strategy: { title: 'Strategy', summary: 'Why teams do what they do.' },
     cap: { title: 'The salary cap', summary: 'How team payrolls really work.' },
   },
@@ -333,6 +334,36 @@ export default {
       title: 'Regular season vs playoffs',
       example: 'Next up: how the season works.',
     },
+    foulFlag: {
+      title: 'A foul: the yellow flag',
+      body: 'When an official sees a foul, he throws a yellow flag onto the field, toward the spot where it happened. The play goes on; the foul is sorted out afterwards.',
+    },
+    foulAnnounce: {
+      title: 'The referee explains it on the microphone',
+      body: 'After the play, the referee turns on his microphone and announces to the whole stadium: what the foul was, which team, the player’s number, the penalty and the next down.',
+      note: 'The team that suffered the foul can decline it. More on that in two slides.',
+    },
+    foulOffense: {
+      title: 'Foul by the offense: back, and the down repeats',
+      body: 'The offense goes back the penalty yards and plays the same down again. That’s how you see things like “1st & 20”.',
+      example: '1st & 10 at the 30, holding by the offense (10 yards): it’s 1st & 20 from the 20.',
+    },
+    foulDefense: {
+      title: 'Foul by the defense: forward, often with a first down',
+      body: 'The offense moves forward the penalty yards. Most defensive fouls also give an automatic first down: 1st & 10 again, even if the yards don’t reach the line to gain.',
+      note: 'That’s why sometimes the offense gains fewer yards than it needed and still gets a first down. Exceptions that only give yards: offside, encroachment and neutral zone infraction, among others.',
+      example: '3rd & 8, holding by the defense (5 yards + automatic first down): 1st & 10, after only 5 of the 8 yards.',
+    },
+    foulDecline: {
+      title: 'Declining a foul (the “advantage”)',
+      body: 'The team that suffered the foul doesn’t have to take the penalty. If the play itself went better, it declines the foul and keeps the result.',
+      note: 'Not like soccer! In soccer, the referee decides when to play advantage. In the NFL, the head coach of the team that suffered the foul chooses: accept or decline.',
+      example: 'The offense gains 30 yards, but the defense committed a 10-yard foul. Accept = 10 yards. Decline = keep the 30. Easy choice.',
+    },
+    foulMechanism: {
+      title: 'Fouls in one picture',
+      example: 'Next up: ties & overtime. The individual fouls (false start, holding…) are in the “Common fouls” lesson.',
+    },
   },
 
   kickoff: {
@@ -451,6 +482,43 @@ export default {
   },
 
   fouls: {
+    flagLanded: 'Foul!',
+    offFoulBefore: 'Foul by the offense: holding (10 yards)',
+    offFoulAfter: 'Back 10 yards, same down again',
+    defFoulBefore: 'Foul by the defense: holding (5 yards)',
+    defFoulAfter: '+5 yards and an automatic first down',
+    announce: {
+      title: 'What the referee announces',
+      quote: 'Holding, offense, number 74. 10-yard penalty. Repeat first down.',
+      example: 'Example announcement, made up for this slide.',
+      parts: [
+        ['Foul', 'Holding'],
+        ['Team', 'Offense'],
+        ['Player', 'Number 74'],
+        ['Penalty', '10 yards'],
+        ['Next down', '1st down again'],
+      ],
+    },
+    decline: {
+      play: '+30: the play',
+      penalty: '+10: the penalty',
+      accept: 'Accept: 10 yards',
+      reject: 'Decline: keep the 30 yards',
+    },
+    sum: {
+      yards: 'Yards:',
+      down: 'Down:',
+      off: {
+        title: 'Foul by the offense',
+        yards: 'the offense goes back.',
+        down: 'the same down is played again (e.g. 1st & 20).',
+      },
+      def: {
+        title: 'Foul by the defense',
+        yards: 'the offense moves forward.',
+        down: 'usually an automatic 1st & 10 (not for small ones like offside).',
+      },
+    },
     offFoul: 'Offense foul',
     defFoul: 'Defense foul',
     whistle: 'Whistle! Play is dead',
