@@ -36,6 +36,36 @@ export const SOURCES = {
     title: 'Wikipedia — Special teams, edited 2026-09-28',
     url: 'https://en.wikipedia.org/wiki/Special_teams',
   },
+  S8: {
+    short: 'NFL Football Ops · Making the Schedule',
+    title: 'NFL Football Operations — Making the Schedule',
+    url: 'https://operations.nfl.com/calendar-events/nfl-schedule/making-the-schedule',
+  },
+  S9: {
+    short: 'NFL.com · 14-team playoffs',
+    title: 'NFL.com — Owners approve expanding postseason to 14 teams',
+    url: 'https://www.nfl.com/news/owners-approve-expanding-postseason-to-14-teams-0ap3000001107961',
+  },
+  S10: {
+    short: 'NFL.com · Tiebreaking procedures',
+    title: 'NFL.com — NFL Tiebreaking Procedures',
+    url: 'https://www.nfl.com/standings/tie-breaking-procedures',
+  },
+  S11: {
+    short: 'NFL · Approved 2026 rules & bylaws',
+    title: 'NFL — Approved 2026 Playing Rules, Bylaws and Resolutions (2026-03-31)',
+    url: 'https://media.nfl.com/football-information/2026/news/approved-2026-playing-rules--bylaws-and-resolutions',
+  },
+  S12: {
+    short: 'NFL.com · 2026 divisions',
+    title: 'NFL.com — 2026 division standings (team list)',
+    url: 'https://www.nfl.com/standings/division/2026/REG',
+  },
+  S13: {
+    short: 'Wikipedia · NFL playoffs',
+    title: 'Wikipedia — NFL playoffs (fallback source)',
+    url: 'https://en.wikipedia.org/wiki/NFL_playoffs',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

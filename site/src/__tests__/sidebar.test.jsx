@@ -14,10 +14,10 @@ describe('topic sidebar', () => {
     const { container } = render(<App />);
     const sidebar = await screen.findByRole('complementary', { name: 'Contents' });
 
-    for (const lesson of ['How football works', 'Common fouls', 'Ties & overtime', 'Strategy', 'The salary cap']) {
+    for (const lesson of ['How football works', 'How the season works', 'Common fouls', 'Ties & overtime', 'Strategy', 'The salary cap']) {
       expect(within(sidebar).getByText(lesson)).toBeTruthy();
     }
-    expect(within(sidebar).getAllByRole('link').filter((a) => a.href.includes('?s=')).length).toBe(24); // 17 basics + 7 fouls
+    expect(within(sidebar).getAllByRole('link').filter((a) => a.href.includes('?s=')).length).toBe(31); // 17 basics + 7 season + 7 fouls
 
     // Open the (mobile) drawer, pick slide 8, and the drawer closes again.
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: /Contents/ })); });

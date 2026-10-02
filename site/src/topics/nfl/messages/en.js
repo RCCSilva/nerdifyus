@@ -4,6 +4,7 @@ export default {
   blurb: 'American football, from "what is a down?" to how the salary cap works.',
   lessons: {
     basics: { title: 'How football works', summary: 'The field, scoring, positions, running and passing.' },
+    season: { title: 'How the season works', summary: 'Conferences, divisions, the 17 games, playoffs and the Super Bowl.' },
     fouls: { title: 'Common fouls', summary: 'False start, offside, holding, pass interference.' },
     overtime: { title: 'Ties & overtime', summary: 'Ties are possible in the regular season, never in the playoffs.' },
     strategy: { title: 'Strategy', summary: 'Why teams do what they do.' },
@@ -129,7 +130,7 @@ export default {
     end: {
       title: 'That’s the basics!',
       body: 'You now know the field, how to score, who plays where, and how the ball moves.',
-      example: 'Next up: common fouls, then ties & overtime.',
+      example: 'Next up: how the season works.',
     },
     foulsIntro: {
       title: 'Fouls: the yellow flag',
@@ -180,6 +181,86 @@ export default {
         ['Pass interference (defense)', 'def', 'Spot & 1st down'],
         ['Pass interference (offense)', 'off', '−10'],
       ],
+    },
+    seasonLeague: {
+      title: '32 teams, 2 conferences',
+      body: 'The NFL has 32 teams, split into two conferences: the AFC and the NFC, with 16 teams each.',
+    },
+    seasonDivisions: {
+      title: '4 divisions in each conference',
+      body: 'Each conference has an East, North, South and West division, with 4 teams each.',
+      example: 'Your division rivals matter most: you play each of them twice a year, and the division champion goes to the playoffs.',
+    },
+    seasonSchedule: {
+      title: 'The 17 games',
+      body: 'Every team plays 17 regular-season games, always with the same formula:',
+      example: 'The last 3 opponents (the 2 green games and the 17th game) depend on where your team finished in its division last season.',
+    },
+    playoffSeeds: {
+      title: 'Who makes the playoffs',
+      body: '7 teams per conference, 14 in total. The 4 division champions get seeds 1–4, ordered by record. The 3 best of the rest (the wild cards) get seeds 5–7.',
+      note: 'Win your division and you’re in with a top-4 seed, even if a wild card has a better record.',
+      example: 'Same record? The first tiebreaker is head-to-head, then division record, and so on.',
+    },
+    playoffBracket: {
+      title: 'Playoffs: lose and you’re out',
+      body: 'One game per round, and the better seed plays at home. The No. 1 seed skips the first round.',
+      example: 'In the example, seed 7 beats seed 2. So in the next round, seed 1 hosts the lowest seed left: 7.',
+    },
+    superBowl: {
+      title: 'The Super Bowl',
+      body: 'The AFC champion plays the NFC champion in the Super Bowl, at a site chosen in advance.',
+    },
+    seasonEnd: {
+      title: 'That’s the season!',
+      body: 'Regular season, playoffs, Super Bowl.',
+      example: 'Next up: common fouls.',
+    },
+  },
+
+  season: {
+    division: {
+      east: 'East',
+      north: 'North',
+      south: 'South',
+      west: 'West',
+    },
+    schedule: {
+      division: 'Division rivals: each one twice (home and away)',
+      confDivision: 'All 4 teams of another division in your conference',
+      otherConfDivision: 'All 4 teams of a division in the other conference',
+      confRank: '1 team from each of the other 2 divisions in your conference (based on last season)',
+      seventeenth: 'The 17th game: 1 team from the other conference (based on last season)',
+    },
+    oneConference: 'One conference (AFC or NFC)',
+    divChamp: 'Division champion',
+    wildCard: 'Wild card',
+    bye: 'Bye (skips round 1)',
+    out: 'Out of the playoffs',
+    hosts: 'hosts',
+    champion: 'Conference champion',
+    round: {
+      seeds: 'Seeds',
+      wildCard: 'Wild Card round',
+      wildCardResult: 'Wild Card: results',
+      divisional: 'Divisional round',
+      divisionalResult: 'Divisional: results',
+      conference: 'Conference Championship',
+      conferenceResult: 'Conference champion',
+    },
+    roundHow: {
+      seeds: '7 teams per conference',
+      wildCard: '2 hosts 7, 3 hosts 6, 4 hosts 5. Seed 1 rests.',
+      wildCardResult: 'Example: seed 7 upsets seed 2',
+      divisional: 'Seed 1 hosts the lowest seed left: 7',
+      divisionalResult: 'Example: seeds 1 and 3 win',
+      conference: 'The last 2 teams play for the conference title',
+      conferenceResult: 'Seed 1 goes to the Super Bowl',
+    },
+    recap: {
+      regular: 'Regular season: 17 games',
+      playoffs: 'Playoffs: 7 teams per conference, lose and you’re out',
+      superBowl: 'Super Bowl: AFC champion vs NFC champion',
     },
   },
 

@@ -4,8 +4,9 @@ import { render, screen, fireEvent, act, cleanup } from '@testing-library/react'
 import App from '../App';
 import { BASICS_SLIDES } from '../topics/nfl/basics/slides';
 import { FOULS_SLIDES } from '../topics/nfl/fouls/slides';
+import { SEASON_SLIDES } from '../topics/nfl/season/slides';
 
-const DECKS = [['basics', BASICS_SLIDES], ['fouls', FOULS_SLIDES]];
+const DECKS = [['basics', BASICS_SLIDES], ['season', SEASON_SLIDES], ['fouls', FOULS_SLIDES]];
 
 // Behave like a real browser: motion ON, animation frames ticking.
 window.matchMedia = () => ({ matches: false, addEventListener() {}, removeEventListener() {} });

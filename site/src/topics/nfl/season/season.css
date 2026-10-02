@@ -1,0 +1,138 @@
+.season-panel {
+  --afc: #c8323f;
+  --nfc: #1d4f91;
+  background: var(--surface);
+  padding: 1rem;
+}
+.season-panel h3 { margin: 0 0 0.6rem; font-family: var(--font-display); font-size: 1.05rem; }
+.season-panel h3 span { color: var(--muted); font-weight: 600; }
+.conf-afc h3 { color: var(--afc); }
+.conf-nfc h3 { color: var(--nfc); }
+
+@keyframes season-in { from { opacity: 0; transform: translateY(8px) scale(0.96); } }
+
+/* league */
+.league { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.team-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.team-chip {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 99px;
+  color: #fff;
+  animation: season-in 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.conf-afc .team-chip { background: var(--afc); }
+.conf-nfc .team-chip { background: var(--nfc); }
+
+/* divisions */
+.divisions { display: grid; gap: 1rem; }
+.division-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; }
+.division {
+  border-radius: 10px;
+  padding: 0.5rem 0.6rem;
+  background: var(--bg);
+  border-top: 3px solid currentColor;
+  animation: season-in 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.conf-afc .division { color: var(--afc); }
+.conf-nfc .division { color: var(--nfc); }
+.division strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+.division ul { list-style: none; margin: 0; padding: 0; color: var(--text); font-size: 0.82rem; line-height: 1.45; }
+
+/* schedule */
+.game-strip { display: grid; grid-template-columns: repeat(17, minmax(0, 1fr)); gap: 3px; margin-bottom: 1rem; }
+.game {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  transition: opacity 0.2s;
+  animation: season-in 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.game.is-dim { opacity: 0.2; }
+.g-division { background: #c8323f; }
+.g-confDivision { background: #d9661f; }
+.g-otherConfDivision { background: #1d4f91; }
+.g-confRank { background: #0f8a7e; }
+.g-seventeenth { background: #6b46c1; }
+.schedule-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+.schedule-legend li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; line-height: 1.3; }
+.schedule-legend .game { width: 1.8rem; flex: none; font-size: 0.85rem; animation: none; }
+
+/* seeds */
+.seed-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+.seed-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  background: var(--bg);
+  animation: season-in 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.seed {
+  flex: none;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  font-weight: 800;
+  color: #fff;
+}
+.is-champ .seed { background: #1c8c3c; }
+.is-wild .seed { background: #d9661f; }
+.is-out { opacity: 0.5; }
+.is-out .seed { background: var(--muted); }
+.seed-what { font-weight: 600; }
+.seed-tag { margin-left: auto; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
+
+/* bracket */
+.bracket { padding: 0; }
+.bracket-body { display: grid; gap: 0.6rem; padding: 1.2rem 1rem; min-height: 12rem; align-content: center; justify-items: center; }
+.seed-row { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.matchup { display: flex; align-items: center; gap: 0.7rem; animation: season-in 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.matchup .vs { font-size: 0.8rem; color: var(--muted); min-width: 5rem; text-align: center; }
+.seed-pill {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  transition: opacity 0.3s, transform 0.3s;
+  animation: season-in 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.seed-pill.champ, .swatch.seed-champ { background: #1c8c3c; }
+.seed-pill.wild, .swatch.seed-wild { background: #d9661f; }
+.seed-pill.lost { opacity: 0.25; transform: scale(0.85); }
+.seed-pill.won { box-shadow: 0 0 0 3px var(--hl); }
+
+/* super bowl */
+.superbowl { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; padding: 2rem 1rem; }
+.sb-side { display: grid; justify-items: center; gap: 0.2rem; animation: season-in 0.5s both; }
+.sb-side span { font: 800 2rem/1 var(--font-display); color: #fff; padding: 1rem 1.2rem; border-radius: 14px; }
+.sb-side.conf-afc span { background: var(--afc); }
+.sb-side.conf-nfc span { background: var(--nfc); animation-delay: 0.15s; }
+.sb-side small { color: var(--muted); font-weight: 600; }
+.sb-trophy { display: grid; justify-items: center; gap: 0.3rem; animation: season-in 0.6s 0.3s both; }
+.sb-trophy svg { width: 3.2rem; fill: #b8bcc4; }
+.sb-trophy strong { font-family: var(--font-display); }
+
+/* recap */
+.season-steps { display: grid; gap: 0.6rem; }
+.season-step { display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 0.9rem; border-radius: 12px; background: var(--bg); font-weight: 600; animation: season-in 0.4s both; }
+.season-step-num { width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font-weight: 800; flex: none; }
+
+@media (max-width: 560px) {
+  .league { grid-template-columns: 1fr; }
+  .division-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-strip { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+}

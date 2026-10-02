@@ -3,6 +3,7 @@ export default {
   blurb: 'Fútbol americano, desde "¿qué es un down?" hasta cómo funciona el tope salarial.',
   lessons: {
     basics: { title: 'Cómo funciona el fútbol americano', summary: 'El campo, cómo anotar, las posiciones, correr y pasar.' },
+    season: { title: 'Cómo funciona la temporada', summary: 'Conferencias, divisiones, los 17 partidos, los playoffs y el Super Bowl.' },
     fouls: { title: 'Castigos comunes', summary: 'Salida en falso, fuera de lugar, sujeción, interferencia de pase.' },
     overtime: { title: 'Empates y tiempo extra', summary: 'Puede haber empate en la temporada regular, nunca en playoffs.' },
     strategy: { title: 'Estrategia', summary: 'Por qué los equipos hacen lo que hacen.' },
@@ -128,7 +129,7 @@ export default {
     end: {
       title: '¡Eso es lo básico!',
       body: 'Ya conoces el campo, cómo anotar, quién juega dónde y cómo avanza el balón.',
-      example: 'Lo próximo: castigos comunes y después empates y tiempo extra.',
+      example: 'Lo próximo: cómo funciona la temporada.',
     },
     foulsIntro: {
       title: 'Castigos: el pañuelo amarillo',
@@ -179,6 +180,86 @@ export default {
         ['Interferencia de pase (defensiva)', 'def', 'Lugar y 1.er down'],
         ['Interferencia de pase (ofensiva)', 'off', '−10'],
       ],
+    },
+    seasonLeague: {
+      title: '32 equipos, 2 conferencias',
+      body: 'La NFL tiene 32 equipos, divididos en dos conferencias: la AFC y la NFC, con 16 equipos cada una.',
+    },
+    seasonDivisions: {
+      title: '4 divisiones en cada conferencia',
+      body: 'Cada conferencia tiene una división Este, Norte, Sur y Oeste, con 4 equipos cada una.',
+      example: 'Los rivales de división son los más importantes: juegas contra cada uno dos veces al año, y el campeón de la división va a los playoffs.',
+    },
+    seasonSchedule: {
+      title: 'Los 17 partidos',
+      body: 'Cada equipo juega 17 partidos de temporada regular, siempre con la misma fórmula:',
+      example: 'Los últimos 3 rivales (los 2 partidos verdes y el partido 17) dependen de en qué lugar terminó tu equipo en su división la temporada anterior.',
+    },
+    playoffSeeds: {
+      title: 'Quién va a los playoffs',
+      body: '7 equipos por conferencia, 14 en total. Los 4 campeones de división ocupan las posiciones 1–4, según su récord. Los 3 mejores del resto (los comodines) ocupan las posiciones 5–7.',
+      note: 'Si ganas tu división, entras con una de las 4 primeras posiciones, aunque un comodín tenga mejor récord.',
+      example: '¿Mismo récord? El primer desempate es el enfrentamiento directo, luego el récord de división, y así sucesivamente.',
+    },
+    playoffBracket: {
+      title: 'Playoffs: quien pierde queda fuera',
+      body: 'Un partido por ronda, y el mejor posicionado juega en casa. El número 1 se salta la primera ronda.',
+      example: 'En el ejemplo, el 7 vence al 2. Por eso, en la siguiente ronda, el 1 recibe a la posición más baja que queda: el 7.',
+    },
+    superBowl: {
+      title: 'El Super Bowl',
+      body: 'El campeón de la AFC juega contra el campeón de la NFC en el Super Bowl, en una sede elegida de antemano.',
+    },
+    seasonEnd: {
+      title: '¡Esa es la temporada!',
+      body: 'Temporada regular, playoffs, Super Bowl.',
+      example: 'Lo próximo: castigos comunes.',
+    },
+  },
+
+  season: {
+    division: {
+      east: 'Este',
+      north: 'Norte',
+      south: 'Sur',
+      west: 'Oeste',
+    },
+    schedule: {
+      division: 'Rivales de división: cada uno dos veces (local y visitante)',
+      confDivision: 'Los 4 equipos de otra división de tu conferencia',
+      otherConfDivision: 'Los 4 equipos de una división de la otra conferencia',
+      confRank: '1 equipo de cada una de las otras 2 divisiones de tu conferencia (según la temporada anterior)',
+      seventeenth: 'El partido 17: 1 equipo de la otra conferencia (según la temporada anterior)',
+    },
+    oneConference: 'Una conferencia (AFC o NFC)',
+    divChamp: 'Campeón de división',
+    wildCard: 'Comodín (wild card)',
+    bye: 'Descansa en la 1.ª ronda',
+    out: 'Fuera de los playoffs',
+    hosts: 'recibe a',
+    champion: 'Campeón de conferencia',
+    round: {
+      seeds: 'Posiciones',
+      wildCard: 'Ronda de comodines',
+      wildCardResult: 'Comodines: resultados',
+      divisional: 'Ronda divisional',
+      divisionalResult: 'Divisional: resultados',
+      conference: 'Final de conferencia',
+      conferenceResult: 'Campeón de conferencia',
+    },
+    roundHow: {
+      seeds: '7 equipos por conferencia',
+      wildCard: '2 recibe a 7, 3 a 6, 4 a 5. El 1 descansa.',
+      wildCardResult: 'Ejemplo: el 7 vence al 2',
+      divisional: 'El 1 recibe a la posición más baja que queda: 7',
+      divisionalResult: 'Ejemplo: ganan el 1 y el 3',
+      conference: 'Los 2 últimos juegan por el título de conferencia',
+      conferenceResult: 'El 1 va al Super Bowl',
+    },
+    recap: {
+      regular: 'Temporada regular: 17 partidos',
+      playoffs: 'Playoffs: 7 equipos por conferencia, quien pierde queda fuera',
+      superBowl: 'Super Bowl: campeón de la AFC contra campeón de la NFC',
     },
   },
 

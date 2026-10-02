@@ -3,6 +3,7 @@ export default {
   blurb: 'Futebol americano, de "o que é uma descida?" até como funciona o teto salarial.',
   lessons: {
     basics: { title: 'Como o futebol americano funciona', summary: 'O campo, como pontuar, as posições, correr e passar.' },
+    season: { title: 'Como funciona o campeonato', summary: 'Conferências, divisões, os 17 jogos, os playoffs e o Super Bowl.' },
     fouls: { title: 'Faltas comuns', summary: 'False start, offside, holding, interferência de passe.' },
     overtime: { title: 'Empates e prorrogação', summary: 'Empate pode na temporada regular, nunca nos playoffs.' },
     strategy: { title: 'Estratégia', summary: 'Por que os times fazem o que fazem.' },
@@ -128,7 +129,7 @@ export default {
     end: {
       title: 'Esse é o básico!',
       body: 'Agora você conhece o campo, como pontuar, quem joga onde e como a bola avança.',
-      example: 'A seguir: faltas comuns e depois empates e prorrogação.',
+      example: 'A seguir: como funciona o campeonato.',
     },
     foulsIntro: {
       title: 'Faltas: a bandeira amarela',
@@ -179,6 +180,86 @@ export default {
         ['Interferência de passe (defesa)', 'def', 'Local e first down'],
         ['Interferência de passe (ataque)', 'off', '−10'],
       ],
+    },
+    seasonLeague: {
+      title: '32 times, 2 conferências',
+      body: 'A NFL tem 32 times, divididos em duas conferências: a AFC e a NFC, com 16 times cada.',
+    },
+    seasonDivisions: {
+      title: '4 divisões em cada conferência',
+      body: 'Cada conferência tem uma divisão Leste, Norte, Sul e Oeste, com 4 times cada.',
+      example: 'Os rivais de divisão são os que mais importam: você joga contra cada um duas vezes por ano, e o campeão da divisão vai aos playoffs.',
+    },
+    seasonSchedule: {
+      title: 'Os 17 jogos',
+      body: 'Cada time joga 17 partidas na temporada regular, sempre com a mesma fórmula:',
+      example: 'Os 3 últimos adversários (os 2 jogos verdes e o 17º jogo) dependem da posição em que seu time terminou na divisão na temporada anterior.',
+    },
+    playoffSeeds: {
+      title: 'Quem vai aos playoffs',
+      body: '7 times por conferência, 14 no total. Os 4 campeões de divisão ficam com as posições 1–4, pela campanha. Os 3 melhores do resto (os wild cards) ficam com as posições 5–7.',
+      note: 'Ganhou a divisão, está dentro, entre os 4 primeiros, mesmo que um wild card tenha campanha melhor.',
+      example: 'Mesma campanha? O primeiro critério de desempate é o confronto direto, depois a campanha na divisão, e assim por diante.',
+    },
+    playoffBracket: {
+      title: 'Playoffs: perdeu, está fora',
+      body: 'Um jogo por rodada, e o mais bem classificado joga em casa. O 1º colocado pula a primeira rodada.',
+      example: 'No exemplo, o 7º elimina o 2º. Por isso, na rodada seguinte, o 1º recebe o pior classificado que sobrou: o 7º.',
+    },
+    superBowl: {
+      title: 'O Super Bowl',
+      body: 'O campeão da AFC enfrenta o campeão da NFC no Super Bowl, em um local definido com antecedência.',
+    },
+    seasonEnd: {
+      title: 'Esse é o campeonato!',
+      body: 'Temporada regular, playoffs, Super Bowl.',
+      example: 'A seguir: faltas comuns.',
+    },
+  },
+
+  season: {
+    division: {
+      east: 'Leste',
+      north: 'Norte',
+      south: 'Sul',
+      west: 'Oeste',
+    },
+    schedule: {
+      division: 'Rivais de divisão: cada um duas vezes (em casa e fora)',
+      confDivision: 'Os 4 times de outra divisão da sua conferência',
+      otherConfDivision: 'Os 4 times de uma divisão da outra conferência',
+      confRank: '1 time de cada uma das outras 2 divisões da sua conferência (pela temporada anterior)',
+      seventeenth: 'O 17º jogo: 1 time da outra conferência (pela temporada anterior)',
+    },
+    oneConference: 'Uma conferência (AFC ou NFC)',
+    divChamp: 'Campeão de divisão',
+    wildCard: 'Wild card',
+    bye: 'Folga na 1ª rodada',
+    out: 'Fora dos playoffs',
+    hosts: 'recebe o',
+    champion: 'Campeão de conferência',
+    round: {
+      seeds: 'Classificação',
+      wildCard: 'Rodada Wild Card',
+      wildCardResult: 'Wild Card: resultados',
+      divisional: 'Rodada Divisional',
+      divisionalResult: 'Divisional: resultados',
+      conference: 'Final de conferência',
+      conferenceResult: 'Campeão de conferência',
+    },
+    roundHow: {
+      seeds: '7 times por conferência',
+      wildCard: '2º recebe o 7º, 3º o 6º, 4º o 5º. O 1º folga.',
+      wildCardResult: 'Exemplo: o 7º elimina o 2º',
+      divisional: 'O 1º recebe o pior classificado que sobrou: o 7º',
+      divisionalResult: 'Exemplo: 1º e 3º vencem',
+      conference: 'Os 2 últimos disputam o título da conferência',
+      conferenceResult: 'O 1º vai ao Super Bowl',
+    },
+    recap: {
+      regular: 'Temporada regular: 17 jogos',
+      playoffs: 'Playoffs: 7 times por conferência, perdeu está fora',
+      superBowl: 'Super Bowl: campeão da AFC contra campeão da NFC',
     },
   },
 
