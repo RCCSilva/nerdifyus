@@ -36,8 +36,11 @@
 
 .sb-part { border-radius: 5px; transition: opacity 0.3s, box-shadow 0.3s; }
 .sb-part.is-dim { opacity: 0.22; }
-.sb-part.is-focus { box-shadow: 0 0 0 2px #ffd400, 0 0 14px rgb(255 212 0 / 0.6); animation: focus-pulse 1.6s ease-in-out infinite; }
-@keyframes focus-pulse { 50% { box-shadow: 0 0 0 2px #ffd400, 0 0 2px rgb(255 212 0 / 0.2); } }
+.sb-part.is-focus { box-shadow: 0 0 0 2px #fff, 0 0 14px rgb(255 255 255 / 0.55); animation: focus-pulse 1.6s ease-in-out infinite; }
+@keyframes focus-pulse { 50% { box-shadow: 0 0 0 2px #fff, 0 0 2px rgb(255 255 255 / 0.15); } }
+/* white ring, not yellow: the timeout bars and the down are yellow themselves */
+.sb-timeouts.is-focus { padding: 0.3rem 0.4rem; gap: 4px; }
+.sb-timeouts.is-focus i { width: 0.9rem; height: 0.3rem; }
 
 .big-playclock { justify-self: center; font: 800 3.4rem/1 var(--font-display); font-variant-numeric: tabular-nums; color: var(--text); }
 
