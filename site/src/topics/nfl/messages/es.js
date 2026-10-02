@@ -423,16 +423,12 @@ export default {
       title: 'Intercambios: cambiar jugadores y selecciones',
       body: 'Los equipos pueden intercambiar jugadores con contrato y selecciones del draft, solos o combinados: un jugador por una selección, selecciones por selecciones, jugadores por jugadores.',
       example: 'Las selecciones se pueden intercambiar incluso durante el propio draft.',
+      note: 'A diferencia del fútbol, no hay dinero de por medio: los equipos no pueden comprar ni vender jugadores, y no existe el pago por traspaso. Las reglas de la NFL prohíben cualquier intercambio que incluya dinero. Un intercambio son solo jugadores, selecciones o una mezcla de ambos.',
     },
     tradeWindow: {
       title: 'Cuándo se puede intercambiar',
       body: 'Los intercambios se abren cuando empieza el año de la liga, en marzo, y se cierran en la fecha límite durante la temporada. Después quedan cerrados hasta el siguiente año de la liga.',
       example: '2026: los intercambios terminaron el 10 de noviembre a las 4 p. m., hora de Nueva York.',
-    },
-    tradeCap: {
-      title: 'Qué hace un intercambio con el tope salarial',
-      body: 'El salario del jugador se va con él. Pero su bono por firma, ya pagado por el equipo anterior, se queda: el nuevo equipo no carga nada de él, y el anterior carga de golpe todo lo que faltaba contar.',
-      note: 'Ese resto se llama “dinero muerto” (dead money): espacio del tope usado por un jugador que ya no juega para ti. Si el intercambio es antes del 1 de junio, cuenta todo este año; después del 1 de junio, cuenta el año siguiente.',
     },
     tagWhat: {
       title: 'Tags: retener a un jugador un año más',
@@ -510,15 +506,8 @@ export default {
     march: 'Marzo',
     nov10: '10 nov (2026)',
     marchNext: 'Marzo siguiente',
-    tradeBefore: 'Antes del intercambio',
-    tradeBeforeHow: 'Bono de US$ 20 M en 5 años: US$ 4 M por año en el tope',
-    tradeAfter: 'Intercambiado tras 2 temporadas',
-    tradeAfterHow: 'Equipo anterior: US$ 12 M de dinero muerto ya · Nuevo: nada del bono',
-    bonusPart: 'Bono en el tope',
     dead: 'Dinero muerto',
     alreadyCounted: 'Ya contado',
-    oldTeam: 'Equipo anterior',
-    newTeam: 'Equipo nuevo',
     yearN: 'Año {n}',
     tagFoot: 'Cada equipo puede usar un tag por año. Un tag aceptado está garantizado.',
     tagRow: {

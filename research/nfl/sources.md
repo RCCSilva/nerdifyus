@@ -47,6 +47,8 @@
 | S43 | Bleacher Report — "Flashback Friday: Redskins vs. Panthers timeline" (Rich Tandler) | secondary | 2008-08-22 · accessed 2026-10-02 | https://bleacherreport.com/articles/50011-flashback-friday-redskins-vs-panthers-timeline |
 | S44 | The Washington Post — "Gilbert signs with Panthers" (archive; date from the URL, page returned 403) | secondary (news) | 1998-04-21 · accessed 2026-10-02 | https://www.washingtonpost.com/archive/sports/1998/04/21/gilbert-signs-with-panthers/86516c45-e891-41e5-97c8-42dfb4a64251/ |
 | S45 | Wikipedia — "1998 NFL draft" | fallback (encyclopedia) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/1998_NFL_draft |
+| S46 | Constitution and Bylaws of the National Football League (revised as of 2016-09-14), copy hosted by Aceris Law (`raw/nfl-constitution-bylaws.pdf`) | official (league governing document) | 2016-09-14 · accessed 2026-10-02 | https://www.acerislaw.com/wp-content/uploads/2026/02/NFL-constitution.pdf |
+| S47 | Wikipedia — "Transfer (association football)" | fallback (encyclopedia) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/Transfer_(association_football) |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

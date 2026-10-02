@@ -5,6 +5,14 @@ Applies to: the 2020 CBA (S33) and the 2026 calendar (S34)
 ## What can be traded
 - Player contracts and draft picks. Teams may trade picks at any time before and during the draft [S30]; compensatory picks too (Detroit traded its 2026 special pick to Jacksonville) [S32].
 
+## No money in trades (vs. soccer)
+- A trade is defined as an assignment or exchange of "player contracts, rights to players, selection choices, and/or cash"; "There shall be no trades for past, future or nominal consideration" [S46 Art. XVI §16.6, PDF p.76].
+- 1982, Commissioner Rozelle: selling a draft choice "for any amount of money" is conduct detrimental to the League; he would void it [S46 App. 1982-2, PDF p.136].
+- 2001, Competition Committee re-affirmed the policy: "any trades for, or involving, any amount of cash are prohibited" [S46 App. 2001-15, PDF p.228].
+- So in practice a trade is players, picks, or a mix (no cash).
+- Soccer contrast: "A transfer fee is the agreed financial compensation paid by the new club to the selling club" [S47].
+- The site's trades lesson doesn't cover the cap effect any more (user's choice). The cap rules stay below and in the cap lesson.
+
 ## When
 - Trading runs from the start of the league year until the trade deadline. 2026: "All trading ends for 2026 at 4:00 p.m., New York time" on November 10; it resumes when the next league year begins, in March [S34].
 

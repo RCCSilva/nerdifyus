@@ -424,16 +424,12 @@ export default {
       title: 'Trades: swapping players and picks',
       body: 'Teams can trade players under contract and draft picks, alone or mixed: a player for a pick, picks for picks, players for players.',
       example: 'Picks can even be traded during the draft itself.',
+      note: 'Unlike soccer, there’s no money involved: teams can’t buy or sell players, and there’s no transfer fee. NFL rules prohibit any trade that involves cash. A trade is only players, picks, or a mix of both.',
     },
     tradeWindow: {
       title: 'When teams can trade',
       body: 'Trading opens when the league year starts, in March, and closes at the trade deadline during the season. Then it’s closed until the next league year.',
       example: '2026: all trading ended on November 10 at 4 p.m. New York time.',
-    },
-    tradeCap: {
-      title: 'What a trade does to the salary cap',
-      body: 'The player’s salary goes with him. But his signing bonus, already paid by the old team, stays behind: the new team takes none of it, and the old team takes all that was left to count, at once.',
-      note: 'That leftover is called “dead money”: cap space used by a player who no longer plays for you. Traded before June 1, it all counts this year; after June 1, it counts next year.',
     },
     tagWhat: {
       title: 'Tags: keeping a player for one more year',
@@ -511,15 +507,8 @@ export default {
     march: 'March',
     nov10: 'Nov 10 (2026)',
     marchNext: 'Next March',
-    tradeBefore: 'Before the trade',
-    tradeBeforeHow: '$20M bonus over 5 years: $4M a year on the cap',
-    tradeAfter: 'Traded after 2 seasons',
-    tradeAfterHow: 'Old team: $12M dead money now · New team: no bonus',
-    bonusPart: 'Bonus on the cap',
     dead: 'Dead money',
     alreadyCounted: 'Already counted',
-    oldTeam: 'Old team',
-    newTeam: 'New team',
     yearN: 'Year {n}',
     tagFoot: 'Each team can use one tag per year. An accepted tag is guaranteed.',
     tagRow: {

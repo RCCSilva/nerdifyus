@@ -3,9 +3,8 @@ import * as V from './visuals';
 // Trades (intermediate), tags and the salary cap (advanced). Text lives in nfl/messages/<locale>.js.
 // refs: [sourceId, locator, pdfPage] — see ../sources.js and research/nfl/09-trades.md, 10-tags.md, 12-salary-cap.md.
 export const TRADES_SLIDES = [
-  { id: 'tradeWhat', Visual: V.TradeWhatVisual, refs: [['S30'], ['S32', '2026']] },
+  { id: 'tradeWhat', Visual: V.TradeWhatVisual, refs: [['S30'], ['S32', '2026'], ['S46', 'Art. XVI §16.6', 76], ['S46', '2001 position on trades for cash', 228], ['S47']] },
   { id: 'tradeWindow', Visual: V.TradeWindowVisual, refs: [['S34', '2026']] },
-  { id: 'tradeCap', Visual: V.TradeCapVisual, refs: [['S33', 'Art. 13 §6(b)(i)', 126], ['S33', 'Art. 13 §6(b)(ii)', 127]] },
 ];
 
 export const TAGS_SLIDES = [

@@ -423,16 +423,12 @@ export default {
       title: 'Trocas: jogadores e escolhas de draft',
       body: 'Os times podem trocar jogadores com contrato e escolhas de draft, sozinhos ou misturados: um jogador por uma escolha, escolhas por escolhas, jogadores por jogadores.',
       example: 'As escolhas podem ser trocadas até durante o próprio draft.',
+      note: 'Diferente do futebol, não tem dinheiro envolvido: os times não podem comprar nem vender jogadores, e não existe valor de transferência. As regras da NFL proíbem qualquer troca que envolva dinheiro. Uma troca é só jogadores, escolhas de draft ou uma mistura dos dois.',
     },
     tradeWindow: {
       title: 'Quando dá para trocar',
       body: 'As trocas abrem quando começa o ano da liga, em março, e fecham no prazo final (trade deadline) durante a temporada. Depois ficam fechadas até o próximo ano da liga.',
       example: '2026: as trocas acabaram em 10 de novembro, às 16h de Nova York.',
-    },
-    tradeCap: {
-      title: 'O que uma troca faz com o teto',
-      body: 'O salário do jogador vai junto com ele. Mas o bônus de assinatura (signing bonus), já pago pelo time antigo, fica para trás: o time novo não carrega nada dele, e o antigo carrega de uma vez tudo o que ainda faltava contar.',
-      note: 'Essa sobra se chama “dead money”: espaço do teto usado por um jogador que não joga mais para você. Troca antes de 1º de junho: conta tudo neste ano; depois de 1º de junho: conta no ano seguinte.',
     },
     tagWhat: {
       title: 'Tags: segurando um jogador por mais um ano',
@@ -510,15 +506,8 @@ export default {
     march: 'Março',
     nov10: '10/nov (2026)',
     marchNext: 'Março seguinte',
-    tradeBefore: 'Antes da troca',
-    tradeBeforeHow: 'Bônus de assinatura de US$ 20 mi: US$ 4 mi por ano no teto',
-    tradeAfter: 'Trocado depois de 2 temporadas',
-    tradeAfterHow: 'Time antigo: US$ 12 mi de dead money já · Novo: nada do bônus',
-    bonusPart: 'Bônus de assinatura no teto',
     dead: 'Dead money',
     alreadyCounted: 'Já contado',
-    oldTeam: 'Time antigo',
-    newTeam: 'Time novo',
     yearN: 'Ano {n}',
     tagFoot: 'Cada time pode usar um tag por ano. Tag aceito é garantido.',
     tagRow: {

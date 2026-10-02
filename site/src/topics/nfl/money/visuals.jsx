@@ -66,48 +66,6 @@ export function TradeWindowVisual({ replay }) {
   );
 }
 
-/** Before / after a trade: who carries what on the cap (signing bonus example). */
-export function TradeCapVisual({ replay }) {
-  const { t } = useI18n();
-  const money = useMoney();
-  const frames = [
-    { chip: t('nfl.money.tradeBefore'), caption: t('nfl.money.tradeBeforeHow'), old: [4, 4, 4, 4, 4], newT: [] },
-    { chip: t('nfl.money.tradeAfter'), caption: t('nfl.money.tradeAfterHow'), old: [4, 4, 12], newT: [0, 0, 0] },
-  ];
-  return (
-    <StopMotionScene
-      frames={2}
-      interval={2800}
-      replay={replay}
-      header={(i) => <StateLine chip={frames[i].chip} caption={frames[i].caption} highlight={i === 1} />}
-      footer={<Legend items={[{ swatch: 'tone-a', label: t('nfl.money.bonusPart') }, { swatch: 'tone-dead', label: t('nfl.money.dead') }, { swatch: 'tone-past', label: t('nfl.money.alreadyCounted') }]} />}
-    >
-      {(i) => (
-        <div className="years">
-          {[['old', t('nfl.money.oldTeam')], ['newT', t('nfl.money.newTeam')]].map(([k, label]) => (
-            <div key={k} className="years-row">
-              <span className="years-label">{label}</span>
-              <span className="years-cells">
-                {[1, 2, 3, 4, 5].map((y) => {
-                  const v = frames[i][k][y - 1];
-                  const past = i === 1 && y <= 2 && k === 'old';
-                  const dead = i === 1 && y === 3 && k === 'old';
-                  return (
-                    <span key={y} className={`year-cell ${v ? (dead ? 'tone-dead' : past ? 'tone-past' : 'tone-a') : 'is-empty'}`}>
-                      <small>{t('nfl.money.yearN', { n: y })}</small>
-                      {v ? money(v) : '—'}
-                    </span>
-                  );
-                })}
-              </span>
-            </div>
-          ))}
-        </div>
-      )}
-    </StopMotionScene>
-  );
-}
-
 /* ================= Tags ================= */
 
 const TAGS = ['nonExclusive', 'exclusive', 'transition'];

@@ -222,6 +222,16 @@ export const SOURCES = {
     title: 'Wikipedia — 1998 NFL draft (held April 18–19, 1998)',
     url: 'https://en.wikipedia.org/wiki/1998_NFL_draft',
   },
+  S46: {
+    short: 'NFL Constitution & Bylaws',
+    title: 'Constitution and Bylaws of the National Football League (revised as of September 14, 2016)',
+    url: 'https://www.acerislaw.com/wp-content/uploads/2026/02/NFL-constitution.pdf',
+  },
+  S47: {
+    short: 'Wikipedia · Transfer (association football)',
+    title: 'Wikipedia — Transfer (association football)',
+    url: 'https://en.wikipedia.org/wiki/Transfer_(association_football)',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */
