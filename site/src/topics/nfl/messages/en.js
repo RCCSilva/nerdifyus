@@ -48,7 +48,8 @@ export default {
     downs: {
       title: '4 tries to go 10 yards',
       body: 'Each try is a down. The offense needs to gain at least 10 yards in 4 downs.',
-      example: 'Got 10+ yards, in one play or several? The count resets: 1st & 10 again. Didn’t? The other team gets the ball.',
+      example: 'Example: you gain 20 yards. The count resets: the next play is 1st & 10 from where the ball ended.',
+      note: 'Not always 10 to go: penalties can push the offense back. Example: false start (an offensive player moves before the snap) → the offense goes back 5 yards.',
       steps: [
         'Start: 1st & 10',
         'Run, +4 yards',
@@ -129,6 +130,75 @@ export default {
       title: 'That’s the basics!',
       body: 'You now know the field, how to score, who plays where, and how the ball moves.',
       example: 'Next up: common fouls, then ties & overtime.',
+    },
+    foulsIntro: {
+      title: 'Fouls: the yellow flag',
+      body: 'Break a rule and an official throws a yellow flag. The usual punishment: yards.',
+      example: 'Foul by the offense → the offense goes back. Foul by the defense → the offense moves forward.',
+    },
+    falseStart: {
+      title: 'False start (offense): 5 yards',
+      body: 'Before the snap, an offensive player who is set moves as if the play had started. Whistle: the play never happens.',
+      example: 'A lineman flinches before the snap → the offense goes back 5 yards.',
+    },
+    offside: {
+      title: 'Offside, encroachment, neutral zone infraction',
+      body: 'The neutral zone is the length of the ball, between the two teams. Before the snap, defenders must stay out of it. Three ways to break that rule, all 5 yards against the defense:',
+      bullets: [
+        'Offside: a defender is inside the neutral zone when the ball is snapped.',
+        'Encroachment: a defender crosses it and touches an offensive player before the snap.',
+        'Neutral zone infraction: a defender steps into it and makes an offensive player flinch.',
+      ],
+    },
+    offHolding: {
+      title: 'Holding (offense): 10 yards',
+      body: 'A blocker grabs, hooks or pulls down a defender to stop him.',
+      example: 'Blocking is legal; holding isn’t. The offense goes back 10 yards.',
+    },
+    defHolding: {
+      title: 'Holding (defense): 5 yards + first down',
+      body: 'A defender grabs a receiver, or his jersey, to slow him down.',
+      example: 'The offense moves forward 5 yards and gets an automatic first down: 1st & 10 again.',
+    },
+    passInterference: {
+      title: 'Pass interference',
+      body: 'While a pass is in the air, nobody may take away the other player’s chance to catch it (more than 1 yard past the line).',
+      bullets: [
+        'By the defense: the offense gets the ball where the foul happened, plus a first down. It can be a huge gain.',
+        'By the offense (for example, pushing off the defender): the offense goes back 10 yards.',
+      ],
+      example: 'Bumping while both players go for the ball is fine. It’s a foul when the contact takes away the chance to catch.',
+    },
+    foulsSummary: {
+      title: 'Common fouls at a glance',
+      example: 'Next up: ties & overtime.',
+      rows: [
+        ['False start', 'off', '−5'],
+        ['Offside / encroachment / neutral zone infraction', 'def', '+5'],
+        ['Holding (offense)', 'off', '−10'],
+        ['Holding (defense)', 'def', '+5 & 1st down'],
+        ['Pass interference (defense)', 'def', 'Spot & 1st down'],
+        ['Pass interference (offense)', 'off', '−10'],
+      ],
+    },
+  },
+
+  fouls: {
+    offFoul: 'Offense foul',
+    defFoul: 'Defense foul',
+    whistle: 'Whistle! Play is dead',
+    neutralZone: 'Neutral zone',
+    firstDown: 'Automatic 1st & 10',
+    spotFirstDown: 'Ball here + 1st & 10',
+    scene: {
+      offside: 'Offside',
+      encroachment: 'Encroachment',
+      nzi: 'Neutral zone infraction',
+    },
+    sceneHow: {
+      offside: 'In the zone when the ball is snapped',
+      encroachment: 'Crosses and touches an offensive player',
+      nzi: 'Steps in and makes a blocker flinch',
     },
   },
 

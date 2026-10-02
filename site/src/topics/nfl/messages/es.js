@@ -47,7 +47,8 @@ export default {
     downs: {
       title: '4 intentos para avanzar 10 yardas',
       body: 'Cada intento es un down. La ofensiva necesita avanzar al menos 10 yardas en 4 downs.',
-      example: '¿Avanzó 10+ yardas, en una jugada o en varias? La cuenta se reinicia: otra vez 1.º y 10. ¿No? El balón pasa al rival.',
+      example: 'Ejemplo: avanzas 20 yardas. La cuenta se reinicia: la siguiente jugada es 1.º y 10 desde donde terminó el balón.',
+      note: 'No siempre faltan 10: los castigos pueden hacer retroceder a la ofensiva. Ejemplo: salida en falso (un jugador ofensivo se mueve antes del snap) → la ofensiva retrocede 5 yardas.',
       steps: [
         'Inicio: 1.º y 10',
         'Carrera, +4 yardas',
@@ -128,6 +129,75 @@ export default {
       title: '¡Eso es lo básico!',
       body: 'Ya conoces el campo, cómo anotar, quién juega dónde y cómo avanza el balón.',
       example: 'Lo próximo: castigos comunes y después empates y tiempo extra.',
+    },
+    foulsIntro: {
+      title: 'Castigos: el pañuelo amarillo',
+      body: 'Si alguien rompe una regla, un oficial lanza un pañuelo amarillo. El castigo habitual: yardas.',
+      example: 'Castigo a la ofensiva → la ofensiva retrocede. Castigo a la defensiva → la ofensiva avanza.',
+    },
+    falseStart: {
+      title: 'Salida en falso (ofensiva): 5 yardas',
+      body: 'Antes del snap, un jugador ofensivo ya colocado se mueve como si la jugada hubiera empezado. Silbato: la jugada no ocurre.',
+      example: 'Un liniero se mueve antes del snap → la ofensiva retrocede 5 yardas.',
+    },
+    offside: {
+      title: 'Fuera de lugar, invasión, infracción de zona neutral',
+      body: 'La zona neutral es el largo del balón, entre los dos equipos. Antes del snap, los defensivos deben quedarse fuera de ella. Tres formas de romper esa regla, todas de 5 yardas contra la defensiva:',
+      bullets: [
+        'Fuera de lugar: un defensivo está dentro de la zona neutral cuando se hace el snap.',
+        'Invasión (encroachment): un defensivo la cruza y toca a un jugador ofensivo antes del snap.',
+        'Infracción de zona neutral: un defensivo entra en ella y hace que un jugador ofensivo reaccione.',
+      ],
+    },
+    offHolding: {
+      title: 'Sujeción (ofensiva): 10 yardas',
+      body: 'Un bloqueador agarra, engancha o derriba a un defensivo para frenarlo.',
+      example: 'Bloquear es legal; sujetar no. La ofensiva retrocede 10 yardas.',
+    },
+    defHolding: {
+      title: 'Sujeción (defensiva): 5 yardas + primer down',
+      body: 'Un defensivo agarra a un receptor, o su camiseta, para frenarlo.',
+      example: 'La ofensiva avanza 5 yardas y gana un primer down automático: de nuevo 1.º y 10.',
+    },
+    passInterference: {
+      title: 'Interferencia de pase',
+      body: 'Mientras el pase está en el aire, nadie puede quitarle al rival la oportunidad de atraparlo (a más de 1 yarda de la línea).',
+      bullets: [
+        'De la defensiva: la ofensiva recibe el balón donde ocurrió la falta, más un primer down. Puede ser una gran ganancia.',
+        'De la ofensiva (por ejemplo, empujar al defensor): la ofensiva retrocede 10 yardas.',
+      ],
+      example: 'Chocar mientras ambos van por el balón está permitido. Es falta cuando el contacto quita la oportunidad de atraparlo.',
+    },
+    foulsSummary: {
+      title: 'Los castigos comunes de un vistazo',
+      example: 'Lo próximo: empates y tiempo extra.',
+      rows: [
+        ['Salida en falso', 'off', '−5'],
+        ['Fuera de lugar / invasión / infracción de zona neutral', 'def', '+5'],
+        ['Sujeción (ofensiva)', 'off', '−10'],
+        ['Sujeción (defensiva)', 'def', '+5 y 1.er down'],
+        ['Interferencia de pase (defensiva)', 'def', 'Lugar y 1.er down'],
+        ['Interferencia de pase (ofensiva)', 'off', '−10'],
+      ],
+    },
+  },
+
+  fouls: {
+    offFoul: 'Castigo a la ofensiva',
+    defFoul: 'Castigo a la defensiva',
+    whistle: '¡Silbato! Jugada muerta',
+    neutralZone: 'Zona neutral',
+    firstDown: '1.º y 10 automático',
+    spotFirstDown: 'Balón aquí + 1.º y 10',
+    scene: {
+      offside: 'Fuera de lugar',
+      encroachment: 'Invasión (encroachment)',
+      nzi: 'Infracción de zona neutral',
+    },
+    sceneHow: {
+      offside: 'Dentro de la zona cuando se hace el snap',
+      encroachment: 'Cruza y toca a un jugador ofensivo',
+      nzi: 'Entra y hace reaccionar a un bloqueador',
     },
   },
 

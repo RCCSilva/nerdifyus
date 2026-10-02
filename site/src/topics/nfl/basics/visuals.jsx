@@ -15,7 +15,7 @@ const LINEUP_Y = [7, WIDTH - 7];
 const at = (los, p) => ({ ...p, x: los + p.dx });
 const byGroup = (list, ...groups) => list.filter((p) => groups.includes(p.group));
 
-function Pop({ x, y, show, children, kind = '' }) {
+export function Pop({ x, y, show, children, kind = '' }) {
   return (
     <g className={`pop ${kind} ${show ? 'is-on' : ''}`}>
       <UprightText x={x} y={y} className="pop-text">{children}</UprightText>
@@ -274,7 +274,7 @@ export function TouchdownVisual({ replay }) {
   );
 }
 
-function kickArc(from, to, p) {
+export function kickArc(from, to, p) {
   const [x, y] = along([from, to], p);
   return { x, y, z: Math.sin(Math.PI * p) };
 }

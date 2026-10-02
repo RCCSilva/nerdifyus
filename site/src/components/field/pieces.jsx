@@ -50,3 +50,17 @@ export function Ball({ x, y, z = 0, angle = 0 }) {
 export function FieldLine({ x, kind }) {
   return <line className={kind} x1={x} x2={x} y1={0} y2={WIDTH} style={{ transition: 'all .6s ease' }} />;
 }
+
+/** The yellow penalty flag, thrown from (fromX, fromY) to (x, y). p: 0 = in hand, 1 = landed. */
+export function PenaltyFlag({ x, y, fromX = x - 6, fromY = y - 8, p = 1 }) {
+  if (p <= 0) return null;
+  const cx = fromX + (x - fromX) * p;
+  const cy = fromY + (y - fromY) * p - Math.sin(Math.PI * p) * 3;
+  const spin = (1 - p) * 540;
+  return (
+    <g className={`penalty-flag ${p >= 1 ? 'is-down' : ''}`} transform={`translate(${cx} ${cy}) rotate(${spin})`}>
+      <path d="M-0.9 -0.5 Q0 -0.9 0.9 -0.5 L0.9 0.5 Q0 0.1 -0.9 0.5 Z" />
+      <circle cx={-0.9} cy={0.55} r={0.22} />
+    </g>
+  );
+}

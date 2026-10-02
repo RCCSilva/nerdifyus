@@ -47,7 +47,8 @@ export default {
     downs: {
       title: '4 tentativas para avançar 10 jardas',
       body: 'Cada tentativa é uma descida (down). O ataque precisa avançar pelo menos 10 jardas em 4 descidas.',
-      example: 'Avançou 10+ jardas, em uma jogada ou em várias? A contagem zera: 1ª & 10 de novo. Não? A bola vai para o adversário.',
+      example: 'Exemplo: você avança 20 jardas. A contagem zera: a próxima jogada é 1ª & 10 de onde a bola parou.',
+      note: 'Nem sempre faltam 10: faltas podem empurrar o ataque para trás. Exemplo: false start (um jogador do ataque se mexe antes do snap) → o ataque volta 5 jardas.',
       steps: [
         'Início: 1ª & 10',
         'Corrida, +4 jardas',
@@ -128,6 +129,75 @@ export default {
       title: 'Esse é o básico!',
       body: 'Agora você conhece o campo, como pontuar, quem joga onde e como a bola avança.',
       example: 'A seguir: faltas comuns e depois empates e prorrogação.',
+    },
+    foulsIntro: {
+      title: 'Faltas: a bandeira amarela',
+      body: 'Quebrou uma regra, um árbitro joga uma bandeira amarela. A punição mais comum: jardas.',
+      example: 'Falta do ataque → o ataque volta. Falta da defesa → o ataque avança.',
+    },
+    falseStart: {
+      title: 'False start (ataque): 5 jardas',
+      body: 'Antes do snap, um jogador do ataque já posicionado se mexe como se a jogada tivesse começado. Apito: a jogada não acontece.',
+      example: 'Um lineman se mexe antes do snap → o ataque volta 5 jardas.',
+    },
+    offside: {
+      title: 'Impedimento, encroachment, infração de zona neutra',
+      body: 'A zona neutra é o comprimento da bola, entre os dois times. Antes do snap, os defensores precisam ficar fora dela. Três jeitos de quebrar essa regra, todos de 5 jardas contra a defesa:',
+      bullets: [
+        'Impedimento (offside): um defensor está dentro da zona neutra na hora do snap.',
+        'Encroachment: um defensor atravessa a zona e toca um jogador do ataque antes do snap.',
+        'Infração de zona neutra: um defensor entra na zona e faz um jogador do ataque reagir.',
+      ],
+    },
+    offHolding: {
+      title: 'Holding (ataque): 10 jardas',
+      body: 'Um bloqueador agarra, engancha ou derruba um defensor para segurá-lo.',
+      example: 'Bloquear pode; segurar não. O ataque volta 10 jardas.',
+    },
+    defHolding: {
+      title: 'Holding (defesa): 5 jardas + first down',
+      body: 'Um defensor agarra um recebedor, ou a camisa dele, para atrasá-lo.',
+      example: 'O ataque avança 5 jardas e ganha um first down automático: 1ª & 10 de novo.',
+    },
+    passInterference: {
+      title: 'Interferência de passe',
+      body: 'Enquanto o passe está no ar, ninguém pode tirar do outro a chance de pegar a bola (a mais de 1 jarda da linha).',
+      bullets: [
+        'Da defesa: o ataque fica com a bola onde a falta aconteceu, mais um first down. Pode ser um ganho enorme.',
+        'Do ataque (por exemplo, empurrar o defensor): o ataque volta 10 jardas.',
+      ],
+      example: 'Trombar enquanto os dois disputam a bola pode. É falta quando o contato tira a chance de pegar a bola.',
+    },
+    foulsSummary: {
+      title: 'As faltas comuns num relance',
+      example: 'A seguir: empates e prorrogação.',
+      rows: [
+        ['False start', 'off', '−5'],
+        ['Impedimento / encroachment / infração de zona neutra', 'def', '+5'],
+        ['Holding (ataque)', 'off', '−10'],
+        ['Holding (defesa)', 'def', '+5 e first down'],
+        ['Interferência de passe (defesa)', 'def', 'Local e first down'],
+        ['Interferência de passe (ataque)', 'off', '−10'],
+      ],
+    },
+  },
+
+  fouls: {
+    offFoul: 'Falta do ataque',
+    defFoul: 'Falta da defesa',
+    whistle: 'Apito! Jogada morta',
+    neutralZone: 'Zona neutra',
+    firstDown: '1ª & 10 automática',
+    spotFirstDown: 'Bola aqui + 1ª & 10',
+    scene: {
+      offside: 'Impedimento (offside)',
+      encroachment: 'Encroachment',
+      nzi: 'Infração de zona neutra',
+    },
+    sceneHow: {
+      offside: 'Dentro da zona na hora do snap',
+      encroachment: 'Atravessa e toca um jogador do ataque',
+      nzi: 'Entra e faz um bloqueador reagir',
     },
   },
 
