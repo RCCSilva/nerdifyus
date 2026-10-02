@@ -116,6 +116,26 @@ export const SOURCES = {
     title: 'Wikipedia — Pass interference, edited 2026-09-20 (fallback source)',
     url: 'https://en.wikipedia.org/wiki/Pass_interference',
   },
+  S24: {
+    short: 'Wikipedia · Man-to-man coverage',
+    title: 'Wikipedia — Man-to-man coverage, edited 2026-09-29 (fallback source)',
+    url: 'https://en.wikipedia.org/wiki/Man-to-man_coverage',
+  },
+  S25: {
+    short: 'Wikipedia · Zone defense',
+    title: 'Wikipedia — Zone defense in American football, edited 2026-10-02 (fallback source)',
+    url: 'https://en.wikipedia.org/wiki/Zone_defense_in_American_football',
+  },
+  S26: {
+    short: 'Football Nation · Pattern-match coverage',
+    title: 'Football Nation — What Is Pattern-Match Coverage? Zone-Match Explained',
+    url: 'https://www.footballnationusa.com/post/what-is-pattern-match-coverage-football',
+  },
+  S27: {
+    short: 'PFF · 2025 schematic trends',
+    title: 'PFF — How the NFL is Evolving: Five schematic trends that have shaped the 2025 season (2026-01-04)',
+    url: 'https://www.pff.com/news/nfl-is-evolving-five-schematic-trends-that-have-shaped-the-2025-season',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

@@ -10,6 +10,7 @@ export default {
     fouls: { title: 'How fouls work', summary: 'The flag, the announcement, and what a foul does to the yards and the down.' },
     overtime: { title: 'Ties & overtime', summary: 'Ties are possible in the regular season, never in the playoffs.' },
     commonFouls: { title: 'Common fouls', summary: 'False start, offside, holding, pass interference.' },
+    defenseTactics: { title: 'Defensive tactics: pass coverage', summary: 'Man-to-man, zone and match: the three ways to cover receivers.' },
     strategy: { title: 'Strategy', summary: 'Why teams do what they do.' },
     cap: { title: 'The salary cap', summary: 'How team payrolls really work.' },
   },
@@ -364,6 +365,60 @@ export default {
       title: 'Fouls in one picture',
       insight: 'Football is a contact sport, but it isn’t a wrestling match. Many fouls exist to keep the game about the ball: holding stops players from simply grabbing whoever is in their way, and pass interference makes sure both players get a fair chance to catch a ball in the air.',
       example: 'Next up: ties & overtime. The individual fouls (false start, holding…) are in the “Common fouls” lesson.',
+    },
+    covFamilies: {
+      title: 'Three ways to cover a pass',
+      body: 'On a pass play, the defense has to decide who covers whom. There are three big families:',
+    },
+    covMan: {
+      title: 'Man-to-man',
+      body: 'Each defender is assigned one receiver and follows him wherever he goes. Defensive linemen and the deep safety usually don’t get a receiver: the safety stays deep to help over the top.',
+      example: 'Tight coverage, but it takes very good defenders: one step behind and the receiver is open.',
+    },
+    covZone: {
+      title: 'Zone',
+      body: 'Each defender is responsible for an area of the field, not a player. He covers whoever enters his area.',
+      example: 'Keeps receivers in front and limits long passes, but there are holes between the areas, and two receivers in one area is a problem.',
+    },
+    covMatch: {
+      title: 'Match (pattern-match)',
+      body: 'It starts like a zone, then changes responsibilities according to the receivers’ routes: a defender “carries” a receiver who goes deep, like man-to-man, and “passes” a shallow route to the teammate whose area it enters.',
+      example: 'It fixes zone’s weak spot: two receivers in one defender’s area.',
+    },
+    covToday: {
+      title: 'What defenses play today',
+      body: 'Man-to-man is at its lowest in years: in 2025 it was used on 22.6% of snaps, down from over a third seven seasons ago. One team stood out: Cleveland, with 45.1%.',
+      insight: 'It’s often said that today almost everything is match, and that with the very best defenders you’d always call man-to-man. We found no source that measures “match” directly; what the sources do show is that man-to-man needs elite coverage skills and that modern calls blend man and zone.',
+    },
+  },
+
+  tactics: {
+    receivers: 'Receivers',
+    defenders: 'Defenders',
+    following: 'Following a receiver',
+    zoneArea: 'Zone (area)',
+    matchRule: 'Rule: the corner carries the deep route; the slant is passed to the linebacker.',
+    decimal: '.',
+    family: {
+      man: {
+        name: 'Man-to-man',
+        what: 'Each defender follows one receiver.',
+      },
+      zone: {
+        name: 'Zone',
+        what: 'Each defender guards an area of the field.',
+      },
+      match: {
+        name: 'Match',
+        what: 'Starts as a zone, then turns into man-to-man depending on the routes.',
+      },
+    },
+    today: {
+      title: 'Share of snaps in man-to-man',
+      past: '7 seasons ago',
+      league2025: 'League, 2025',
+      browns2025: 'Cleveland, 2025',
+      note: 'Source: PFF. Zone and match make up the rest.',
     },
   },
 

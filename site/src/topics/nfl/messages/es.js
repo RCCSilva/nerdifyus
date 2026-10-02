@@ -9,6 +9,7 @@ export default {
     fouls: { title: 'Cómo funcionan los castigos', summary: 'El pañuelo, el anuncio y qué le hace un castigo a las yardas y al down.' },
     overtime: { title: 'Empates y tiempo extra', summary: 'Puede haber empate en la temporada regular, nunca en playoffs.' },
     commonFouls: { title: 'Castigos comunes', summary: 'Salida en falso, fuera de lugar, sujeción, interferencia de pase.' },
+    defenseTactics: { title: 'Táctica: la defensa contra el pase', summary: 'Hombre a hombre, zona y match: las tres formas de cubrir a los receptores.' },
     strategy: { title: 'Estrategia', summary: 'Por qué los equipos hacen lo que hacen.' },
     cap: { title: 'El tope salarial', summary: 'Cómo funcionan realmente las nóminas.' },
   },
@@ -363,6 +364,60 @@ export default {
       title: 'Los castigos en una imagen',
       insight: 'El fútbol americano es un deporte de contacto, pero no es una lucha. Muchas faltas existen para que el juego siga siendo sobre el balón: la sujeción impide agarrar sin más a quien se cruza en el camino, y la interferencia de pase garantiza que los dos jugadores tengan una oportunidad justa de atrapar un balón en el aire.',
       example: 'Lo próximo: empates y tiempo extra. Las faltas una por una (salida en falso, sujeción…) están en la lección “Castigos comunes”.',
+    },
+    covFamilies: {
+      title: 'Tres formas de cubrir un pase',
+      body: 'En una jugada de pase, la defensa tiene que decidir quién cubre a quién. Hay tres grandes familias:',
+    },
+    covMan: {
+      title: 'Hombre a hombre',
+      body: 'Cada defensor tiene asignado un receptor y lo sigue a donde vaya. Los linieros defensivos y el safety profundo normalmente no tienen receptor: el safety se queda atrás para ayudar por arriba.',
+      example: 'Cobertura pegada, pero exige defensores muy buenos: un paso atrás y el receptor queda libre.',
+    },
+    covZone: {
+      title: 'Zona',
+      body: 'Cada defensor es responsable de un área del campo, no de un jugador. Cubre a quien entre en su área.',
+      example: 'Mantiene a los receptores por delante y limita los pases largos, pero hay huecos entre las áreas, y dos receptores en una misma área son un problema.',
+    },
+    covMatch: {
+      title: 'Match (pattern-match)',
+      body: 'Empieza como una zona y luego cambia las responsabilidades según las rutas de los receptores: un defensor “acompaña” al receptor que va profundo, como hombre a hombre, y “pasa” una ruta corta al compañero en cuya área entra.',
+      example: 'Corrige el punto débil de la zona: dos receptores en el área de un mismo defensor.',
+    },
+    covToday: {
+      title: 'Qué juegan las defensas hoy',
+      body: 'El hombre a hombre está en su punto más bajo en años: en 2025 se usó en el 22,6% de las jugadas, frente a más de un tercio hace siete temporadas. Un equipo destacó: Cleveland, con 45,1%.',
+      insight: 'Se dice mucho que hoy casi todo es match, y que con los mejores defensores siempre se jugaría hombre a hombre. No encontramos una fuente que mida el “match” directamente; lo que sí muestran las fuentes es que el hombre a hombre exige una cobertura de élite y que las llamadas modernas mezclan hombre y zona.',
+    },
+  },
+
+  tactics: {
+    receivers: 'Receptores',
+    defenders: 'Defensores',
+    following: 'Siguiendo a un receptor',
+    zoneArea: 'Zona (área)',
+    matchRule: 'Regla: el esquinero acompaña la ruta profunda; la ruta en diagonal pasa al apoyador.',
+    decimal: ',',
+    family: {
+      man: {
+        name: 'Hombre a hombre',
+        what: 'Cada defensor sigue a un receptor.',
+      },
+      zone: {
+        name: 'Zona',
+        what: 'Cada defensor cuida un área del campo.',
+      },
+      match: {
+        name: 'Match',
+        what: 'Empieza como zona y se vuelve hombre a hombre según las rutas.',
+      },
+    },
+    today: {
+      title: 'Porcentaje de jugadas en hombre a hombre',
+      past: 'Hace 7 temporadas',
+      league2025: 'Liga, 2025',
+      browns2025: 'Cleveland, 2025',
+      note: 'Fuente: PFF. Zona y match forman el resto.',
     },
   },
 

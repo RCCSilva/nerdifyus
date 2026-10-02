@@ -25,6 +25,10 @@
 | S21 | Football Zebras — "Penalty enforcement is an entire-crew effort" (Mark Schultz) | secondary (officiating site) | 2014-08-01 · accessed 2026-10-02 | https://www.footballzebras.com/2014/08/penalty-enforcement-an-entire-crew-effort/ |
 | S22 | IFAB Laws of the Game — Law 5 "The Referee", Advantage (soccer; comparison only) | primary | latest edition · accessed 2026-10-02 | https://www.theifab.com/laws/latest/the-referee/ |
 | S23 | Wikipedia — "Pass interference" | secondary (explainer) | last edited 2026-09-20 · accessed 2026-10-02 | https://en.wikipedia.org/wiki/Pass_interference |
+| S24 | Wikipedia — "Man-to-man coverage" | secondary (explainer) | last edited 2026-09-29 · accessed 2026-10-02 | https://en.wikipedia.org/wiki/Man-to-man_coverage |
+| S25 | Wikipedia — "Zone defense in American football" | secondary (explainer) | last edited 2026-10-02 · accessed 2026-10-02 | https://en.wikipedia.org/wiki/Zone_defense_in_American_football |
+| S26 | Football Nation — "What Is Pattern-Match Coverage? Zone-Match Explained" | secondary (explainer) | updated Sep 13 · accessed 2026-10-02 | https://www.footballnationusa.com/post/what-is-pattern-match-coverage-football |
+| S27 | PFF — "How the NFL is Evolving: Five schematic trends that have shaped the 2025 season" (Daire Carragher) | secondary (analytics) | 2026-01-04 · accessed 2026-10-02 | https://www.pff.com/news/nfl-is-evolving-five-schematic-trends-that-have-shaped-the-2025-season |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

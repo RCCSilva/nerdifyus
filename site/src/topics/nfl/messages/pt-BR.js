@@ -9,6 +9,7 @@ export default {
     fouls: { title: 'Como funcionam as faltas', summary: 'A bandeira, o anúncio e o que uma falta faz com as jardas e a descida.' },
     overtime: { title: 'Empates e prorrogação', summary: 'Empate pode na temporada regular, nunca nos playoffs.' },
     commonFouls: { title: 'Faltas comuns', summary: 'False start, impedimento, holding, interferência de passe.' },
+    defenseTactics: { title: 'Tática: a defesa contra o passe', summary: 'Homem a homem, zona e match: as três formas de marcar os recebedores.' },
     strategy: { title: 'Estratégia', summary: 'Por que os times fazem o que fazem.' },
     cap: { title: 'O teto salarial', summary: 'Como as folhas salariais funcionam de verdade.' },
   },
@@ -363,6 +364,60 @@ export default {
       title: 'As faltas num só quadro',
       insight: 'O futebol americano é um esporte de contato, mas não é uma luta de judô. Muitas faltas existem para o jogo continuar sendo sobre a bola: o holding impede de simplesmente agarrar quem está no caminho, e a interferência de passe garante que os dois jogadores tenham uma chance justa de pegar a bola no ar.',
       example: 'A seguir: empates e prorrogação. As faltas uma a uma (false start, holding…) estão na lição “Faltas comuns”.',
+    },
+    covFamilies: {
+      title: 'Três jeitos de marcar um passe',
+      body: 'Numa jogada de passe, a defesa precisa decidir quem marca quem. Existem três grandes famílias:',
+    },
+    covMan: {
+      title: 'Homem a homem (individual)',
+      body: 'Cada defensor fica com um recebedor e vai atrás dele aonde ele for. Os linemen da defesa e o safety lá atrás normalmente não pegam ninguém: o safety fica no fundo para ajudar por cima.',
+      example: 'Marcação colada, mas exige defensores muito bons: ficou um passo atrás, o recebedor está livre.',
+    },
+    covZone: {
+      title: 'Zona',
+      body: 'Cada defensor é responsável por uma área do campo, não por um jogador. Ele marca quem entrar na área dele.',
+      example: 'Mantém os recebedores na frente e limita passes longos, mas sobram buracos entre as áreas, e dois recebedores na mesma área viram problema.',
+    },
+    covMatch: {
+      title: 'Match (pattern-match)',
+      body: 'Começa como zona e depois muda as responsabilidades conforme as rotas dos recebedores: o defensor “carrega” o recebedor que vai fundo, como no homem a homem, e “passa” a rota curta para o companheiro em cuja área ela entra.',
+      example: 'Corrige o ponto fraco da zona: dois recebedores na área de um mesmo defensor.',
+    },
+    covToday: {
+      title: 'O que as defesas jogam hoje',
+      body: 'O homem a homem está no menor uso em anos: em 2025 ele apareceu em 22,6% das jogadas, contra mais de um terço sete temporadas antes. Um time se destacou: Cleveland, com 45,1%.',
+      insight: 'Muita gente diz que hoje quase tudo é match, e que com os melhores defensores você sempre chamaria homem a homem. Não achamos uma fonte que meça o “match” diretamente; o que as fontes mostram é que o homem a homem exige cobertura de elite e que as chamadas modernas misturam homem e zona.',
+    },
+  },
+
+  tactics: {
+    receivers: 'Recebedores',
+    defenders: 'Defensores',
+    following: 'Marcando um recebedor',
+    zoneArea: 'Zona (área)',
+    matchRule: 'Regra: o cornerback carrega a rota funda; a rota em diagonal passa para o linebacker.',
+    decimal: ',',
+    family: {
+      man: {
+        name: 'Homem a homem',
+        what: 'Cada defensor segue um recebedor.',
+      },
+      zone: {
+        name: 'Zona',
+        what: 'Cada defensor cuida de uma área do campo.',
+      },
+      match: {
+        name: 'Match',
+        what: 'Começa como zona e vira homem a homem conforme as rotas.',
+      },
+    },
+    today: {
+      title: 'Jogadas com marcação homem a homem',
+      past: '7 temporadas atrás',
+      league2025: 'Liga, 2025',
+      browns2025: 'Cleveland, 2025',
+      note: 'Fonte: PFF. Zona e match formam o resto.',
     },
   },
 

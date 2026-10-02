@@ -7,11 +7,12 @@ import { GAME_SLIDES } from '../topics/nfl/game/slides';
 import { OVERTIME_SLIDES } from '../topics/nfl/overtime/slides';
 import { FOULS_SLIDES, COMMON_FOULS_SLIDES } from '../topics/nfl/fouls/slides';
 import { SEASON_SLIDES } from '../topics/nfl/season/slides';
+import { DEFENSE_TACTICS_SLIDES } from '../topics/nfl/tactics/slides';
 
 const DECKS = [
   ['basics', BASICS_SLIDES], ['game', GAME_SLIDES], ['positions', POSITIONS_SLIDES],
   ['fouls', FOULS_SLIDES], ['overtime', OVERTIME_SLIDES], ['season', SEASON_SLIDES],
-  ['commonFouls', COMMON_FOULS_SLIDES],
+  ['commonFouls', COMMON_FOULS_SLIDES], ['defenseTactics', DEFENSE_TACTICS_SLIDES],
 ];
 
 // Behave like a real browser: motion ON, animation frames ticking.
