@@ -161,6 +161,32 @@ export const SOURCES = {
     title: 'NFL — NFL Announces 33 Compensatory Draft Choices to 15 Clubs (2026-03-09)',
     url: 'https://media.nfl.com/football-information/2026/news/---nfl-announces-33-compensatory-draft-choices-to-15-clubs-',
   },
+  S33: {
+    short: 'NFL–NFLPA CBA 2020',
+    title: '2020 NFL–NFLPA Collective Bargaining Agreement (official PDF)',
+    url: 'https://nflpaweb.blob.core.windows.net/website/PDFs/CBA/March-15-2020-NFL-NFLPA-Collective-Bargaining-Agreement-Final-Executed-Copy.pdf',
+    page: (p) => `#page=${p}`,
+  },
+  S34: {
+    short: 'NFL.com · 2026-27 important dates',
+    title: 'NFL.com — 2026-27 National Football League important dates',
+    url: 'https://www.nfl.com/news/2026-27-national-football-league-important-dates',
+  },
+  S35: {
+    short: 'NFL.com · 2026 salary cap',
+    title: 'NFL.com — NFL announces 2026 salary cap set at $301.2 million per team (2026-02-27)',
+    url: 'https://www.nfl.com/news/nfl-announces-2026-salary-cap-set-at-301-2-million-per-team',
+  },
+  S36: {
+    short: 'NFL Football Ops · Franchise tags',
+    title: 'NFL Football Operations — Franchise Tags',
+    url: 'https://operations.nfl.com/calendar-events/nfl-free-agency/franchise-tags',
+  },
+  S37: {
+    short: 'PFT · 2026 tag values',
+    title: 'NBC Sports / ProFootballTalk — NFL announces franchise tag, transition tag values for 2026 (2026-02-27)',
+    url: 'https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nfl-announces-franchise-tag-transition-tag-values-for-2026',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

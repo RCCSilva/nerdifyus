@@ -9,12 +9,13 @@ import { FOULS_SLIDES, COMMON_FOULS_SLIDES } from '../topics/nfl/fouls/slides';
 import { SEASON_SLIDES } from '../topics/nfl/season/slides';
 import { DEFENSE_TACTICS_SLIDES } from '../topics/nfl/tactics/slides';
 import { DRAFT_SLIDES } from '../topics/nfl/draft/slides';
+import { TRADES_SLIDES, TAGS_SLIDES, CAP_SLIDES } from '../topics/nfl/money/slides';
 
 const DECKS = [
   ['basics', BASICS_SLIDES], ['game', GAME_SLIDES], ['positions', POSITIONS_SLIDES],
   ['fouls', FOULS_SLIDES], ['overtime', OVERTIME_SLIDES], ['season', SEASON_SLIDES],
   ['commonFouls', COMMON_FOULS_SLIDES], ['defenseTactics', DEFENSE_TACTICS_SLIDES],
-  ['draft', DRAFT_SLIDES],
+  ['draft', DRAFT_SLIDES], ['trades', TRADES_SLIDES], ['cap', CAP_SLIDES], ['tags', TAGS_SLIDES],
 ];
 
 // Behave like a real browser: motion ON, animation frames ticking.
