@@ -432,6 +432,23 @@ a.lesson:hover { transform: translateX(4px); }
 .fg-rate b { text-align: right; }
 .fg-rates-note { color: var(--muted); font-size: 0.78rem; line-height: 1.35; }
 
+/* step-animation controls */
+.step-controls { margin-left: auto; display: inline-flex; gap: 0.3rem; }
+.step-controls button {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.step-controls button.is-main { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.step-controls button:hover { border-color: var(--accent); }
+
 /* teams */
 .teams { background: var(--surface); }
 .teams-legend { display: flex; gap: 1.2rem; padding: 0.7rem 1rem; font-weight: 700; }

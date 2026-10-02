@@ -177,14 +177,17 @@ export function DownsVisual() {
 function DriveVisual({ replay, from, to }) {
   const { t, tm } = useI18n();
   const [i, setI] = useState(from);
+  const [playing, setPlaying] = useState(() => !prefersReducedMotion());
   const steps = tm('nfl.slides.downs.steps');
+  const next = () => setI((n) => (n >= to ? from : n + 1));
+  const prev = () => setI((n) => (n <= from ? to : n - 1));
 
   useEffect(() => { setI(from); }, [replay, from]);
   useEffect(() => {
-    if (prefersReducedMotion()) return undefined;
-    const id = setTimeout(() => setI((n) => (n >= to ? from : n + 1)), i === to ? 3200 : 2300);
+    if (!playing) return undefined;
+    const id = setTimeout(next, i === to ? 3200 : 2300);
     return () => clearTimeout(id);
-  }, [i, from, to]);
+  }, [i, from, to, playing]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const s = DRIVE[i];
   const spot = (y) => (y === 50 ? '50' : y < 50 ? t('nfl.common.ownSide', { n: y }) : t('nfl.common.oppSide', { n: 100 - y }));
@@ -208,8 +211,23 @@ function DriveVisual({ replay, from, to }) {
       <div className="downs-legend">
         <span><i className="swatch los" />{t('nfl.common.los')}</span>
         <span><i className="swatch ltg" />{t('nfl.common.ltg')}</span>
+        <StepControls playing={playing} onToggle={() => setPlaying((p) => !p)} onPrev={() => { setPlaying(false); prev(); }} onNext={() => { setPlaying(false); next(); }} />
       </div>
     </div>
+  );
+}
+
+/** Controls for step-by-step animations: back, play/pause, forward. Stepping by hand pauses playback. */
+export function StepControls({ playing, onToggle, onPrev, onNext }) {
+  const { t } = useI18n();
+  return (
+    <span className="step-controls">
+      <button onClick={onPrev} aria-label={t('ui.deck.stepBack')} title={t('ui.deck.stepBack')}>⏮</button>
+      <button onClick={onToggle} aria-label={t(playing ? 'ui.deck.pause' : 'ui.deck.play')} title={t(playing ? 'ui.deck.pause' : 'ui.deck.play')} className="is-main">
+        {playing ? '⏸' : '▶'}
+      </button>
+      <button onClick={onNext} aria-label={t('ui.deck.stepForward')} title={t('ui.deck.stepForward')}>⏭</button>
+    </span>
   );
 }
 
@@ -381,47 +399,11 @@ export function TryVisual({ replay }) {
 export function FieldGoalVisual({ replay }) {
   return (
     <div className="stack-visual">
-      <FieldGoalKick replay={replay} />
+      <SpecialTeamsUnit unit="fg" plain replay={replay} />
       <div className="stack-visual-pad"><FgRates /></div>
     </div>
   );
 }
-
-function FieldGoalKick({ replay }) {
-  const t = useTimeline(3000, replay);
-  const p = seg(t, 400, 2200);
-  const k = kickArc([fx(72), MID_Y + 1], [LENGTH + 3, MID_Y - 0.4], p);
-  return (
-    <Field view={[fx(60), LENGTH + BORDER]} viewY={[6, 47]} highlight={p >= 0.92 ? ['goalposts'] : []}>
-      <path className="trail" d={`M${fx(72)} ${MID_Y + 1} L${k.x} ${k.y}`} />
-      <Ball x={k.x} y={k.y} z={k.z} />
-      <Pop x={LENGTH - END_ZONE / 2} y={MID_Y - 8} show={t > 2250}>+3</Pop>
-    </Field>
-  );
-}
-
-export function PuntVisual({ replay }) {
-  const t = useTimeline(4200, replay);
-  const los = fx(30);
-  const punter = [los - 15, MID_Y];
-  const land = [fx(78), MID_Y + 2];
-  const snap = seg(t, 300, 900);
-  const fly = seg(t, 1200, 3000);
-  const ball = t < 1200 ? { ...xyOf(along([[los - 0.4, MID_Y], punter], snap)), z: 0 } : kickArc(punter, land, fly);
-  return (
-    <Field view={[fx(10), fx(84)]} viewY={[MID_Y - 11, MID_Y + 11]}>
-      <FieldLine x={los} kind="los" />
-      <path className="trail" d={`M${punter[0]} ${punter[1]} L${land[0]} ${land[1]}`} style={{ opacity: t > 1200 ? 0.6 : 0 }} />
-      <Player x={los - 1} y={MID_Y} label="LS" side="off" size={1.9} />
-      <Player x={punter[0] - 1.2} y={punter[1]} label="P" side="off" size={1.9} active />
-      <Player x={land[0] + 1.4} y={land[1]} label="KR" side="def" size={1.9} />
-      <Ball x={ball.x} y={ball.y} z={ball.z} />
-      <UprightText x={(los + land[0]) / 2} y={MID_Y - 6.5} className="tag tag-md tag-hl" style={{ fontSize: 2.6 }}>{`≈ ${Math.round(land[0] - los)} yd`}</UprightText>
-    </Field>
-  );
-}
-
-const xyOf = ([x, y]) => ({ x, y });
 
 export function SafetyVisual({ replay }) {
   const t = useTimeline(3000, replay);
@@ -558,6 +540,23 @@ const ST_UNITS = {
   },
 };
 
+// The other team on each kicking play, for the full-team views in the basics deck. ILLUSTRATIVE spacing;
+// jammers (who slow the gunners) come from S7. dx/dy as in ST_UNITS (dx positive = past the line).
+const ST_DEFENSE = {
+  fg: [
+    ...[-4, -3, -2, -1, 0, 1, 2, 3, 4].map((k) => ({ dx: 1.3, dy: k * 1.9 })),
+    { dx: 5, dy: -6 },
+    { dx: 5, dy: 6 },
+  ],
+  punt: [
+    ...[-2.5, -1.5, -0.5, 0.5, 1.5, 2.5].map((k) => ({ dx: 2.1, dy: k * 2.6 })),
+    { dx: 1.3, dy: -18.6, jammer: -1 },
+    { dx: 1.3, dy: 18.6, jammer: 1 },
+    { dx: 10, dy: -5 },
+    { dx: 10, dy: 5 },
+  ],
+};
+
 function useStPlay(unit, replay) {
   const u = ST_UNITS[unit];
   const t = useTimeline(unit === 'fg' ? 3200 : 4200, `${unit}-${replay}`);
@@ -591,46 +590,59 @@ function useStPlay(unit, replay) {
 }
 const xy = ([x, y]) => ({ x, y });
 
-function SpecialTeamsUnit({ unit, replay }) {
+function SpecialTeamsUnit({ unit, replay, plain = false }) {
   const { tm } = useI18n();
   const u = ST_UNITS[unit];
   const [sel, setSel] = useState(u.select);
   const play = useStPlay(unit, replay);
   const info = tm(`nfl.positions.${sel}`);
+  const gunner = (sign) => u.players.find((p) => p.id === 'GUN' && Math.sign(p.dy) === sign);
 
+  const field = (
+    <Field view={u.view} viewY={u.viewY} highlight={play.hl}>
+      <FieldLine x={u.los} kind="los" />
+      {plain && ST_DEFENSE[unit].map((d, n) => {
+        // Jammers shadow the gunners downfield.
+        const [x, y] = d.jammer
+          ? (([gx, gy]) => [gx + 1.6, gy])(play.pos(gunner(d.jammer)))
+          : [u.los + d.dx, MID_Y + d.dy];
+        return <Player key={`d${n}`} x={x} y={y} label="" side="def" size={u.size} />;
+      })}
+      {u.returner && (
+        <Player
+          x={u.los + u.returner.dx}
+          y={MID_Y + u.returner.dy}
+          label={u.returner.id}
+          side="def"
+          size={u.size}
+          active={!plain && sel === u.returner.id}
+          onSelect={plain ? undefined : () => setSel(u.returner.id)}
+        />
+      )}
+      {u.players.map((p, n) => {
+        const [x, y] = play.pos(p);
+        return (
+          <Player
+            key={n}
+            x={x}
+            y={y}
+            label={p.id}
+            side="off"
+            size={plain || p.id ? u.size : u.size * 0.75}
+            dim={!plain && !p.id}
+            active={!plain && p.id === sel}
+            onSelect={!plain && p.id ? () => setSel(p.id) : undefined}
+          />
+        );
+      })}
+      <Ball x={play.ball.x} y={play.ball.y} z={play.ball.z} />
+    </Field>
+  );
+
+  if (plain) return field;
   return (
     <div className="lineup">
-      <Field view={u.view} viewY={u.viewY} highlight={play.hl}>
-        <FieldLine x={u.los} kind="los" />
-        {u.returner && (
-          <Player
-            x={u.los + u.returner.dx}
-            y={MID_Y + u.returner.dy}
-            label={u.returner.id}
-            side="def"
-            size={u.size}
-            active={sel === u.returner.id}
-            onSelect={() => setSel(u.returner.id)}
-          />
-        )}
-        {u.players.map((p, n) => {
-          const [x, y] = play.pos(p);
-          return (
-            <Player
-              key={n}
-              x={x}
-              y={y}
-              label={p.id}
-              side="off"
-              size={p.id ? u.size : u.size * 0.75}
-              dim={!p.id}
-              active={p.id === sel}
-              onSelect={p.id ? () => setSel(p.id) : undefined}
-            />
-          );
-        })}
-        <Ball x={play.ball.x} y={play.ball.y} z={play.ball.z} />
-      </Field>
+      {field}
       <div className="lineup-info" aria-live="polite">
         <span className={`lineup-abbr ${sel === 'KR' ? 'def' : 'off'}`}>{sel}</span>
         <div><strong>{info.name}</strong><p>{info.role}</p></div>
@@ -641,6 +653,9 @@ function SpecialTeamsUnit({ unit, replay }) {
 
 export const FieldGoalUnitVisual = (props) => <SpecialTeamsUnit unit="fg" {...props} />;
 export const PuntUnitVisual = (props) => <SpecialTeamsUnit unit="punt" {...props} />;
+
+/** Kicking plays in the basics deck: both full teams, same colours, no highlighting. */
+export const PuntVisual = (props) => <SpecialTeamsUnit unit="punt" plain {...props} />;
 
 export function EndVisual({ replay }) {
   const los = fx(50);
