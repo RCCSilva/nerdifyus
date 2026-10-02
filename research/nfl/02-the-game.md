@@ -5,7 +5,7 @@ Applies to: 2026 season
 Citation key: see `01-basic-rules.md`. Sources are listed in `sources.md`.
 
 ## Length
-- 60 minutes, in four periods (quarters) of 15 minutes. If it's tied after four, there's overtime (Rule 16, see `06-overtime.md`) [S1 R4-1-1, p.18].
+- 60 minutes, in four periods (quarters) of 15 minutes. If it's tied after four, there's overtime (Rule 16, see `05-overtime.md`) [S1 R4-1-1, p.18].
 - At least 2 minutes between Q1–Q2 and between Q3–Q4. **Halftime** (between Q2 and Q3) is 13 minutes [S1 R4-1-2/3, p.18]. So the game has two halves: Q1+Q2 and Q3+Q4.
 - Teams switch ends after Q1 and Q3. The down, distance and ball spot stay the same [S1 R4-2-3, p.18].
 

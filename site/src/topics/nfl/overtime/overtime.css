@@ -1,0 +1,108 @@
+.ot-panel { background: var(--surface); padding: 1.4rem 1rem; display: grid; gap: 1rem; }
+@keyframes ot-in { from { opacity: 0; transform: translateY(8px); } }
+
+/* scoreboard + coin */
+.ot-when { justify-items: center; }
+.ot-board {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+  background: #11151c;
+  color: #fff;
+  border-radius: 14px;
+  padding: 0.9rem 1.4rem;
+  font-family: var(--font-display);
+}
+.ot-team { font-weight: 800; letter-spacing: 0.05em; font-size: 0.9rem; opacity: 0.85; }
+.ot-score { font-size: 2.6rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.ot-dash { opacity: 0.5; }
+.ot-clock { grid-column: 1 / -1; justify-self: center; color: #9ec1ff; font-weight: 700; }
+.ot-coin {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffe680, #c9a227);
+  display: grid;
+  place-items: center;
+  color: #7a5e00;
+  font-weight: 800;
+  opacity: 0;
+}
+.ot-coin.is-on { opacity: 1; animation: coin-flip 0.8s ease-in-out; }
+@keyframes coin-flip { 0% { transform: translateY(0) rotateX(0); } 50% { transform: translateY(-1.5rem) rotateX(540deg); } 100% { transform: translateY(0) rotateX(1080deg); } }
+.ot-badge {
+  font: 800 1.2rem/1 var(--font-display);
+  background: #ffd400;
+  color: #11151c;
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 0.35s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+.ot-badge.is-on { opacity: 1; transform: none; }
+.ot-badge.is-tie { background: var(--muted); color: #fff; }
+
+/* periods */
+.ot-period { position: relative; height: 3.4rem; border-radius: 10px; overflow: hidden; background: var(--bg); display: grid; place-items: center; }
+.ot-period-fill { position: absolute; inset: 0; background: #6b46c1; transform-origin: left; animation: ot-fill 1.4s 0.2s ease-out both; }
+@keyframes ot-fill { from { transform: scaleX(0); } }
+.ot-period-label { position: relative; color: #fff; font-weight: 800; }
+.ot-period.small { height: 2.8rem; padding: 0 0.8rem; background: #6b46c1; }
+.ot-timeouts { display: grid; gap: 0.5rem; }
+.ot-to-row { display: flex; align-items: center; gap: 0.8rem; font-weight: 700; }
+.ot-to-row small { color: var(--muted); font-weight: 500; }
+.ot-two i { background: #d9a400 !important; }
+
+/* possession */
+.ot-possession { gap: 0.7rem; }
+.ot-poss {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  color: #fff;
+  animation: ot-in 0.45s both;
+}
+.ot-poss.team-A { background: var(--off); }
+.ot-poss.team-B { background: var(--def); }
+.ot-poss-team { font-weight: 800; }
+.ot-poss-ball { width: 1.5rem; height: 0.95rem; border-radius: 50%; background: var(--ball); border: 2px solid #fff; }
+.ot-poss-rule { margin: 0; font-weight: 700; text-align: center; animation: ot-in 0.45s both; }
+
+/* scenarios */
+.ot-scenarios { gap: 0.45rem; }
+.ot-sc-head, .ot-sc-row { display: grid; grid-template-columns: 1fr 1fr 1.4fr; gap: 0.5rem; align-items: center; }
+.ot-sc-head { font-size: 0.78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.ot-sc-row { animation: ot-in 0.4s both; }
+.ot-ev, .ot-res { padding: 0.5rem 0.6rem; border-radius: 9px; font-weight: 700; font-size: 0.88rem; text-align: center; }
+.ot-ev { background: var(--bg); }
+.ev-td { background: #1c8c3c; color: #fff; }
+.ev-fg { background: #3f9d55; color: #fff; }
+.ev-none { background: var(--line); color: var(--muted); }
+.ev-any { background: #d9a400; color: #11151c; }
+.ot-res { background: var(--accent-soft); color: var(--text); }
+.ot-example { margin: 0.2rem 0 0; font-size: 0.75rem; font-style: italic; color: var(--muted); text-align: right; }
+
+/* postseason chain */
+.ot-chain { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.ot-link { display: flex; align-items: center; gap: 0.4rem; animation: ot-in 0.4s both; }
+.ot-arrow, .ot-more { font-weight: 800; color: var(--muted); font-size: 1.3rem; }
+
+/* summary */
+.ot-table { width: 100%; border-collapse: separate; border-spacing: 0 0.35rem; }
+.ot-table th, .ot-table td { text-align: left; padding: 0.5rem 0.6rem; }
+.ot-table thead th { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.ot-table tbody tr { animation: ot-in 0.4s both; }
+.ot-table tbody th { font-weight: 600; color: var(--muted); }
+.ot-table tbody td { background: var(--bg); font-weight: 700; }
+.ot-table tbody td:first-of-type { border-radius: 8px 0 0 8px; }
+.ot-table tbody td:last-child { border-radius: 0 8px 8px 0; }
+
+@media (max-width: 560px) {
+  .ot-score { font-size: 2rem; }
+  .ot-sc-head, .ot-sc-row { grid-template-columns: 1fr 1fr 1.2fr; }
+}

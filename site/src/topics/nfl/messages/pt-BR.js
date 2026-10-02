@@ -223,7 +223,7 @@ export default {
     seasonEnd: {
       title: 'Esse é o campeonato!',
       body: 'Temporada regular, playoffs, Super Bowl.',
-      example: 'A seguir: faltas comuns.',
+      example: 'Com isso fechamos o básico!',
     },
     gameLength: {
       title: '60 minutos, 4 quartos',
@@ -283,6 +283,71 @@ export default {
       body: 'Agora você sabe ler um placar: times, campanha, timeouts, pontos, relógio, descida e play clock.',
       example: 'A seguir: as posições, começando pelo ataque.',
     },
+    otWhen: {
+      title: 'Empatou nos 60 minutos? Prorrogação',
+      body: 'Se o placar está empatado no fim do 4º quarto, o jogo vai para a prorrogação. Ela começa com um novo cara ou coroa, e quem escolhe é o visitante.',
+      note: 'Não é como no futebol! No futebol o empate é um resultado normal, e quando precisa de um vencedor tem prorrogação (2 × 15 minutos) e pênaltis. A NFL tem um sistema próprio.',
+    },
+    otRegular: {
+      title: 'Temporada regular: um período de 10 minutos',
+      body: 'Na temporada regular, a prorrogação é um único período de 10 minutos. Cada time tem 2 timeouts.',
+    },
+    otPossession: {
+      title: 'Os dois times têm uma chance com a bola',
+      body: 'O time que recebe o kickoff da prorrogação fica com a bola primeiro. Mesmo que ele marque um touchdown, o outro time ainda tem a sua chance.',
+      note: 'Única exceção: se o time que chutou o kickoff marcar um safety nessa primeira posse, ele vence na hora.',
+    },
+    otScenarios: {
+      title: 'Então, quem vence?',
+      body: 'Depois que os dois times tiveram a bola, vence quem tiver mais pontos. Segue empatado? Quem pontuar primeiro, de qualquer jeito, vence.',
+      example: 'Se o time A não pontuar na primeira posse, qualquer ponto depois disso, de qualquer um dos dois, decide o jogo.',
+    },
+    otTie: {
+      title: 'Empatou nos 10 minutos? É empate',
+      body: 'Se os 10 minutos acabarem com o placar empatado, o jogo termina empatado, mesmo que o segundo time nunca tenha tido a bola.',
+    },
+    otPostseason: {
+      title: 'Playoffs: não existe empate',
+      body: 'Nos playoffs a regra da posse é a mesma, mas os períodos são de 15 minutos e continuam até alguém vencer.',
+      example: '2 minutos entre os períodos e 3 timeouts por time em cada tempo.',
+    },
+    otSummary: {
+      title: 'Temporada regular × playoffs',
+      example: 'A seguir: como funciona o campeonato.',
+    },
+  },
+
+  overtime: {
+    overtime: 'PRORROGAÇÃO',
+    otShort: 'PR',
+    twoTimeouts: '2 timeouts',
+    team: 'Time {x}',
+    receivesKickoff: 'Recebe o kickoff: fica com a bola primeiro',
+    thenGetsBall: 'Depois tem a sua chance com a bola',
+    bothChance: 'Os dois times têm uma chance com a bola',
+    result: 'Resultado',
+    ev: {
+      td: 'Touchdown',
+      fg: 'Field goal',
+      none: 'Não pontua',
+      any: 'Qualquer ponto',
+    },
+    res: {
+      aWins: 'Time A vence',
+      bWins: 'Time B vence',
+      nextScore: 'Segue empatado: quem pontuar primeiro vence',
+      nextScore2: 'Time B vence',
+    },
+    tieFinal: 'FIM: EMPATE',
+    untilWinner: 'Quantos períodos forem precisos: não existe empate',
+    regular: 'Temporada regular',
+    playoffs: 'Playoffs',
+    rows: [
+      ['Duração', 'Um período de 10 min', 'Períodos de 15 min até alguém vencer'],
+      ['Pode terminar empatado?', 'Sim', 'Não'],
+      ['Timeouts', '2 por time', '3 por time em cada tempo'],
+      ['Os dois têm a bola?', 'Sim', 'Sim'],
+    ],
   },
 
   game: {

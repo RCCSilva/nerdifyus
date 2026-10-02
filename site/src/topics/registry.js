@@ -1,5 +1,6 @@
 import { BASICS_SLIDES, POSITIONS_SLIDES } from './nfl/basics/slides';
 import { GAME_SLIDES } from './nfl/game/slides';
+import { OVERTIME_SLIDES } from './nfl/overtime/slides';
 import { FOULS_SLIDES } from './nfl/fouls/slides';
 import { SEASON_SLIDES } from './nfl/season/slides';
 import { resolveRef as nflRef } from './nfl/sources';
@@ -14,9 +15,9 @@ export const TOPICS = [
       { id: 'basics', level: 'basic', slides: BASICS_SLIDES },
       { id: 'game', level: 'basic', slides: GAME_SLIDES },
       { id: 'positions', level: 'basic', slides: POSITIONS_SLIDES },
-      { id: 'season', level: 'basic', slides: SEASON_SLIDES },
       { id: 'fouls', level: 'basic', slides: FOULS_SLIDES },
-      { id: 'overtime', level: 'basic' },
+      { id: 'overtime', level: 'basic', slides: OVERTIME_SLIDES },
+      { id: 'season', level: 'basic', slides: SEASON_SLIDES },
       { id: 'strategy', level: 'intermediate' },
       { id: 'cap', level: 'advanced' },
     ],

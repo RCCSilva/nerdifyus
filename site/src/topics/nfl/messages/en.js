@@ -224,7 +224,7 @@ export default {
     seasonEnd: {
       title: 'That’s the season!',
       body: 'Regular season, playoffs, Super Bowl.',
-      example: 'Next up: common fouls.',
+      example: 'That wraps up the basics!',
     },
     gameLength: {
       title: '60 minutes, 4 quarters',
@@ -284,6 +284,71 @@ export default {
       body: 'Now you can read a scoreboard: teams, record, timeouts, score, clock, down and play clock.',
       example: 'Next up: the positions, starting with the offense.',
     },
+    otWhen: {
+      title: 'Tied after 60 minutes? Overtime',
+      body: 'If the score is tied at the end of the 4th quarter, the game goes to overtime. It starts with a new coin toss, called by the visiting team.',
+      note: 'Not like soccer! In soccer a draw is a normal result, and when a winner is needed it uses extra time (2 × 15 minutes) and penalties. The NFL has its own system.',
+    },
+    otRegular: {
+      title: 'Regular season: one 10-minute period',
+      body: 'In the regular season, overtime is a single period of 10 minutes. Each team gets 2 timeouts.',
+    },
+    otPossession: {
+      title: 'Both teams get a chance with the ball',
+      body: 'The team that receives the overtime kickoff has the ball first. Even if it scores a touchdown, the other team still gets its chance.',
+      note: 'The only exception: if the kicking team scores a safety on that first possession, it wins right away.',
+    },
+    otScenarios: {
+      title: 'So who wins?',
+      body: 'Once both teams have had the ball, the team with more points wins. Still tied? The next score of any kind wins.',
+      example: 'If team A doesn’t score on its first possession, any score after that, by either team, wins the game.',
+    },
+    otTie: {
+      title: 'Still tied after 10 minutes? It’s a tie',
+      body: 'If the 10 minutes run out with the score still tied, the game ends in a tie, even if the second team never got the ball.',
+    },
+    otPostseason: {
+      title: 'Playoffs: no ties',
+      body: 'In the playoffs the possession rule is the same, but the periods are 15 minutes and they keep coming until someone wins.',
+      example: '2 minutes between periods, and 3 timeouts per team in each half.',
+    },
+    otSummary: {
+      title: 'Regular season vs playoffs',
+      example: 'Next up: how the season works.',
+    },
+  },
+
+  overtime: {
+    overtime: 'OVERTIME',
+    otShort: 'OT',
+    twoTimeouts: '2 timeouts',
+    team: 'Team {x}',
+    receivesKickoff: 'Receives the kickoff: has the ball first',
+    thenGetsBall: 'Then gets its chance with the ball',
+    bothChance: 'Both teams get a chance with the ball',
+    result: 'Result',
+    ev: {
+      td: 'Touchdown',
+      fg: 'Field goal',
+      none: 'No score',
+      any: 'Any score',
+    },
+    res: {
+      aWins: 'Team A wins',
+      bWins: 'Team B wins',
+      nextScore: 'Still tied: next score wins',
+      nextScore2: 'Team B wins',
+    },
+    tieFinal: 'FINAL: TIE',
+    untilWinner: 'As many periods as it takes: no ties',
+    regular: 'Regular season',
+    playoffs: 'Playoffs',
+    rows: [
+      ['Length', 'One 10-minute period', '15-minute periods until someone wins'],
+      ['Can it end tied?', 'Yes', 'No'],
+      ['Timeouts', '2 per team', '3 per team in each half'],
+      ['Both teams get the ball?', 'Yes', 'Yes'],
+    ],
   },
 
   game: {

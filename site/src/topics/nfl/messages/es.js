@@ -223,7 +223,7 @@ export default {
     seasonEnd: {
       title: '¡Esa es la temporada!',
       body: 'Temporada regular, playoffs, Super Bowl.',
-      example: 'Lo próximo: castigos comunes.',
+      example: '¡Con esto terminan los básicos!',
     },
     gameLength: {
       title: '60 minutos, 4 cuartos',
@@ -283,6 +283,71 @@ export default {
       body: 'Ya sabes leer un marcador: equipos, récord, tiempos fuera, puntos, reloj, down y reloj de jugada.',
       example: 'Lo próximo: las posiciones, empezando por la ofensiva.',
     },
+    otWhen: {
+      title: '¿Empate tras 60 minutos? Tiempo extra',
+      body: 'Si el marcador está empatado al final del 4.º cuarto, el partido va a tiempo extra. Empieza con un nuevo volado (cara o cruz), que elige el visitante.',
+      note: '¡No es como en el fútbol! En el fútbol el empate es un resultado normal, y cuando hace falta un ganador se usa prórroga (2 × 15 minutos) y penales. La NFL tiene su propio sistema.',
+    },
+    otRegular: {
+      title: 'Temporada regular: un periodo de 10 minutos',
+      body: 'En la temporada regular, el tiempo extra es un solo periodo de 10 minutos. Cada equipo tiene 2 tiempos fuera.',
+    },
+    otPossession: {
+      title: 'Ambos equipos tienen una oportunidad con el balón',
+      body: 'El equipo que recibe la patada inicial del tiempo extra tiene el balón primero. Aunque anote un touchdown, el otro equipo igual tiene su oportunidad.',
+      note: 'Única excepción: si el equipo que patea anota un safety en esa primera posesión, gana en el acto.',
+    },
+    otScenarios: {
+      title: 'Entonces, ¿quién gana?',
+      body: 'Cuando ambos equipos ya tuvieron el balón, gana quien tenga más puntos. ¿Siguen empatados? Gana la siguiente anotación, de cualquier tipo.',
+      example: 'Si el equipo A no anota en su primera posesión, cualquier anotación posterior, de cualquiera de los dos, gana el partido.',
+    },
+    otTie: {
+      title: '¿Empate tras los 10 minutos? Es empate',
+      body: 'Si se acaban los 10 minutos con el marcador empatado, el partido termina en empate, aunque el segundo equipo nunca haya tenido el balón.',
+    },
+    otPostseason: {
+      title: 'Playoffs: no hay empate',
+      body: 'En los playoffs la regla de posesión es la misma, pero los periodos son de 15 minutos y se siguen jugando hasta que alguien gane.',
+      example: '2 minutos entre periodos y 3 tiempos fuera por equipo en cada mitad.',
+    },
+    otSummary: {
+      title: 'Temporada regular vs playoffs',
+      example: 'Lo próximo: cómo funciona la temporada.',
+    },
+  },
+
+  overtime: {
+    overtime: 'TIEMPO EXTRA',
+    otShort: 'TE',
+    twoTimeouts: '2 tiempos fuera',
+    team: 'Equipo {x}',
+    receivesKickoff: 'Recibe la patada inicial: tiene el balón primero',
+    thenGetsBall: 'Después tiene su oportunidad con el balón',
+    bothChance: 'Ambos equipos tienen una oportunidad con el balón',
+    result: 'Resultado',
+    ev: {
+      td: 'Touchdown',
+      fg: 'Gol de campo',
+      none: 'No anota',
+      any: 'Cualquier anotación',
+    },
+    res: {
+      aWins: 'Gana el equipo A',
+      bWins: 'Gana el equipo B',
+      nextScore: 'Siguen empatados: gana la siguiente anotación',
+      nextScore2: 'Gana el equipo B',
+    },
+    tieFinal: 'FINAL: EMPATE',
+    untilWinner: 'Los periodos que hagan falta: no hay empate',
+    regular: 'Temporada regular',
+    playoffs: 'Playoffs',
+    rows: [
+      ['Duración', 'Un periodo de 10 min', 'Periodos de 15 min hasta que alguien gane'],
+      ['¿Puede terminar empatado?', 'Sí', 'No'],
+      ['Tiempos fuera', '2 por equipo', '3 por equipo en cada mitad'],
+      ['¿Ambos tienen el balón?', 'Sí', 'Sí'],
+    ],
   },
 
   game: {
