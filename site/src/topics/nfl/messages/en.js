@@ -102,7 +102,7 @@ export default {
     touchdown: {
       title: 'The goal: a touchdown (6 points)',
       body: 'That’s what every attack is after: carry the ball into the other team’s end zone, or catch it there.',
-      note: 'Not like soccer! The ball doesn’t have to cross the line. Touchdown = a player holding the ball gets just the tip of it to the goal line. A loose ball (nobody holding it) in the end zone only counts if a player grabs it there.',
+      note: 'It’s enough for the ball, in a player’s hands, to touch the goal line: touchdown. If the ball crosses the line in the air on a pass, it’s only a touchdown if a receiver catches it inside the end zone.',
     },
     try: {
       title: 'After a TD: 1 or 2 more points',

@@ -320,7 +320,7 @@ function DriveVisual({ replay, from, to }) {
       {(i) => {
         const s = DRIVE[from + i];
         return (
-          <Field view={[fx(14), fx(94)]}>
+          <Field view={[fx(18), fx(50)]} viewY={[MID_Y - 11, MID_Y + 11]}>
             {!s.punt && <FieldLine x={fx(s.los)} kind="los" />}
             {!s.punt && <FieldLine x={fx(s.ltg)} kind="ltg" />}
             <g className={`downs-ball ${s.punt ? 'is-punt' : ''}`} style={{ transform: `translate(${fx(s.ball)}px, ${MID_Y}px)` }}>

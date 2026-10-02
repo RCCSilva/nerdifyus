@@ -101,7 +101,7 @@ export default {
     touchdown: {
       title: 'El objetivo: un touchdown (6 puntos)',
       body: 'Eso es lo que busca todo ataque: llevar el balón a la zona de anotación rival, o atraparlo allí.',
-      note: '¡No es como en el fútbol! El balón no tiene que cruzar la línea. Touchdown = un jugador con el balón en su poder hace llegar solo la punta del balón a la línea de gol. Un balón suelto (sin nadie que lo tenga) en la zona de anotación solo cuenta si un jugador lo atrapa allí.',
+      note: 'Basta con que el balón, en manos de un jugador, toque la línea de gol: es touchdown. Si el balón cruza la línea por el aire en un pase, solo es touchdown si un receptor lo atrapa dentro de la zona de anotación.',
     },
     try: {
       title: 'Tras un TD: 1 o 2 puntos más',

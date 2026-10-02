@@ -101,7 +101,7 @@ export default {
     touchdown: {
       title: 'O objetivo: o touchdown (6 pontos)',
       body: 'É isso que todo ataque busca: levar a bola até a end zone adversária, ou pegá-la lá dentro.',
-      note: 'Não é como no futebol! A bola não precisa cruzar a linha. Touchdown = um jogador segurando a bola faz só a ponta dela chegar à linha do gol. Uma bola solta (ninguém segurando) na end zone só vale se um jogador a pegar lá dentro.',
+      note: 'Basta a bola, nas mãos de um jogador, tocar a linha do gol: é touchdown. Se a bola cruza a linha pelo ar num passe, só é touchdown se um recebedor pegá-la dentro da end zone.',
     },
     try: {
       title: 'Depois do TD: mais 1 ou 2 pontos',
