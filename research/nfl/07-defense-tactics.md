@@ -9,11 +9,20 @@ Citation key: see `01-basic-rules.md`. Sources are listed in `sources.md`. The r
 - Defensive linemen and deep safeties are typically not assigned a receiver; a deep safety helps over the top [S24].
 - Weaknesses listed include quick passes and passes over the top when the defender is a step behind; "elite-level coverage skills" are needed to do it consistently [S24].
 
+### Beating man
+- "Speed can attack a corner vertically"; "option routes let a receiver break away from leverage"; "shallow crossers make defenders chase across the entire field"; "pick or rub concepts" (within the pass-interference rules) [S28].
+- Why: "One missed jam, one bad angle or one receiver who wins early can create an explosive play with nobody nearby to repair the mistake" [S28].
+- "Zig" routes by name: only found in video-game guides, so not used on the site.
+
 ## Zone
 - "Defenders are responsible for covering specified areas (zones) of the field rather than following individual receivers" [S25]. Linebackers and defensive backs split the field into underneath and deep zones [S25].
 - Strength: keep receivers in front, allow short gains, limit long passes [S25]. Weakness: holes between zones (e.g. Cover 2's "natural hole between the safeties") [S25].
 
-## Match (pattern-match / zone-match)
+### Beating zone
+- High-low: "places one route behind an underneath defender and another in front of him", so he has to choose [S29].
+- Flood: "overloads one side" [S29]. Seams and holes between zones [S29; S25].
+
+## Match (pattern-match / zone-match) — ADVANCED lesson, still being researched (2026-10-02)
 - "Pattern-match coverage is a pass defense that begins with zone spacing but changes responsibilities according to the receivers' routes" [S26].
 - Defenders align in a zone shell, read the receivers' releases, then "carry" a receiver vertically like man coverage, "pass" shallow routes to a teammate, or take crossing routes [S26].
 - It addresses spot-drop zone's soft spots, where "floods, seams and layered routes can place two receivers near one zone defender" [S26]. "Modern calls often blend" zone and man [S26].

@@ -11,6 +11,7 @@ export default {
     commonFouls: { title: 'Castigos comunes', summary: 'Salida en falso, fuera de lugar, sujeción, interferencia de pase.' },
     defenseTactics: { title: 'Táctica: la defensa contra el pase', summary: 'Hombre a hombre, zona y match: las tres formas de cubrir a los receptores.' },
     strategy: { title: 'Estrategia', summary: 'Por qué los equipos hacen lo que hacen.' },
+    matchCoverage: { title: 'Cobertura match', summary: 'El híbrido de hombre y zona que usan hoy muchas defensas.' },
     cap: { title: 'El tope salarial', summary: 'Cómo funcionan realmente las nóminas.' },
   },
 
@@ -367,15 +368,17 @@ export default {
     },
     covFamilies: {
       title: 'Tres formas de cubrir un pase',
-      body: 'En una jugada de pase, la defensa tiene que decidir quién cubre a quién. Hay tres grandes familias:',
+      body: 'En una jugada de pase, la defensa tiene que decidir quién cubre a quién. Las dos familias básicas son hombre a hombre y zona. Una tercera, el match, mezcla las dos: tiene su propia lección avanzada.',
     },
     covMan: {
       title: 'Hombre a hombre',
+      aside: { title: 'Cómo vencerla', body: 'Ganar el duelo uno contra uno: los receptores rápidos atacan al defensor en profundidad, y las rutas con cambios bruscos de dirección o que cruzan el campo le hacen perder un paso. Los receptores juntos también pueden estorbar a los defensores (dentro de las reglas). Un paso perdido y no hay nadie para ayudar.' },
       body: 'Cada defensor tiene asignado un receptor y lo sigue a donde vaya. Los linieros defensivos y el safety profundo normalmente no tienen receptor: el safety se queda atrás para ayudar por arriba.',
       example: 'Cobertura pegada, pero exige defensores muy buenos: un paso atrás y el receptor queda libre.',
     },
     covZone: {
       title: 'Zona',
+      aside: { title: 'Cómo vencerla', body: 'Obligar a un defensor a elegir: un receptor detrás de él y otro delante, o dos receptores en la misma área. Cubra a quien cubra, el otro queda libre. Los receptores también pueden pararse en los huecos entre dos áreas, donde no queda claro de quién es la responsabilidad.' },
       body: 'Cada defensor es responsable de un área del campo, no de un jugador. Cubre a quien entre en su área.',
       example: 'Mantiene a los receptores por delante y limita los pases largos, pero hay huecos entre las áreas, y dos receptores en una misma área son un problema.',
     },
@@ -387,7 +390,6 @@ export default {
     covToday: {
       title: 'Qué juegan las defensas hoy',
       body: 'El hombre a hombre está en su punto más bajo en años: en 2025 se usó en el 22,6% de las jugadas, frente a más de un tercio hace siete temporadas. Un equipo destacó: Cleveland, con 45,1%.',
-      insight: 'Se dice mucho que hoy casi todo es match, y que con los mejores defensores siempre se jugaría hombre a hombre. No encontramos una fuente que mida el “match” directamente; lo que sí muestran las fuentes es que el hombre a hombre exige una cobertura de élite y que las llamadas modernas mezclan hombre y zona.',
     },
   },
 

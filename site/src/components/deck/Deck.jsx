@@ -98,6 +98,12 @@ export default function Deck({ slides, textPath, resolveRef, footer }) {
               </ul>
             )}
             {text.example && <p className="slide-example">{text.example}</p>}
+            {text.aside && (
+              <div className="slide-aside" role="note">
+                <strong>🎯 {text.aside.title}</strong>
+                <p>{text.aside.body}</p>
+              </div>
+            )}
             {text.note && (
               <div className="slide-note" role="note">
                 <strong>⚠ {t('ui.deck.important')}</strong>

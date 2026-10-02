@@ -136,6 +136,16 @@ export const SOURCES = {
     title: 'PFF — How the NFL is Evolving: Five schematic trends that have shaped the 2025 season (2026-01-04)',
     url: 'https://www.pff.com/news/nfl-is-evolving-five-schematic-trends-that-have-shaped-the-2025-season',
   },
+  S28: {
+    short: 'Football Nation · Man coverage',
+    title: 'Football Nation — What Is Man Coverage in Football?',
+    url: 'https://www.footballnationusa.com/post/what-is-man-coverage-in-football',
+  },
+  S29: {
+    short: 'Football Nation · Zone coverage',
+    title: 'Football Nation — What Is Zone Coverage in Football? Cover 2, 3 and 4',
+    url: 'https://www.footballnationusa.com/post/what-is-zone-coverage-in-football',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

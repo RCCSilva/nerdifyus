@@ -18,3 +18,5 @@
 .cov-bar-track { height: 0.8rem; border-radius: 99px; background: var(--line); overflow: hidden; }
 .cov-bar-track i { display: block; height: 100%; border-radius: 99px; background: #c8323f; transform-origin: left; animation: grow 0.9s ease-out both; }
 .cov-bar b { text-align: right; font-variant-numeric: tabular-nums; }
+.cov-badge { margin-left: 0.5rem; vertical-align: 0.15rem; }
+.cov-card-match { opacity: 0.75; }

@@ -153,6 +153,7 @@ export function CoverageFamiliesVisual({ replay }) {
         {['man', 'zone', 'match'].map((k, n) => (
           <section key={k} className={`cov-card cov-card-${k}`} style={{ animationDelay: `${n * 140}ms` }}>
             <strong>{t(`nfl.tactics.family.${k}.name`)}</strong>
+            {k === 'match' && <span className="badge lvl-advanced cov-badge">{t('ui.topic.level.advanced')} · {t('ui.topic.soon')}</span>}
             <p>{t(`nfl.tactics.family.${k}.what`)}</p>
           </section>
         ))}

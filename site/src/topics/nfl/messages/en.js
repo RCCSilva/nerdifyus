@@ -12,6 +12,7 @@ export default {
     commonFouls: { title: 'Common fouls', summary: 'False start, offside, holding, pass interference.' },
     defenseTactics: { title: 'Defensive tactics: pass coverage', summary: 'Man-to-man, zone and match: the three ways to cover receivers.' },
     strategy: { title: 'Strategy', summary: 'Why teams do what they do.' },
+    matchCoverage: { title: 'Match coverage', summary: 'The man/zone hybrid most defenses use today.' },
     cap: { title: 'The salary cap', summary: 'How team payrolls really work.' },
   },
 
@@ -368,15 +369,17 @@ export default {
     },
     covFamilies: {
       title: 'Three ways to cover a pass',
-      body: 'On a pass play, the defense has to decide who covers whom. There are three big families:',
+      body: 'On a pass play, the defense has to decide who covers whom. The two basic families are man-to-man and zone. A third, match, mixes both: it has its own advanced lesson.',
     },
     covMan: {
       title: 'Man-to-man',
+      aside: { title: 'How to beat it', body: 'Win the one-on-one: fast receivers attack the defender deep, and routes with sudden breaks or crossing the field make him lose a step. Bunched receivers can also get in the defenders’ way (within the rules). One step lost, and nobody else is there to help.' },
       body: 'Each defender is assigned one receiver and follows him wherever he goes. Defensive linemen and the deep safety usually don’t get a receiver: the safety stays deep to help over the top.',
       example: 'Tight coverage, but it takes very good defenders: one step behind and the receiver is open.',
     },
     covZone: {
       title: 'Zone',
+      aside: { title: 'How to beat it', body: 'Make a defender choose: put one receiver behind him and another in front of him, or two receivers in the same area. Whichever he covers, the other is open. Receivers can also sit in the gaps between two areas, where it isn’t clear whose job they are.' },
       body: 'Each defender is responsible for an area of the field, not a player. He covers whoever enters his area.',
       example: 'Keeps receivers in front and limits long passes, but there are holes between the areas, and two receivers in one area is a problem.',
     },
@@ -388,7 +391,6 @@ export default {
     covToday: {
       title: 'What defenses play today',
       body: 'Man-to-man is at its lowest in years: in 2025 it was used on 22.6% of snaps, down from over a third seven seasons ago. One team stood out: Cleveland, with 45.1%.',
-      insight: 'It’s often said that today almost everything is match, and that with the very best defenders you’d always call man-to-man. We found no source that measures “match” directly; what the sources do show is that man-to-man needs elite coverage skills and that modern calls blend man and zone.',
     },
   },
 

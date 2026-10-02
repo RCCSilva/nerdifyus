@@ -11,6 +11,7 @@ export default {
     commonFouls: { title: 'Faltas comuns', summary: 'False start, impedimento, holding, interferência de passe.' },
     defenseTactics: { title: 'Tática: a defesa contra o passe', summary: 'Homem a homem, zona e match: as três formas de marcar os recebedores.' },
     strategy: { title: 'Estratégia', summary: 'Por que os times fazem o que fazem.' },
+    matchCoverage: { title: 'Marcação match', summary: 'O híbrido de homem e zona que muitas defesas usam hoje.' },
     cap: { title: 'O teto salarial', summary: 'Como as folhas salariais funcionam de verdade.' },
   },
 
@@ -367,15 +368,17 @@ export default {
     },
     covFamilies: {
       title: 'Três jeitos de marcar um passe',
-      body: 'Numa jogada de passe, a defesa precisa decidir quem marca quem. Existem três grandes famílias:',
+      body: 'Numa jogada de passe, a defesa precisa decidir quem marca quem. As duas famílias básicas são homem a homem e zona. Uma terceira, o match, mistura as duas: ela tem uma lição avançada própria.',
     },
     covMan: {
       title: 'Homem a homem (individual)',
+      aside: { title: 'Como vencer', body: 'Ganhar o duelo individual: recebedores rápidos atacam o defensor em profundidade, e rotas com mudança brusca de direção ou cruzando o campo fazem ele perder um passo. Recebedores juntos também podem atrapalhar o caminho dos defensores (dentro das regras). Perdeu um passo, não tem ninguém por perto para ajudar.' },
       body: 'Cada defensor fica com um recebedor e vai atrás dele aonde ele for. Os linemen da defesa e o safety lá atrás normalmente não pegam ninguém: o safety fica no fundo para ajudar por cima.',
       example: 'Marcação colada, mas exige defensores muito bons: ficou um passo atrás, o recebedor está livre.',
     },
     covZone: {
       title: 'Zona',
+      aside: { title: 'Como vencer', body: 'Forçar o defensor a escolher: um recebedor atrás dele e outro na frente, ou dois recebedores na mesma área. Quem ele marcar, o outro fica livre. Os recebedores também podem parar nos buracos entre duas áreas, onde não fica claro de quem é a responsabilidade.' },
       body: 'Cada defensor é responsável por uma área do campo, não por um jogador. Ele marca quem entrar na área dele.',
       example: 'Mantém os recebedores na frente e limita passes longos, mas sobram buracos entre as áreas, e dois recebedores na mesma área viram problema.',
     },
@@ -387,7 +390,6 @@ export default {
     covToday: {
       title: 'O que as defesas jogam hoje',
       body: 'O homem a homem está no menor uso em anos: em 2025 ele apareceu em 22,6% das jogadas, contra mais de um terço sete temporadas antes. Um time se destacou: Cleveland, com 45,1%.',
-      insight: 'Muita gente diz que hoje quase tudo é match, e que com os melhores defensores você sempre chamaria homem a homem. Não achamos uma fonte que meça o “match” diretamente; o que as fontes mostram é que o homem a homem exige cobertura de elite e que as chamadas modernas misturam homem e zona.',
     },
   },
 

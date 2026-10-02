@@ -22,6 +22,7 @@ export const TOPICS = [
       { id: 'commonFouls', level: 'intermediate', slides: COMMON_FOULS_SLIDES },
       { id: 'defenseTactics', level: 'intermediate', slides: DEFENSE_TACTICS_SLIDES },
       { id: 'strategy', level: 'intermediate' },
+      { id: 'matchCoverage', level: 'advanced' },
       { id: 'cap', level: 'advanced' },
     ],
   },

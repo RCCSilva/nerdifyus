@@ -109,6 +109,17 @@
 .slide-note strong { display: block; color: var(--warn-text); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
 .slide-note p { margin: 0; }
 @keyframes note-in { from { opacity: 0; transform: translateY(8px); } }
+.slide-aside {
+  margin: 0 0 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid color-mix(in srgb, #0f8a7e 45%, transparent);
+  background: color-mix(in srgb, #0f8a7e 9%, var(--surface));
+  border-radius: 10px;
+  line-height: 1.45;
+  animation: note-in 0.5s 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.slide-aside strong { display: block; color: #0f8a7e; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+.slide-aside p { margin: 0; }
 .slide-insight {
   margin: 0 0 1rem;
   padding: 0.7rem 0.9rem;

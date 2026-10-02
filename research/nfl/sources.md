@@ -29,6 +29,8 @@
 | S25 | Wikipedia — "Zone defense in American football" | secondary (explainer) | last edited 2026-10-02 · accessed 2026-10-02 | https://en.wikipedia.org/wiki/Zone_defense_in_American_football |
 | S26 | Football Nation — "What Is Pattern-Match Coverage? Zone-Match Explained" | secondary (explainer) | updated Sep 13 · accessed 2026-10-02 | https://www.footballnationusa.com/post/what-is-pattern-match-coverage-football |
 | S27 | PFF — "How the NFL is Evolving: Five schematic trends that have shaped the 2025 season" (Daire Carragher) | secondary (analytics) | 2026-01-04 · accessed 2026-10-02 | https://www.pff.com/news/nfl-is-evolving-five-schematic-trends-that-have-shaped-the-2025-season |
+| S28 | Football Nation — "What Is Man Coverage in Football?" | secondary (explainer) | updated Sep 8 · accessed 2026-10-02 | https://www.footballnationusa.com/post/what-is-man-coverage-in-football |
+| S29 | Football Nation — "What Is Zone Coverage in Football? Cover 2, 3 and 4" | secondary (explainer) | updated Sep 2 · accessed 2026-10-02 | https://www.footballnationusa.com/post/what-is-zone-coverage-in-football |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.
