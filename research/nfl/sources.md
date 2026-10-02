@@ -20,6 +20,7 @@
 | S16 | NFL — "2026 NFL Schedule Announced" | primary | 2026 season · accessed 2026-10-01 | https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced |
 | S17 | IFAB Laws of the Game — Law 7 "The Duration of the Match" (soccer; comparison only) | primary | 2026/27 edition · accessed 2026-10-01 | https://www.theifab.com/laws/latest/the-duration-of-the-match/ |
 | S18 | NFL.com — 2025 team field goal stats by distance | primary | 2025 regular season · accessed 2026-10-01 | https://www.nfl.com/stats/team-stats/special-teams/field-goals/2025/reg/all |
+| S19 | Wikipedia — "Field goal" | secondary (explainer) | last edited 2026-09-29 · accessed 2026-10-01 | https://en.wikipedia.org/wiki/Field_goal |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

@@ -49,7 +49,7 @@ export default {
     },
     downs: {
       title: '4 intentos para avanzar 10 yardas',
-      body: 'Cada intento es un down. La ofensiva necesita avanzar al menos 10 yardas en 4 downs.',
+      body: 'El objetivo de la ofensiva en cada jugada: un primer down y, si puede, un touchdown. Tiene 4 intentos (downs) para avanzar 10 yardas; si lo logra, gana 4 más.',
       example: 'Ejemplo: avanzas 20 yardas. La cuenta se reinicia: la siguiente jugada es 1.º y 10 desde donde terminó el balón.',
       note: 'No siempre faltan 10: los castigos pueden hacer retroceder a la ofensiva. Ejemplo: salida en falso (un jugador ofensivo se mueve antes del snap) → la ofensiva retrocede 5 yardas.',
       steps: [
@@ -67,23 +67,22 @@ export default {
       body: 'En los tres primeros downs, la ofensiva corre o pasa para llegar a la línea a ganar. ¿Llegó? La cuenta vuelve a 1.º y 10.',
     },
     downsFourth: {
-      title: '4.º down: una decisión',
-      body: '¿En 4.º down y aún sin llegar a la línea a ganar? La ofensiva tiene tres opciones:',
-      note: 'Ninguna regla obliga a esperar al 4.º down: un equipo puede despejar o intentar un gol de campo en cualquier down. Pero patear entrega el balón, así que normalmente los equipos siguen corriendo y pasando hasta el 4.º down.',
+      title: '4.º down: ¿y ahora?',
+      body: '¿En 4.º down y sin llegar? Ir por ello es una apuesta: si falla, el rival recibe el balón ahí mismo, ya cerca de tu zona de anotación. Así que la ofensiva elige:',
     },
     run: {
-      title: 'Correr con el balón',
+      title: 'Cómo llegar: correr',
       body: 'El QB entrega el balón al corredor (RB). El RB corre hasta que lo derriban o sale del campo.',
       example: 'Entregar el balón hacia adelante solo es legal a un jugador elegible detrás de la línea, como el RB.',
     },
     pass: {
-      title: 'Pasar el balón',
+      title: 'Cómo llegar: pasar',
       body: 'Un pase hacia adelante por jugada, lanzado desde detrás de la línea de golpeo.',
       example: 'Atrapado → completo, sigue corriendo. Toca el suelo → incompleto: se gasta el down y el balón vuelve.',
     },
     touchdown: {
-      title: 'Touchdown: 6 puntos',
-      body: 'Lleva el balón a la zona de anotación rival, o atrápalo allí.',
+      title: 'El objetivo: un touchdown (6 puntos)',
+      body: 'Eso es lo que busca todo ataque: llevar el balón a la zona de anotación rival, o atraparlo allí.',
       note: '¡No es como en el fútbol! El balón no tiene que cruzar la línea. Touchdown = un jugador con el balón en su poder hace llegar solo la punta del balón a la línea de gol. Un balón suelto (sin nadie que lo tenga) en la zona de anotación solo cuenta si un jugador lo atrapa allí.',
     },
     try: {
@@ -96,10 +95,15 @@ export default {
       kick: 'Intento de 1: patada desde la 15',
       two: 'Intento de 2: carrera/pase desde la 2',
     },
+    punt: {
+      title: 'El despeje (punt)',
+      body: 'El despeje es una patada larga que le entrega el balón al rival, pero lejos. Es la opción segura cuando estás demasiado lejos para un gol de campo: mejor entregar el balón lejos que fallar en 4.º down y entregarlo donde estás.',
+      note: 'Los despejes casi siempre ocurren en 4.º down. Ninguna regla prohíbe despejar antes, pero estarías regalando downs que todavía tenías.',
+    },
     fieldGoal: {
-      title: 'Gol de campo: 3 puntos',
-      body: 'Patea el balón por encima del travesaño y entre los postes. Todo el balón debe pasar.',
-      example: '¿Cuándo? Normalmente en 4.º down, cuando la ofensiva no avanza. Cerca de los postes → gol de campo. Demasiado lejos → despeje.',
+      title: 'El gol de campo: 3 puntos',
+      body: '¿Lo bastante cerca de los postes, pero sin la seguridad del primer down? En lugar de arriesgar el 4.º down, patea por encima del travesaño y entre los postes y llévate 3 puntos. Si falla, el rival recibe el balón en el lugar de la patada.',
+      note: 'Se permite en cualquier down. En 1.º a 3.º down, normalmente solo se patea cuando se acaba el tiempo, como en la última jugada de una mitad.',
     },
     safety: {
       title: 'Safety: 2 puntos para la defensiva',
@@ -320,8 +324,8 @@ export default {
 
   fourth: {
     goForIt: { name: 'Ir por ello', what: 'Correr o pasar una vez más. Si lo logra: nuevo 1.º y 10. Si no: el rival recibe el balón ahí mismo.' },
-    fieldGoal: { name: 'Gol de campo', what: '¿Lo bastante cerca? Patea por 3 puntos. Si falla: el rival recibe el balón en el lugar de la patada.' },
-    punt: { name: 'Despeje (punt)', what: '¿Demasiado lejos para un gol de campo? Patea el balón lejos para que el rival empiece más atrás.' },
+    fieldGoal: { name: 'Gol de campo', what: '¿Lo bastante cerca? Patea por 3 puntos (la diapositiva después).' },
+    punt: { name: 'Despeje (punt)', what: '¿Lejos de los postes? Patea el balón lejos (siguiente diapositiva).' },
     fgRates: 'Goles de campo convertidos en 2025, por distancia (yardas)',
     fgDistance: 'La distancia se cuenta desde la patada hasta los postes: línea de golpeo + unas 7 yardas + las 10 yardas de la zona de anotación. Desde la 40 rival, son unas 57 yardas.',
   },

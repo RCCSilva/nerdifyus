@@ -49,7 +49,7 @@ export default {
     },
     downs: {
       title: '4 tentativas para avançar 10 jardas',
-      body: 'Cada tentativa é uma descida (down). O ataque precisa avançar pelo menos 10 jardas em 4 descidas.',
+      body: 'O objetivo do ataque em toda jogada: a primeira descida e, se der, o touchdown. Ele tem 4 tentativas (descidas) para avançar 10 jardas; conseguiu, ganha mais 4.',
       example: 'Exemplo: você avança 20 jardas. A contagem zera: a próxima jogada é 1ª & 10 de onde a bola parou.',
       note: 'Nem sempre faltam 10: faltas podem empurrar o ataque para trás. Exemplo: false start (um jogador do ataque se mexe antes do snap) → o ataque volta 5 jardas.',
       steps: [
@@ -67,23 +67,22 @@ export default {
       body: 'Nas três primeiras descidas, o ataque corre ou passa para chegar à linha a alcançar. Chegou? A contagem volta para 1ª & 10.',
     },
     downsFourth: {
-      title: '4ª descida: uma decisão',
-      body: 'Chegou na 4ª descida sem alcançar a linha? O ataque tem três saídas:',
-      note: 'Nenhuma regra obriga a esperar a 4ª descida: o time pode dar punt ou tentar um field goal em qualquer descida. Mas chutar entrega a bola, então normalmente os times correm e passam até a 4ª descida.',
+      title: '4ª descida: e agora?',
+      body: 'Chegou na 4ª descida sem alcançar a linha? Tentar de novo é uma aposta: se falhar, o adversário fica com a bola ali mesmo, já perto da sua end zone. Então o ataque escolhe:',
     },
     run: {
-      title: 'Correndo com a bola',
+      title: 'Como chegar lá: correndo',
       body: 'O QB entrega a bola ao running back (RB). O RB corre até ser derrubado ou sair do campo.',
       example: 'Entregar a bola para a frente só é permitido para um jogador elegível atrás da linha, como o RB.',
     },
     pass: {
-      title: 'Passando a bola',
+      title: 'Como chegar lá: passando',
       body: 'Um passe para a frente por jogada, lançado de trás da linha de scrimmage.',
       example: 'Pegou → completo, continua correndo. Tocou o chão → incompleto: a descida é gasta e a bola volta.',
     },
     touchdown: {
-      title: 'Touchdown: 6 pontos',
-      body: 'Leve a bola até a end zone adversária, ou pegue-a lá dentro.',
+      title: 'O objetivo: o touchdown (6 pontos)',
+      body: 'É isso que todo ataque busca: levar a bola até a end zone adversária, ou pegá-la lá dentro.',
       note: 'Não é como no futebol! A bola não precisa cruzar a linha. Touchdown = um jogador segurando a bola faz só a ponta dela chegar à linha do gol. Uma bola solta (ninguém segurando) na end zone só vale se um jogador a pegar lá dentro.',
     },
     try: {
@@ -96,10 +95,15 @@ export default {
       kick: 'Tentativa de 1: chute da 15',
       two: 'Tentativa de 2: corrida/passe da 2',
     },
+    punt: {
+      title: 'O punt',
+      body: 'O punt é um chute longo que entrega a bola ao adversário, só que lá longe. É a escolha segura quando você está longe demais para o field goal: melhor entregar a bola lá no fundo do que falhar na 4ª descida e entregá-la onde você está.',
+      note: 'O punt quase sempre acontece na 4ª descida. Nenhuma regra proíbe dar punt antes, mas você estaria abrindo mão de descidas que ainda tinha.',
+    },
     fieldGoal: {
-      title: 'Field goal: 3 pontos',
-      body: 'Chute a bola por cima do travessão e entre as traves. A bola inteira precisa passar.',
-      example: 'Quando? Normalmente na 4ª descida, quando o ataque não consegue avançar. Perto das traves → field goal. Longe demais → punt.',
+      title: 'O field goal: 3 pontos',
+      body: 'Perto o bastante das traves, mas sem garantia da primeira descida? Em vez de arriscar a 4ª descida, chuta por cima do travessão e entre as traves e garante 3 pontos. Se errar, o adversário fica com a bola no local do chute.',
+      note: 'Vale em qualquer descida. Da 1ª à 3ª, normalmente só se chuta quando o tempo está acabando, como na última jogada de um tempo.',
     },
     safety: {
       title: 'Safety: 2 pontos para a defesa',
@@ -320,8 +324,8 @@ export default {
 
   fourth: {
     goForIt: { name: 'Tentar mais uma vez', what: 'Corrida ou passe mais uma vez. Conseguiu: nova 1ª & 10. Não conseguiu: o adversário fica com a bola ali mesmo.' },
-    fieldGoal: { name: 'Field goal', what: 'Perto o bastante? Chuta para 3 pontos. Errou: o adversário fica com a bola no local do chute.' },
-    punt: { name: 'Punt', what: 'Longe demais para tentar o field goal? Chuta a bola para longe, para o adversário começar mais atrás.' },
+    fieldGoal: { name: 'Field goal', what: 'Perto o bastante? Chuta para 3 pontos (o slide seguinte).' },
+    punt: { name: 'Punt', what: 'Longe das traves? Chuta a bola para longe (próximo slide).' },
     fgRates: 'Field goals convertidos em 2025, por distância (jardas)',
     fgDistance: 'A distância conta do chute até as traves: linha de scrimmage + cerca de 7 jardas + as 10 jardas da end zone. Da linha de 40 do adversário, dá uns 57 jardas.',
   },

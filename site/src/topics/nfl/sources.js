@@ -91,6 +91,11 @@ export const SOURCES = {
     title: 'NFL.com — 2025 team field goal stats by distance',
     url: 'https://www.nfl.com/stats/team-stats/special-teams/field-goals/2025/reg/all',
   },
+  S19: {
+    short: 'Wikipedia · Field goal',
+    title: 'Wikipedia — Field goal, edited 2026-09-29 (fallback source)',
+    url: 'https://en.wikipedia.org/wiki/Field_goal',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

@@ -50,7 +50,7 @@ export default {
     },
     downs: {
       title: '4 tries to go 10 yards',
-      body: 'Each try is a down. The offense needs to gain at least 10 yards in 4 downs.',
+      body: 'The offense’s goal on every snap: a first down and, if it can, a touchdown. It gets 4 tries (downs) to gain 10 yards; make it and it gets 4 more.',
       example: 'Example: you gain 20 yards. The count resets: the next play is 1st & 10 from where the ball ended.',
       note: 'Not always 10 to go: penalties can push the offense back. Example: false start (an offensive player moves before the snap) → the offense goes back 5 yards.',
       steps: [
@@ -68,23 +68,22 @@ export default {
       body: 'On the first three downs, the offense runs or passes to reach the line to gain. Got there? The count resets to 1st & 10.',
     },
     downsFourth: {
-      title: '4th down: a decision',
-      body: 'Still short of the line to gain on 4th down? The offense has three options:',
-      note: 'No rule says to wait for 4th down: a team may punt or try a field goal on any down. But kicking gives the ball away, so teams normally keep running and passing until 4th down.',
+      title: '4th down: what now?',
+      body: 'Still short on 4th down? Going for it is a gamble: miss, and the other team gets the ball right there, already close to your end zone. So the offense chooses:',
     },
     run: {
-      title: 'Running the ball',
+      title: 'Getting there: run',
       body: 'The QB hands the ball to the running back (RB). The RB runs until tackled or out of bounds.',
       example: 'Handing the ball forward is only legal to an eligible player behind the line, like the RB.',
     },
     pass: {
-      title: 'Passing the ball',
+      title: 'Getting there: pass',
       body: 'One forward pass per play, thrown from behind the line of scrimmage.',
       example: 'Caught → complete, keep running. Hits the ground → incomplete: the down is used and the ball goes back.',
     },
     touchdown: {
-      title: 'Touchdown: 6 points',
-      body: 'Carry the ball into the other team’s end zone, or catch it there.',
+      title: 'The goal: a touchdown (6 points)',
+      body: 'That’s what every attack is after: carry the ball into the other team’s end zone, or catch it there.',
       note: 'Not like soccer! The ball doesn’t have to cross the line. Touchdown = a player holding the ball gets just the tip of it to the goal line. A loose ball (nobody holding it) in the end zone only counts if a player grabs it there.',
     },
     try: {
@@ -97,10 +96,15 @@ export default {
       kick: '1-pt attempt: kick from the 15',
       two: '2-pt attempt: run/pass from the 2',
     },
+    punt: {
+      title: 'The punt',
+      body: 'A punt is a long kick that hands the ball to the other team, but far away. It’s the safe choice when you’re too far for a field goal: better to give the ball away deep than to fail on 4th down and hand it over where you are.',
+      note: 'Punts almost always happen on 4th down. No rule forbids punting earlier, but you would give away downs you still had.',
+    },
     fieldGoal: {
-      title: 'Field goal: 3 points',
-      body: 'Kick the ball over the crossbar and between the uprights. The whole ball must go through.',
-      example: 'When? Usually on 4th down, when the offense is stuck. Close enough to the posts → kick a field goal. Too far → punt it away.',
+      title: 'The field goal: 3 points',
+      body: 'Close enough to the posts, but not sure you’ll get the first down? Instead of risking 4th down, kick it over the crossbar and between the uprights and take 3 points. If it misses, the other team gets the ball at the spot of the kick.',
+      note: 'Allowed on any down. On 1st to 3rd down, teams usually kick only when time is running out, like the last play of a half.',
     },
     safety: {
       title: 'Safety: 2 points for the defense',
@@ -321,8 +325,8 @@ export default {
 
   fourth: {
     goForIt: { name: 'Go for it', what: 'Run or pass one more time. Make it: new 1st & 10. Miss: the other team gets the ball right there.' },
-    fieldGoal: { name: 'Field goal', what: 'Close enough? Kick for 3 points. Miss: the other team gets the ball at the spot of the kick.' },
-    punt: { name: 'Punt', what: 'Too far to try a field goal? Kick the ball far away so the other team starts farther back.' },
+    fieldGoal: { name: 'Field goal', what: 'Close enough? Kick for 3 points (the slide after).' },
+    punt: { name: 'Punt', what: 'Too far from the posts? Kick the ball away (next slide).' },
     fgRates: 'Field goals made in 2025, by distance (yards)',
     fgDistance: 'The distance counts from the kick to the posts: line of scrimmage + about 7 yards + the 10-yard end zone. From the opponent’s 40, that’s about 57 yards.',
   },

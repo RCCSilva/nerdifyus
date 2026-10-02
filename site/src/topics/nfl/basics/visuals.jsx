@@ -219,9 +219,26 @@ export const DownsUseVisual = (props) => <DriveVisual from={0} to={2} {...props}
 // (research/nfl/01-basic-rules.md, "Using the 4 downs").
 const FG_RATES = [['40–49', 84], ['50–59', 70], ['60+', 55]];
 
+function FgRates() {
+  const { t } = useI18n();
+  return (
+    <div className="fg-rates">
+      <span className="fg-rates-title">{t('nfl.fourth.fgRates')}</span>
+      {FG_RATES.map(([d, pct]) => (
+        <div key={d} className="fg-rate">
+          <span>{d}</span>
+          <span className="fg-bar"><i style={{ width: `${pct}%` }} /></span>
+          <b>{pct}%</b>
+        </div>
+      ))}
+      <span className="fg-rates-note">{t('nfl.fourth.fgDistance')}</span>
+    </div>
+  );
+}
+
 export function FourthDownVisual({ replay }) {
   const { t } = useI18n();
-  const opts = ['goForIt', 'fieldGoal', 'punt'];
+  const opts = ['goForIt', 'punt', 'fieldGoal']; // same order as the next slides
   return (
     <div className="fourth" key={replay}>
       {opts.map((o, n) => (
@@ -231,19 +248,6 @@ export function FourthDownVisual({ replay }) {
             <strong>{t(`nfl.fourth.${o}.name`)}</strong>
           </header>
           <p>{t(`nfl.fourth.${o}.what`)}</p>
-          {o === 'fieldGoal' && (
-            <div className="fg-rates">
-              <span className="fg-rates-title">{t('nfl.fourth.fgRates')}</span>
-              {FG_RATES.map(([d, pct]) => (
-                <div key={d} className="fg-rate">
-                  <span>{d}</span>
-                  <span className="fg-bar"><i style={{ width: `${pct}%` }} /></span>
-                  <b>{pct}%</b>
-                </div>
-              ))}
-              <span className="fg-rates-note">{t('nfl.fourth.fgDistance')}</span>
-            </div>
-          )}
         </section>
       ))}
     </div>
@@ -375,6 +379,15 @@ export function TryVisual({ replay }) {
 }
 
 export function FieldGoalVisual({ replay }) {
+  return (
+    <div className="stack-visual">
+      <FieldGoalKick replay={replay} />
+      <div className="stack-visual-pad"><FgRates /></div>
+    </div>
+  );
+}
+
+function FieldGoalKick({ replay }) {
   const t = useTimeline(3000, replay);
   const p = seg(t, 400, 2200);
   const k = kickArc([fx(72), MID_Y + 1], [LENGTH + 3, MID_Y - 0.4], p);
@@ -386,6 +399,29 @@ export function FieldGoalVisual({ replay }) {
     </Field>
   );
 }
+
+export function PuntVisual({ replay }) {
+  const t = useTimeline(4200, replay);
+  const los = fx(30);
+  const punter = [los - 15, MID_Y];
+  const land = [fx(78), MID_Y + 2];
+  const snap = seg(t, 300, 900);
+  const fly = seg(t, 1200, 3000);
+  const ball = t < 1200 ? { ...xyOf(along([[los - 0.4, MID_Y], punter], snap)), z: 0 } : kickArc(punter, land, fly);
+  return (
+    <Field view={[fx(10), fx(84)]} viewY={[MID_Y - 11, MID_Y + 11]}>
+      <FieldLine x={los} kind="los" />
+      <path className="trail" d={`M${punter[0]} ${punter[1]} L${land[0]} ${land[1]}`} style={{ opacity: t > 1200 ? 0.6 : 0 }} />
+      <Player x={los - 1} y={MID_Y} label="LS" side="off" size={1.9} />
+      <Player x={punter[0] - 1.2} y={punter[1]} label="P" side="off" size={1.9} active />
+      <Player x={land[0] + 1.4} y={land[1]} label="KR" side="def" size={1.9} />
+      <Ball x={ball.x} y={ball.y} z={ball.z} />
+      <UprightText x={(los + land[0]) / 2} y={MID_Y - 6.5} className="tag tag-md tag-hl" style={{ fontSize: 2.6 }}>{`≈ ${Math.round(land[0] - los)} yd`}</UprightText>
+    </Field>
+  );
+}
+
+const xyOf = ([x, y]) => ({ x, y });
 
 export function SafetyVisual({ replay }) {
   const t = useTimeline(3000, replay);

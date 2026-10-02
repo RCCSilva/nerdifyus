@@ -42,12 +42,14 @@ Citation key: `[S1 R11-1-2, p.49]` = 2026 Rulebook, Rule 11, Section 1, Article 
 - The QB takes the snap and moves the ball by running or passing; the RB is the main ball carrier [S2 "Quarterback", "Running Back"].
 
 ## Using the 4 downs
+- **Why punt or kick at all:** failing on 4th down gives the other team a new series where the ball is [S1 R7-3-2(a), p.34]. So when the offense is too far for a field goal it punts [S2 "Punter"], and when it's within kicking range but more than a yard or two short it usually kicks [S19].
 - Downs 1–3: the offense runs or passes (see "Moving the ball") to reach the line to gain [S1 R3-7-2, p.11].
 - 4th down without a first down: three options.
   - **Go for it** (run or pass). Reach the line to gain → new series [S1 R7-3-1, p.34]. Fail → the other team gets a new series [S1 R7-3-2(a), p.34].
   - **Field goal**, if close enough [S2 "Punter"]. If it misses, the other team gets the ball at the spot of the kick (or at its 20 if the kick was inside the 20) [S1 R11-4-2, p.50].
   - **Punt**, if too far away to attempt a field goal [S2 "Punter"]. When the receiving team ends up with the ball, it gets a new series [S1 R7-3-2(c), p.34].
 - **Any down:** the rules let Team A punt or kick from on or behind the line of scrimmage, with no restriction to 4th down [S1 R9-1-1, p.43]. Kicking gives the ball away, which is why the punter "enters the game on fourth downs" [S2 "Punter"].
+- **When field goals happen** [S19]: usually on the last down (4th in the NFL), when the offense is more than a yard or two from a first down and "within kicking range of the goalposts (about 45 yards at the professional level)". On an earlier down near the end of a half ("if there is only enough time remaining to execute just one more play, regardless of the down"), or late in the game "if a successful kick will win or tie the game".
 - **Field-goal distance:** the goal is on the end line [S1 R1-3-1, p.8], 10 yards behind the goal line [S1 R1-1-1, p.8]. The holder sets the ball about 7–8 yards behind the line of scrimmage [S7]. So a kick from the line at the opponent's 40 is about 40 + 10 + 7 ≈ 57 yards.
 - **2025 league totals** (made/attempted), summed from all 32 teams on [S18]: 1–19 yd 4/4, 20–29 202/206 (98%), 30–39 278/299 (93%), 40–49 264/313 (84%), 50–59 171/244 (70%), 60+ 12/22 (55%).
 

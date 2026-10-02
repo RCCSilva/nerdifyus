@@ -18,15 +18,15 @@ describe('topic sidebar', () => {
       // A lesson title can also be a slide title (e.g. "The offense"), so allow several matches.
       expect(within(sidebar).getAllByText(lesson).length).toBeGreaterThan(0);
     }
-    expect(within(sidebar).getAllByRole('link').filter((a) => a.href.includes('?s=')).length).toBe(52); // 15 basics + 12 game + 4 positions + 7 fouls + 7 overtime + 7 season
+    expect(within(sidebar).getAllByRole('link').filter((a) => a.href.includes('?s=')).length).toBe(53); // 16 basics + 12 game + 4 positions + 7 fouls + 7 overtime + 7 season
 
     // Open the (mobile) drawer, pick slide 8, and the drawer closes again.
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: /Contents/ })); });
     expect(container.querySelector('.topic-layout.is-open')).toBeTruthy();
-    await act(async () => { fireEvent.click(within(sidebar).getByText('Touchdown: 6 points')); });
-    expect(window.location.hash).toBe('#/en/nfl/basics?s=10');
-    expect(await screen.findByRole('heading', { name: 'Touchdown: 6 points' })).toBeTruthy();
+    await act(async () => { fireEvent.click(within(sidebar).getByText('The goal: a touchdown (6 points)')); });
+    expect(window.location.hash).toBe('#/en/nfl/basics?s=5');
+    expect(await screen.findByRole('heading', { name: 'The goal: a touchdown (6 points)' })).toBeTruthy();
     expect(container.querySelector('.topic-layout.is-open')).toBeNull();
-    expect(within(sidebar).getByText('Touchdown: 6 points').closest('a').getAttribute('aria-current')).toBe('step');
+    expect(within(sidebar).getByText('The goal: a touchdown (6 points)').closest('a').getAttribute('aria-current')).toBe('step');
   });
 });
