@@ -185,13 +185,19 @@ export default {
       example: 'Aqui o tight end se alinha um passo atrás: só 6 na linha, e o ataque volta 5 jardas. O sinal é o mesmo do false start.',
     },
     offside: {
-      title: 'Impedimento, encroachment, infração de zona neutra',
-      body: 'A zona neutra é o comprimento da bola, entre os dois times. Antes do snap, os defensores precisam ficar fora dela. Três jeitos de quebrar essa regra, todos de 5 jardas contra a defesa:',
-      bullets: [
-        'Impedimento (offside): um defensor está dentro da zona neutra na hora do snap.',
-        'Encroachment: um defensor atravessa a zona e toca um jogador do ataque antes do snap.',
-        'Infração de zona neutra: um defensor entra na zona e faz um jogador do ataque reagir.',
-      ],
+      title: 'Impedimento (defesa): 5 jardas',
+      body: 'A zona neutra é o comprimento da bola, entre os dois times. É impedimento quando um defensor está dentro dela na hora do snap.',
+      note: 'O árbitro não apita: o snap acontece e a jogada segue. A falta é anunciada no fim, e se a jogada foi melhor que 5 jardas o ataque pode recusar.',
+    },
+    encroachment: {
+      title: 'Encroachment (defesa): 5 jardas',
+      body: 'Antes do snap, um defensor entra na zona neutra e toca um jogador do ataque (ou a bola).',
+      note: 'Apito na hora, como no false start: a jogada não acontece.',
+    },
+    nzi: {
+      title: 'Infração de zona neutra (defesa): 5 jardas',
+      body: 'Antes do snap, um defensor entra na zona neutra e faz um jogador do ataque perto dele reagir. Também é falta se ele passa da zona com caminho livre até o QB.',
+      note: 'Apito na hora. Se ninguém reagir e ele voltar a tempo, sem tocar em ninguém, não é falta.',
     },
     delayOfGame: {
       title: 'Delay of game: 5 jardas',
@@ -863,7 +869,7 @@ export default {
     firstDown: '1ª & 10 automática',
     spotFirstDown: 'Bola aqui + 1ª & 10',
     signalTitle: 'O sinal do árbitro',
-    legend: { onLine: 'Na linha', hands: 'Mãos no adversário', fiveYards: 'Primeiras 5 jardas' },
+    legend: { onLine: 'Na linha', hands: 'Mãos no adversário', fiveYards: 'Primeiras 5 jardas', nz: 'Zona neutra' },
     top: {
       title: 'Faltas marcadas em 2025 (temporada regular)',
       note: 'Só faltas aceitas: as recusadas e as que se anulam não entram na conta.',
@@ -884,16 +890,7 @@ export default {
     roughing: { gone: 'A bola já saiu' },
     roughness: { out: 'Fora de campo' },
     faceMask: { grab: 'Agarra a grade do capacete' },
-    scene: {
-      offside: 'Impedimento (offside)',
-      encroachment: 'Encroachment',
-      nzi: 'Infração de zona neutra',
-    },
-    sceneHow: {
-      offside: 'Dentro da zona na hora do snap',
-      encroachment: 'Atravessa e toca um jogador do ataque',
-      nzi: 'Entra e faz um bloqueador reagir',
-    },
+    nz: { playOn: 'A jogada segue', whistle: 'Apito!' },
   },
 
   signals: {

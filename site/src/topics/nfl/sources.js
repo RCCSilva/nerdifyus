@@ -237,6 +237,11 @@ export const SOURCES = {
     title: 'NFLPenalties.com — 2025 penalty totals, all penalties (declined and offsetting excluded)',
     url: 'https://www.nflpenalties.com/all-penalties.php?year=2025',
   },
+  S49: {
+    short: 'Pro Football Network',
+    title: 'Pro Football Network — Offsides vs. Encroachment: What’s the Difference Between the NFL Penalties? (Daniel Tomaro, Feb 8, 2026)',
+    url: 'https://www.profootballnetwork.com/offsides-vs-encroachment-whats-the-difference-between-the-nfl-penalties/',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
-  max-width: 980px;
+  max-width: 820px;
   margin: 0 auto;
 }
 
@@ -30,11 +30,11 @@
   touch-action: pan-y;
 }
 
+/* one column everywhere: title, then the visual, then the text, boxes and sources */
 .slide {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
-  gap: 1.6rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.1rem;
   animation: slide-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 .slide.from-left { animation-name: slide-in-left; }
@@ -49,11 +49,11 @@
 }
 .slide-visual > .field { border-radius: 14px; }
 
-.slide-text h2 {
+.slide-title {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.2rem);
   line-height: 1.1;
-  margin: 0 0 0.6rem;
+  margin: 0;
   letter-spacing: -0.02em;
 }
 .slide-body {
@@ -197,7 +197,7 @@
 }
 
 @media (max-width: 760px) {
-  .slide { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .slide { gap: 0.9rem; }
   .slide-body { font-size: 1.02rem; }
 }
 

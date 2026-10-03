@@ -86,11 +86,11 @@ export default function Deck({ slides, textPath, resolveRef, footer }) {
           aria-roledescription="slide"
           aria-label={t('ui.deck.progress', { i: index + 1, n })}
         >
+          <h2 className="slide-title">{text.title}</h2>
           <div className="slide-visual">
             <Visual replay={replay} />
           </div>
           <div className="slide-text">
-            <h2>{text.title}</h2>
             {text.body && <p className="slide-body">{text.body}</p>}
             {text.bullets && (
               <ul className="slide-bullets">

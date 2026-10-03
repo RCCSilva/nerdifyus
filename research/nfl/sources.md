@@ -50,6 +50,7 @@
 | S46 | Constitution and Bylaws of the National Football League (revised as of 2016-09-14), copy hosted by Aceris Law (`raw/nfl-constitution-bylaws.pdf`) | official (league governing document) | 2016-09-14 · accessed 2026-10-02 | https://www.acerislaw.com/wp-content/uploads/2026/02/NFL-constitution.pdf |
 | S47 | Wikipedia — "Transfer (association football)" | fallback (encyclopedia) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/Transfer_(association_football) |
 | S48 | NFLPenalties.com — 2025 penalty totals (all penalties) | secondary (stats tracker) | 2025 season · accessed 2026-10-02 | https://www.nflpenalties.com/all-penalties.php?year=2025 |
+| S49 | Pro Football Network — "Offsides vs. Encroachment: What's the Difference Between the NFL Penalties?" (Daniel Tomaro) | secondary (explainer) | 2026-02-08 · accessed 2026-10-02 | https://www.profootballnetwork.com/offsides-vs-encroachment-whats-the-difference-between-the-nfl-penalties/ |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

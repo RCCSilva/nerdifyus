@@ -186,13 +186,19 @@ export default {
       example: 'Here the tight end lines up a step back: only 6 on the line, so the offense goes back 5 yards. The signal is the same as for a false start.',
     },
     offside: {
-      title: 'Offside, encroachment, neutral zone infraction',
-      body: 'The neutral zone is the length of the ball, between the two teams. Before the snap, defenders must stay out of it. Three ways to break that rule, all 5 yards against the defense:',
-      bullets: [
-        'Offside: a defender is inside the neutral zone when the ball is snapped.',
-        'Encroachment: a defender crosses it and touches an offensive player before the snap.',
-        'Neutral zone infraction: a defender steps into it and makes an offensive player flinch.',
-      ],
+      title: 'Offside (defense): 5 yards',
+      body: 'The neutral zone is the length of the ball, between the two teams. It’s offside when a defender is inside it as the ball is snapped.',
+      note: 'No whistle: the snap happens and the play goes on. The foul is announced at the end, and if the play gained more than 5 yards the offense can decline it.',
+    },
+    encroachment: {
+      title: 'Encroachment (defense): 5 yards',
+      body: 'Before the snap, a defender enters the neutral zone and touches an offensive player (or the ball).',
+      note: 'Whistle right away, like a false start: the play never happens.',
+    },
+    nzi: {
+      title: 'Neutral zone infraction (defense): 5 yards',
+      body: 'Before the snap, a defender steps into the neutral zone and makes a nearby offensive player react. It’s also a foul if he goes past it with a clear path to the QB.',
+      note: 'Whistle right away. If nobody reacts and he gets back in time without touching anyone, it’s not a foul.',
     },
     delayOfGame: {
       title: 'Delay of game: 5 yards',
@@ -864,7 +870,7 @@ export default {
     firstDown: 'Automatic 1st & 10',
     spotFirstDown: 'Ball here + 1st & 10',
     signalTitle: 'The referee’s signal',
-    legend: { onLine: 'On the line', hands: 'Hands on the opponent', fiveYards: 'First 5 yards' },
+    legend: { onLine: 'On the line', hands: 'Hands on the opponent', fiveYards: 'First 5 yards', nz: 'Neutral zone' },
     top: {
       title: 'Fouls called in 2025 (regular season)',
       note: 'Accepted fouls only: declined and offsetting ones aren’t counted.',
@@ -885,16 +891,7 @@ export default {
     roughing: { gone: 'The ball is already gone' },
     roughness: { out: 'Out of bounds' },
     faceMask: { grab: 'Grabs the facemask' },
-    scene: {
-      offside: 'Offside',
-      encroachment: 'Encroachment',
-      nzi: 'Neutral zone infraction',
-    },
-    sceneHow: {
-      offside: 'In the zone when the ball is snapped',
-      encroachment: 'Crosses and touches an offensive player',
-      nzi: 'Steps in and makes a blocker flinch',
-    },
+    nz: { playOn: 'Play goes on', whistle: 'Whistle!' },
   },
 
   signals: {

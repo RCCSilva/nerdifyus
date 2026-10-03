@@ -184,56 +184,59 @@ function IllegalFormationPlay({ t1 }) {
 }
 
 // The three look-alike neutral-zone fouls, stacked top to bottom.
-const NZ_SCENES = ['offside', 'encroachment', 'nzi'];
-
+// One defender and the neutral zone before the snap (R7-4-3/4/5). Offside needs the snap, so that
+// play goes on; encroachment and the neutral zone infraction are whistled at once.
 function NeutralZoneField({ scene, t1 }) {
+  const { t } = useI18n();
   const los = fx(50);
   const ZONE = 0.62; // half the drawn ball: the neutral zone is the ball's length (R3-18-2)
   const move = seg(t1, 300, 1100);
-  const flagP = seg(t1, 1300, 1900);
-  const ol = [-2, -1, 0, 1, 2].map((k) => ({ id: ['T', 'G', 'C', 'G', 'T'][k + 2], x: los - ZONE - 1.1, y: MID_Y + k * 2.1 }));
-  const dl = [-3.5, -1, 1, 3.6].map((k, n) => ({ id: ['DE', 'DT', 'DT', 'DE'][n], x: los + ZONE + 1.3, y: MID_Y + k * 2.1 }));
   const actor = scene === 'offside' ? 0 : scene === 'encroachment' ? 2 : 3;
+  const snap = scene === 'offside' ? seg(t1, 1300, 1500) : 0; // only offside gets a snap
+  const run = scene === 'offside' ? seg(t1, 1500, 2700) : 0; // and the play goes on
+  const flagAt = scene === 'offside' ? 1400 : 1300;
+  const flagP = seg(t1, flagAt, flagAt + 600);
+  const ol = [-2, -1, 0, 1, 2].map((k) => ({ id: ['T', 'G', 'C', 'G', 'T'][k + 2], x: los - ZONE - 1.1 - run * 0.5, y: MID_Y + k * 2.1 }));
+  const dl = [-3.5, -1, 1, 3.6].map((k, n) => ({ id: ['DE', 'DT', 'DT', 'DE'][n], x: los + ZONE + 1.3, y: MID_Y + k * 2.1 }));
   const defPos = (p, n) => {
-    if (n !== actor) return [p.x, p.y];
-    if (scene === 'offside') return [lerp(p.x, los + ZONE - 0.2, move), p.y];
+    if (n !== actor) return [p.x - run * 1.2, p.y];
+    if (scene === 'offside') return [lerp(p.x, los + ZONE - 0.2, move) - run * 3.5, p.y - run * 0.5]; // rushes around the tackle
     if (scene === 'encroachment') return [lerp(p.x, los - ZONE - 0.6 + 2.0, move), lerp(p.y, MID_Y + 2.1, move)];
     return [lerp(p.x, los - 0.2, move), p.y];
   };
   const flinch = scene === 'nzi' ? -0.9 * seg(t1, 1000, 1300) : 0;
+  const qbX = los - 4.5 - run * 3;
+  const ballX = lerp(los, qbX, snap);
+  const ballY = MID_Y + 1.3 * snap; // in the QB's hands, below his label
+  const whistle = scene !== 'offside' && t1 > 1300;
   return (
     <Field view={[los - 13, los + 13]} viewY={[MID_Y - 9.2, MID_Y + 9.2]}>
       <rect className="nz-band" x={los - ZONE} y={MID_Y - 30} width={ZONE * 2} height={60} />
-      <Ball x={los} y={MID_Y} />
+      <Player x={qbX} y={MID_Y} label="QB" side="off" dim={scene !== 'offside'} />
+      <Ball x={ballX} y={ballY} />
       {ol.map((p, n) => <Player key={`o${n}`} x={p.x + (n === 4 ? flinch : 0)} y={p.y} label={p.id} side="off" />)}
       {dl.map((p, n) => {
         const [x, y] = defPos(p, n);
         return <Player key={`d${n}`} x={x} y={y} label={p.id} side="def" active={n === actor} />;
       })}
       <PenaltyFlag x={los + 3.5} y={MID_Y - 5.5} fromX={los + 7} fromY={MID_Y - 9} p={flagP} />
-      <Pop x={los + 8.5} y={MID_Y + 5} show={t1 > 1950} kind="sm">+5</Pop>
+      <Tag x={los - 6} y={MID_Y + 7.9} show={scene === 'offside' && t1 > 1700}>{t('nfl.fouls.nz.playOn')}</Tag>
+      <Tag x={los - 6.5} y={MID_Y - 7.8} show={whistle}>{t('nfl.fouls.nz.whistle')}</Tag>
+      <Pop x={los + 8.5} y={MID_Y + 5} show={t1 > (scene === 'offside' ? 3000 : 1950)} kind="sm">+5</Pop>
     </Field>
   );
 }
 
-export function OffsideFamilyVisual({ replay }) {
-  const { t } = useI18n();
+const nzVisual = (scene, duration) => function NeutralZoneVisual({ replay }) {
   return (
-    <FoulStack signal="offside">
-      {NZ_SCENES.map((scene) => (
-        <FluidScene
-          key={scene}
-          duration={2600}
-          replay={`${scene}-${replay}`}
-          header={<StateLine chip={t(`nfl.fouls.scene.${scene}`)} caption={t(`nfl.fouls.sceneHow.${scene}`)} />}
-          footer={<Legend items={[{ swatch: 'nz', label: t('nfl.fouls.neutralZone') }]} />}
-        >
-          {(t1) => <NeutralZoneField scene={scene} t1={t1} />}
-        </FluidScene>
-      ))}
-    </FoulStack>
+    <FoulScene duration={duration} replay={replay} signal="offside" legend={['nz']}>
+      {(t1) => <NeutralZoneField scene={scene} t1={t1} />}
+    </FoulScene>
   );
-}
+};
+export const OffsideVisual = nzVisual('offside', 3600);
+export const EncroachmentVisual = nzVisual('encroachment', 2600);
+export const NeutralZoneInfractionVisual = nzVisual('nzi', 2600);
 
 /** The play clock runs out before the snap. */
 export function DelayOfGameVisual({ replay }) {

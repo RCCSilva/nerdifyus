@@ -185,13 +185,19 @@ export default {
       example: 'Aquí el tight end se alinea un paso atrás: solo 6 en la línea, y la ofensiva retrocede 5 yardas. La señal es la misma que la de la salida en falso.',
     },
     offside: {
-      title: 'Fuera de lugar, invasión, infracción de zona neutral',
-      body: 'La zona neutral es el largo del balón, entre los dos equipos. Antes del snap, los defensivos deben quedarse fuera de ella. Tres formas de romper esa regla, todas de 5 yardas contra la defensiva:',
-      bullets: [
-        'Fuera de lugar: un defensivo está dentro de la zona neutral cuando se hace el snap.',
-        'Invasión (invasión): un defensivo la cruza y toca a un jugador ofensivo antes del snap.',
-        'Infracción de zona neutral: un defensivo entra en ella y hace que un jugador ofensivo reaccione.',
-      ],
+      title: 'Fuera de lugar (defensiva): 5 yardas',
+      body: 'La zona neutral es el largo del balón, entre los dos equipos. Es fuera de lugar cuando un defensivo está dentro de ella en el momento del snap.',
+      note: 'No hay silbato: el snap se da y la jugada sigue. La falta se anuncia al final, y si la jugada ganó más de 5 yardas la ofensiva puede rechazarla.',
+    },
+    encroachment: {
+      title: 'Invasión (defensiva): 5 yardas',
+      body: 'Antes del snap, un defensivo entra en la zona neutral y toca a un jugador ofensivo (o el balón).',
+      note: 'Silbato inmediato, como en la salida en falso: la jugada no se da.',
+    },
+    nzi: {
+      title: 'Infracción de zona neutral (defensiva): 5 yardas',
+      body: 'Antes del snap, un defensivo entra en la zona neutral y hace reaccionar a un jugador ofensivo cercano. También es falta si la pasa con camino libre hacia el QB.',
+      note: 'Silbato inmediato. Si nadie reacciona y él vuelve a tiempo sin tocar a nadie, no es falta.',
     },
     delayOfGame: {
       title: 'Retraso del juego: 5 yardas',
@@ -863,7 +869,7 @@ export default {
     firstDown: '1.º y 10 automático',
     spotFirstDown: 'Balón aquí + 1.º y 10',
     signalTitle: 'La señal del árbitro',
-    legend: { onLine: 'En la línea', hands: 'Manos sobre el rival', fiveYards: 'Primeras 5 yardas' },
+    legend: { onLine: 'En la línea', hands: 'Manos sobre el rival', fiveYards: 'Primeras 5 yardas', nz: 'Zona neutral' },
     top: {
       title: 'Faltas cobradas en 2025 (temporada regular)',
       note: 'Solo faltas aceptadas: las rechazadas y las que se anulan no cuentan.',
@@ -884,16 +890,7 @@ export default {
     roughing: { gone: 'El balón ya salió' },
     roughness: { out: 'Fuera del campo' },
     faceMask: { grab: 'Agarra la máscara' },
-    scene: {
-      offside: 'Fuera de lugar',
-      encroachment: 'Invasión (encroachment)',
-      nzi: 'Infracción de zona neutral',
-    },
-    sceneHow: {
-      offside: 'Dentro de la zona cuando se hace el snap',
-      encroachment: 'Cruza y toca a un jugador ofensivo',
-      nzi: 'Entra y hace reaccionar a un bloqueador',
-    },
+    nz: { playOn: 'La jugada sigue', whistle: '¡Silbato!' },
   },
 
   signals: {

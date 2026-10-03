@@ -39,6 +39,11 @@ Three different fouls, all about a defender and the neutral zone before the snap
 - **Offside:** any part of a player's body is in or beyond the neutral zone when the ball is snapped. Loss of 5 yards [S1 R7-4-5, p.35].
 - **Encroachment:** a defender enters the neutral zone and contacts an offensive player (or the ball) before the snap. Whistle immediately, loss of 5 yards [S1 R7-4-3, p.34].
 - **Neutral zone infraction:** a defender enters the neutral zone before the snap and makes nearby offensive players react (move) to protect themselves. Or he moves beyond it with an unimpeded path to the QB or kicker. Whistle immediately, loss of 5 yards [S1 R7-4-4(a)(b), p.34–35].
+- **Does the play stop?** (checked 2026-10-02)
+  - Encroachment and neutral zone infraction: "Officials are to blow their whistles immediately" [S1 R7-4-3, R7-4-4, p.34]. No snap, no play, like a false start ("the official shall blow the whistle immediately") [S1 R7-4-2, p.34].
+  - Offside: defined "when the ball is put in play", with no whistle instruction [S1 R7-4-5, p.35]. A live ball foul is one that "occurs during the period after the snap until the ball is dead" [S1 R3-13-1(a), p.12]. Explainer, in plain words: "Offsides requires the snap to occur, so it's a live-ball foul. Officials let the play run, then announce the penalty afterward." Encroachment and NZI: "Officials blow the whistle immediately. No play happens." [S49]
+  - The offense can decline the penalty and keep the play [S1 R14-1-1, p.61].
+  - NZI is not a foul if no nearby offensive player reacts and the defender gets back before the snap without contact [S1 R7-4-4(b), p.35].
 
 ## During the play
 ### Offensive holding: 10 yards
