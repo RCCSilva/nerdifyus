@@ -21,6 +21,8 @@ export default {
 
   common: {
     goalLine: 'Linha do gol',
+    ballOnLine: 'A bola tocou a linha',
+    caughtInEz: 'Pegou dentro da end zone',
     offense: 'Ataque',
     defense: 'Defesa',
     los: 'Linha de scrimmage',
@@ -102,7 +104,15 @@ export default {
     touchdown: {
       title: 'O objetivo: o touchdown (6 pontos)',
       body: 'É isso que todo ataque busca: levar a bola até a end zone adversária, ou pegá-la lá dentro.',
-      note: 'Basta a bola, nas mãos de um jogador, tocar a linha do gol: é touchdown. Se a bola cruza a linha pelo ar num passe, só é touchdown se um recebedor pegá-la dentro da end zone.',
+    },
+    tdRun: {
+      title: 'Touchdown correndo',
+      body: 'O jogador corre com a bola até a end zone. Basta a bola, nas mãos dele, tocar a linha do gol (ou passar por cima dela): é touchdown, mesmo que o corpo dele ainda esteja fora.',
+    },
+    tdPass: {
+      title: 'Touchdown passando',
+      body: 'O quarterback lança e um recebedor pega a bola dentro da end zone, com os dois pés (ou outra parte do corpo, sem ser as mãos) no chão dentro de campo: é touchdown.',
+      note: 'A bola cruzar a linha pelo ar não basta: só é touchdown se o recebedor pegar a bola lá dentro.',
     },
     try: {
       title: 'Depois do TD: mais 1 ou 2 pontos',

@@ -22,6 +22,8 @@ export default {
 
   common: {
     goalLine: 'Goal line',
+    ballOnLine: 'The ball touched the line',
+    caughtInEz: 'Caught inside the end zone',
     offense: 'Offense',
     defense: 'Defense',
     los: 'Line of scrimmage',
@@ -103,7 +105,15 @@ export default {
     touchdown: {
       title: 'The goal: a touchdown (6 points)',
       body: 'That’s what every attack is after: carry the ball into the other team’s end zone, or catch it there.',
-      note: 'It’s enough for the ball, in a player’s hands, to touch the goal line: touchdown. If the ball crosses the line in the air on a pass, it’s only a touchdown if a receiver catches it inside the end zone.',
+    },
+    tdRun: {
+      title: 'Touchdown by running',
+      body: 'The player runs the ball to the end zone. It’s enough for the ball, in his hands, to touch the goal line (or get past it): touchdown, even if his body is still outside.',
+    },
+    tdPass: {
+      title: 'Touchdown by passing',
+      body: 'The quarterback throws and a receiver catches the ball inside the end zone, with both feet (or another body part, not the hands) down in bounds: touchdown.',
+      note: 'The ball crossing the line in the air isn’t enough: it’s only a touchdown if the receiver catches it in there.',
     },
     try: {
       title: 'After a TD: 1 or 2 more points',

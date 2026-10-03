@@ -490,6 +490,72 @@ function TouchdownPlay({ t }) {
   );
 }
 
+/** Close-up of the goal line: the ball touches it while the runner is still outside (R11-2-1(a), R3-38). */
+export function TdRunVisual({ replay }) {
+  const legends = useLegends();
+  return (
+    <FluidScene duration={2600} replay={replay} header={legends.teams()}>
+      {(t) => <TdRunPlay t={t} />}
+    </FluidScene>
+  );
+}
+
+function TdRunPlay({ t }) {
+  const { t: tr } = useI18n();
+  const goal = fx(100);
+  const runP = seg(t, 200, 1700);
+  const runnerX = lerp(goal - 11, goal - 1.67, runP); // stops with the ball's tip on the line
+  const ballX = runnerX + 1.05;
+  const scored = runP >= 1;
+  return (
+    <Field view={[goal - 16, goal + 8]} viewY={[MID_Y - 7, MID_Y + 6]} highlight={scored ? ['goalLines', 'endzones'] : ['goalLines']}>
+      <UprightText x={goal} y={MID_Y - 5.6} className="tag tag-hl">{tr('nfl.common.goalLine')} ↓</UprightText>
+      <Player x={runnerX} y={MID_Y + 0.6} label="RB" side="off" active />
+      <Ball x={ballX} y={MID_Y + 0.6} />
+      <UprightText x={goal - 6} y={MID_Y + 4.3} className="tag tag-hl" style={{ opacity: scored ? 1 : 0 }}>{tr('nfl.common.ballOnLine')}</UprightText>
+      <Pop x={goal + 4.5} y={MID_Y + 0.6} show={t > 1800} kind="sm">+6</Pop>
+    </Field>
+  );
+}
+
+/** A pass caught inside the end zone (R11-2-1(d), R8-1-3). */
+export function TdPassVisual({ replay }) {
+  const legends = useLegends();
+  return (
+    <FluidScene duration={3800} replay={replay} header={legends.teams()}>
+      {(t) => <TdPassPlay t={t} />}
+    </FluidScene>
+  );
+}
+
+function TdPassPlay({ t }) {
+  const { t: tr } = useI18n();
+  const qb = along([[fx(88), MID_Y], [fx(84), MID_Y]], seg(t, 200, 1000));
+  const route = [[fx(90), MID_Y - 9], [fx(97), MID_Y - 9], [fx(104), MID_Y - 4]];
+  const wrP = seg(t, 200, 2600);
+  const wr = along(route, wrP);
+  const catchAt = along(route, 1);
+  const cb = along([[fx(94), MID_Y - 11], [fx(99), MID_Y - 10], [fx(103), MID_Y - 6.5]], Math.max(0, wrP - 0.08));
+  const flight = seg(t, 1400, 2600);
+  let ball = qb;
+  let z = 0;
+  if (t >= 1400 && t < 2600) { ball = along([[fx(84), MID_Y], catchAt], flight); z = Math.sin(Math.PI * flight); }
+  else if (t >= 2600) ball = wr;
+  const caught = t >= 2600;
+  return (
+    <Field view={[fx(78), LENGTH + BORDER]} viewY={[MID_Y - 13, MID_Y + 9]} highlight={caught ? ['goalLines', 'endzones'] : ['goalLines']}>
+      <UprightText x={fx(100)} y={MID_Y - 11.3} className="tag tag-hl">{tr('nfl.common.goalLine')} ↓</UprightText>
+      {t >= 1400 && <path className="trail" d={`M${fx(84)} ${MID_Y} L${catchAt[0]} ${catchAt[1]}`} style={{ opacity: caught ? 0.35 : 0.9 }} />}
+      <Player x={cb[0]} y={cb[1]} label="CB" side="def" />
+      <Player x={qb[0]} y={qb[1]} label="QB" side="off" active={t < 2600} />
+      <Player x={wr[0]} y={wr[1]} label="WR" side="off" active={caught} />
+      <Ball x={ball[0]} y={ball[1] - (t >= 1400 && t < 2600 ? 0 : 1.1)} z={z} />
+      <UprightText x={fx(95)} y={MID_Y + 6.5} className="tag tag-hl" style={{ opacity: caught ? 1 : 0 }}>{tr('nfl.common.caughtInEz')}</UprightText>
+      <Pop x={LENGTH - END_ZONE / 2 + 1} y={MID_Y + 3} show={t > 2800} kind="sm">+6</Pop>
+    </Field>
+  );
+}
+
 export function kickArc(from, to, p) {
   const [x, y] = along([from, to], p);
   return { x, y, z: Math.sin(Math.PI * p) };
