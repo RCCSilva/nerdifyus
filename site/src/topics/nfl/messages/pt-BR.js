@@ -21,6 +21,7 @@ export default {
 
   common: {
     goalLine: 'Linha do gol',
+    ezStart: 'começo da end zone',
     ballOnLine: 'A bola tocou a linha',
     caughtInEz: 'Pegou dentro da end zone',
     offense: 'Ataque',

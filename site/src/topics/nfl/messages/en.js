@@ -22,6 +22,7 @@ export default {
 
   common: {
     goalLine: 'Goal line',
+    ezStart: 'start of the end zone',
     ballOnLine: 'The ball touched the line',
     caughtInEz: 'Caught inside the end zone',
     offense: 'Offense',

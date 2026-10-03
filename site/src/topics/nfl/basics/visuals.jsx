@@ -463,6 +463,18 @@ function PassPlay({ t }) {
 
 /* ---------- scoring ---------- */
 
+/** "Goal line" over the line itself, with "start of the end zone" and an arrow right on it (R3-11-3: the goal line is in the end zone). */
+function GoalLineTag({ x, y }) {
+  const { t } = useI18n();
+  return (
+    <>
+      <UprightText x={x} y={y} className="tag tag-hl">{t('nfl.common.goalLine')}</UprightText>
+      <UprightText x={x} y={y + 1.35} className="tag tag-hl tag-sub">{t('nfl.common.ezStart')}</UprightText>
+      <UprightText x={x} y={y + 2.7} className="tag tag-hl">↓</UprightText>
+    </>
+  );
+}
+
 export function TouchdownVisual({ replay }) {
   const legends = useLegends();
   return (
@@ -481,7 +493,7 @@ function TouchdownPlay({ t }) {
   const scored = ballX + 0.62 >= fx(100);
   return (
     <Field view={[fx(80), LENGTH + BORDER]} viewY={[9, 44]} highlight={scored ? ['goalLines', 'endzones'] : ['goalLines']}>
-      <UprightText x={fx(100)} y={11.6} className="tag tag-hl">{tr('nfl.common.goalLine')} ↓</UprightText>
+      <GoalLineTag x={fx(100)} y={11.2} />
       <Player x={chaser[0]} y={chaser[1]} label="CB" side="def" />
       <Player x={runner[0]} y={runner[1]} label="RB" side="off" active />
       <Ball x={ballX} y={runner[1]} />
@@ -508,8 +520,8 @@ function TdRunPlay({ t }) {
   const ballX = runnerX + 1.05;
   const scored = runP >= 1;
   return (
-    <Field view={[goal - 16, goal + 8]} viewY={[MID_Y - 7, MID_Y + 6]} highlight={scored ? ['goalLines', 'endzones'] : ['goalLines']}>
-      <UprightText x={goal} y={MID_Y - 5.6} className="tag tag-hl">{tr('nfl.common.goalLine')} ↓</UprightText>
+    <Field view={[goal - 16, goal + 8]} viewY={[MID_Y - 7.2, MID_Y + 6]} highlight={scored ? ['goalLines', 'endzones'] : ['goalLines']}>
+      <GoalLineTag x={goal} y={MID_Y - 6.2} />
       <Player x={runnerX} y={MID_Y + 0.6} label="RB" side="off" active />
       <Ball x={ballX} y={MID_Y + 0.6} />
       <UprightText x={goal - 6} y={MID_Y + 4.3} className="tag tag-hl" style={{ opacity: scored ? 1 : 0 }}>{tr('nfl.common.ballOnLine')}</UprightText>
@@ -543,8 +555,8 @@ function TdPassPlay({ t }) {
   else if (t >= 2600) ball = wr;
   const caught = t >= 2600;
   return (
-    <Field view={[fx(78), LENGTH + BORDER]} viewY={[MID_Y - 13, MID_Y + 9]} highlight={caught ? ['goalLines', 'endzones'] : ['goalLines']}>
-      <UprightText x={fx(100)} y={MID_Y - 11.3} className="tag tag-hl">{tr('nfl.common.goalLine')} ↓</UprightText>
+    <Field view={[fx(78), LENGTH + BORDER]} viewY={[MID_Y - 16, MID_Y + 9]} highlight={caught ? ['goalLines', 'endzones'] : ['goalLines']}>
+      <GoalLineTag x={fx(100)} y={MID_Y - 15.2} />
       {t >= 1400 && <path className="trail" d={`M${fx(84)} ${MID_Y} L${catchAt[0]} ${catchAt[1]}`} style={{ opacity: caught ? 0.35 : 0.9 }} />}
       <Player x={cb[0]} y={cb[1]} label="CB" side="def" />
       <Player x={qb[0]} y={qb[1]} label="QB" side="off" active={t < 2600} />

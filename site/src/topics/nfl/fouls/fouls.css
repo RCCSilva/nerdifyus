@@ -14,7 +14,7 @@
 .foul-side.both { background: linear-gradient(90deg, var(--off) 50%, var(--def) 50%); }
 
 /* pieces drawn on the field */
-.tag.tag-xs { font-size: 1.25px; stroke-width: 0.32; }
+.tag.tag-xs { font-size: 1.25px; stroke-width: 0.19; }
 .zone5-band { fill: #ffd400; opacity: 0.16; }
 .swatch.fiveYards { background: #ffd400; opacity: 0.5; border-radius: 2px; }
 .swatch.hands { background: #ffd400; border-radius: 2px; height: 0.25rem; width: 1rem; vertical-align: 0.2rem; }

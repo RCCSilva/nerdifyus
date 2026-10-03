@@ -21,6 +21,7 @@ export default {
 
   common: {
     goalLine: 'Línea de gol',
+    ezStart: 'inicio de la zona de anotación',
     ballOnLine: 'El balón tocó la línea',
     caughtInEz: 'Atrapado dentro de la zona de anotación',
     offense: 'Ofensiva',

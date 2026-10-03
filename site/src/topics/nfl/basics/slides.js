@@ -9,7 +9,7 @@ export const BASICS_SLIDES = [
   { id: 'teams', Visual: V.TeamsVisual, refs: [['S1', 'R5-1-1', 23]] },
   { id: 'coinToss', Visual: V.CoinTossVisual, refs: [['S1', 'R4-2-2', 18]] },
   { id: 'kickoff', Visual: V.KickoffVisual, refs: [['S1', 'R6-1-1/2/3', 29], ['S1', 'R6-1-4/5', 30], ['S1', 'R7-2-1(d)', 33]] },
-  { id: 'touchdown', Visual: V.TouchdownVisual, refs: [['S1', 'R11-1-2', 49], ['S1', 'R11-2-1(a)(d)', 49]] },
+  { id: 'touchdown', Visual: V.TouchdownVisual, refs: [['S1', 'R11-1-2', 49], ['S1', 'R11-2-1(a)(d)', 49], ['S1', 'R3-11-3/6', 12]] },
   { id: 'run', Visual: V.RunVisual, refs: [['S1', 'R8-7-4', 41], ['S1', 'R3-27', 15], ['S1', 'R7-2-1', 33]] },
   { id: 'pass', Visual: V.PassVisual, refs: [['S1', 'R8-1-2/3', 37], ['S1', 'R8-1-4', 38]] },
   { id: 'downs', Visual: V.DownsVisual, refs: [['S1', 'R3-7-2/3', 11], ['S1', 'R7-3-1', 34], ['S1', 'R7-6-1', 35], ['S1', 'R7-4-2', 34]] },
