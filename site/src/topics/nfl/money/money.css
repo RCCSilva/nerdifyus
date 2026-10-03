@@ -65,6 +65,32 @@
 .hit-bar i { display: grid; place-items: center; font-style: normal; white-space: nowrap; overflow: hidden; }
 .hit-row b { text-align: right; font-variant-numeric: tabular-nums; }
 
+/* simulators */
+.sim { display: grid; gap: 1rem; padding: 1.1rem 1rem; }
+.sim-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.8rem 1.2rem; }
+.sim-field { display: grid; gap: 0.35rem; }
+.sim-label { font-size: 0.82rem; font-weight: 700; color: var(--muted); }
+.sim-label b { color: var(--text); }
+.sim-field input[type=range] { width: 100%; accent-color: #1d4f91; }
+.sim-choice { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.sim-choice button { flex: 1 1 auto; min-width: 2.4rem; padding: 0.4rem 0.6rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; font-size: 0.85rem; cursor: pointer; }
+.sim-choice button.is-on { background: #1d4f91; border-color: #1d4f91; color: #fff; font-weight: 700; }
+.sim-cols { display: grid; gap: 0.5rem; align-items: end; }
+.sim-col { display: grid; justify-items: center; gap: 0.2rem; }
+.sim-stack { display: flex; flex-direction: column-reverse; width: 70%; height: 9rem; }
+.sim-stack i { display: block; width: 100%; transition: height 0.3s; }
+.sim-stack i:last-child { border-radius: 6px 6px 0 0; }
+.sim-col b { font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.sim-col small, .sim-table small { color: var(--muted); font-size: 0.72rem; text-align: center; }
+.sim-sum { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin: 0; font-size: 0.92rem; }
+.sim-table { display: grid; gap: 0.3rem; align-items: center; }
+.sim-row-label { font-size: 0.82rem; font-weight: 700; }
+.sim-cell { display: grid; place-items: center; padding: 0.45rem 0.1rem; border-radius: 8px; font-weight: 800; font-size: 0.8rem; font-variant-numeric: tabular-nums; transition: background 0.3s; }
+.sim-cell.is-empty { background: var(--bg); color: var(--muted); }
+.sim-table > b { text-align: right; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.sim-fine { display: block; color: var(--muted); font-size: 0.75rem; }
+.tone-loose, .swatch.tone-loose { background: repeating-linear-gradient(135deg, #8fa9d6 0 6px, #a9bfe3 6px 12px); }
+
 /* incentives */
 .incent { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; padding: 1.1rem 1rem; }
 .incent-card { display: grid; gap: 0.35rem; align-content: start; padding: 0.9rem; border-radius: 12px; background: var(--bg); border-top: 4px solid #1d4f91; }
@@ -159,6 +185,9 @@
 
 @media (max-width: 560px) {
   .parts, .incent { grid-template-columns: 1fr; }
+  .sim-table { grid-template-columns: 4.6rem repeat(var(--n, 5), minmax(0, 1fr)) !important; }
+  .sim-table > b, .sim-table > small:last-of-type { display: none; }
+  .sim-cell { font-size: 0.66rem; }
   .hit-row { grid-template-columns: 1fr 4.8rem; }
   .hit-label { grid-column: 1 / -1; }
   .span-year { font-size: 0.65rem; }

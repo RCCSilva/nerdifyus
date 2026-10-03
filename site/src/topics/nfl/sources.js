@@ -307,6 +307,31 @@ export const SOURCES = {
     title: 'ESPN — No more Russell Wilson dead money (Jeff Legwold, Feb 26, 2026)',
     url: 'https://www.espn.com/nfl/story/_/id/48025223/denver-broncos-free-agency-2026-offseason-free-russell-wilson-dead-money-salary-cap',
   },
+  S63: {
+    short: 'NFL.com · Kirk Cousins roster bonus',
+    title: 'NFL.com — Falcons keep Kirk Cousins on roster through Saturday, allowing 2026 $10 million bonus to become guaranteed (Bobby Kownack, Mar 2025)',
+    url: 'https://www.nfl.com/news/falcons-keeping-kirk-cousins-on-roster-through-saturday-allowing-2026-10-million-bonus-to-become-guaranteed',
+  },
+  S64: {
+    short: 'ESPN · Lamar Jackson workout bonus',
+    title: 'ESPN — Lamar Jackson not discussing deal after forfeiting $750K bonus (Jamison Hensley, Jun 12, 2024)',
+    url: 'https://www.espn.com/nfl/story/_/id/40337167/lamar-jackson-discuss-contract-forfeiting-750k-bonus',
+  },
+  S65: {
+    short: 'CBS Sports · best contracts for players',
+    title: 'CBS Sports — Agent’s Take: Here are the 10 best NFL contracts from the players’ perspective (Joel Corry, Sep 19, 2018)',
+    url: 'https://www.cbssports.com/nfl/news/agents-take-here-are-the-10-best-nfl-contracts-from-the-players-perspective/',
+  },
+  S66: {
+    short: 'Sports Illustrated · the art of contracts',
+    title: 'Sports Illustrated — The Art of NFL Contracts Part 2: The Examples (Conner Christopherson, May 21, 2020)',
+    url: 'https://www.si.com/nfl/chiefs/onsi/gm-report/the-art-of-nfl-contracts-part-2-the-examples',
+  },
+  S67: {
+    short: 'CBS Sports · post-June 1 explained',
+    title: 'CBS Sports — NFL post-June 1 designation explained (Joel Corry, Jun 2, 2026)',
+    url: 'https://www.cbssports.com/nfl/news/agents-take-nfl-post-june-1-designation-explained/',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

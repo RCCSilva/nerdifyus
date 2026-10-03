@@ -1,4 +1,5 @@
 import * as V from './visuals';
+import { ContractSimVisual, CapSimVisual } from './Simulators';
 
 // Trades (intermediate), tags and the salary cap (advanced). Text lives in nfl/messages/<locale>.js.
 // refs: [sourceId, locator, pdfPage] — see ../sources.js and research/nfl/09-trades.md, 10-tags.md, 12-salary-cap.md.
@@ -18,8 +19,9 @@ export const TAGS_SLIDES = [
 // How contracts work, without the cap (research/nfl/14-contracts.md). The cap side is in CAP_SLIDES.
 export const CONTRACTS_SLIDES = [
   { id: 'contractWhat', Visual: V.ContractWhatVisual, refs: [['S52'], ['S50'], ['S33', 'Art. 13 §2', 123]] },
-  { id: 'contractParts', Visual: V.ContractPartsVisual, refs: [['S50'], ['S33', 'App. A ¶6', 354], ['S33', 'App. A ¶11', 356]] },
+  { id: 'contractParts', Visual: V.ContractPartsVisual, refs: [['S50'], ['S33', 'App. A ¶6', 354], ['S33', 'App. A ¶11', 356], ['S64'], ['S63']] },
   { id: 'contractGuarantees', Visual: V.ContractGuaranteesVisual, refs: [['S33', 'App. A ¶11', 356], ['S50'], ['S52'], ['S51']] },
+  { id: 'contractSim', Visual: ContractSimVisual, refs: [['S50'], ['S65'], ['S66']] },
   { id: 'contractDates', Visual: V.ContractDatesVisual, refs: [['S51']] },
   { id: 'contractWatson', Visual: V.ContractWatsonVisual, refs: [['S56'], ['S58'], ['S57'], ['S51']] },
   { id: 'contractMahomes', Visual: V.ContractMahomesVisual, refs: [['S59'], ['S60']] },
@@ -34,6 +36,7 @@ export const CAP_SLIDES = [
   { id: 'contractIncentives', Visual: V.ContractIncentivesVisual, refs: [['S33', 'Art. 13 §6(c)', 130], ['S50']] },
   { id: 'capBonus', Visual: V.CapBonusVisual, refs: [['S33', 'Art. 13 §6(b)(i)', 126]] },
   { id: 'capDead', Visual: V.CapDeadVisual, refs: [['S33', 'Art. 13 §6(b)(ii)', 127], ['S61'], ['S62']] },
+  { id: 'capSim', Visual: CapSimVisual, refs: [['S33', 'Art. 13 §6(b)(i)', 126], ['S33', 'Art. 13 §6(b)(ii)', 127], ['S33', 'Art. 13 §6(d)(iv)', 139], ['S67']] },
   { id: 'contractRestructure', Visual: V.ContractRestructureVisual, refs: [['S50'], ['S33', 'Art. 13 §6(b)(iii)(3)', 128], ['S33', 'Art. 13 §6(b)(ii)(4)', 127], ['S54'], ['S55'], ['S53'], ['S58']] },
   { id: 'capCarry', Visual: V.CapCarryVisual, refs: [['S33', 'Art. 13 §6(b)(v)', 129]] },
 ];

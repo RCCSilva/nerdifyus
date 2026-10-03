@@ -18,7 +18,7 @@ describe('topic sidebar', () => {
       // A lesson title can also be a slide title (e.g. "The offense"), so allow several matches.
       expect(within(sidebar).getAllByText(lesson).length).toBeGreaterThan(0);
     }
-    expect(within(sidebar).getAllByRole('link').filter((a) => a.href.includes('?s=')).length).toBe(103); // + 2 trades + 7 cap + 5 tags + 2 neutral zone fouls + 6 contracts + 3 cap
+    expect(within(sidebar).getAllByRole('link').filter((a) => a.href.includes('?s=')).length).toBe(105); // + 2 trades + 7 cap + 5 tags + 2 neutral zone fouls + 7 contracts + 4 cap
 
     // Open the (mobile) drawer, pick slide 8, and the drawer closes again.
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: /Contents/ })); });

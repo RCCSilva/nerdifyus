@@ -47,6 +47,7 @@ Lessons are slide decks, not articles. People don't want to read walls of text.
   - `StillScene`: a picture that doesn't move (e.g. 11 vs 11, the lineups).
   - `FluidScene`: a continuous animation, like a short video (run, pass, kicks); children get the time `t`.
   - `StopMotionScene`: a few frames with a frame indicator and back / play-pause / forward. It never loops: back is disabled on the first frame, forward on the last, playback stops at the end.
+  - A simulator (readers change the inputs and see the result, e.g. the contract and cap simulators) is a `StillScene` with its controls inside. Keep its math in a plain module with unit tests.
 - One topic per lesson, but don't over-split: e.g. offense, defense and special teams live together in one "Positions" lesson.
 
 ## i18n

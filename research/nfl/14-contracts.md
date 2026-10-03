@@ -49,3 +49,18 @@ Scope (editorial choice, 2026-10-03): the parts of a contract, guarantees and re
 
 ## Cap hit
 - What a contract costs on a team's cap in one year ("cap hit" or "cap figure" in the press [S53]). It's the player's Salary counted under the CBA rules for that league year: that year's base salary [S33 Art. 13 §6(a)(i), p.125], the year's share of signing bonus [S33 Art. 13 §6(b)(i), p.126], roster bonuses (in full that season) [S50], and incentives deemed likely to be earned, including workout bonuses [S33 Art. 13 §6(c)(i), p.130]. So the cap hit and the cash paid in a year can be very different.
+
+## Real cases for roster and workout bonuses
+- Workout bonus: Lamar Jackson's contract has bonuses "for participating in 80% of the team's offseason program". In spring 2024 he skipped four of Baltimore's first five voluntary OTAs, which cost him $750,000 [S64].
+- Roster bonus: in March 2025 Atlanta kept Kirk Cousins on the roster past the deadline (Saturday, 4 p.m. ET), so his $10 million roster bonus for 2026 became fully guaranteed [S63].
+
+## Front-loaded and back-loaded
+- "Back-loaded contracts are considered as team-friendly deals" [S65].
+- A "true 'front-loaded' contract" (Jimmy Garoppolo, 49ers) is "rare in the NFL"; with the biggest cap hits early, the team can get out later with little dead money [S66].
+- Editor's interpretation (2026-10-03, insight box only): the shape depends on the guarantee. Fully guaranteed → front-load, so getting out isn't a huge hit later; small guarantees → back-load while the team doesn't fully trust the player.
+
+## Release: before or after June 1 (for the cap simulator)
+- Before June 1: all the remaining bonus proration counts in that league year [S33 Art. 13 §6(b)(ii)(1), p.127]; "the full salary cap impact hits immediately" [S67].
+- After June 1: future years' proration counts fully at the start of the next league year [S33 Art. 13 §6(b)(ii)(2), p.127]. Each club may designate up to two pre-June 1 releases to be treated as if on June 2 [S33 Art. 13 §6(b)(ii)(1), p.127]; with that designation "a team must carry the player's full cap number until June 2" [S67].
+- Guaranteed salary for years after the release is included in Team Salary at the time of release, at present value [S33 Art. 13 §6(d)(iv), p.139]. Guaranteed base salaries create dead money because the team still has to pay them [S67].
+- Simulator simplifications: no present value discount, no incentives, no offsets when another team signs the player.
