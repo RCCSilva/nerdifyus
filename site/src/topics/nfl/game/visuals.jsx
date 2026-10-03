@@ -47,8 +47,14 @@ export function Scoreboard({ focus = null, playClock = 25 }) {
   );
 }
 
+/** What the two team labels on the example scoreboard stand for. */
+function TeamsKey() {
+  const { t } = useI18n();
+  return <p className="sb-key">{t('nfl.game.teamsKey')}</p>;
+}
+
 const SbSlide = (focus) => function ScoreboardFocus() {
-  return <div className="game-panel"><Scoreboard focus={focus} /></div>;
+  return <div className="game-panel"><Scoreboard focus={focus} /><TeamsKey /></div>;
 };
 
 export const ScoreboardVisual = SbSlide(null);
@@ -65,6 +71,7 @@ export function PlayClockVisual({ replay }) {
   return (
     <div className="game-panel">
       <Scoreboard focus="play" playClock={left} />
+      <TeamsKey />
       <div className="big-playclock" aria-hidden="true">:{String(left).padStart(2, '0')}</div>
     </div>
   );

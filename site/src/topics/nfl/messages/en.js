@@ -4,7 +4,7 @@ export default {
   blurb: 'American football, from "what is a down?" to how the salary cap works.',
   lessons: {
     basics: { title: 'How football works', summary: 'The field, downs, running, passing and how to score.' },
-    game: { title: 'The game', summary: 'Quarters, the clock, timeouts and how to read the scoreboard.' },
+    game: { title: 'Following a game', summary: 'Quarters, the clock, timeouts and how to read the scoreboard.' },
     positions: { title: 'The positions', summary: 'Who is who on offense, on defense and on special teams.' },
     season: { title: 'How the season works', summary: 'Conferences, divisions, the 17 games, playoffs and the Super Bowl.' },
     fouls: { title: 'How fouls work', summary: 'The flag, the announcement, and what a foul does to the yards and the down.' },
@@ -974,6 +974,7 @@ export default {
     left: 'left in the quarter',
     twoMinute: 'Two-minute warning: clock stops',
     example: 'example',
+    teamsKey: 'AWAY = the visiting team · HOME = the home team',
     exampleScoreboard: 'Example TV scoreboard',
   },
 

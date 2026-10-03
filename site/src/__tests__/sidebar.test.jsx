@@ -14,7 +14,7 @@ describe('topic sidebar', () => {
     const { container } = render(<App />);
     const sidebar = await screen.findByRole('complementary', { name: 'Contents' });
 
-    for (const lesson of ['How football works', 'The game', 'The positions', 'How fouls work', 'Ties & overtime', 'How the season works', 'Common fouls', 'Defensive tactics: pass coverage', 'Strategy', 'The salary cap']) {
+    for (const lesson of ['How football works', 'Following a game', 'The positions', 'How fouls work', 'Ties & overtime', 'How the season works', 'Common fouls', 'Defensive tactics: pass coverage', 'Strategy', 'The salary cap']) {
       // A lesson title can also be a slide title (e.g. "The offense"), so allow several matches.
       expect(within(sidebar).getAllByText(lesson).length).toBeGreaterThan(0);
     }

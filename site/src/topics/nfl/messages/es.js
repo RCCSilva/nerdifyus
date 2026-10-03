@@ -3,7 +3,7 @@ export default {
   blurb: 'Fútbol americano, desde "¿qué es un down?" hasta cómo funciona el tope salarial.',
   lessons: {
     basics: { title: 'Cómo funciona el fútbol americano', summary: 'El campo, los downs, correr, pasar y cómo anotar.' },
-    game: { title: 'El partido', summary: 'Cuartos, el reloj, los tiempos fuera y cómo leer el marcador.' },
+    game: { title: 'Cómo seguir un partido', summary: 'Cuartos, el reloj, los tiempos fuera y cómo leer el marcador.' },
     positions: { title: 'Las posiciones', summary: 'Quién es quién en la ofensiva, la defensiva y los equipos especiales.' },
     season: { title: 'Cómo funciona la temporada', summary: 'Conferencias, divisiones, los 17 partidos, los playoffs y el Super Bowl.' },
     fouls: { title: 'Cómo funcionan los castigos', summary: 'El pañuelo, el anuncio y qué le hace un castigo a las yardas y al down.' },
@@ -973,6 +973,7 @@ export default {
     left: 'quedan en el cuarto',
     twoMinute: 'Aviso de dos minutos: el reloj se detiene',
     example: 'ejemplo',
+    teamsKey: 'VIS = equipo visitante · LOC = equipo local',
     exampleScoreboard: 'Marcador de TV de ejemplo',
   },
 

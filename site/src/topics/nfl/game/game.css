@@ -1,4 +1,5 @@
 .game-panel { background: var(--surface); padding: 1.4rem 1rem; display: grid; gap: 1rem; }
+.sb-key { margin: 0; padding-top: 0.6rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); }
 
 @keyframes game-in { from { opacity: 0; transform: translateY(8px); } }
 

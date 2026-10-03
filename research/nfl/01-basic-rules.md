@@ -43,6 +43,7 @@ Citation key: `[S1 R11-1-2, p.49]` = 2026 Rulebook, Rule 11, Section 1, Article 
 ## Downs: the core loop
 - The offense gets a **series of four downs** to reach the **line to gain** [S1 R3-7-2, p.11].
 - The line to gain is 10 yards ahead of where the series started. If the goal line is closer than that, the goal line is the line to gain ("and goal") [S1 R3-7-3, p.11].
+  - Wording (editorial choice, 2026-10-03): in pt-BR the site calls it "linha da primeira descida" ("linha da 1ª descida" on labels), the term Brazilian fans use, instead of a literal "linha a alcançar".
 - Reaching it earns a new set of four downs, called a **first down** [S1 R7-3-1, p.34].
 - Failing to reach it after four downs gives the ball to the other team where the play ended [S1 R7-3-2, p.34]. This is why teams usually punt on 4th down: a **punt** is a 4th-down kick that gives the ball to the opponent farther downfield [S2 "Punt"].
 - Progress is measured from the **forward point of the ball** where it was declared dead [S1 R7-3-3, p.34].

@@ -3,7 +3,7 @@ export default {
   blurb: 'Futebol americano, de "o que é uma descida?" até como funciona o teto salarial.',
   lessons: {
     basics: { title: 'Como o futebol americano funciona', summary: 'O campo, as descidas, correr, passar e como pontuar.' },
-    game: { title: 'O jogo', summary: 'Quartos, o relógio, os timeouts e como ler o placar.' },
+    game: { title: 'Como acompanhar a partida', summary: 'Quartos, o relógio, os timeouts e como ler o placar.' },
     positions: { title: 'As posições', summary: 'Quem é quem no ataque, na defesa e nos times especiais.' },
     season: { title: 'Como funciona o campeonato', summary: 'Conferências, divisões, os 17 jogos, os playoffs e o Super Bowl.' },
     fouls: { title: 'Como funcionam as faltas', summary: 'A bandeira, o anúncio e o que uma falta faz com as jardas e a descida.' },
@@ -26,7 +26,7 @@ export default {
     offense: 'Ataque',
     defense: 'Defesa',
     los: 'Linha de scrimmage',
-    ltg: 'Linha a alcançar',
+    ltg: 'Linha da 1ª descida',
     pts: '+{n}',
     ownSide: 'própria {n}',
     oppSide: 'adversária {n}',
@@ -85,11 +85,11 @@ export default {
     },
     downsUse: {
       title: 'Descidas 1 a 3: corrida ou passe',
-      body: 'Nas três primeiras descidas, o ataque corre ou passa para chegar à linha a alcançar. Chegou? A contagem volta para 1ª & 10.',
+      body: 'Nas três primeiras descidas, o ataque corre ou passa para chegar à linha da primeira descida. Chegou? A contagem volta para 1ª & 10.',
     },
     downsFourth: {
       title: '4ª descida: e agora?',
-      body: 'Chegou na 4ª descida sem alcançar a linha? Tentar de novo é uma aposta: se falhar, o adversário fica com a bola ali mesmo, já perto da sua end zone. Então o ataque escolhe:',
+      body: 'Chegou na 4ª descida sem passar da linha da primeira descida? Tentar de novo é uma aposta: se falhar, o adversário fica com a bola ali mesmo, já perto da sua end zone. Então o ataque escolhe:',
     },
     run: {
       title: 'Como chegar lá: correndo',
@@ -361,7 +361,7 @@ export default {
     },
     sbDown: {
       title: 'Descida e distância',
-      body: '“2ª & 8” = é a 2ª descida, e o ataque precisa de mais 8 jardas para chegar à linha a alcançar.',
+      body: '“2ª & 8” = é a 2ª descida, e o ataque precisa de mais 8 jardas para chegar à linha da primeira descida.',
       example: 'Chegou lá, a contagem volta para 1ª & 10.',
     },
     sbPlayClock: {
@@ -422,7 +422,7 @@ export default {
     },
     foulDefense: {
       title: 'Falta da defesa: avança, muitas vezes com first down',
-      body: 'O ataque avança as jardas da punição. A maioria das faltas da defesa também dá first down automático: 1ª & 10 de novo, mesmo que as jardas não cheguem à linha a alcançar.',
+      body: 'O ataque avança as jardas da punição. A maioria das faltas da defesa também dá first down automático: 1ª & 10 de novo, mesmo que as jardas não cheguem à linha da primeira descida.',
       note: 'Por isso às vezes o ataque ganha menos jardas do que precisava e ainda assim consegue o first down. Exceções que só dão as jardas: impedimento, encroachment e infração de zona neutra, entre outras.',
       example: '3ª & 8, holding da defesa (5 jardas + first down automático): 1ª & 10, com só 5 das 8 jardas.',
     },
@@ -973,6 +973,7 @@ export default {
     left: 'restantes no quarto',
     twoMinute: 'Aviso de dois minutos: o relógio para',
     example: 'exemplo',
+    teamsKey: 'VIS = time visitante · MAN = time mandante (que joga em casa)',
     exampleScoreboard: 'Placar de TV de exemplo',
   },
 
