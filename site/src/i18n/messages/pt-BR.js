@@ -4,6 +4,7 @@ export default {
     lead: 'Lições curtas e visuais para avançar com um toque. Cada fato aponta para a sua fonte.',
     topics: 'Temas',
   },
+  footer: { feedback: 'Achou um erro ou tem uma sugestão?', issues: 'Abra uma issue no GitHub', code: 'Código do site no GitHub' },
   nav: { home: 'Início', language: 'Idioma', contents: 'Conteúdo' },
   topic: {
     lessons: 'Lições',

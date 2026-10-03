@@ -1,0 +1,21 @@
+name: Sugestão / Suggestion
+description: Um tema, slide, exemplo ou animação que você gostaria de ver. / A topic, slide, example or animation you'd like to see.
+title: "[Sugestão] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: O que você sugere? / What do you suggest?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Por quê? / Why?
+      description: O que ficou difícil de entender sem isso? / What was hard to understand without it?
+  - type: input
+    id: link
+    attributes:
+      label: Onde no site? / Where on the site?
+      description: Link do slide relacionado, se houver (opcional). / Link to a related slide, if any (optional).

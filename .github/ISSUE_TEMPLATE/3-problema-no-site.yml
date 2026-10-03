@@ -1,0 +1,31 @@
+name: Problema no site / Site bug
+description: Algo quebrado, travado ou fora do lugar. / Something broken, stuck or out of place.
+title: "[Site] "
+labels: ["bug"]
+body:
+  - type: input
+    id: link
+    attributes:
+      label: Link da página / Page link
+      placeholder: http://rccsilva.com/nerdifyus/#/pt-BR/nfl/cap?s=9
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: O que aconteceu? / What happened?
+      description: E o que você esperava. Prints ajudam. / And what you expected. Screenshots help.
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Aparelho / Device
+      options: [Computador / Desktop, Celular / Phone, Tablet]
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Navegador / Browser
+      placeholder: Chrome, Safari, Firefox...

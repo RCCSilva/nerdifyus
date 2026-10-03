@@ -1,0 +1,37 @@
+name: Erro no conteúdo / Content error
+description: Uma regra, número ou explicação que está errada ou confusa. / A rule, number or explanation that is wrong or unclear.
+title: "[Conteúdo] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado! Todo fato do site precisa de uma fonte, então uma referência ajuda muito.
+        Thanks! Every fact on the site needs a source, so a reference helps a lot.
+  - type: input
+    id: link
+    attributes:
+      label: Link do slide / Slide link
+      description: Copie o endereço da página (termina em ?s=N). / Copy the page address (it ends in ?s=N).
+      placeholder: http://rccsilva.com/nerdifyus/#/pt-BR/nfl/basics?s=8
+    validations:
+      required: true
+  - type: dropdown
+    id: lang
+    attributes:
+      label: Idioma / Language
+      options: [Português, English, Español]
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: O que está errado? / What's wrong?
+      description: Cole o trecho e diga o que deveria ser. / Paste the text and say what it should be.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Fonte / Source
+      description: Link para o Rulebook, operations.nfl.com ou outra fonte confiável (opcional). / Link to the Rulebook, operations.nfl.com or another reliable source (optional).

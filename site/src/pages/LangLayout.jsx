@@ -3,6 +3,18 @@ import { Link, Navigate, Outlet, useLocation, useNavigate, useParams } from 'rea
 import { LOCALES, detectLocale, isLocale } from '../i18n/config';
 import { I18nProvider, useI18n } from '../i18n/I18n';
 
+const REPO = 'https://github.com/RCCSilva/nerdifyus';
+
+function SiteFooter() {
+  const { t } = useI18n();
+  return (
+    <footer className="site-footer">
+      <p>{t('ui.footer.feedback')} <a href={`${REPO}/issues`} target="_blank" rel="noreferrer">{t('ui.footer.issues')}</a></p>
+      <p><a href={REPO} target="_blank" rel="noreferrer">{t('ui.footer.code')}</a></p>
+    </footer>
+  );
+}
+
 function LanguageSwitcher() {
   const { locale, t } = useI18n();
   const { pathname, search } = useLocation();
@@ -47,6 +59,7 @@ export default function LangLayout() {
       <main className="site-main">
         <Outlet />
       </main>
+      <SiteFooter />
     </I18nProvider>
   );
 }

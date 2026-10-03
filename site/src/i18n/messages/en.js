@@ -4,6 +4,7 @@ export default {
     lead: 'Short, visual lessons you can tap through. Every fact links to its source.',
     topics: 'Topics',
   },
+  footer: { feedback: 'Found a mistake or have a suggestion?', issues: 'Open an issue on GitHub', code: 'Site code on GitHub' },
   nav: { home: 'Home', language: 'Language', contents: 'Contents' },
   topic: {
     lessons: 'Lessons',
