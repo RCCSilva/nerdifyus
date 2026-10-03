@@ -20,7 +20,11 @@ export const CAP_SLIDES = [
   { id: 'capGrowth', Visual: V.CapGrowthVisual, refs: [['S35']] },
   { id: 'capShare', Visual: V.CapShareVisual, refs: [['S33', 'Art. 12 §6(c)', 112]] },
   { id: 'capFloor', Visual: V.CapFloorVisual, refs: [['S33', 'Art. 12 §8–9', 117]] },
+  { id: 'contractParts', Visual: V.ContractPartsVisual, refs: [['S50'], ['S33', 'App. A ¶6', 354], ['S33', 'Art. 13 §6(a)(i)', 125], ['S33', 'Art. 13 §6(c)(i)', 130], ['S33', 'App. A ¶11', 356]] },
+  { id: 'contractGuarantees', Visual: V.ContractGuaranteesVisual, refs: [['S33', 'App. A ¶11', 356], ['S50'], ['S52'], ['S51']] },
+  { id: 'contractIncentives', Visual: V.ContractIncentivesVisual, refs: [['S33', 'Art. 13 §6(c)', 130], ['S50']] },
   { id: 'capBonus', Visual: V.CapBonusVisual, refs: [['S33', 'Art. 13 §6(b)(i)', 126]] },
   { id: 'capDead', Visual: V.CapDeadVisual, refs: [['S33', 'Art. 13 §6(b)(ii)', 127]] },
+  { id: 'contractRestructure', Visual: V.ContractRestructureVisual, refs: [['S50'], ['S33', 'Art. 13 §6(b)(iii)(3)', 128], ['S33', 'Art. 13 §6(b)(ii)(4)', 127], ['S54'], ['S55'], ['S53']] },
   { id: 'capCarry', Visual: V.CapCarryVisual, refs: [['S33', 'Art. 13 §6(b)(v)', 129]] },
 ];

@@ -51,6 +51,12 @@
 | S47 | Wikipedia — "Transfer (association football)" | fallback (encyclopedia) | accessed 2026-10-02 | https://en.wikipedia.org/wiki/Transfer_(association_football) |
 | S48 | NFLPenalties.com — 2025 penalty totals (all penalties) | secondary (stats tracker) | 2025 season · accessed 2026-10-02 | https://www.nflpenalties.com/all-penalties.php?year=2025 |
 | S49 | Pro Football Network — "Offsides vs. Encroachment: What's the Difference Between the NFL Penalties?" (Daniel Tomaro) | secondary (explainer) | 2026-02-08 · accessed 2026-10-02 | https://www.profootballnetwork.com/offsides-vs-encroachment-whats-the-difference-between-the-nfl-penalties/ |
+| S50 | NFL Football Operations — NFL Contract Language (glossary) | primary (official) | accessed 2026-10-03 | https://operations.nfl.com/calendar-events/nfl-free-agency/contract-language |
+| S51 | CBS Sports — "Agent's Take: How Lamar Jackson fared representing himself negotiating his record-setting deal with Ravens" (Joel Corry) | secondary (news) | 2023-05-05 · accessed 2026-10-03 | https://www.cbssports.com/nfl/news/agents-take-how-lamar-jackson-fared-representing-himself-negotiating-his-record-setting-deal-with-ravens |
+| S52 | NFL.com — "Lamar Jackson, Ravens agree to terms on five-year, $260 million contract" (Kevin Patra) | primary (league site) | 2023-04-27 · accessed 2026-10-03 | https://www.nfl.com/news/lamar-jackson-ravens-agree-to-terms-on-new-contract |
+| S53 | Yahoo Sports — "Lamar Jackson, Josh Allen, Jared Goff reportedly restructure contracts to create cap space for their teams" (Andy Backstrom) | secondary (news) | 2026-03-11 · accessed 2026-10-03 | https://sports.yahoo.com/nfl/article/lamar-jackson-josh-allen-jared-goff-reportedly-restructure-contracts-to-create-cap-space-for-their-teams-182535809.html |
+| S54 | Sports Illustrated — "Vikings' Use of Void Years Indicates They Plan to Contend in 2023" (Will Ragatz) | secondary (explainer) | 2023-03-22 · accessed 2026-10-03 | https://www.si.com/nfl/vikings/news/vikings-use-void-years-indicates-plan-contend-2023-kwesi-free-agency |
+| S55 | Newsweek — "NFL Contracts: How Does Restructuring a Deal Actually Work?" (Joe Kozlowski) | secondary (explainer) | 2024-03-01 · accessed 2026-10-03 | https://www.newsweek.com/how-restructuring-nfl-contracts-works-1875079 |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

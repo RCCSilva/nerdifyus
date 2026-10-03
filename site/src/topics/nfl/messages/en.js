@@ -535,6 +535,29 @@ export default {
       body: 'Teams can’t just keep the money: over each period of a few years, each team must actually spend at least 90% of the cap in cash. And across all 32 teams, the league as a whole must spend at least 95%.',
       example: 'Any shortfall goes to the players: a team’s is paid by that team; the league’s is split among its players.',
     },
+    contractParts: {
+      title: 'The parts of a contract',
+      body: 'A contract’s value is the sum of several parts. Each is paid at a different time and counts on the cap in a different way.',
+      note: 'Base salary is only guaranteed if the contract says so. Without a guarantee, the team can release the player, and the rest of the salary isn’t protected.',
+    },
+    contractGuarantees: {
+      title: 'Guaranteed vs. not guaranteed',
+      body: 'A $260 million contract doesn’t mean $260 million in the bank. Without a guarantee, the team can release the player for performance or to make cap room. Only the guaranteed part is protected.',
+      note: 'A guarantee can cover skill, cap and/or injury. “Fully guaranteed” means it covers all three.',
+      example: 'Lamar Jackson (Ravens, 2023): 5 years and $260M, with $185M guaranteed. But only $135M was guaranteed at signing (including a $72.5M signing bonus). The rest became guaranteed step by step, year by year.',
+    },
+    contractIncentives: {
+      title: 'Incentives: likely and not likely',
+      body: 'Performance bonuses count on the cap based on the season before. If the goal was already reached last year, the bonus is “likely to be earned” (LTBE) and counts now. If not, it’s “not likely to be earned” (NLTBE) and doesn’t.',
+      note: 'After the season the league settles up on next year’s cap: an unlikely bonus that was earned can become a charge, and a likely one that wasn’t earned becomes a credit.',
+      example: 'A receiver had 900 yards last year and gets a bonus at 1,000. It’s not likely: it doesn’t count now. If he gets there, it’s settled on next year’s cap.',
+    },
+    contractRestructure: {
+      title: 'Restructures and void years',
+      body: 'A restructure turns salary into signing bonus: this year’s cap hit drops, because the bonus is spread over the remaining years. To spread it over more years, the team can add “void years”: fake years that exist only for the math.',
+      note: 'The cost doesn’t go away: the next years get more expensive. When the contract ends, whatever sat in the void years hits the cap all at once, as dead money.',
+      example: 'Lamar Jackson, March 2026: the Ravens turned $51.3M of salary into a bonus. His 2026 cap figure dropped from $74.5M to $34.54M, and his 2027 one rose to $84.49M. The deal has 2 void years.',
+    },
     capBonus: {
       title: 'The signing bonus trick',
       body: 'A signing bonus is paid up front, but on the cap it’s spread evenly over the contract, up to 5 years.',
@@ -621,6 +644,58 @@ export default {
     floorText: 'Minimum cash spending over each period (2024–2026, 2027–2030): 90% of the cap per team and 95% across the league.',
     floorTeam: 'Each team',
     floorLeague: 'The whole league (32 teams)',
+    parts: {
+      capLabel: 'On the cap',
+      salary: {
+        name: 'Base salary',
+        what: 'Paid weekly, during the regular season.',
+        cap: 'In the year it’s earned',
+      },
+      signing: {
+        name: 'Signing bonus',
+        what: 'Paid for signing the contract.',
+        cap: 'Spread over the contract (up to 5 years)',
+      },
+      roster: {
+        name: 'Roster bonus',
+        what: 'Earned by being on the roster on a set date.',
+        cap: 'In full, that year',
+      },
+      workout: {
+        name: 'Workout bonus',
+        what: 'Earned by attending an agreed share of the offseason workouts.',
+        cap: 'In full, that year',
+      },
+    },
+    guar: {
+      who: 'Lamar Jackson · Ravens · 2023',
+      total: 'Total value',
+      guaranteed: 'Guaranteed',
+      atSigning: 'Guaranteed at signing',
+    },
+    incent: {
+      ltbe: {
+        name: 'Likely (LTBE)',
+        when: 'Goal reached last year',
+        now: 'Counts on the cap now',
+        after: 'Not earned? A credit next year',
+      },
+      nltbe: {
+        name: 'Not likely (NLTBE)',
+        when: 'Goal not reached last year',
+        now: 'Doesn’t count now',
+        after: 'Earned? Settled on next year’s cap',
+      },
+    },
+    rs: {
+      f0: 'Before',
+      f0How: '$20M salary a year, 2 years left',
+      f1: 'Restructured',
+      f1How: '$16M becomes a bonus, spread over 4 years (2 real + 2 void)',
+      f2: 'The contract ended',
+      f2How: 'The $8M in the void years becomes dead money',
+      void: 'Void year',
+    },
     cash: 'Cash paid',
     onCap: 'Counts on the cap',
     cashRow: 'Cash',

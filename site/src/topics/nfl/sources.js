@@ -242,6 +242,36 @@ export const SOURCES = {
     title: 'Pro Football Network — Offsides vs. Encroachment: What’s the Difference Between the NFL Penalties? (Daniel Tomaro, Feb 8, 2026)',
     url: 'https://www.profootballnetwork.com/offsides-vs-encroachment-whats-the-difference-between-the-nfl-penalties/',
   },
+  S50: {
+    short: 'NFL Football Operations · Contract Language',
+    title: 'NFL Football Operations — NFL Contract Language',
+    url: 'https://operations.nfl.com/calendar-events/nfl-free-agency/contract-language',
+  },
+  S51: {
+    short: 'CBS Sports · Lamar Jackson deal',
+    title: 'CBS Sports — Agent’s Take: How Lamar Jackson fared representing himself negotiating his record-setting deal with Ravens (Joel Corry, May 5, 2023)',
+    url: 'https://www.cbssports.com/nfl/news/agents-take-how-lamar-jackson-fared-representing-himself-negotiating-his-record-setting-deal-with-ravens',
+  },
+  S52: {
+    short: 'NFL.com · Lamar Jackson deal',
+    title: 'NFL.com — Lamar Jackson, Ravens agree to terms on five-year, $260 million contract (Kevin Patra, Apr 27, 2023)',
+    url: 'https://www.nfl.com/news/lamar-jackson-ravens-agree-to-terms-on-new-contract',
+  },
+  S53: {
+    short: 'Yahoo Sports · 2026 restructures',
+    title: 'Yahoo Sports — Lamar Jackson, Josh Allen, Jared Goff reportedly restructure contracts to create cap space for their teams (Andy Backstrom, Mar 11, 2026)',
+    url: 'https://sports.yahoo.com/nfl/article/lamar-jackson-josh-allen-jared-goff-reportedly-restructure-contracts-to-create-cap-space-for-their-teams-182535809.html',
+  },
+  S54: {
+    short: 'Sports Illustrated · void years',
+    title: 'Sports Illustrated — Vikings’ Use of Void Years Indicates They Plan to Contend in 2023 (Will Ragatz, Mar 22, 2023)',
+    url: 'https://www.si.com/nfl/vikings/news/vikings-use-void-years-indicates-plan-contend-2023-kwesi-free-agency',
+  },
+  S55: {
+    short: 'Newsweek · restructures',
+    title: 'Newsweek — NFL Contracts: How Does Restructuring a Deal Actually Work? (Joe Kozlowski, Mar 1, 2024)',
+    url: 'https://www.newsweek.com/how-restructuring-nfl-contracts-works-1875079',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

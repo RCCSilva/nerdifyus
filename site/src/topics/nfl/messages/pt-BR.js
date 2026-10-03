@@ -534,6 +534,29 @@ export default {
       body: 'Os times não podem só guardar o dinheiro: em cada período de alguns anos, cada time precisa gastar de verdade, em dinheiro, pelo menos 90% do teto. E, somando os 32 times, a liga inteira precisa gastar pelo menos 95%.',
       example: 'Se ficar abaixo, a diferença vai para os jogadores: a do time, paga pelo time; a da liga, dividida entre os jogadores dela.',
     },
+    contractParts: {
+      title: 'As peças de um contrato',
+      body: 'O valor de um contrato é a soma de várias peças. Cada uma é paga num momento diferente e conta no teto de um jeito diferente.',
+      note: 'O salário-base só é garantido se o contrato disser. Sem garantia, o time pode dispensar o jogador e o resto do salário não está protegido.',
+    },
+    contractGuarantees: {
+      title: 'Garantido x não garantido',
+      body: 'Um contrato de US$ 260 milhões não quer dizer US$ 260 milhões no bolso. Sem garantia, o time pode dispensar o jogador por desempenho ou para abrir espaço no teto. Só a parte garantida está protegida.',
+      note: 'A garantia pode cobrir desempenho, teto e/ou lesão. “Totalmente garantido” é quando cobre os três.',
+      example: 'Lamar Jackson (Ravens, 2023): 5 anos e US$ 260 mi, com US$ 185 mi garantidos. Mas só US$ 135 mi eram garantidos na assinatura (incluindo o bônus de US$ 72,5 mi). O resto virou garantido aos poucos, ano a ano.',
+    },
+    contractIncentives: {
+      title: 'Incentivos: prováveis e improváveis',
+      body: 'Bônus por desempenho contam no teto conforme a temporada anterior. Se a meta já foi batida no ano passado, o bônus é “provável” (LTBE) e conta agora. Se não, é “improvável” (NLTBE) e não conta.',
+      note: 'No fim da temporada a liga acerta a conta no teto do ano seguinte: o improvável que aconteceu pode virar cobrança, e o provável que não aconteceu vira crédito.',
+      example: 'Um recebedor fez 900 jardas no ano passado e ganha um bônus se chegar a 1.000. É improvável: não conta agora. Se ele chegar, o acerto vai para o teto do ano seguinte.',
+    },
+    contractRestructure: {
+      title: 'Reestruturação e void years',
+      body: 'Reestruturar é transformar salário em bônus de assinatura: o teto deste ano cai, porque o bônus é dividido pelos anos que faltam. Para dividir por mais anos, o time pode criar “void years”: anos falsos, que existem só para a conta.',
+      note: 'A conta não some: os próximos anos ficam mais caros. Quando o contrato acaba, o que estava nos void years cai de uma vez no teto, como dead money.',
+      example: 'Lamar Jackson, março de 2026: os Ravens transformaram US$ 51,3 mi de salário em bônus. O teto dele em 2026 caiu de US$ 74,5 mi para US$ 34,54 mi, e o de 2027 subiu para US$ 84,49 mi. O contrato tem 2 void years.',
+    },
     capBonus: {
       title: 'O truque do bônus de assinatura (signing bonus)',
       body: 'O bônus de assinatura é pago na hora, mas no teto ele é dividido igualmente ao longo do contrato, em até 5 anos.',
@@ -620,6 +643,58 @@ export default {
     floorText: 'Gasto mínimo em dinheiro em cada período (2024–2026, 2027–2030): 90% do teto por time e 95% somando a liga.',
     floorTeam: 'Cada time',
     floorLeague: 'A liga toda (32 times)',
+    parts: {
+      capLabel: 'No teto',
+      salary: {
+        name: 'Salário-base',
+        what: 'Pago por semana, durante a temporada regular.',
+        cap: 'No ano em que é ganho',
+      },
+      signing: {
+        name: 'Bônus de assinatura',
+        what: 'Pago ao assinar o contrato.',
+        cap: 'Dividido pelos anos do contrato (até 5)',
+      },
+      roster: {
+        name: 'Roster bonus',
+        what: 'Ganho por estar no elenco numa data marcada.',
+        cap: 'Inteiro, naquele ano',
+      },
+      workout: {
+        name: 'Workout bonus',
+        what: 'Ganho por ir a uma parte combinada dos treinos fora da temporada.',
+        cap: 'Inteiro, naquele ano',
+      },
+    },
+    guar: {
+      who: 'Lamar Jackson · Ravens · 2023',
+      total: 'Valor total',
+      guaranteed: 'Garantido',
+      atSigning: 'Garantido na assinatura',
+    },
+    incent: {
+      ltbe: {
+        name: 'Provável (LTBE)',
+        when: 'Meta batida no ano passado',
+        now: 'Conta no teto agora',
+        after: 'Não aconteceu? Vira crédito no ano seguinte',
+      },
+      nltbe: {
+        name: 'Improvável (NLTBE)',
+        when: 'Meta não batida no ano passado',
+        now: 'Não conta agora',
+        after: 'Aconteceu? Acerto no teto do ano seguinte',
+      },
+    },
+    rs: {
+      f0: 'Antes',
+      f0How: 'Salário de US$ 20 mi por ano, 2 anos restantes',
+      f1: 'Reestruturou',
+      f1How: 'US$ 16 mi viram bônus, divididos em 4 anos (2 reais + 2 void)',
+      f2: 'O contrato acabou',
+      f2How: 'Os US$ 8 mi dos void years viram dead money',
+      void: 'Void year',
+    },
     cash: 'Dinheiro pago',
     onCap: 'Conta no teto',
     cashRow: 'Dinheiro',

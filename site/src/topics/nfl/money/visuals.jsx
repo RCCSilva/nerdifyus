@@ -3,7 +3,8 @@ import { StillScene, StopMotionScene, Legend, StateLine } from '../../../compone
 import './money.css';
 
 // Trades, tags and the salary cap (research/nfl/09-trades.md, 10-tags.md, 12-salary-cap.md).
-// Rules from the 2020 CBA (S33); 2026 figures from S34–S37. Contract examples are ILLUSTRATIVE.
+// Rules from the 2020 CBA (S33); 2026 figures from S34–S37. Contract examples are ILLUSTRATIVE,
+// except Lamar Jackson's (research/nfl/14-contracts.md).
 
 /** "$301.2M" / "US$ 301,2 mi" in the visitor's language. */
 function useMoney() {
@@ -13,9 +14,9 @@ function useMoney() {
 }
 
 /** Horizontal bars: rows of { label, value, tone }, scaled to `max`. */
-function Bars({ rows, max, fmt }) {
+function Bars({ rows, max, fmt, wide = false }) {
   return (
-    <div className="m-bars">
+    <div className={`m-bars ${wide ? 'is-wide' : ''}`}>
       {rows.map((r, n) => (
         <div key={r.label} className="m-bar">
           <span className="m-bar-label">{r.label}</span>
@@ -293,5 +294,104 @@ export function CapCarryVisual({ replay }) {
         </div>
       </div>
     </StillScene>
+  );
+}
+
+/* ================= How contracts work (research/nfl/14-contracts.md) ================= */
+
+const PARTS = ['salary', 'signing', 'roster', 'workout'];
+
+/** The four parts of a contract: what each pays for and when it counts on the cap. */
+export function ContractPartsVisual({ replay }) {
+  const { t } = useI18n();
+  return (
+    <StillScene>
+      <div className="parts" key={replay}>
+        {PARTS.map((k, n) => (
+          <div key={k} className="part" style={{ animationDelay: `${n * 90}ms` }}>
+            <strong>{t(`nfl.money.parts.${k}.name`)}</strong>
+            <p>{t(`nfl.money.parts.${k}.what`)}</p>
+            <small><b>{t('nfl.money.parts.capLabel')}:</b> {t(`nfl.money.parts.${k}.cap`)}</small>
+          </div>
+        ))}
+      </div>
+    </StillScene>
+  );
+}
+
+/** Lamar Jackson's 2023 deal: total value vs guaranteed vs guaranteed at signing (S51, S52). */
+export function ContractGuaranteesVisual({ replay }) {
+  const { t } = useI18n();
+  const money = useMoney();
+  return (
+    <StillScene header={<StateLine chip={t('nfl.money.guar.who')} />}>
+      <Bars
+        key={replay}
+        wide
+        max={260}
+        fmt={money}
+        rows={[
+          { label: t('nfl.money.guar.total'), value: 260, tone: 'past' },
+          { label: t('nfl.money.guar.guaranteed'), value: 185, tone: 'b' },
+          { label: t('nfl.money.guar.atSigning'), value: 135, tone: 'a' },
+        ]}
+      />
+    </StillScene>
+  );
+}
+
+/** LTBE vs NLTBE side by side. */
+export function ContractIncentivesVisual({ replay }) {
+  const { t } = useI18n();
+  return (
+    <StillScene>
+      <div className="incent" key={replay}>
+        {['ltbe', 'nltbe'].map((k) => (
+          <div key={k} className={`incent-card is-${k}`}>
+            <strong>{t(`nfl.money.incent.${k}.name`)}</strong>
+            <span>{t(`nfl.money.incent.${k}.when`)}</span>
+            <b>{t(`nfl.money.incent.${k}.now`)}</b>
+            <small>{t(`nfl.money.incent.${k}.after`)}</small>
+          </div>
+        ))}
+      </div>
+    </StillScene>
+  );
+}
+
+/** Restructure with 2 void years, then the contract ends (illustrative numbers, in $M). */
+export function ContractRestructureVisual({ replay }) {
+  const { t } = useI18n();
+  const money = useMoney();
+  // cells: [value, kind]; years 3–4 are void years. Total on the cap stays 40 in every frame.
+  const frames = [
+    [[20, 'a'], [20, 'a'], [0], [0]],
+    [[8, 'a'], [24, 'a'], [4, 'void'], [4, 'void']],
+    [[8, 'past'], [24, 'past'], [8, 'dead'], [0]],
+  ];
+  return (
+    <StopMotionScene
+      frames={3}
+      interval={2800}
+      replay={replay}
+      header={(i) => <StateLine chip={t(`nfl.money.rs.f${i}`)} caption={t(`nfl.money.rs.f${i}How`)} highlight={i > 0} />}
+      footer={<Legend items={[{ swatch: 'tone-past', label: t('nfl.money.alreadyCounted') }, { swatch: 'tone-a', label: t('nfl.money.onCap') }, { swatch: 'tone-void', label: t('nfl.money.rs.void') }, { swatch: 'tone-dead', label: t('nfl.money.dead') }]} />}
+    >
+      {(i) => (
+        <div className="years">
+          <div className="years-row">
+            <span className="years-label">{t('nfl.money.capRow')}</span>
+            <span className="years-cells is-4">
+              {frames[i].map(([v, kind], y) => (
+                <span key={y} className={`year-cell ${v ? `tone-${kind}` : 'is-empty'}`}>
+                  <small>{t('nfl.money.yearN', { n: y + 1 })}{y >= 2 ? ' · void' : ''}</small>
+                  {v ? money(v) : '—'}
+                </span>
+              ))}
+            </span>
+          </div>
+        </div>
+      )}
+    </StopMotionScene>
   );
 }

@@ -534,6 +534,29 @@ export default {
       body: 'Los equipos no pueden quedarse con el dinero: en cada período de algunos años, cada equipo debe gastar en efectivo al menos el 90% del tope. Y, sumando los 32 equipos, la liga entera debe gastar al menos el 95%.',
       example: 'Si no se llega, la diferencia va a los jugadores: la de un equipo la paga ese equipo; la de la liga se reparte entre sus jugadores.',
     },
+    contractParts: {
+      title: 'Las partes de un contrato',
+      body: 'El valor de un contrato es la suma de varias partes. Cada una se paga en un momento distinto y cuenta en el tope de forma distinta.',
+      note: 'El salario base solo está garantizado si el contrato lo dice. Sin garantía, el equipo puede cortar al jugador y el resto del salario no está protegido.',
+    },
+    contractGuarantees: {
+      title: 'Garantizado vs. no garantizado',
+      body: 'Un contrato de 260 millones de dólares no significa 260 millones en el bolsillo. Sin garantía, el equipo puede cortar al jugador por rendimiento o para abrir espacio en el tope. Solo la parte garantizada está protegida.',
+      note: 'La garantía puede cubrir rendimiento, tope y/o lesión. “Totalmente garantizado” es cuando cubre las tres.',
+      example: 'Lamar Jackson (Ravens, 2023): 5 años y US$ 260 M, con US$ 185 M garantizados. Pero solo US$ 135 M estaban garantizados al firmar (incluido el bono de US$ 72,5 M). El resto se fue garantizando poco a poco, año a año.',
+    },
+    contractIncentives: {
+      title: 'Incentivos: probables e improbables',
+      body: 'Los bonos por rendimiento cuentan en el tope según la temporada anterior. Si la meta ya se alcanzó el año pasado, el bono es “probable” (LTBE) y cuenta ya. Si no, es “improbable” (NLTBE) y no cuenta.',
+      note: 'Al final de la temporada la liga ajusta la cuenta en el tope del año siguiente: el improbable que se cumplió puede convertirse en un cargo, y el probable que no se cumplió, en un crédito.',
+      example: 'Un receptor hizo 900 yardas el año pasado y gana un bono si llega a 1.000. Es improbable: no cuenta ya. Si llega, el ajuste va al tope del año siguiente.',
+    },
+    contractRestructure: {
+      title: 'Reestructuraciones y void years',
+      body: 'Reestructurar es convertir salario en bono por firma: el tope de este año baja, porque el bono se reparte entre los años que quedan. Para repartirlo en más años, el equipo puede añadir “void years”: años falsos que solo existen para la cuenta.',
+      note: 'El costo no desaparece: los años siguientes salen más caros. Cuando el contrato termina, lo que estaba en los void years cae de golpe en el tope, como dead money.',
+      example: 'Lamar Jackson, marzo de 2026: los Ravens convirtieron US$ 51,3 M de salario en bono. Su tope de 2026 bajó de US$ 74,5 M a US$ 34,54 M, y el de 2027 subió a US$ 84,49 M. El contrato tiene 2 void years.',
+    },
     capBonus: {
       title: 'El truco del bono por firma',
       body: 'El bono por firma se paga por adelantado, pero en el tope se reparte en partes iguales a lo largo del contrato, hasta 5 años.',
@@ -620,6 +643,58 @@ export default {
     floorText: 'Gasto mínimo en efectivo en cada período (2024–2026, 2027–2030): 90% del tope por equipo y 95% sumando la liga.',
     floorTeam: 'Cada equipo',
     floorLeague: 'Toda la liga (32 equipos)',
+    parts: {
+      capLabel: 'En el tope',
+      salary: {
+        name: 'Salario base',
+        what: 'Se paga por semana, durante la temporada regular.',
+        cap: 'En el año en que se gana',
+      },
+      signing: {
+        name: 'Bono por firma',
+        what: 'Se paga al firmar el contrato.',
+        cap: 'Repartido en los años del contrato (hasta 5)',
+      },
+      roster: {
+        name: 'Roster bonus',
+        what: 'Se gana por estar en la plantilla en una fecha fijada.',
+        cap: 'Entero, ese año',
+      },
+      workout: {
+        name: 'Workout bonus',
+        what: 'Se gana por asistir a una parte acordada de los entrenamientos fuera de temporada.',
+        cap: 'Entero, ese año',
+      },
+    },
+    guar: {
+      who: 'Lamar Jackson · Ravens · 2023',
+      total: 'Valor total',
+      guaranteed: 'Garantizado',
+      atSigning: 'Garantizado al firmar',
+    },
+    incent: {
+      ltbe: {
+        name: 'Probable (LTBE)',
+        when: 'Meta alcanzada el año pasado',
+        now: 'Cuenta en el tope ya',
+        after: '¿No se cumplió? Crédito el año siguiente',
+      },
+      nltbe: {
+        name: 'Improbable (NLTBE)',
+        when: 'Meta no alcanzada el año pasado',
+        now: 'No cuenta ya',
+        after: '¿Se cumplió? Ajuste en el tope del año siguiente',
+      },
+    },
+    rs: {
+      f0: 'Antes',
+      f0How: 'Salario de US$ 20 M por año, quedan 2 años',
+      f1: 'Reestructuró',
+      f1How: 'US$ 16 M pasan a bono, repartidos en 4 años (2 reales + 2 void)',
+      f2: 'El contrato terminó',
+      f2How: 'Los US$ 8 M de los void years pasan a dead money',
+      void: 'Void year',
+    },
     cash: 'Efectivo pagado',
     onCap: 'Cuenta en el tope',
     cashRow: 'Efectivo',
