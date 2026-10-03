@@ -302,14 +302,26 @@ export default {
       note: 'Si ganas tu división, entras con una de las 4 primeras posiciones, aunque un comodín tenga mejor récord.',
       example: '¿Mismo récord? El primer desempate es el enfrentamiento directo, luego el récord de división, y así sucesivamente.',
     },
+    playoffSeeds2025: {
+      title: 'Ejemplo real: la clasificación de 2025',
+      body: 'Así terminaron las dos conferencias en la temporada 2025. Mira el 4.º de la NFC: los Panthers ganaron su división con 8 victorias y 9 derrotas y quedaron por delante de Rams y 49ers, que ganaron 12 partidos.',
+      note: 'En la AFC pasó lo mismo: los Steelers (10-7) ganaron su división y quedaron 4.º, por encima de Texans y Bills (12-5).',
+      insight: 'Para quien viene del fútbol, esto es lo más raro: no hay una tabla única en la que gana el mejor clasificado. Ganar tu división vale más que tener más victorias que equipos de otras divisiones.',
+    },
     playoffBracket: {
       title: 'Playoffs: quien pierde queda fuera',
       body: 'Un partido por ronda, y el mejor posicionado juega en casa. El número 1 se salta la primera ronda.',
       example: 'En el ejemplo, el 7 vence al 2. Por eso, en la siguiente ronda, el 1 recibe a la posición más baja que queda: el 7.',
     },
+    playoffBracket2025: {
+      title: 'Ejemplo real: los playoffs de 2025–26',
+      body: 'Ronda a ronda, en las dos conferencias. En cada partido juega en casa el mejor clasificado, y quien pierde queda fuera.',
+      example: 'Los Rams (5.º) jugaron en casa de los Panthers (4.º) pese a tener mejor récord, y ganaron 34-31: la posición decide quién es local.',
+    },
     superBowl: {
       title: 'El Super Bowl',
       body: 'El campeón de la AFC juega contra el campeón de la NFC en el Super Bowl, en una sede elegida de antemano.',
+      example: 'Super Bowl LX, el 8 de febrero de 2026, en el Levi\'s Stadium (Santa Clara, California): Seahawks 29, Patriots 13.',
     },
     seasonEnd: {
       title: '¡Esa es la temporada!',
@@ -1009,6 +1021,12 @@ export default {
       divisional: 'El 1 recibe a la posición más baja que queda (7). El 3 recibe al 4.',
       conference: 'Los 2 últimos juegan por el título de conferencia.',
       superBowl: 'El campeón de conferencia va al Super Bowl.',
+    },
+    real: {
+      season: 'temporada 2025',
+      wonDiv: 'Ganó la división {div}',
+      hostFirst: 'El primero de cada partido jugó en casa',
+      ot: 'prórroga',
     },
     example: 'Ejemplo',
     recap: {

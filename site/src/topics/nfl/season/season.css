@@ -92,6 +92,27 @@
 .seed-what { font-weight: 600; }
 .seed-tag { margin-left: auto; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
 
+/* a real season */
+.seeds-real { display: grid; gap: 1rem; }
+.seeds-conf h3 { margin: 0 0 0.5rem; font: 800 1rem/1.2 var(--font-display); }
+.seed-team { font-weight: 800; }
+.seed-record { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--muted); }
+.seed-why { margin-left: auto; font-size: 0.78rem; color: var(--muted); text-align: right; }
+.seed-list li.is-standout { box-shadow: inset 0 0 0 2px var(--hl); }
+.seed-list li.is-standout .seed-record { color: var(--text); background: var(--hl); padding: 0.05rem 0.35rem; border-radius: 5px; }
+.res-conf { display: grid; grid-template-columns: 2.6rem 1fr; gap: 0.5rem; align-items: start; margin-top: 0.4rem; }
+.res-conf-tag { display: inline-grid; place-items: center; padding: 0.15rem 0.4rem; border-radius: 6px; color: #fff; font-weight: 800; font-size: 0.72rem; }
+.res-conf-tag.conf-nfc { background: #1d4f91; }
+.res-conf-tag.conf-afc { background: #c8323f; }
+.res-games { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; }
+.res-game { display: flex; align-items: center; gap: 0.4rem; font-size: 0.88rem; padding: 0.25rem 0.55rem; border-radius: 9px; background: var(--surface); }
+.res-side { display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.55; }
+.res-side.is-won { opacity: 1; }
+.res-side.is-won .res-team { font-weight: 800; }
+.res-side b { font-variant-numeric: tabular-nums; }
+.res-ot { color: var(--muted); font-size: 0.72rem; }
+.seed-pill.sm { width: 1.5rem; height: 1.5rem; font-size: 0.75rem; }
+
 /* bracket: stacked rounds */
 .bracket { display: grid; gap: 0.7rem; }
 .bracket-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: center; font-size: 0.8rem; color: var(--muted); }

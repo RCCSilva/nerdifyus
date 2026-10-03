@@ -41,3 +41,15 @@ Citation key: see `01-basic-rules.md`. Sources are listed in `sources.md`.
 - An official NFL page for the seeding, divisional-round and Super Bowl wording (to replace S13).
 - How the previous-season ranking maps to the 2-game and 17th-game opponents in detail (S8 says only that it's based on division ranking).
 - Ties: see `05-overtime.md`.
+
+## A real season: 2025 (2025–26 playoffs)
+- Records (regular season) [S69]. Seeds and division champions vs wild cards [S68]:
+  - NFC: 1 Seahawks 14-3 (West), 2 Bears 11-6 (North), 3 Eagles 11-6 (East), 4 Panthers 8-9 (South); wild cards 5 Rams 12-5, 6 49ers 12-5, 7 Packers 9-7-1.
+  - AFC: 1 Broncos 14-3 (West), 2 Patriots 14-3 (East), 3 Jaguars 13-4 (South), 4 Steelers 10-7 (North); wild cards 5 Texans 12-5, 6 Bills 12-5, 7 Chargers 11-6.
+  - So the Panthers (8-9) and Steelers (10-7) were seeded 4th, ahead of 12-5 wild cards: the division-champion rule [S13] in action.
+- Results [S68]:
+  - Wild Card: Bears 31–27 Packers; 49ers 23–19 Eagles; Rams 34–31 Panthers; Patriots 16–3 Chargers; Bills 27–24 Jaguars; Texans 30–6 Steelers.
+  - Divisional: Seahawks 41–6 49ers; Rams 20–17 Bears (OT); Broncos 33–30 Bills (OT); Patriots 28–16 Texans.
+  - Conference championships: Seahawks 31–27 Rams; Patriots 10–7 Broncos.
+  - Super Bowl LX, Feb 8, 2026, Levi's Stadium, Santa Clara: Seahawks 29–13 Patriots [S70, S68].
+- Home teams follow the seeds: e.g. the 5th-seeded Rams played at the 4th-seeded Panthers [S9, S68].

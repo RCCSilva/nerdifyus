@@ -332,6 +332,21 @@ export const SOURCES = {
     title: 'CBS Sports — NFL post-June 1 designation explained (Joel Corry, Jun 2, 2026)',
     url: 'https://www.cbssports.com/nfl/news/agents-take-nfl-post-june-1-designation-explained/',
   },
+  S68: {
+    short: 'Wikipedia · 2025–26 NFL playoffs',
+    title: 'Wikipedia — 2025–26 NFL playoffs (seeds and results)',
+    url: 'https://en.wikipedia.org/wiki/2025%E2%80%9326_NFL_playoffs',
+  },
+  S69: {
+    short: 'NFL.com · 2025 standings',
+    title: 'NFL.com — 2025 regular season standings',
+    url: 'https://www.nfl.com/standings/league/2025/REG',
+  },
+  S70: {
+    short: 'ESPN · Super Bowl LX',
+    title: 'ESPN — Super Bowl 2026 highlights: Seahawks capture second Lombardi with 29-13 win over Patriots (Feb 8, 2026)',
+    url: 'https://www.espn.com/nfl/story/_/id/47822193/2026-super-bowl-lx-patriots-seahawks-live-highlights-results',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

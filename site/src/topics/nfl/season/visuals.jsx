@@ -162,6 +162,101 @@ export function BracketVisual({ replay }) {
   );
 }
 
+/* ---------- a real season: 2025 (S68 seeds and results, S69 records) ---------- */
+
+// [seed, team, record, division (null = wild card)]
+const SEEDS_2025 = {
+  NFC: [[1, 'Seahawks', '14-3', 'west'], [2, 'Bears', '11-6', 'north'], [3, 'Eagles', '11-6', 'east'], [4, 'Panthers', '8-9', 'south'],
+    [5, 'Rams', '12-5', null], [6, '49ers', '12-5', null], [7, 'Packers', '9-7-1', null]],
+  AFC: [[1, 'Broncos', '14-3', 'west'], [2, 'Patriots', '14-3', 'east'], [3, 'Jaguars', '13-4', 'south'], [4, 'Steelers', '10-7', 'north'],
+    [5, 'Texans', '12-5', null], [6, 'Bills', '12-5', null], [7, 'Chargers', '11-6', null]],
+};
+// The 4th seed won its division with a worse record than seeds 5–6.
+const STANDOUT = { NFC: 4, AFC: 4 };
+
+export function Seeds2025Visual({ replay }) {
+  const { t } = useI18n();
+  return (
+    <div className="season-panel seeds-real" key={replay}>
+      {['NFC', 'AFC'].map((conf) => (
+        <section key={conf} className={`seeds-conf conf-${conf.toLowerCase()}`}>
+          <h3>{conf} · {t('nfl.season.real.season')}</h3>
+          <ol className="seed-list">
+            {SEEDS_2025[conf].map(([seed, team, record, div], n) => (
+              <li key={seed} className={`${div ? 'is-champ' : 'is-wild'}${seed === STANDOUT[conf] ? ' is-standout' : ''}`} style={delay(n, 70)}>
+                <span className="seed">{seed}</span>
+                <span className="seed-team">{team}</span>
+                <span className="seed-record">{record}</span>
+                <span className="seed-why">{div ? t('nfl.season.real.wonDiv', { div: t(`nfl.season.division.${div}`) }) : t('nfl.season.wildCard')}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+    </div>
+  );
+}
+
+// Each game: [home seed, away seed, home score, away score, overtime?]. Teams come from SEEDS_2025.
+const RESULTS_2025 = {
+  NFC: { wildCard: [[2, 7, 31, 27], [3, 6, 19, 23], [4, 5, 31, 34]], divisional: [[1, 6, 41, 6], [2, 5, 17, 20, true]], conference: [[1, 5, 31, 27]] },
+  AFC: { wildCard: [[2, 7, 16, 3], [3, 6, 24, 27], [4, 5, 6, 30]], divisional: [[1, 6, 33, 30, true], [2, 5, 28, 16]], conference: [[1, 2, 7, 10]] },
+};
+
+function Side({ conf, seed, score, won }) {
+  const [, team] = SEEDS_2025[conf][seed - 1];
+  return (
+    <span className={`res-side${won ? ' is-won' : ''}`}>
+      <span className={`seed-pill sm ${seed <= 4 ? 'champ' : 'wild'}`}>{seed}</span>
+      <span className="res-team">{team}</span>
+      <b>{score}</b>
+    </span>
+  );
+}
+
+export function Bracket2025Visual({ replay }) {
+  const { t } = useI18n();
+  return (
+    <div className="season-panel bracket" key={replay}>
+      <div className="bracket-legend">
+        <span><i className="swatch seed-champ" />{t('nfl.season.divChamp')}</span>
+        <span><i className="swatch seed-wild" />{t('nfl.season.wildCard')}</span>
+        <span className="bracket-example">{t('nfl.season.real.hostFirst')}</span>
+      </div>
+      {['wildCard', 'divisional', 'conference'].map((round, n) => (
+        <section key={round} className="round" style={delay(n, 160)}>
+          <header><span className="round-chip">{t(`nfl.season.round.${round}`)}</span></header>
+          {['NFC', 'AFC'].map((conf) => (
+            <div key={conf} className="res-conf">
+              <small className={`res-conf-tag conf-${conf.toLowerCase()}`}>{conf}</small>
+              <div className="res-games">
+                {RESULTS_2025[conf][round].map(([home, away, hs, as, ot]) => (
+                  <div key={`${home}-${away}`} className="res-game">
+                    <Side conf={conf} seed={home} score={hs} won={hs > as} />
+                    <span className="vs">×</span>
+                    <Side conf={conf} seed={away} score={as} won={as > hs} />
+                    {ot && <small className="res-ot">{t('nfl.season.real.ot')}</small>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+      ))}
+      <section className="round" style={delay(3, 160)}>
+        <header><span className="round-chip">{t('nfl.season.round.superBowl')} LX</span></header>
+        <div className="res-games">
+          <div className="res-game">
+            <span className="res-side is-won"><span className="res-conf-tag conf-nfc">NFC</span><span className="res-team">Seahawks</span><b>29</b></span>
+            <span className="vs">×</span>
+            <span className="res-side"><span className="res-conf-tag conf-afc">AFC</span><span className="res-team">Patriots</span><b>13</b></span>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 /* ---------- Super Bowl ---------- */
 
 export function SuperBowlVisual({ replay }) {

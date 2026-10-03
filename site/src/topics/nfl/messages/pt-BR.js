@@ -302,14 +302,26 @@ export default {
       note: 'Ganhou a divisão, está dentro, entre os 4 primeiros, mesmo que um wild card tenha campanha melhor.',
       example: 'Mesma campanha? O primeiro critério de desempate é o confronto direto, depois a campanha na divisão, e assim por diante.',
     },
+    playoffSeeds2025: {
+      title: 'Exemplo real: a classificação de 2025',
+      body: 'Assim ficaram as duas conferências na temporada 2025. Olhe o 4º da NFC: os Panthers ganharam a divisão com 8 vitórias e 9 derrotas e ficaram na frente de Rams e 49ers, que venceram 12 jogos.',
+      note: 'Na AFC foi igual: os Steelers (10-7) ganharam a divisão e ficaram em 4º, acima de Texans e Bills (12-5).',
+      insight: 'Para quem vem do futebol, isso é o mais estranho: não existe uma tabela única em que o melhor colocado leva. Ganhar a sua divisão vale mais do que ter mais vitórias que times de outras divisões.',
+    },
     playoffBracket: {
       title: 'Playoffs: perdeu, está fora',
       body: 'Um jogo por rodada, e o mais bem classificado joga em casa. O 1º colocado pula a primeira rodada.',
       example: 'No exemplo, o 7º elimina o 2º. Por isso, na rodada seguinte, o 1º recebe o pior classificado que sobrou: o 7º.',
     },
+    playoffBracket2025: {
+      title: 'Exemplo real: os playoffs de 2025–26',
+      body: 'Rodada a rodada, nas duas conferências. Em cada jogo, quem tem a melhor posição joga em casa, e quem perde está fora.',
+      example: 'Os Rams (5º) jogaram na casa dos Panthers (4º) mesmo tendo campanha melhor, e venceram por 34 x 31: quem define o mando é a posição.',
+    },
     superBowl: {
       title: 'O Super Bowl',
       body: 'O campeão da AFC enfrenta o campeão da NFC no Super Bowl, em um local definido com antecedência.',
+      example: 'Super Bowl LX, em 8 de fevereiro de 2026, no Levi\'s Stadium (Santa Clara, Califórnia): Seahawks 29 x 13 Patriots.',
     },
     seasonEnd: {
       title: 'Esse é o campeonato!',
@@ -1009,6 +1021,12 @@ export default {
       divisional: 'O 1º recebe o pior classificado que sobrou (7º). O 3º recebe o 4º.',
       conference: 'Os 2 últimos disputam o título da conferência.',
       superBowl: 'O campeão da conferência vai ao Super Bowl.',
+    },
+    real: {
+      season: 'temporada 2025',
+      wonDiv: 'Ganhou a divisão {div}',
+      hostFirst: 'Quem aparece primeiro jogou em casa',
+      ot: 'prorrogação',
     },
     example: 'Exemplo',
     recap: {

@@ -303,14 +303,26 @@ export default {
       note: 'Win your division and you’re in with a top-4 seed, even if a wild card has a better record.',
       example: 'Same record? The first tiebreaker is head-to-head, then division record, and so on.',
     },
+    playoffSeeds2025: {
+      title: 'A real example: the 2025 seeds',
+      body: 'This is how both conferences finished in 2025. Look at the NFC’s 4th seed: the Panthers won their division at 8-9 and were seeded ahead of the Rams and 49ers, who won 12 games.',
+      note: 'Same in the AFC: the Steelers (10-7) won their division and were seeded 4th, above the Texans and Bills (12-5).',
+      insight: 'For soccer fans, this is the strangest part: there’s no single table where the top team wins out. Winning your division is worth more than having more wins than teams in other divisions.',
+    },
     playoffBracket: {
       title: 'Playoffs: lose and you’re out',
       body: 'One game per round, and the better seed plays at home. The No. 1 seed skips the first round.',
       example: 'In the example, seed 7 beats seed 2. So in the next round, seed 1 hosts the lowest seed left: 7.',
     },
+    playoffBracket2025: {
+      title: 'A real example: the 2025–26 playoffs',
+      body: 'Round by round, in both conferences. In every game the better seed plays at home, and the loser is out.',
+      example: 'The Rams (5th) played at the Panthers (4th) despite a better record, and won 34-31: the seed decides who hosts.',
+    },
     superBowl: {
       title: 'The Super Bowl',
       body: 'The AFC champion plays the NFC champion in the Super Bowl, at a site chosen in advance.',
+      example: 'Super Bowl LX, February 8, 2026, at Levi\'s Stadium (Santa Clara, California): Seahawks 29, Patriots 13.',
     },
     seasonEnd: {
       title: 'That’s the season!',
@@ -1010,6 +1022,12 @@ export default {
       divisional: 'Seed 1 hosts the lowest seed left (7). 3 hosts 4.',
       conference: 'The last 2 teams play for the conference title.',
       superBowl: 'The conference champion goes to the Super Bowl.',
+    },
+    real: {
+      season: '2025 season',
+      wonDiv: 'Won the {div} division',
+      hostFirst: 'The team listed first was at home',
+      ot: 'overtime',
     },
     example: 'Example',
     recap: {
