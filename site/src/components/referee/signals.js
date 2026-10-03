@@ -27,27 +27,32 @@ const personalFoul = (t) => {
 };
 
 export const SIGNALS = {
-  // 9 — "Forearms rotated over and over in front of body."
+  // 9 — "Forearms rotated over and over in front of body." Forearms level and crossed, rolling
+  // around each other from the elbows: seen from the front the hands only rise and fall, and swap
+  // which one is in front.
   falseStart: {
     loop: 3000, still: 1500,
     hands: (t) => {
-      const a = (t / 480) * Math.PI * 2;
+      const a = (t / 520) * Math.PI * 2;
       const b = up(t);
-      return [
-        mix(REST_L, P(-5 + Math.cos(a) * 9, 50 + Math.sin(a) * 9), b),
-        mix(REST_R, P(5 + Math.cos(a + Math.PI) * 9, 50 + Math.sin(a + Math.PI) * 9), b),
-      ];
+      return [mix(REST_L, P(2, 52 + Math.sin(a) * 7), b), mix(REST_R, P(-2, 52 - Math.sin(a) * 7), b)];
     },
+    front: (t) => (Math.cos((t / 520) * Math.PI * 2) > 0 ? 'L' : 'R'),
     hand: ['fist', 'fist'],
   },
   // 21 — "Hands on hips."
   offside: hold(P(-19, 74), P(19, 74)),
-  // 8 — "Folded arms."
-  delayOfGame: hold(P(14, 50), P(-14, 56)),
+  // 8 — "Folded arms." Just below the shoulders, one forearm over the other, each hand near the
+  // other elbow. The upper arms point at the viewer, so they're drawn shorter.
+  delayOfGame: hold(P(10, 44), P(-10, 47), { upper: 0.5, hand: ['flat', 'flat'] }),
   // 11 — "Grasping one wrist, the fist clenched, in front of chest."
   holding: {
     loop: 2400, still: 2000,
-    hands: (t) => { const b = up(t); const tug = Math.sin(t / 150) * 1.2 * b; return [mix(REST_L, P(-2 + tug, 50), b), mix(REST_R, P(6 + tug, 52), b)]; },
+    // the open hand holds the other forearm a third of the way from the wrist, so the grab reads
+    // as a wrist and not a handshake; while the arms come up the hand still travels from rest
+    hands: (t) => { const b = up(t); const tug = Math.sin(t / 150) * 1.2 * b; return [mix(REST_L, P(0, 48), b), mix(REST_R, P(-10 + tug, 42), b)]; },
+    grip: 1 / 3, gripIn: up,
+    front: () => 'L',
     hand: ['open', 'fist'],
   },
   // 12 — "Grasping one wrist, the hand open and facing forward, in front of chest."
