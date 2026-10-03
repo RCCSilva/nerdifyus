@@ -902,7 +902,7 @@ export default {
     illegalContact: 'Una mano abierta empujando hacia adelante.',
     passInterference: 'Las dos manos abiertas, empujando hacia adelante desde los hombros, palmas verticales.',
     grounding: 'Brazos paralelos moviéndose en diagonal delante del cuerpo, luego manos detrás de la cabeza (pérdida del down).',
-    personalFoul: 'Una muñeca golpeando la otra sobre la cabeza (falta personal).',
+    personalFoul: 'La mano abierta golpea sobre la muñeca del otro brazo, frente al pecho (falta personal).',
     roughingPasser: 'Señal de falta personal, luego un brazo levantado moviéndose hacia adelante.',
     faceMask: 'Señal de falta personal, luego una mano agarrando cerca de la cara, como una máscara.',
   },

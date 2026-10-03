@@ -902,7 +902,7 @@ export default {
     illegalContact: 'Uma mão aberta empurrando para frente.',
     passInterference: 'As duas mãos abertas, empurrando para frente a partir dos ombros, palmas em pé.',
     grounding: 'Braços paralelos balançando na diagonal na frente do corpo, depois mãos atrás da cabeça (perda da descida).',
-    personalFoul: 'Um pulso batendo no outro acima da cabeça (falta pessoal).',
+    personalFoul: 'A mão aberta bate sobre o pulso do outro braço, na frente do peito (falta pessoal).',
     roughingPasser: 'Sinal de falta pessoal, depois um braço levantado balançando para frente.',
     faceMask: 'Sinal de falta pessoal, depois a mão agarrando perto do rosto, como numa grade de capacete.',
   },

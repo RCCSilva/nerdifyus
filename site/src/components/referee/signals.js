@@ -20,11 +20,15 @@ const SIDE_REST = P(4, 82);
 const up = (t) => seg(t, 200, 650);
 const hold = (l, r, extra = {}) => ({ hands: (t) => [mix(REST_L, l, up(t)), mix(REST_R, r, up(t))], loop: 2400, still: 2000, ...extra });
 
+// Personal foul, as the site's editor describes it (the rulebook's wording says "above head"):
+// the arms as in holding, but the open hand chops down onto the other wrist instead of holding it.
+const PF_FIST = P(-10, 42);
+const chop = (t) => wave(Math.max(0, t - 650), 420);
 const personalFoul = (t) => {
   const b = up(t);
-  const hit = wave(Math.max(0, t - 650), 420);
-  return [mix(REST_L, P(-4, -18), b), mix(REST_R, mix(P(22, -38), P(6, -22), hit), b)];
+  return [mix(REST_L, P(0, 40), b), mix(REST_R, PF_FIST, b)];
 };
+const pfGrip = { grip: 1 / 3, gripLift: (t) => 0.5 + chop(t) * 5, front: () => 'L', hand: ['open', 'fist'] };
 
 export const SIGNALS = {
   // 9 — "Forearms rotated over and over in front of body." Forearms level and crossed, rolling
@@ -87,26 +91,33 @@ export const SIGNALS = {
     },
     hand: ['flat', 'flat'],
   },
-  // 10 — "One wrist striking the other above head."
-  personalFoul: { loop: 2600, still: 900, hands: personalFoul },
-  // 10 + "raised arm swinging forward: Roughing Passer."
+  // 10 — the open hand chopping onto the other wrist, in front of the chest (see personalFoul above).
+  personalFoul: { loop: 2600, still: 900, hands: personalFoul, gripIn: up, ...pfGrip },
+  // 10, then "raised arm swinging forward: Roughing Passer."
   roughingPasser: {
     loop: 4400, still: 3300,
     hands: (t) => {
       if (t < 2000) return personalFoul(t);
       const swing = wave(t - 2000, 900);
-      return [mix(P(-4, -18), REST_L, seg(t, 2000, 2400)), mix(P(16, -32), P(36, 28), swing)];
+      const raise = seg(t, 2000, 2400);
+      return [mix(P(0, 40), REST_L, raise), mix(mix(PF_FIST, P(16, -32), raise), P(36, 28), swing * raise)];
     },
+    gripIn: (t) => (t < 2000 ? up(t) : 1 - seg(t, 2000, 2300)),
+    ...pfGrip,
+    hand: ['open', 'fist'],
   },
-  // 10 + "grasping facemask: Facemask."
+  // 10, then "grasping facemask: Facemask."
   faceMask: {
     loop: 4400, still: 3200,
     hands: (t) => {
       if (t < 2000) return personalFoul(t);
       const tug = wave(t - 2000, 700) * 5;
-      return [mix(P(-4, -18), REST_L, seg(t, 2000, 2400)), mix(P(6, -22), P(8, 14 + tug), seg(t, 2000, 2400))];
+      const k = seg(t, 2000, 2400);
+      return [mix(P(0, 40), REST_L, k), mix(PF_FIST, P(8, 14 + tug), k)];
     },
-    hand: ['fist', 'fist'],
+    gripIn: (t) => (t < 2000 ? up(t) : 1 - seg(t, 2000, 2300)),
+    ...pfGrip,
+    hand: ['open', 'fist'],
   },
   // 3 — "Arms pointed toward defensive team's goal."
   firstDown: hold(REST_L, P(70, 24)),

@@ -117,6 +117,7 @@ Quoted descriptions, by signal number:
 - 8 Delay of game: "Folded arms."
 - 9 False start, illegal formation: "Forearms rotated over and over in front of body."
 - 10 Personal foul: "One wrist striking the other above head." Followed by "raised arm swinging forward: Roughing Passer"; followed by "grasping facemask: Facemask."
+  - On the site (editor's decision, 2026-10-02): drawn as the site's editor describes refs doing it in games, the arms as in holding with the open hand chopping onto the other wrist in front of the chest, not above the head. This differs from the rulebook wording above, and no written source for it is on file.
 - 11 Holding: "Grasping one wrist, the fist clenched, in front of chest."
 - 12 Illegal use of hands: "Grasping one wrist, the hand open and facing forward, in front of chest."
 - 16 Intentional grounding: "Parallel arms waved in a diagonal plane across body. Followed by loss of down signal (23)."

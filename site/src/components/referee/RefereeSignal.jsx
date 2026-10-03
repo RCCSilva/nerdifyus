@@ -83,7 +83,8 @@ export default function RefereeSignal({ signal, className = '' }) {
     const [sh, u, f] = solve(x, P(h.x, h.y - 3), out);
     return <Arm shoulder={sh} upper={u} fore={f} hand={kind} len={len} />;
   };
-  // `grip` (0–1): the left hand holds the right forearm that far from the wrist toward the elbow
+  // `grip` (0–1): the left hand holds the right forearm that far from the wrist toward the elbow;
+  // `gripIn(t)` blends it in (0–1), `gripLift(t)` raises it off the arm
   let left = hl;
   if (s.grip != null) {
     const [sh, u, f] = solve(sx, P(hr.x, hr.y - 3), 1);
@@ -99,7 +100,8 @@ export default function RefereeSignal({ signal, className = '' }) {
       aim = P(spot.x - d.x * 4.5, spot.y - d.y * 4.5);
     }
     const k = s.gripIn?.(t) ?? 1;
-    left = P(hl.x + (aim.x - hl.x) * k, hl.y + (aim.y + 3 - hl.y) * k);
+    const lift = s.gripLift?.(t) ?? 0; // hovering above the spot instead of holding it
+    left = P(hl.x + (aim.x - hl.x) * k, hl.y + (aim.y + 3 - lift - hl.y) * k);
   }
   // the arm nearer the viewer is drawn last; `front(t)` lets a signal swap them (arms rolling over each other)
   const leftInFront = !side && s.front?.(t) === 'L';

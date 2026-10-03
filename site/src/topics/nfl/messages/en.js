@@ -903,7 +903,7 @@ export default {
     illegalContact: 'One open hand pushed forward.',
     passInterference: 'Both hands open, pushed forward from the shoulders, palms upright.',
     grounding: 'Parallel arms waved diagonally across the body, then hands behind the head (loss of down).',
-    personalFoul: 'One wrist striking the other above the head (personal foul).',
+    personalFoul: 'An open hand chops down onto the other wrist, in front of the chest (personal foul).',
     roughingPasser: 'Personal foul signal, then a raised arm swinging forward.',
     faceMask: 'Personal foul signal, then a hand grabbing near the face, like a facemask.',
   },
