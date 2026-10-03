@@ -113,6 +113,33 @@
 .res-ot { color: var(--muted); font-size: 0.72rem; }
 .seed-pill.sm { width: 1.5rem; height: 1.5rem; font-size: 0.75rem; }
 
+/* bracket: one box per game, lines from each winner to its next game */
+.bk { display: grid; gap: 0.4rem; }
+.bk-conf { margin: 0.4rem 0 0; font: 800 1rem/1.2 var(--font-display); }
+.bk-heads, .bk-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 0.7fr); column-gap: 1.4rem; }
+.bk-heads small { font-size: 0.72rem; font-weight: 700; color: var(--muted); }
+.bk-grid { min-height: 17rem; }
+.bk-col, .bk-pair { display: flex; flex-direction: column; }
+.bk-pair { flex: 1; position: relative; }
+.bk-slot { flex: 1; display: flex; align-items: center; position: relative; padding: 0.2rem 0; }
+.bk-game { position: relative; width: 100%; display: grid; gap: 0.15rem; padding: 0.3rem 0.4rem; border-radius: 9px; background: var(--bg); border: 1px solid var(--line); font-size: 0.82rem; }
+.bk-game.is-bye { border-style: dashed; }
+.bk-game.is-bye small { color: var(--muted); font-size: 0.7rem; }
+.bk-game.is-champ, .bk-game.is-final { border: 2px solid var(--hl); }
+.bk-side { display: flex; align-items: center; gap: 0.3rem; opacity: 0.45; min-width: 0; }
+.bk-side.is-won { opacity: 1; font-weight: 800; }
+.bk-team { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bk-code { display: none; }
+.bk-side b { margin-left: auto; font-variant-numeric: tabular-nums; }
+.bk-ot { color: var(--muted); font-size: 0.68rem; }
+/* connectors: each slot reaches right; a pair joins its two slots and feeds the next column */
+.bk-col:not(.bk-final) .bk-slot::after { content: ''; position: absolute; right: -0.7rem; top: 50%; width: 0.7rem; border-top: 2px solid var(--muted); }
+.bk-col:not(.bk-final) .bk-pair:not(.is-single)::after { content: ''; position: absolute; right: -0.7rem; top: 25%; bottom: 25%; border-right: 2px solid var(--muted); }
+.bk-col:not(:first-child) .bk-slot::before { content: ''; position: absolute; left: -0.7rem; top: 50%; width: 0.7rem; border-top: 2px solid var(--muted); }
+.bk-sb { display: grid; justify-items: center; gap: 0.3rem; margin-top: 0.6rem; }
+.bk-sb small { font-weight: 800; }
+.bk-sb .bk-game { width: min(18rem, 100%); }
+
 /* bracket: stacked rounds */
 .bracket { display: grid; gap: 0.7rem; }
 .bracket-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: center; font-size: 0.8rem; color: var(--muted); }
@@ -156,6 +183,15 @@
 .season-step-num { width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font-weight: 800; flex: none; }
 
 @media (max-width: 560px) {
+  .bk-heads, .bk-grid { column-gap: 0.9rem; }
+  .bk-game { font-size: 0.7rem; padding: 0.25rem; }
+  .bk-long { display: none; }
+  .bk-code { display: inline; }
+  .bk .seed-pill.sm { width: 1.2rem; height: 1.2rem; font-size: 0.65rem; }
+  .bk-col:not(.bk-final) .bk-slot::after, .bk-col:not(:first-child) .bk-slot::before { width: 0.45rem; right: -0.45rem; }
+  .bk-col:not(:first-child) .bk-slot::before { left: -0.45rem; right: auto; }
+  .bk-col:not(.bk-final) .bk-pair:not(.is-single)::after { right: -0.45rem; }
+
   .league { grid-template-columns: 1fr; }
   .division-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .game-strip { grid-template-columns: repeat(9, minmax(0, 1fr)); }

@@ -72,6 +72,7 @@
 | S68 | Wikipedia — 2025–26 NFL playoffs (seeds and results) | secondary (encyclopedia) | accessed 2026-10-03 | https://en.wikipedia.org/wiki/2025%E2%80%9326_NFL_playoffs |
 | S69 | NFL.com — 2025 regular season standings | primary (league site) | accessed 2026-10-03 | https://www.nfl.com/standings/league/2025/REG |
 | S70 | ESPN — Super Bowl 2026 highlights: Seahawks capture second Lombardi with 29-13 win over Patriots (Feb 8, 2026) | secondary (news) | 2026-02-08 · accessed 2026-10-03 | https://www.espn.com/nfl/story/_/id/47822193/2026-super-bowl-lx-patriots-seahawks-live-highlights-results |
+| S71 | NFL.com — "NFL season to feature 17 regular-season games per team" (scheduling formula) | primary (league site) | accessed 2026-10-03 | https://www.nfl.com/news/nfl-season-to-feature-17-regular-season-games-per-team |
 
 Notes
 - S1 is authoritative. S2 and S3 are official too, but simplified, and may be out of date. If they disagree, S1 wins.

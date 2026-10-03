@@ -295,7 +295,7 @@ export default {
     seasonSchedule: {
       title: 'The 17 games',
       body: 'Every team plays 17 regular-season games, always with the same formula:',
-      example: 'The last 3 opponents (the 2 green games and the 17th game) depend on where your team finished in its division last season.',
+      example: 'The last 3 opponents (the 2 green games and the 17th game) come from last season’s division finish: 1st plays 1st, 2nd plays 2nd, and so on. A team that finished 1st, for example, plays three other division winners.',
     },
     playoffSeeds: {
       title: 'Who makes the playoffs',
@@ -311,7 +311,7 @@ export default {
     },
     playoffBracket: {
       title: 'Playoffs: lose and you’re out',
-      body: 'One game per round, and the better seed plays at home. The No. 1 seed skips the first round.',
+      body: 'One game per round, and the better seed plays at home. The No. 1 seed has a bye in the Wild Card round and only enters in the Divisional round.',
       example: 'In the example, seed 7 beats seed 2. So in the next round, seed 1 hosts the lowest seed left: 7.',
     },
     playoffBracket2025: {
@@ -447,7 +447,7 @@ export default {
     },
     foulMechanism: {
       title: 'Fouls in one picture',
-      insight: 'Football is a contact sport, but it isn’t a wrestling match. Many fouls exist to keep the game about the ball: holding stops players from simply grabbing whoever is in their way, and pass interference makes sure both players get a fair chance to catch a ball in the air.',
+      insight: 'Football is a contact sport, and the contact is often hard. But it isn’t judo or boxing: you can’t grab an opponent and throw him down, or throw punches. Many fouls exist to protect players’ health and to keep the game watchable: if everyone could just hold each other, the game would grind to a halt. Holding and pass interference, for example, protect the receiver’s chance to catch the ball. Contact is for stopping the ball carrier, within limits; even blocking has rules, and going past them is a foul.',
       example: 'Next up: ties & overtime. The individual fouls (false start, holding…) are in the “Common fouls” lesson.',
     },
     covFamilies: {
@@ -1001,8 +1001,8 @@ export default {
       division: 'Division rivals: each one twice (home and away)',
       confDivision: 'All 4 teams of another division in your conference',
       otherConfDivision: 'All 4 teams of a division in the other conference',
-      confRank: '1 team from each of the other 2 divisions in your conference (based on last season)',
-      seventeenth: 'The 17th game: 1 team from the other conference (based on last season)',
+      confRank: '1 team from each of the other 2 divisions in your conference: the one that finished in the same place as yours last season',
+      seventeenth: 'The 17th game: 1 team from the other conference that finished in the same place as yours last season',
     },
     oneConference: 'One conference (AFC or NFC)',
     divChamp: 'Division champion',

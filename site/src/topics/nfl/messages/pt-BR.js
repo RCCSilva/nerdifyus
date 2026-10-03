@@ -294,7 +294,7 @@ export default {
     seasonSchedule: {
       title: 'Os 17 jogos',
       body: 'Cada time joga 17 partidas na temporada regular, sempre com a mesma fórmula:',
-      example: 'Os 3 últimos adversários (os 2 jogos verdes e o 17º jogo) dependem da posição em que seu time terminou na divisão na temporada anterior.',
+      example: 'Os 3 últimos adversários (os 2 jogos verdes e o 17º jogo) saem da posição na divisão na temporada passada: 1º contra 1º, 2º contra 2º, e assim por diante. Quem foi 1º, por exemplo, enfrenta outros três campeões de divisão.',
     },
     playoffSeeds: {
       title: 'Quem vai aos playoffs',
@@ -310,7 +310,7 @@ export default {
     },
     playoffBracket: {
       title: 'Playoffs: perdeu, está fora',
-      body: 'Um jogo por rodada, e o mais bem classificado joga em casa. O 1º colocado pula a primeira rodada.',
+      body: 'Um jogo por rodada, e o mais bem classificado joga em casa. O 1º colocado folga na rodada Wild Card e só entra na Divisional.',
       example: 'No exemplo, o 7º elimina o 2º. Por isso, na rodada seguinte, o 1º recebe o pior classificado que sobrou: o 7º.',
     },
     playoffBracket2025: {
@@ -446,7 +446,7 @@ export default {
     },
     foulMechanism: {
       title: 'As faltas num só quadro',
-      insight: 'O futebol americano é um esporte de contato, mas não é uma luta de judô. Muitas faltas existem para o jogo continuar sendo sobre a bola: o holding impede de simplesmente agarrar quem está no caminho, e a interferência de passe garante que os dois jogadores tenham uma chance justa de pegar a bola no ar.',
+      insight: 'O futebol americano é um esporte de contato, e o contato muitas vezes é forte. Mas não é judô nem boxe: não dá para agarrar o adversário e derrubá-lo com golpes, nem dar socos. Muitas faltas existem para proteger a saúde dos jogadores e para manter o jogo bonito: se todo mundo pudesse se agarrar, o jogo ficaria travado. O holding e a interferência de passe, por exemplo, protegem a chance de o recebedor pegar a bola. O contato vale para parar quem está com a bola, dentro de um limite; até no bloqueio há regras, e passar delas é falta.',
       example: 'A seguir: empates e prorrogação. As faltas uma a uma (false start, holding…) estão na lição “Faltas comuns”.',
     },
     covFamilies: {
@@ -1000,8 +1000,8 @@ export default {
       division: 'Rivais de divisão: cada um duas vezes (em casa e fora)',
       confDivision: 'Os 4 times de outra divisão da sua conferência',
       otherConfDivision: 'Os 4 times de uma divisão da outra conferência',
-      confRank: '1 time de cada uma das outras 2 divisões da sua conferência (pela temporada anterior)',
-      seventeenth: 'O 17º jogo: 1 time da outra conferência (pela temporada anterior)',
+      confRank: '1 time de cada uma das outras 2 divisões da sua conferência: o que terminou na mesma posição que o seu na temporada passada',
+      seventeenth: 'O 17º jogo: 1 time da outra conferência que terminou na mesma posição que o seu na temporada passada',
     },
     oneConference: 'Uma conferência (AFC ou NFC)',
     divChamp: 'Campeão de divisão',

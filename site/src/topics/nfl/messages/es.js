@@ -294,7 +294,7 @@ export default {
     seasonSchedule: {
       title: 'Los 17 partidos',
       body: 'Cada equipo juega 17 partidos de temporada regular, siempre con la misma fórmula:',
-      example: 'Los últimos 3 rivales (los 2 partidos verdes y el partido 17) dependen de en qué lugar terminó tu equipo en su división la temporada anterior.',
+      example: 'Los últimos 3 rivales (los 2 partidos verdes y el partido 17) salen del puesto en la división la temporada pasada: 1.º contra 1.º, 2.º contra 2.º, y así. Un equipo que terminó 1.º, por ejemplo, juega contra otros tres campeones de división.',
     },
     playoffSeeds: {
       title: 'Quién va a los playoffs',
@@ -310,7 +310,7 @@ export default {
     },
     playoffBracket: {
       title: 'Playoffs: quien pierde queda fuera',
-      body: 'Un partido por ronda, y el mejor posicionado juega en casa. El número 1 se salta la primera ronda.',
+      body: 'Un partido por ronda, y el mejor posicionado juega en casa. El número 1 descansa en la ronda Wild Card y solo entra en la Divisional.',
       example: 'En el ejemplo, el 7 vence al 2. Por eso, en la siguiente ronda, el 1 recibe a la posición más baja que queda: el 7.',
     },
     playoffBracket2025: {
@@ -446,7 +446,7 @@ export default {
     },
     foulMechanism: {
       title: 'Los castigos en una imagen',
-      insight: 'El fútbol americano es un deporte de contacto, pero no es una lucha. Muchas faltas existen para que el juego siga siendo sobre el balón: la sujeción impide agarrar sin más a quien se cruza en el camino, y la interferencia de pase garantiza que los dos jugadores tengan una oportunidad justa de atrapar un balón en el aire.',
+      insight: 'El fútbol americano es un deporte de contacto, y el contacto muchas veces es fuerte. Pero no es judo ni boxeo: no se puede agarrar al rival y derribarlo con llaves, ni dar golpes. Muchas faltas existen para proteger la salud de los jugadores y para que el juego sea vistoso: si todos pudieran agarrarse, el juego quedaría trabado. La sujeción y la interferencia de pase, por ejemplo, protegen la oportunidad del receptor de atrapar el balón. El contacto sirve para frenar a quien lleva el balón, dentro de un límite; hasta el bloqueo tiene reglas, y pasarse es falta.',
       example: 'Lo próximo: empates y tiempo extra. Las faltas una por una (salida en falso, sujeción…) están en la lección “Castigos comunes”.',
     },
     covFamilies: {
@@ -1000,8 +1000,8 @@ export default {
       division: 'Rivales de división: cada uno dos veces (local y visitante)',
       confDivision: 'Los 4 equipos de otra división de tu conferencia',
       otherConfDivision: 'Los 4 equipos de una división de la otra conferencia',
-      confRank: '1 equipo de cada una de las otras 2 divisiones de tu conferencia (según la temporada anterior)',
-      seventeenth: 'El partido 17: 1 equipo de la otra conferencia (según la temporada anterior)',
+      confRank: '1 equipo de cada una de las otras 2 divisiones de tu conferencia: el que terminó en el mismo puesto que el tuyo la temporada pasada',
+      seventeenth: 'El partido 17: 1 equipo de la otra conferencia que terminó en el mismo puesto que el tuyo la temporada pasada',
     },
     oneConference: 'Una conferencia (AFC o NFC)',
     divChamp: 'Campeón de división',

@@ -347,6 +347,11 @@ export const SOURCES = {
     title: 'ESPN — Super Bowl 2026 highlights: Seahawks capture second Lombardi with 29-13 win over Patriots (Feb 8, 2026)',
     url: 'https://www.espn.com/nfl/story/_/id/47822193/2026-super-bowl-lx-patriots-seahawks-live-highlights-results',
   },
+  S71: {
+    short: 'NFL.com · 17-game season',
+    title: 'NFL.com — NFL season to feature 17 regular-season games per team (scheduling formula)',
+    url: 'https://www.nfl.com/news/nfl-season-to-feature-17-regular-season-games-per-team',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

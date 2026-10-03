@@ -81,7 +81,7 @@ function TagTable({ focus, replay }) {
         <table className="tag-table">
           <thead>
             <tr>
-              <th />
+              <td />
               {TAGS.map((k) => <th key={k} className={focus && focus !== k ? 'is-dim' : focus === k ? 'is-focus' : ''}>{t(`nfl.money.tag.${k}.name`)}</th>)}
             </tr>
           </thead>

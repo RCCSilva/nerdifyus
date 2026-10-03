@@ -64,16 +64,19 @@ export default function Deck({ slides, textPath, resolveRef, footer }) {
 
   return (
     <section className="deck" aria-roledescription="carousel">
-      <div className="deck-progress" role="progressbar" aria-valuemin={1} aria-valuemax={n} aria-valuenow={index + 1}>
+      <nav className="deck-progress" aria-label={t('ui.deck.slides')}>
         {slides.map((s, i) => (
           <button
             key={s.id}
             className={i === index ? 'is-on' : i < index ? 'is-done' : ''}
             onClick={() => go(i)}
             aria-label={t('ui.deck.progress', { i: i + 1, n })}
+            aria-current={i === index ? 'step' : undefined}
           />
         ))}
-      </div>
+      </nav>
+      {/* screen readers hear which slide they're on when it changes */}
+      <p className="sr-only" aria-live="polite">{t('ui.deck.progress', { i: index + 1, n })}: {text.title}</p>
 
       <div
         className="deck-stage"
@@ -102,19 +105,19 @@ export default function Deck({ slides, textPath, resolveRef, footer }) {
             {text.example && <p className="slide-example">{text.example}</p>}
             {text.aside && (
               <div className="slide-aside" role="note">
-                <strong>🎯 {text.aside.title}</strong>
+                <strong><span aria-hidden="true">🎯 </span>{text.aside.title}</strong>
                 <p>{text.aside.body}</p>
               </div>
             )}
             {text.note && (
               <div className="slide-note" role="note">
-                <strong>⚠ {t('ui.deck.important')}</strong>
+                <strong><span aria-hidden="true">⚠ </span>{t('ui.deck.important')}</strong>
                 <p>{text.note}</p>
               </div>
             )}
             {text.insight && (
               <div className="slide-insight" role="note">
-                <strong>💡 {t('ui.deck.insight')}</strong>
+                <strong><span aria-hidden="true">💡 </span>{t('ui.deck.insight')}</strong>
                 <p>{text.insight}</p>
                 <small>{t('ui.deck.insightHint')}</small>
               </div>
@@ -138,7 +141,7 @@ export default function Deck({ slides, textPath, resolveRef, footer }) {
       <nav className="deck-nav">
         <button className="deck-btn" onClick={() => go(index - 1)} disabled={index === 0} aria-label={t('ui.deck.prev')}>←</button>
         <span className="deck-count">{index + 1} / {n}</span>
-        <button className="deck-replay" onClick={() => setReplay((r) => r + 1)}>↻ {t('ui.deck.replay')}</button>
+        <button className="deck-replay" onClick={() => setReplay((r) => r + 1)}><span aria-hidden="true">↻ </span>{t('ui.deck.replay')}</button>
         <button className="deck-btn primary" onClick={() => go(index + 1)} disabled={index === n - 1} aria-label={t('ui.deck.next')}>→</button>
       </nav>
       {index === 0 && <p className="deck-hint">{t('ui.deck.hint')}</p>}

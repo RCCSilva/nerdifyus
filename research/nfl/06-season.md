@@ -23,6 +23,7 @@ Citation key: see `01-basic-rules.md`. Sources are listed in `sources.md`.
 3. **4** vs. all four teams of one division in the other conference (2 home, 2 road).
 4. **2** vs. one team from each of the two remaining divisions in the same conference (1 home, 1 road). "Matchups are based on division ranking from the previous season."
 5. **1**, the 17th game: a non-conference opponent "from a division that the team is not scheduled to play". Also based on the previous season's division ranking.
+- Same-place matching: the two standings-based conference games "match a first-place team against the first-place teams in the two same-conference divisions the team is not scheduled to play that season"; the 17th game matches "a first-place team from one division against a first-place team in an opposite conference division that the team is not scheduled to play". 2nd, 3rd and 4th place work the same way [S71].
 - 6 + 4 + 4 + 2 + 1 = 17.
 
 ## Who makes the playoffs

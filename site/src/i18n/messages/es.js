@@ -5,6 +5,7 @@ export default {
     topics: 'Temas',
   },
   footer: { feedback: '¿Encontraste un error o tienes una sugerencia?', issues: 'Abre un issue en GitHub', code: 'Código del sitio en GitHub' },
+  field: 'Ilustración en el campo',
   nav: { home: 'Inicio', language: 'Idioma', contents: 'Contenido' },
   topic: {
     lessons: 'Lecciones',
@@ -16,6 +17,7 @@ export default {
     frame: 'Cuadro {i} de {n}',
   },
   deck: {
+    slides: 'Diapositivas',
     prev: 'Anterior',
     next: 'Siguiente',
     progress: 'Diapositiva {i} de {n}',

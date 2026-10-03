@@ -3,6 +3,7 @@ import {
   NUMBER_FROM_SIDELINE, NUMBER_HEIGHT, TRY_MARK_DIST, CROSSBAR, fx, yardLabel, MID_Y,
 } from './geometry';
 import { FieldContext } from './FieldContext';
+import { useI18n } from '../../i18n/I18n';
 import './field.css';
 
 const range = (from, to, step = 1) => {
@@ -29,10 +30,12 @@ export default function Field({
   vertical = false,
   highlight = [],
   endZoneText = ['', ''],
-  title = 'American football field',
+  title,
+  interactive = false, // players inside are buttons: a group, not a flat image
   className = '',
   children,
 }) {
+  const { t } = useI18n();
   const on = (part) => (highlight.includes(part) ? ' is-hl' : '');
   const [x0, x1] = view;
   const [y0, y1] = viewY;
@@ -48,8 +51,8 @@ export default function Field({
     <svg
       className={`field ${highlight.length ? 'has-hl' : ''} ${className}`}
       viewBox={viewBox}
-      role="img"
-      aria-label={title}
+      role={interactive ? 'group' : 'img'}
+      aria-label={title ?? t('ui.field')}
     >
       <FieldContext.Provider value={{ vertical }}>
       <g transform={vertical ? `matrix(0 -1 1 0 0 ${LENGTH})` : undefined}>

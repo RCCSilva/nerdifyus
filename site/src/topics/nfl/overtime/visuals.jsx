@@ -147,7 +147,7 @@ export function OvertimeSummaryVisual({ replay }) {
     <div className="ot-panel" key={replay}>
       <table className="ot-table">
         <thead>
-          <tr><th /><th>{t('nfl.overtime.regular')}</th><th>{t('nfl.overtime.playoffs')}</th></tr>
+          <tr><td /><th>{t('nfl.overtime.regular')}</th><th>{t('nfl.overtime.playoffs')}</th></tr>
         </thead>
         <tbody>
           {tm('nfl.overtime.rows').map(([label, reg, post], n) => (

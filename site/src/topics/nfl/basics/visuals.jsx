@@ -684,7 +684,7 @@ function Lineup({ side }) {
         </>
       )}
     >
-      <Field vertical view={LINEUP_VIEW(los)} viewY={LINEUP_Y}>
+      <Field vertical interactive view={LINEUP_VIEW(los)} viewY={LINEUP_Y}>
         <FieldLine x={los} kind="los" />
         {side === 'def' && OFFENSE.map((p, n) => <Player key={`o${n}`} x={los + p.dx} y={p.y} label={p.id} side="off" size={1.08} dim />)}
         {mine.map((p, n) => (
@@ -805,7 +805,7 @@ function KickField({ unit, t, plain, sel, onSelect }) {
   const play = stPlay(unit, t);
   const gunner = (sign) => u.players.find((p) => p.id === 'GUN' && Math.sign(p.dy) === sign);
   return (
-    <Field view={u.view} viewY={u.viewY} highlight={play.hl}>
+    <Field view={u.view} viewY={u.viewY} highlight={play.hl} interactive={!plain}>
       <FieldLine x={u.los} kind="los" />
       {plain && ST_DEFENSE[unit].map((d, n) => {
         // Jammers shadow the gunners downfield.

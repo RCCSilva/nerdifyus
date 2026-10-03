@@ -32,6 +32,7 @@ If web-dev needs a fact that isn't in the notes, it asks for research. It does n
 - Respect `prefers-reduced-motion`: timelines jump to their end state.
 - Commands (in `site/`): `npm run dev`, `npm run build`, `npm run preview`, `npm test` (Vitest + jsdom, tests in `src/__tests__/`).
 - Deploy: every push to `main` runs the tests, builds `site/` and publishes it to GitHub Pages (`.github/workflows/deploy.yml`) at http://rccsilva.com/nerdifyus/.
+- Accessibility: the tests run axe-core on every page and slide (`src/__tests__/a11y.test.jsx`; color contrast needs a real browser, so it's off there). A field whose players are buttons gets `interactive` (a group, not a flat image). Slide changes are announced to screen readers.
 - `index.html` opts out of browser auto-translation (`translate="no"`), since we ship our own translations.
 - Effects must never return a value implicitly: write `useEffect(() => { fn(); }, deps)`, not `useEffect(() => fn(), deps)`. Current Chrome returns a Promise from `scrollTo`, React then calls it as a cleanup, and the page crashes (this broke the language switch once). The tests stub `scrollTo` to return a Promise to catch this.
 
