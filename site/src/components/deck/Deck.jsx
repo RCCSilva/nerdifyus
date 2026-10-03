@@ -44,8 +44,10 @@ export default function Deck({ slides, textPath, resolveRef, footer }) {
 
   // Swipe: horizontal drags over the slide (ignored when they start on a button).
   const start = useRef(null);
+  // Swipe is for touch screens only: with a mouse, dragging selects text (arrows and keys still work).
   const onPointerDown = (e) => {
-    if (e.target.closest('button, a, [role="button"]')) return;
+    if (e.pointerType === 'mouse') return;
+    if (e.target.closest('button, a, input, select, textarea, [role="button"]')) return;
     start.current = { x: e.clientX, y: e.clientY };
   };
   const onPointerUp = (e) => {

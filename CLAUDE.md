@@ -40,7 +40,7 @@ If web-dev needs a fact that isn't in the notes, it asks for research. It does n
 Lessons are slide decks, not articles. People don't want to read walls of text.
 - One idea per slide: a **visual** (usually the field), a title, 1–2 short sentences, an optional example, and source chips.
 - One column on every screen, in this order: title, visual, text (body, bullets, example, boxes), sources.
-- Navigation: arrows, ← → keys, swipe, progress segments, and the topic sidebar (every lesson, every slide; a drawer on phones). The current slide is in `?s=N`.
+- Navigation: arrows, ← → keys, swipe (touch screens only, so a mouse can select text), progress segments, and the topic sidebar (every lesson, every slide; a drawer on phones). The current slide is in `?s=N`.
 - Always start from the basics, and be direct.
 - **No sub-slides.** Don't put steppers, dots or auto-advancing stages inside a slide. When a visual has several static parts (rounds of a bracket, variants of a foul), stack them vertically so readers scroll at their own pace, especially on phones. A continuous animation (like a play) is fine: it's a short video. A step-by-step animation (frames that change on a timer, like the downs drive) is a `StopMotionScene`, so readers can stop and step at their own pace.
 - **Every slide visual is a scene** (`site/src/components/scene/Scene.jsx`), so they all look the same: a header (what to look at: `Legend`, `Hint`, `StateLine`), the picture, and a footer (legends, a chart, a player card). Three kinds:
