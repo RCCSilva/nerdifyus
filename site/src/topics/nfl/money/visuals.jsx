@@ -301,7 +301,7 @@ export function CapCarryVisual({ replay }) {
 
 const PARTS = ['salary', 'signing', 'roster', 'workout'];
 
-/** The four parts of a contract: what each pays for and when it counts on the cap. */
+/** The four parts of a contract and what each one pays for. */
 export function ContractPartsVisual({ replay }) {
   const { t } = useI18n();
   return (
@@ -311,7 +311,6 @@ export function ContractPartsVisual({ replay }) {
           <div key={k} className="part" style={{ animationDelay: `${n * 90}ms` }}>
             <strong>{t(`nfl.money.parts.${k}.name`)}</strong>
             <p>{t(`nfl.money.parts.${k}.what`)}</p>
-            <small><b>{t('nfl.money.parts.capLabel')}:</b> {t(`nfl.money.parts.${k}.cap`)}</small>
           </div>
         ))}
       </div>
@@ -393,5 +392,106 @@ export function ContractRestructureVisual({ replay }) {
         </div>
       )}
     </StopMotionScene>
+  );
+}
+
+/** How a new deal is reported: years, total value, guaranteed (Lamar Jackson, S52). */
+export function ContractWhatVisual({ replay }) {
+  const { t } = useI18n();
+  const money = useMoney();
+  const items = [['years', '5'], ['total', money(260)], ['guaranteed', money(185)]];
+  return (
+    <StillScene header={<StateLine chip={t('nfl.money.what.who')} />}>
+      <div className="deal" key={replay}>
+        {items.map(([k, v], n) => (
+          <div key={k} className={`deal-item ${k === 'guaranteed' ? 'is-key' : ''}`} style={{ animationDelay: `${n * 120}ms` }}>
+            <b>{v}</b>
+            <small>{t(`nfl.money.what.${k}`)}</small>
+          </div>
+        ))}
+      </div>
+    </StillScene>
+  );
+}
+
+/** A guarantee that vests on a date: injury only at signing, full on the 5th day of the 2025 league year (S51). */
+export function ContractDatesVisual({ replay }) {
+  const { t } = useI18n();
+  return (
+    <StillScene header={<StateLine chip={t('nfl.money.dates.who')} />}>
+      <div className="vest" key={replay}>
+        {['s0', 's1'].map((k, n) => (
+          <div key={k} className="vest-step" style={{ animationDelay: `${n * 250}ms` }}>
+            <small>{t(`nfl.money.dates.${k}`)}</small>
+            <span className={`vest-bar ${n ? 'is-full' : 'is-injury'}`}>{t(`nfl.money.dates.${k}How`)}</span>
+          </div>
+        ))}
+      </div>
+    </StillScene>
+  );
+}
+
+/** Guaranteed at signing, as a share of the deal: Lamar Jackson vs Deshaun Watson (S51, S56). */
+export function ContractWatsonVisual({ replay }) {
+  const { t } = useI18n();
+  const money = useMoney();
+  const deals = [['Lamar Jackson · 2023', 260, 135], ['Deshaun Watson · 2022', 230, 230]];
+  return (
+    <StillScene footer={<Legend items={[{ swatch: 'tone-a', label: t('nfl.money.watson.atSigning') }, { swatch: 'tone-rest', label: t('nfl.money.watson.rest') }]} />}>
+      <div className="share-deals" key={replay}>
+        {deals.map(([who, total, sure]) => (
+          <div key={who} className="share-deal">
+            <strong>{who}</strong>
+            <div className="share-deal-bar" style={{ width: `${(total / 260) * 100}%` }}>
+              <i className="tone-a" style={{ width: `${(sure / total) * 100}%` }}>{money(sure)}</i>
+              {sure < total && <em>{money(total - sure)}</em>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </StillScene>
+  );
+}
+
+const MAHOMES_YEARS = Array.from({ length: 12 }, (_, n) => 2020 + n);
+
+/** Mahomes: a 10-year extension through 2031, reworked in 2023 for 2023–2026 (S59, S60). */
+export function ContractMahomesVisual({ replay }) {
+  const { t } = useI18n();
+  return (
+    <StillScene>
+      <div className="span" key={replay}>
+        <small>{t('nfl.money.mahomes.span')}</small>
+        <div className="span-years">
+          {MAHOMES_YEARS.map((y) => (
+            <span key={y} className={`span-year ${y >= 2023 && y <= 2026 ? 'is-redo' : ''}`}>{String(y).slice(2)}</span>
+          ))}
+        </div>
+        <p className="span-redo">{t('nfl.money.mahomes.redo')}</p>
+      </div>
+    </StillScene>
+  );
+}
+
+/** Cash vs cap hit in year 1: $10M salary + $25M signing bonus over 5 years (illustrative). */
+export function CapHitVisual({ replay }) {
+  const { t } = useI18n();
+  const money = useMoney();
+  const rows = [['cash', 10, 25], ['cap', 10, 5]];
+  return (
+    <StillScene footer={<Legend items={[{ swatch: 'tone-a', label: t('nfl.money.hit.salary') }, { swatch: 'tone-b', label: t('nfl.money.hit.bonus') }]} />}>
+      <div className="hit" key={replay}>
+        {rows.map(([k, salary, bonus]) => (
+          <div key={k} className="hit-row">
+            <span className="hit-label">{t(`nfl.money.hit.${k}`)}</span>
+            <div className="hit-bar" style={{ width: `${((salary + bonus) / 35) * 100}%` }}>
+              <i className="tone-a" style={{ flex: salary }}>{money(salary)}</i>
+              <i className="tone-b" style={{ flex: bonus }}>{money(bonus)}</i>
+            </div>
+            <b>{money(salary + bonus)}</b>
+          </div>
+        ))}
+      </div>
+    </StillScene>
   );
 }

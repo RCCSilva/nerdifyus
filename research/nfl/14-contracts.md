@@ -1,7 +1,7 @@
 # How NFL contracts work
 Level: advanced
 Applies to: the 2020 CBA (S33) and its NFL Player Contract (Appendix A); official glossary S50. Real example: Lamar Jackson (S51–S53).
-Scope (editorial choice, 2026-10-03): the parts of a contract, guarantees, incentives (LTBE/NLTBE), restructures and void years. Signing bonus proration and dead money are in 12-salary-cap.md.
+Scope (editorial choice, 2026-10-03): the parts of a contract, guarantees and real contracts (lesson "Contracts", no cap talk); the cap hit, incentives (LTBE/NLTBE), restructures and void years (lesson "The salary cap"). Signing bonus proration and dead money are in 12-salary-cap.md.
 
 ## The parts of a contract
 - **Base salary ("Paragraph 5" salary):** pay for the regular season [S50]. "Player will be paid 100% of his yearly salary under this contract in equal weekly or biweekly installments over the course of a 34- or 36-week period", starting with the club's first regular season game [S33 App. A ¶6, p.354–355]. On the cap it counts in the year earned [S33 Art. 13 §6(a)(i), p.125].
@@ -31,3 +31,21 @@ Scope (editorial choice, 2026-10-03): the parts of a contract, guarantees, incen
 ## Void years
 - Years added to a contract so the signing bonus can be prorated over more years, lowering the cap hits [S54]. They don't extend the contract: they're placeholders for the proration [S55].
 - When the deal expires and the player leaves, "all of the remaining money in those void years accelerates and hits the cap" [S54]. CBA rule: a contract year the player can end on a contingency counts for proration until the contingency happens; then the amounts for that year are accelerated into Team Salary [S33 Art. 13 §6(b)(ii)(4), p.127].
+
+## Guarantees that depend on dates (Lamar Jackson)
+- Part of a future year's salary can start guaranteed only for injury and become fully guaranteed on a set date. Jackson: $29 million of his 2026 base salary converted "from being guaranteed for injury to fully guaranteed on the fifth day of the 2025 league year" [S51]. His deal also uses option bonuses, unusual for the Ravens, and bars a franchise or transition tag when it ends [S51].
+
+## A fully guaranteed deal (Deshaun Watson)
+- March 2022: Cleveland traded three first-round picks (2022, 2023, 2024), a 2023 third and a 2024 fourth to Houston for Watson, and gave him a five-year, $230 million contract. "The full $230 million is guaranteed … setting a record for highest guarantee given to an NFL player" [S56].
+- In Cleveland: 19 starts, 9–10 record, through 2025 [S58]. In 2024 he tore his right Achilles, then re-tore it three months later [S57].
+- Restructures: in March 2025 the Browns converted his salary into signing bonus to get under the cap (nearly $36 million of room) [S57]. March 2026 was the sixth restructure; 2026 is the last year of the deal, yet he's projected to count $34.6 million on the 2027 cap and $51.6 million on the 2028 cap [S58].
+
+## A 10-year deal (Patrick Mahomes)
+- July 2020: a 10-year extension through 2031, worth $450 million and up to $503 million, with a $140 million injury guarantee and a no-trade clause [S59].
+- September 2023 the deal was reworked: $210.6 million for 2023–2026, all fully guaranteed, "the most in NFL History over a four season span" [S60].
+
+## Released before the guarantee date (Russell Wilson)
+- Denver gave Wilson a five-year, $242.6 million deal; he went 11–19 as a starter in two seasons. The Broncos released him in March 2024, before a $37 million injury guarantee became fully guaranteed on the fifth day of the league year, and took $85 million of dead money over two seasons, more than the next two biggest combined [S61]: $53 million in 2024 and $32 million in 2025 [S62].
+
+## Cap hit
+- What a contract costs on a team's cap in one year ("cap hit" or "cap figure" in the press [S53]). It's the player's Salary counted under the CBA rules for that league year: that year's base salary [S33 Art. 13 §6(a)(i), p.125], the year's share of signing bonus [S33 Art. 13 §6(b)(i), p.126], roster bonuses (in full that season) [S50], and incentives deemed likely to be earned, including workout bonuses [S33 Art. 13 §6(c)(i), p.130]. So the cap hit and the cash paid in a year can be very different.

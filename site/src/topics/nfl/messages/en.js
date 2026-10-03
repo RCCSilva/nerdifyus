@@ -13,6 +13,7 @@ export default {
     defenseTactics: { title: 'Defensive tactics: pass coverage', summary: 'Man-to-man, zone and match: the three ways to cover receivers.' },
     draft: { title: 'The draft', summary: 'How teams pick new players from college each year.' },
     trades: { title: 'Trades', summary: 'How teams swap players and draft picks.' },
+    contracts: { title: 'Contracts', summary: 'The parts of a contract, what’s guaranteed, and real cases: Lamar Jackson, Deshaun Watson and Patrick Mahomes.' },
     strategy: { title: 'Strategy', summary: 'Why teams do what they do.' },
     matchCoverage: { title: 'Match coverage', summary: 'The man/zone hybrid most defenses use today.' },
     tags: { title: 'Franchise & transition tags', summary: 'Exclusive and non-exclusive franchise tags, and the transition tag.' },
@@ -535,16 +536,49 @@ export default {
       body: 'Teams can’t just keep the money: over each period of a few years, each team must actually spend at least 90% of the cap in cash. And across all 32 teams, the league as a whole must spend at least 95%.',
       example: 'Any shortfall goes to the players: a team’s is paid by that team; the league’s is split among its players.',
     },
+    capHit: {
+      title: 'What matters is the cap hit',
+      body: 'For the cap, what counts isn’t how much the player is paid in a year, but the cap hit: how much his contract counts on the cap that year. Each part of the contract counts differently:',
+      bullets: [
+        'Base salary: in the year it’s earned.',
+        'Signing bonus: spread over the contract (up to 5 years).',
+        'Roster bonus: in full, that year.',
+        'Workout bonus and likely incentives: that year.',
+      ],
+      example: 'Year 1 of a contract with a $10M salary and a $25M signing bonus over 5 years: the player gets $35M, but the cap hit is $15M.',
+    },
+    contractMahomes: {
+      title: '10 years: the Mahomes case',
+      body: 'In 2020 Patrick Mahomes signed with the Chiefs for 10 years, through 2031: $450M (up to $503M with bonuses), with a $140M injury guarantee and a clause that stops the team from trading him.',
+      example: 'In 2023 the deal was reworked: $210.6M for 2023–2026, all guaranteed, the most in NFL history over four seasons.',
+    },
+    contractWatson: {
+      title: '100% guaranteed: the Watson case',
+      body: 'In 2022 the Browns traded three first-round picks (and two more) for QB Deshaun Watson and gave him 5 years and $230M, all guaranteed. It was the biggest guarantee in NFL history.',
+      example: 'In Cleveland: 19 starts through 2025, 9 wins and 10 losses, and a torn Achilles twice. The money was guaranteed either way.',
+      insight: 'A huge, fully guaranteed contract only works if the player performs: the team has no way out. That’s why the Watson case became the example of what to avoid.',
+    },
+    contractDates: {
+      title: 'A contract isn’t a spreadsheet',
+      body: 'The parts are always the same, but a contract can tie guarantees to dates: part of a future year’s salary starts guaranteed for injury only and becomes fully guaranteed on a set date.',
+      example: 'Lamar Jackson: $29M of his 2026 salary started guaranteed for injury only and became fully guaranteed on the fifth day of the 2025 league year, in March.',
+      insight: 'In our reading, it’s one of the best-built contracts: the player is protected if he gets hurt, and the team can decide before each date whether to keep going with him.',
+    },
+    contractWhat: {
+      title: 'An NFL contract',
+      body: 'When a new contract is announced, the news usually gives three numbers: how many years, the total value and how much is guaranteed. The guaranteed part stays protected even if the team releases the player.',
+      note: 'Money isn’t unlimited: every team has a salary cap, which we explain in the lesson “The salary cap”.',
+    },
     contractParts: {
       title: 'The parts of a contract',
-      body: 'A contract’s value is the sum of several parts. Each is paid at a different time and counts on the cap in a different way.',
+      body: 'The total value is the sum of several parts, and each one is paid at a different time.',
       note: 'Base salary is only guaranteed if the contract says so. Without a guarantee, the team can release the player, and the rest of the salary isn’t protected.',
     },
     contractGuarantees: {
       title: 'Guaranteed vs. not guaranteed',
-      body: 'A $260 million contract doesn’t mean $260 million in the bank. Without a guarantee, the team can release the player for performance or to make cap room. Only the guaranteed part is protected.',
+      body: 'A $260 million contract doesn’t mean $260 million in the bank. Without a guarantee, the team can release the player for performance or to make room for someone else. Only the guaranteed part is protected.',
       note: 'A guarantee can cover skill, cap and/or injury. “Fully guaranteed” means it covers all three.',
-      example: 'Lamar Jackson (Ravens, 2023): 5 years and $260M, with $185M guaranteed. But only $135M was guaranteed at signing (including a $72.5M signing bonus). The rest became guaranteed step by step, year by year.',
+      example: 'Lamar Jackson (Ravens, 2023): of the $260M, $185M is guaranteed, but only $135M was guaranteed at signing (including a $72.5M signing bonus).',
     },
     contractIncentives: {
       title: 'Incentives: likely and not likely',
@@ -557,6 +591,10 @@ export default {
       body: 'A restructure turns salary into signing bonus: this year’s cap hit drops, because the bonus is spread over the remaining years. To spread it over more years, the team can add “void years”: fake years that exist only for the math.',
       note: 'The cost doesn’t go away: the next years get more expensive. When the contract ends, whatever sat in the void years hits the cap all at once, as dead money.',
       example: 'Lamar Jackson, March 2026: the Ravens turned $51.3M of salary into a bonus. His 2026 cap figure dropped from $74.5M to $34.54M, and his 2027 one rose to $84.49M. The deal has 2 void years.',
+      aside: {
+        title: 'When it goes wrong: Deshaun Watson',
+        body: 'The Browns restructured Watson’s deal six times to make room. 2026 is its last year, yet he’s still due to count $34.6M on the 2027 cap and $51.6M on the 2028 cap.',
+      },
     },
     capBonus: {
       title: 'The signing bonus trick',
@@ -567,6 +605,10 @@ export default {
       title: 'Dead money',
       body: 'Release (or trade) a player before his contract ends, and the rest of his bonus that hadn’t counted yet counts now: that’s dead money.',
       note: 'Before June 1, all of it hits this year. After June 1 (or with one of 2 “post-June 1” releases a team gets per year), part waits until next year.',
+      aside: {
+        title: 'Real case: Russell Wilson',
+        body: 'The Broncos released Wilson in March 2024, before a $37M guarantee became locked in. The cost: $85M of dead money over two seasons ($53M in 2024 and $32M in 2025), more than the next two biggest cases combined.',
+      },
     },
     capCarry: {
       title: 'Saving cap space for next year',
@@ -644,27 +686,49 @@ export default {
     floorText: 'Minimum cash spending over each period (2024–2026, 2027–2030): 90% of the cap per team and 95% across the league.',
     floorTeam: 'Each team',
     floorLeague: 'The whole league (32 teams)',
+    hit: {
+      cash: 'Cash in year 1',
+      cap: 'Cap hit in year 1',
+      salary: 'Base salary',
+      bonus: 'Signing bonus',
+    },
+    mahomes: {
+      span: '2020 contract: 10 years, through 2031',
+      redo: 'Reworked in 2023: $210.6M for 2023–2026, all guaranteed',
+    },
+    watson: {
+      atSigning: 'Guaranteed at signing',
+      rest: 'Rest of the contract',
+    },
+    dates: {
+      who: 'Lamar Jackson · $29M of his 2026 salary',
+      s0: '2023 · at signing',
+      s0How: 'Guaranteed for injury only',
+      s1: 'March 2025 · 5th day of the league year',
+      s1How: 'Fully guaranteed',
+    },
+    what: {
+      who: 'Lamar Jackson · Ravens · 2023',
+      years: 'Years',
+      total: 'Total value',
+      guaranteed: 'Guaranteed',
+    },
     parts: {
-      capLabel: 'On the cap',
       salary: {
         name: 'Base salary',
         what: 'Paid weekly, during the regular season.',
-        cap: 'In the year it’s earned',
       },
       signing: {
         name: 'Signing bonus',
         what: 'Paid for signing the contract.',
-        cap: 'Spread over the contract (up to 5 years)',
       },
       roster: {
         name: 'Roster bonus',
         what: 'Earned by being on the roster on a set date.',
-        cap: 'In full, that year',
       },
       workout: {
         name: 'Workout bonus',
         what: 'Earned by attending an agreed share of the offseason workouts.',
-        cap: 'In full, that year',
       },
     },
     guar: {

@@ -272,6 +272,41 @@ export const SOURCES = {
     title: 'Newsweek — NFL Contracts: How Does Restructuring a Deal Actually Work? (Joe Kozlowski, Mar 1, 2024)',
     url: 'https://www.newsweek.com/how-restructuring-nfl-contracts-works-1875079',
   },
+  S56: {
+    short: 'ESPN · Watson trade & deal',
+    title: 'ESPN — Deshaun Watson traded to Cleveland Browns; QB set to sign deal worth $230M guaranteed (Jake Trotter, Sarah Barshop, Mar 18, 2022)',
+    url: 'https://www.espn.com/nfl/story/_/id/33538489',
+  },
+  S57: {
+    short: 'ESPN · Watson restructure 2025',
+    title: 'ESPN — Source: Browns restructure Deshaun Watson’s deal to get cap compliant (Daniel Oyefusi, Mar 6, 2025)',
+    url: 'https://www.espn.com/nfl/story/_/id/44135374/source-browns-restructure-deshaun-watson-deal-get-cap-compliant',
+  },
+  S58: {
+    short: 'BrownsZone · Watson restructure 2026',
+    title: 'BrownsZone — Browns restructure Deshaun Watson’s contract again to clear salary cap space (Scott Petrak, Mar 6, 2026)',
+    url: 'https://www.brownszone.com/2026/03/06/browns-restructure-deshaun-watsons-contract-again-to-clear-salary-cap-space-ahead-of-new-league-year/',
+  },
+  S59: {
+    short: 'ESPN · Mahomes extension',
+    title: 'ESPN — Chiefs lock up Patrick Mahomes through 2031 with massive extension (Jul 6, 2020)',
+    url: 'https://www.espn.com/nfl/story/_/id/29418825/sources-chiefs-patrick-mahomes-agree-10-year-extension',
+  },
+  S60: {
+    short: 'Yahoo Sports · Mahomes rework',
+    title: 'Yahoo Sports — Patrick Mahomes, Chiefs reportedly set NFL record with restructured 4-year, $210.6 million guaranteed deal (Ryan Young, Sep 18, 2023)',
+    url: 'https://sports.yahoo.com/patrick-mahomes-chiefs-reportedly-set-nfl-record-with-restructured-4-year-2106-million-guaranteed-deal-193554707.html',
+  },
+  S61: {
+    short: 'ESPN · Wilson release',
+    title: 'ESPN — Broncos to release Russell Wilson, take $85M dead money hit (Jeff Legwold, Mar 4, 2024)',
+    url: 'https://www.espn.com/nfl/story/_/id/39654399/broncos-cut-russell-wilson-take-85m-dead-money-hit',
+  },
+  S62: {
+    short: 'ESPN · Wilson dead money',
+    title: 'ESPN — No more Russell Wilson dead money (Jeff Legwold, Feb 26, 2026)',
+    url: 'https://www.espn.com/nfl/story/_/id/48025223/denver-broncos-free-agency-2026-offseason-free-russell-wilson-dead-money-salary-cap',
+  },
 };
 
 /** ref: [sourceId, locator?, pdfPage?] → { label, href } */

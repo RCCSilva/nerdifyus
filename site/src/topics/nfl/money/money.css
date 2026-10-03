@@ -24,6 +24,47 @@
 .part small { color: var(--muted); line-height: 1.3; }
 .part small b { color: var(--text); }
 
+/* how a deal is reported */
+.deal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.7rem; padding: 1.2rem 1rem; }
+.deal-item { display: grid; justify-items: center; gap: 0.2rem; padding: 1rem 0.5rem; border-radius: 12px; background: var(--bg); animation: fade-up-lg 0.5s both; }
+.deal-item b { font: 800 clamp(1.2rem, 1rem + 1.2vw, 1.8rem)/1.1 var(--font-display); }
+.deal-item small { color: var(--muted); font-weight: 600; }
+.deal-item.is-key { background: #1d4f91; color: #fff; }
+.deal-item.is-key small { color: #dfe7f5; }
+
+/* a guarantee that vests on a date */
+.vest { display: grid; gap: 0.9rem; padding: 1.2rem 1rem; }
+.vest-step { display: grid; gap: 0.3rem; animation: fade-up-lg 0.5s both; }
+.vest-step small { font-weight: 700; color: var(--muted); }
+.vest-bar { display: block; padding: 0.7rem 0.9rem; border-radius: 10px; font-weight: 800; color: #fff; }
+.vest-bar.is-injury { background: repeating-linear-gradient(135deg, #6f86b3 0 8px, #5a73a3 8px 16px); }
+.vest-bar.is-full { background: #1d4f91; }
+
+/* guaranteed at signing, as a share of the deal */
+.share-deals { display: grid; gap: 1rem; padding: 1.2rem 1rem; }
+.share-deal { display: grid; gap: 0.35rem; }
+.share-deal-bar { display: flex; height: 2.2rem; border-radius: 10px; overflow: hidden; font-weight: 800; font-size: 0.85rem; transform-origin: left; animation: grow 0.8s ease-out both; }
+.share-deal-bar i, .share-deal-bar em { display: grid; place-items: center; font-style: normal; white-space: nowrap; }
+.share-deal-bar em { flex: 1; background: #d5d8de; color: #11151c; }
+.swatch.tone-rest { background: #d5d8de; }
+
+/* a 10-year deal */
+.span { display: grid; gap: 0.5rem; padding: 1.2rem 1rem; }
+.span small { font-weight: 700; color: var(--muted); }
+.span-years { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3px; }
+.span-year { display: grid; place-items: center; height: 2.2rem; border-radius: 6px; background: #9aa0ac; color: #fff; font-weight: 800; font-size: 0.8rem; }
+.span-year:first-child { background: var(--bg); color: var(--muted); }
+.span-year.is-redo { background: #1d4f91; }
+.span-redo { margin: 0; font-weight: 700; color: #1d4f91; }
+
+/* cash vs cap hit */
+.hit { display: grid; gap: 0.8rem; padding: 1.2rem 1rem; }
+.hit-row { display: grid; grid-template-columns: 9rem 1fr 5.5rem; gap: 0.6rem; align-items: center; }
+.hit-label { font-weight: 700; font-size: 0.9rem; }
+.hit-bar { display: flex; height: 2.2rem; border-radius: 10px; overflow: hidden; font-weight: 800; font-size: 0.8rem; transform-origin: left; animation: grow 0.8s ease-out both; }
+.hit-bar i { display: grid; place-items: center; font-style: normal; white-space: nowrap; overflow: hidden; }
+.hit-row b { text-align: right; font-variant-numeric: tabular-nums; }
+
 /* incentives */
 .incent { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; padding: 1.1rem 1rem; }
 .incent-card { display: grid; gap: 0.35rem; align-content: start; padding: 0.9rem; border-radius: 12px; background: var(--bg); border-top: 4px solid #1d4f91; }
@@ -118,6 +159,9 @@
 
 @media (max-width: 560px) {
   .parts, .incent { grid-template-columns: 1fr; }
+  .hit-row { grid-template-columns: 1fr 4.8rem; }
+  .hit-label { grid-column: 1 / -1; }
+  .span-year { font-size: 0.65rem; }
   .m-bars.is-wide .m-bar { grid-template-columns: 1fr 5.6rem; }
   .m-bars.is-wide .m-bar-label { grid-column: 1 / -1; }
   .years-row { grid-template-columns: 1fr; }

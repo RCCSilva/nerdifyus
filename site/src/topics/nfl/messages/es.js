@@ -12,6 +12,7 @@ export default {
     defenseTactics: { title: 'Táctica: la defensa contra el pase', summary: 'Hombre a hombre, zona y match: las tres formas de cubrir a los receptores.' },
     draft: { title: 'El draft', summary: 'Cómo los equipos eligen cada año a los jugadores que salen de la universidad.' },
     trades: { title: 'Intercambios', summary: 'Cómo los equipos cambian jugadores y selecciones del draft.' },
+    contracts: { title: 'Contratos', summary: 'Las partes de un contrato, lo que está garantizado y casos reales: Lamar Jackson, Deshaun Watson y Patrick Mahomes.' },
     strategy: { title: 'Estrategia', summary: 'Por qué los equipos hacen lo que hacen.' },
     matchCoverage: { title: 'Cobertura match', summary: 'El híbrido de hombre y zona que usan hoy muchas defensas.' },
     tags: { title: 'Franchise y transition tags', summary: 'El franchise tag exclusivo y no exclusivo, y el transition tag.' },
@@ -534,16 +535,49 @@ export default {
       body: 'Los equipos no pueden quedarse con el dinero: en cada período de algunos años, cada equipo debe gastar en efectivo al menos el 90% del tope. Y, sumando los 32 equipos, la liga entera debe gastar al menos el 95%.',
       example: 'Si no se llega, la diferencia va a los jugadores: la de un equipo la paga ese equipo; la de la liga se reparte entre sus jugadores.',
     },
+    capHit: {
+      title: 'Lo que importa es el cap hit',
+      body: 'Para el tope, no importa cuánto cobra el jugador en el año, sino el cap hit: cuánto cuenta su contrato en el tope ese año. Cada parte del contrato cuenta de forma distinta:',
+      bullets: [
+        'Salario base: en el año en que se gana.',
+        'Bono por firma: repartido en los años del contrato (hasta 5).',
+        'Roster bonus: entero, ese año.',
+        'Workout bonus e incentivos probables: ese año.',
+      ],
+      example: 'Año 1 de un contrato con salario de US$ 10 M y bono por firma de US$ 25 M en 5 años: el jugador cobra US$ 35 M, pero el cap hit es de US$ 15 M.',
+    },
+    contractMahomes: {
+      title: '10 años: el caso Mahomes',
+      body: 'En 2020 Patrick Mahomes firmó con los Chiefs por 10 años, hasta 2031: US$ 450 M (hasta US$ 503 M con bonos), con US$ 140 M garantizados por lesión y una cláusula que impide al equipo traspasarlo.',
+      example: 'En 2023 el contrato se rehízo: US$ 210,6 M entre 2023 y 2026, todo garantizado, la mayor cifra de la NFL en un periodo de 4 temporadas.',
+    },
+    contractWatson: {
+      title: '100 % garantizado: el caso Watson',
+      body: 'En 2022 los Browns cambiaron tres selecciones de 1.ª ronda (y dos más) por el QB Deshaun Watson y le dieron 5 años y US$ 230 M, todo garantizado. Era la mayor garantía de la historia de la NFL.',
+      example: 'En Cleveland: 19 partidos como titular hasta 2025, 9 victorias y 10 derrotas, y el tendón de Aquiles roto dos veces. El dinero estaba garantizado de todos modos.',
+      insight: 'Un contrato altísimo y 100 % garantizado solo funciona si el jugador rinde: el equipo no tiene salida. Por eso el caso Watson se volvió el ejemplo de lo que hay que evitar.',
+    },
+    contractDates: {
+      title: 'Un contrato no es una hoja de cálculo',
+      body: 'Las partes son siempre las mismas, pero el contrato puede atar la garantía a fechas: una parte del salario de un año futuro empieza garantizada solo por lesión y pasa a estar garantizada del todo en una fecha fijada.',
+      example: 'Lamar Jackson: US$ 29 M de su salario de 2026 empezaron garantizados solo por lesión y quedaron totalmente garantizados el 5.º día del año de la liga de 2025, en marzo.',
+      insight: 'En nuestra lectura, es uno de los contratos mejor armados: el jugador queda protegido si se lesiona, y el equipo puede decidir antes de cada fecha si sigue con él.',
+    },
+    contractWhat: {
+      title: 'Un contrato de la NFL',
+      body: 'Cuando se anuncia un contrato nuevo, la noticia suele traer tres números: cuántos años, el valor total y cuánto está garantizado. Lo garantizado es la parte que queda protegida aunque el equipo corte al jugador.',
+      note: 'El dinero no es infinito: cada equipo tiene un tope salarial, que explicamos en la lección “El tope salarial”.',
+    },
     contractParts: {
       title: 'Las partes de un contrato',
-      body: 'El valor de un contrato es la suma de varias partes. Cada una se paga en un momento distinto y cuenta en el tope de forma distinta.',
+      body: 'El valor total es la suma de varias partes, y cada una se paga en un momento distinto.',
       note: 'El salario base solo está garantizado si el contrato lo dice. Sin garantía, el equipo puede cortar al jugador y el resto del salario no está protegido.',
     },
     contractGuarantees: {
       title: 'Garantizado vs. no garantizado',
-      body: 'Un contrato de 260 millones de dólares no significa 260 millones en el bolsillo. Sin garantía, el equipo puede cortar al jugador por rendimiento o para abrir espacio en el tope. Solo la parte garantizada está protegida.',
+      body: 'Un contrato de 260 millones de dólares no significa 260 millones en el bolsillo. Sin garantía, el equipo puede cortar al jugador por rendimiento o para dar lugar a otro. Solo la parte garantizada está protegida.',
       note: 'La garantía puede cubrir rendimiento, tope y/o lesión. “Totalmente garantizado” es cuando cubre las tres.',
-      example: 'Lamar Jackson (Ravens, 2023): 5 años y US$ 260 M, con US$ 185 M garantizados. Pero solo US$ 135 M estaban garantizados al firmar (incluido el bono de US$ 72,5 M). El resto se fue garantizando poco a poco, año a año.',
+      example: 'Lamar Jackson (Ravens, 2023): de los US$ 260 M, US$ 185 M están garantizados, pero solo US$ 135 M lo estaban al firmar (incluido el bono de US$ 72,5 M).',
     },
     contractIncentives: {
       title: 'Incentivos: probables e improbables',
@@ -556,6 +590,10 @@ export default {
       body: 'Reestructurar es convertir salario en bono por firma: el tope de este año baja, porque el bono se reparte entre los años que quedan. Para repartirlo en más años, el equipo puede añadir “void years”: años falsos que solo existen para la cuenta.',
       note: 'El costo no desaparece: los años siguientes salen más caros. Cuando el contrato termina, lo que estaba en los void years cae de golpe en el tope, como dead money.',
       example: 'Lamar Jackson, marzo de 2026: los Ravens convirtieron US$ 51,3 M de salario en bono. Su tope de 2026 bajó de US$ 74,5 M a US$ 34,54 M, y el de 2027 subió a US$ 84,49 M. El contrato tiene 2 void years.',
+      aside: {
+        title: 'Cuando sale mal: Deshaun Watson',
+        body: 'Los Browns reestructuraron el contrato de Watson seis veces para abrir espacio. 2026 es su último año, pero aún debe contar US$ 34,6 M en el tope de 2027 y US$ 51,6 M en el de 2028.',
+      },
     },
     capBonus: {
       title: 'El truco del bono por firma',
@@ -566,6 +604,10 @@ export default {
       title: 'Dinero muerto (dead money)',
       body: 'Si liberas (o intercambias) a un jugador antes de que termine su contrato, lo que faltaba contar de su bono cuenta ahora: eso es dinero muerto.',
       note: 'Antes del 1 de junio, todo cae este año. Después del 1 de junio (o con una de las 2 liberaciones “post-1 de junio” que tiene cada equipo por año), una parte espera al año siguiente.',
+      aside: {
+        title: 'Caso real: Russell Wilson',
+        body: 'Los Broncos cortaron a Wilson en marzo de 2024, antes de que una garantía de US$ 37 M quedara fija. Costo: US$ 85 M de dead money en dos temporadas (US$ 53 M en 2024 y US$ 32 M en 2025), más que los dos casos siguientes juntos.',
+      },
     },
     capCarry: {
       title: 'Guardar espacio para el año siguiente',
@@ -643,27 +685,49 @@ export default {
     floorText: 'Gasto mínimo en efectivo en cada período (2024–2026, 2027–2030): 90% del tope por equipo y 95% sumando la liga.',
     floorTeam: 'Cada equipo',
     floorLeague: 'Toda la liga (32 equipos)',
+    hit: {
+      cash: 'Dinero en el año 1',
+      cap: 'Cap hit en el año 1',
+      salary: 'Salario base',
+      bonus: 'Bono por firma',
+    },
+    mahomes: {
+      span: 'Contrato de 2020: 10 años, hasta 2031',
+      redo: 'Rehecho en 2023: US$ 210,6 M en 2023–2026, todo garantizado',
+    },
+    watson: {
+      atSigning: 'Garantizado al firmar',
+      rest: 'Resto del contrato',
+    },
+    dates: {
+      who: 'Lamar Jackson · US$ 29 M de su salario de 2026',
+      s0: '2023 · al firmar',
+      s0How: 'Garantizado solo por lesión',
+      s1: 'Marzo de 2025 · 5.º día del año de la liga',
+      s1How: 'Totalmente garantizado',
+    },
+    what: {
+      who: 'Lamar Jackson · Ravens · 2023',
+      years: 'Años',
+      total: 'Valor total',
+      guaranteed: 'Garantizado',
+    },
     parts: {
-      capLabel: 'En el tope',
       salary: {
         name: 'Salario base',
         what: 'Se paga por semana, durante la temporada regular.',
-        cap: 'En el año en que se gana',
       },
       signing: {
         name: 'Bono por firma',
         what: 'Se paga al firmar el contrato.',
-        cap: 'Repartido en los años del contrato (hasta 5)',
       },
       roster: {
         name: 'Roster bonus',
         what: 'Se gana por estar en la plantilla en una fecha fijada.',
-        cap: 'Entero, ese año',
       },
       workout: {
         name: 'Workout bonus',
         what: 'Se gana por asistir a una parte acordada de los entrenamientos fuera de temporada.',
-        cap: 'Entero, ese año',
       },
     },
     guar: {

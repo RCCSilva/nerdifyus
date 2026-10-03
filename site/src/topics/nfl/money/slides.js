@@ -15,16 +15,25 @@ export const TAGS_SLIDES = [
   { id: 'tagValues', Visual: V.TagValuesVisual, refs: [['S37', '2026'], ['S33', 'Art. 10 §2(b)', 76]] },
 ];
 
+// How contracts work, without the cap (research/nfl/14-contracts.md). The cap side is in CAP_SLIDES.
+export const CONTRACTS_SLIDES = [
+  { id: 'contractWhat', Visual: V.ContractWhatVisual, refs: [['S52'], ['S50'], ['S33', 'Art. 13 §2', 123]] },
+  { id: 'contractParts', Visual: V.ContractPartsVisual, refs: [['S50'], ['S33', 'App. A ¶6', 354], ['S33', 'App. A ¶11', 356]] },
+  { id: 'contractGuarantees', Visual: V.ContractGuaranteesVisual, refs: [['S33', 'App. A ¶11', 356], ['S50'], ['S52'], ['S51']] },
+  { id: 'contractDates', Visual: V.ContractDatesVisual, refs: [['S51']] },
+  { id: 'contractWatson', Visual: V.ContractWatsonVisual, refs: [['S56'], ['S58'], ['S57'], ['S51']] },
+  { id: 'contractMahomes', Visual: V.ContractMahomesVisual, refs: [['S59'], ['S60']] },
+];
+
 export const CAP_SLIDES = [
   { id: 'capWhat', Visual: V.CapWhatVisual, refs: [['S33', 'Art. 13 §1–2', 123], ['S35', '2026']] },
   { id: 'capGrowth', Visual: V.CapGrowthVisual, refs: [['S35']] },
   { id: 'capShare', Visual: V.CapShareVisual, refs: [['S33', 'Art. 12 §6(c)', 112]] },
   { id: 'capFloor', Visual: V.CapFloorVisual, refs: [['S33', 'Art. 12 §8–9', 117]] },
-  { id: 'contractParts', Visual: V.ContractPartsVisual, refs: [['S50'], ['S33', 'App. A ¶6', 354], ['S33', 'Art. 13 §6(a)(i)', 125], ['S33', 'Art. 13 §6(c)(i)', 130], ['S33', 'App. A ¶11', 356]] },
-  { id: 'contractGuarantees', Visual: V.ContractGuaranteesVisual, refs: [['S33', 'App. A ¶11', 356], ['S50'], ['S52'], ['S51']] },
+  { id: 'capHit', Visual: V.CapHitVisual, refs: [['S53'], ['S33', 'Art. 13 §6(a)(i)', 125], ['S33', 'Art. 13 §6(b)(i)', 126], ['S50'], ['S33', 'Art. 13 §6(c)(i)', 130]] },
   { id: 'contractIncentives', Visual: V.ContractIncentivesVisual, refs: [['S33', 'Art. 13 §6(c)', 130], ['S50']] },
   { id: 'capBonus', Visual: V.CapBonusVisual, refs: [['S33', 'Art. 13 §6(b)(i)', 126]] },
-  { id: 'capDead', Visual: V.CapDeadVisual, refs: [['S33', 'Art. 13 §6(b)(ii)', 127]] },
-  { id: 'contractRestructure', Visual: V.ContractRestructureVisual, refs: [['S50'], ['S33', 'Art. 13 §6(b)(iii)(3)', 128], ['S33', 'Art. 13 §6(b)(ii)(4)', 127], ['S54'], ['S55'], ['S53']] },
+  { id: 'capDead', Visual: V.CapDeadVisual, refs: [['S33', 'Art. 13 §6(b)(ii)', 127], ['S61'], ['S62']] },
+  { id: 'contractRestructure', Visual: V.ContractRestructureVisual, refs: [['S50'], ['S33', 'Art. 13 §6(b)(iii)(3)', 128], ['S33', 'Art. 13 §6(b)(ii)(4)', 127], ['S54'], ['S55'], ['S53'], ['S58']] },
   { id: 'capCarry', Visual: V.CapCarryVisual, refs: [['S33', 'Art. 13 §6(b)(v)', 129]] },
 ];
