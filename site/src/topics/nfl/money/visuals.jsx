@@ -195,11 +195,16 @@ export function CapFloorVisual({ replay }) {
   return (
     <StillScene>
       <div className="floor" key={replay}>
-        <div className="floor-bar">
-          <i style={{ width: '90%' }} />
-          <span className="floor-mark" style={{ left: '90%' }}>90%</span>
-          <span className="floor-mark is-cap" style={{ left: '100%' }}>{t('nfl.money.cap')}</span>
-        </div>
+        {[['floorTeam', 90], ['floorLeague', 95]].map(([k, pct]) => (
+          <div key={k} className="floor-row">
+            <strong>{t(`nfl.money.${k}`)}</strong>
+            <div className="floor-bar">
+              <i style={{ width: `${pct}%` }} />
+              <span className="floor-mark" style={{ left: `${pct}%` }}>{pct}%</span>
+              <span className="floor-mark is-cap" style={{ left: '100%' }}>{t('nfl.money.cap')}</span>
+            </div>
+          </div>
+        ))}
         <p>{t('nfl.money.floorText')}</p>
       </div>
     </StillScene>

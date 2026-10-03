@@ -531,8 +531,8 @@ export default {
     },
     capFloor: {
       title: 'Também tem um piso',
-      body: 'Os times não podem só guardar o dinheiro: em cada período de alguns anos, cada time precisa gastar de verdade, em dinheiro, pelo menos 90% do teto.',
-      example: 'Se um time ficar abaixo, ele paga a diferença aos seus jogadores.',
+      body: 'Os times não podem só guardar o dinheiro: em cada período de alguns anos, cada time precisa gastar de verdade, em dinheiro, pelo menos 90% do teto. E, somando os 32 times, a liga inteira precisa gastar pelo menos 95%.',
+      example: 'Se ficar abaixo, a diferença vai para os jogadores: a do time, paga pelo time; a da liga, dividida entre os jogadores dela.',
     },
     capBonus: {
       title: 'O truque do bônus de assinatura (signing bonus)',
@@ -617,7 +617,9 @@ export default {
       local: 'Receitas locais dos times (ingressos etc.): 40%',
     },
     cap: 'Teto',
-    floorText: 'Gasto mínimo em dinheiro: 90% do teto em cada período (2024–2026, 2027–2030).',
+    floorText: 'Gasto mínimo em dinheiro em cada período (2024–2026, 2027–2030): 90% do teto por time e 95% somando a liga.',
+    floorTeam: 'Cada time',
+    floorLeague: 'A liga toda (32 times)',
     cash: 'Dinheiro pago',
     onCap: 'Conta no teto',
     cashRow: 'Dinheiro',

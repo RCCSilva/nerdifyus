@@ -11,6 +11,8 @@ Applies to: the 2020 CBA (S33); 2026 figures (S35)
 
 ## Minimum spending
 - Each team must spend in cash at least 90% of the cap over each multi-year period (2021–23, 2024–26, 2027–30); shortfalls are paid to the players [S33 Art. 12 §9, p.117]. League-wide: 95% [S33 Art. 12 §8, p.117].
+- The 90% team floor applies from 2021; for 2017–2020 it was 89% [S33 Art. 12 §9(a)–(b), p.117].
+- League-wide: "Guaranteed League-Wide Cash Spending of 95% of the Salary Caps … multiplied by the number of Clubs" for each period [S33 Art. 12 §8(b), p.117]. A league shortfall is paid to the players who were on a club roster during the period, per NFLPA allocation, reduced by any team shortfall payments [S33 Art. 12 §8(d), p.117].
 
 ## Signing bonus proration
 - A signing bonus is "prorated over the term of the Player Contract (on a straight-line basis…), with a maximum proration of five years" [S33 Art. 13 §6(b)(i), p.126].

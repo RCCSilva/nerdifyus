@@ -532,8 +532,8 @@ export default {
     },
     capFloor: {
       title: 'A floor, too',
-      body: 'Teams can’t just keep the money: over each period of a few years, each team must actually spend at least 90% of the cap in cash.',
-      example: 'If a team falls short, it pays the difference to its players.',
+      body: 'Teams can’t just keep the money: over each period of a few years, each team must actually spend at least 90% of the cap in cash. And across all 32 teams, the league as a whole must spend at least 95%.',
+      example: 'Any shortfall goes to the players: a team’s is paid by that team; the league’s is split among its players.',
     },
     capBonus: {
       title: 'The signing bonus trick',
@@ -618,7 +618,9 @@ export default {
       local: 'Teams’ local revenues (tickets, etc.): 40%',
     },
     cap: 'Cap',
-    floorText: 'Minimum cash spending: 90% of the cap over each period (2024–2026, 2027–2030).',
+    floorText: 'Minimum cash spending over each period (2024–2026, 2027–2030): 90% of the cap per team and 95% across the league.',
+    floorTeam: 'Each team',
+    floorLeague: 'The whole league (32 teams)',
     cash: 'Cash paid',
     onCap: 'Counts on the cap',
     cashRow: 'Cash',

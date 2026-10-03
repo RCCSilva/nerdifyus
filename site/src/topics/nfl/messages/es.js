@@ -531,8 +531,8 @@ export default {
     },
     capFloor: {
       title: 'También hay un piso',
-      body: 'Los equipos no pueden quedarse con el dinero: en cada período de algunos años, cada equipo debe gastar en efectivo al menos el 90% del tope.',
-      example: 'Si un equipo no llega, paga la diferencia a sus jugadores.',
+      body: 'Los equipos no pueden quedarse con el dinero: en cada período de algunos años, cada equipo debe gastar en efectivo al menos el 90% del tope. Y, sumando los 32 equipos, la liga entera debe gastar al menos el 95%.',
+      example: 'Si no se llega, la diferencia va a los jugadores: la de un equipo la paga ese equipo; la de la liga se reparte entre sus jugadores.',
     },
     capBonus: {
       title: 'El truco del bono por firma',
@@ -617,7 +617,9 @@ export default {
       local: 'Ingresos locales de los equipos (entradas, etc.): 40%',
     },
     cap: 'Tope',
-    floorText: 'Gasto mínimo en efectivo: 90% del tope en cada período (2024–2026, 2027–2030).',
+    floorText: 'Gasto mínimo en efectivo en cada período (2024–2026, 2027–2030): 90% del tope por equipo y 95% sumando la liga.',
+    floorTeam: 'Cada equipo',
+    floorLeague: 'Toda la liga (32 equipos)',
     cash: 'Efectivo pagado',
     onCap: 'Cuenta en el tope',
     cashRow: 'Efectivo',

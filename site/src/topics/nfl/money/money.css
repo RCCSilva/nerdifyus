@@ -76,10 +76,12 @@
 
 /* minimum spending */
 .floor { padding: 1.6rem 1rem 1rem; display: grid; gap: 1.6rem; }
+.floor-row { display: grid; gap: 1.7rem; padding-bottom: 1.2rem; }
+.floor-row strong { font-size: 0.9rem; }
 .floor-bar { position: relative; height: 1.4rem; border-radius: 99px; background: var(--line); }
 .floor-bar i { display: block; height: 100%; border-radius: 99px; background: #1c8c3c; transform-origin: left; animation: grow 0.8s ease-out both; }
 .floor-mark { position: absolute; top: -1.4rem; transform: translateX(-50%); font-size: 0.8rem; font-weight: 800; }
-.floor-mark.is-cap { color: #c8323f; transform: translateX(-100%); }
+.floor-mark.is-cap { top: 1.6rem; color: #c8323f; transform: translateX(-100%); } /* below the bar, clear of the % mark */
 .floor p { margin: 0; line-height: 1.4; }
 
 /* carry over */
